@@ -1,7 +1,7 @@
 # Calculate area of a rectangle (length * breadth)
 
-user_length = int(input("please enter the length: "))
-user_breadth = int(input("please enter the breadth: "))
+user_length = float((input("please enter the length: ")))
+user_breadth = float(input("please enter the breadth: "))
 
 rect_area = user_length * user_breadth
 
