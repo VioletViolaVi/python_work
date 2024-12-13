@@ -1,3 +1,3 @@
 # Python Practice
 
-File for praticing python
+File for practicing python
