@@ -1,5 +1,3 @@
-# Variables
-
 # Strings
 first_name = "Vivian"
 food = "burgers"

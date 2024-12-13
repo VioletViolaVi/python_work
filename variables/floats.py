@@ -1,7 +1,4 @@
-# Variables
-
 # Floats
-
 price = 1.15
 decimal_half = 0.5
 distance = 39

@@ -1,5 +1,3 @@
-# Variables
-
 # Integers
 age = 30
 quantity = 6
