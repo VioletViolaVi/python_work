@@ -18,8 +18,14 @@ print("--- user input version ---")
 
 user_radius = float(input("Enter numerical value for radius: "))
 
+print(f"user_radius: {user_radius}")
+
 user_squared_radius = user_radius ** 2
 
+print(f"user_squared_radius: {user_squared_radius}")
+
 user_circle_area = math.pi * user_squared_radius
+
+print(f"user_circle_area: {user_circle_area}")
 
 print(round(user_circle_area, 2))
