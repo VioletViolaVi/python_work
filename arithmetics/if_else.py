@@ -1,4 +1,4 @@
-# If Else Statements
+# If / Elif / Else Statements
 
 user_age = int(input("How old are you?: "))
 
@@ -10,6 +10,7 @@ else:
 
 
 print(" --- new example --- ")
+
 
 
 user_meal = input("Do you prefer pizza or spaghetti?: ")
@@ -56,3 +57,52 @@ if user_name != "":
     print(f"Hello {user_name}! Nice to meet you!")
 else:
     print("Why don't you want to tell me your name?")
+
+
+
+print(" --- new example --- ")
+
+
+
+is_thirsty = False
+
+if is_thirsty:
+    print("Drink some water!")
+else:
+    print("DON'T drink some water!")
+
+
+
+print(" --- new example --- ")
+
+
+
+user_is_happy = True
+
+if user_is_happy:
+    print("Yay! You are happy!")
+else:
+    print("Oh no! You are sad!")
+
+
+
+print(" --- new example --- ")
+
+
+
+user_is_thirsty = input("True or False, are you thirsty?: ")
+
+if user_is_thirsty == "True":
+    user_is_thirsty = True
+    if user_is_thirsty:
+        print("Drink some water!")
+    else:
+        print("DON'T drink some water!")
+elif user_is_thirsty == "False":
+    user_is_thirsty = False
+    if user_is_thirsty:
+        print("Drink some water!")
+    else:
+        print("DON'T drink some water!")
+else:
+    print("You did not pick between 'True' or 'False'!!!")
