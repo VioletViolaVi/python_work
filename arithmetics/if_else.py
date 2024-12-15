@@ -23,6 +23,10 @@ else:
 
 
 
+print(" --- new example --- ")
+
+
+
 user_topping = input("Pick a pizza topping (pepperoni, ham, spinach, bacon, onions, extra cheese): ")
 
 if user_topping == "pepperoni":
@@ -39,3 +43,16 @@ elif user_topping == "extra cheese":
     print("You added extra cheese to your pizza")
 else:
     print("You must pick from the provided options!")
+
+
+
+print(" --- new example --- ")
+
+
+
+user_name = input("What is your name?: ")
+
+if user_name != "":
+    print(f"Hello {user_name}! Nice to meet you!")
+else:
+    print("Why don't you want to tell me your name?")
