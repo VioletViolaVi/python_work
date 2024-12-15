@@ -8,4 +8,4 @@ adjacent = float(input("Enter numerical adjacent value: "))
 
 hypotenuse = math.sqrt( pow(opposite, 2) + pow(adjacent, 2) )
 
-print(hypotenuse)
+print(f"The hypotenuse of this triangle is {hypotenuse}")
