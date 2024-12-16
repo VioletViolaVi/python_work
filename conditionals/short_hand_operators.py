@@ -1,4 +1,4 @@
-# Short hand Operators
+# Short Hand Operators (Ternary Operators / Conditional Expressions)
 
 # mine
 if True: print("This is truthy!")
@@ -58,3 +58,10 @@ print(response)
 
 
 print(" --- next example --- ")
+
+
+username = "Bella"
+
+login_greeting = "username not entered" if username == "" else f"Hello {username}"
+
+print(login_greeting)
