@@ -42,6 +42,11 @@ else:
     print(f"Sorry, we're all out of {veg}.")
 
 
+
+print(" --- new examples --- ")
+
+
+
 # Shopping list
 meat = "beef"
 drink = "lemonade"
@@ -51,3 +56,23 @@ if (meat == "beef" or meat == "chicken") and (drink == "coffee" or drink == "lem
     print("You have all the items on my shopping list!")
 else:
     print("You don't have all the items on my shopping list!")
+
+
+
+print(" --- new examples --- ")
+
+
+
+# Fizzbuzz
+num = -15
+
+if num % 3 == 0 and num % 5 == 0:
+    print("Fizzbuzz")
+elif num % 3 == 0 and not num % 5 == 0:
+    print("Fizz")
+elif not num % 3 == 0 and num % 5 == 0:
+    print("Buzz")
+elif not num % 3 == 0 and not num % 5 == 0:
+    print("Number not divisible by 3 or 5")
+else:
+    print("Error!!!")
