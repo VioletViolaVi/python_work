@@ -31,6 +31,8 @@ elif user_unit_choice == "cm":
     elif user_conversion_choice == "m":
         result = user_height / 100
         print(f"Your {user_height}{user_unit_choice} height is {result}{user_conversion_choice}!")
+    else:
+        print("You did not pick between 'mm' or 'm'!")
 
 
 
