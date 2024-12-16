@@ -42,6 +42,11 @@ elif user_unit_choice == "m":
     if user_conversion_choice == "mm":
         result = user_height * 1000
         print(f"Your {user_height}{user_unit_choice} height is {result}{user_conversion_choice}!")
+    elif user_conversion_choice == "cm":
+        result = user_height * 100
+        print(f"Your {user_height}{user_unit_choice} height is {result}{user_conversion_choice}!")
+
+        
 
 
 
