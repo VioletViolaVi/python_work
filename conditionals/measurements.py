@@ -34,6 +34,16 @@ elif user_unit_choice == "cm":
     else:
         print("You did not pick between 'mm' or 'm'!")
 
+# converting from m
+elif user_unit_choice == "m":
+    user_conversion_choice = input("Select unit to convert to ('mm' or 'cm'): ").lower()
+
+    # m --> mm / cm / error
+    if user_conversion_choice == "mm":
+        result = user_height * 1000
+        print(f"Your {user_height}{user_unit_choice} height is {result}{user_conversion_choice}!")
+
+
 
 
 
