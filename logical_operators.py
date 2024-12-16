@@ -14,17 +14,37 @@ elif age < 18 and has_id:
 else:
     print("Something has gone wrong! 🤯🫨 😱😲")
 
-# Shopping list
-fruit = "pears"
-veg = "carrots"
-meat = "beef"
-drink = "lemonade"
-ice_cream = "vanilla"
+
+
+print(" --- new examples --- ")
+
+
 
 # Shop availability
+fruit = "apples"
+
 if fruit == "apples" or fruit == "cherries" or fruit == "bananas":
     print(f"Yes, we still have {fruit} in stock.")
 else:
     print(f"Sorry, we're all out of {fruit}.")
 
 
+veg = "sweet peppers"
+has_enough_money = True
+
+if veg == "cabbage" or veg == "lettuce" or veg == "sweetcorn" or veg == "carrots":
+    print(f"We still have {veg} in stock")
+    if not has_enough_money:
+        print(f"You cannot afford to buy the {veg}")
+    else:
+        print(f"You can buy the {veg}. That'll be £46.97 please! 💷")
+else:
+    print(f"Sorry, we're all out of {veg}.")
+
+
+
+
+# # Shopping list
+# meat = "beef"
+# drink = "lemonade"
+# ice_cream = "vanilla"
