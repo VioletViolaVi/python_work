@@ -92,3 +92,18 @@ print(f"is_cooked: {is_cooked}")
 
 conclusion = "Ready to eat! 🍗" if is_cooked else "Throw it away! 🤮 🤢"
 print(conclusion)
+
+
+
+print(" --- next example --- ")
+
+
+
+# admin or guest?
+user = "admin"
+is_admin = True if user == "admin" else False
+print(is_admin)
+
+user = "guest"
+is_admin = True if user == "admin" else False
+print(is_admin)
