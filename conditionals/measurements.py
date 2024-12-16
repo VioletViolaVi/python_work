@@ -48,6 +48,10 @@ elif user_unit_choice == "m":
     else:
         print("You did not pick between 'mm' or 'cm'!")
 
+# mm, cm or m not entered
+else:
+    print("You did not pick between 'mm', 'cm' or 'm'!")
+
         
 
 
