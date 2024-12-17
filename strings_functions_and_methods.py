@@ -1,6 +1,6 @@
 # String Functions & Methods
 
-# # len()
+# len()
 username = input("Enter your name: ") # Jane Doe used
 print(len(username))
 
@@ -42,3 +42,18 @@ title_method = lowered_username.title()
 print(f"lowered_username: {lowered_username}")
 print(f"capitalize_method: {capitalize_method}")
 print(f"title_method: {title_method}")
+
+
+
+print(" --- next --- ")
+
+
+
+# Upper / Lower
+
+whisper = input("What do you want to whisper?: ").lower()
+shout = input("What do you want to shout?: ").upper()
+
+print(whisper)
+print(shout)
+
