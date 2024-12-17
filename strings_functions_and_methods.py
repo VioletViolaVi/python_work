@@ -83,3 +83,20 @@ print(is_alphabet_present_5.isalpha())
 
 print(" --- next --- ")
 
+# .count()
+alliteration = "Peter Piper picked a peck of pickled peppers. A peck of pickled peppers Peter Piper picked"
+
+picked_count = alliteration.count("picked")
+print(f"picked: {picked_count}")
+
+peter_count = alliteration.count("Peter")
+print(f"Peter: {peter_count}")
+
+pick_count = alliteration.count("pick")
+print(f"pick: {pick_count}")
+
+pe_count = alliteration.count("pe") # case sensitive
+print(f"pe: {pe_count}")
+
+Pe_count = alliteration.count("Pe") # case sensitive
+print(f"CAPITAL 'P'!!! (Pe): {Pe_count}")
