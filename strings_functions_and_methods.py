@@ -10,13 +10,13 @@ print(" --- next --- ")
 
 
 
-# .find()
+# .find() / .rfind()
 j_index = username.find('J')
 a_index = username.find('a')
-n_index = username.find('n')
+n_index = username.find('N')
 e_index = username.rfind('e') # .rfind() -> last occurrence
 space_index = username.find(' ')
-d_index = username.find('D')
+d_index = username.find('d')
 o_index = username.find('o')
 
 print(f"J => {j_index}")
