@@ -5,7 +5,7 @@
     # {value:.2f} / {value:.0f} / {value:.5f} etc. -> for decimal places (adds 0's if not enough nums @ end)
     # {value:7} / {value:6} / {value:2} etc. -> adds spaces in front to total 7, 6 and 2 spaces in output
     # {value:07} / {value:06} / {value:02} etc. -> adds 0's instead of spaces in output
-    # 
+    # {value:<8} / {value:<4} / {value:<3} etc. -> aligns output to left (space added on end as needed)
     # #
 
 chocolate_price = 5632.89534
