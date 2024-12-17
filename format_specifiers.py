@@ -30,3 +30,17 @@ print(" --- next ---")
 print(f"20 spaces total: £{chocolate_price:020}")
 print(f"21 spaces total: £{ice_cream_price:021}")
 print(f"15 spaces total: £{juice_price:015}")
+
+print(" --- next ---")
+
+# left justify
+print(f"left justified: £{chocolate_price:<20}")
+print(f"left justified: £{ice_cream_price:<21}")
+print(f"left justified: £{juice_price:<15}")
+
+print(" --- next ---")
+
+# right justify
+print(f"right justified: £{chocolate_price:>20}")
+print(f"right justified: £{ice_cream_price:>21}")
+print(f"right justified: £{juice_price:>15}")
