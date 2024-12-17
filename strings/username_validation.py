@@ -21,7 +21,7 @@ if check_char_len <= 12:
         if check_only_letters:
             print("Yeah! You have a valid username! 🎊 🥳 🙌")
         else:
-            print("Username must have no digits!")
+            print("Username must only have letters!")
     else:
         print("Username must have no spaces!")
 else:
