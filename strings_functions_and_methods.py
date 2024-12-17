@@ -34,7 +34,6 @@ print(" --- next --- ")
 
 
 # Capitalisation
-
 lowered_username = input("Enter your name: ") # john doe used
 capitalize_method = lowered_username.capitalize()
 title_method = lowered_username.title()
@@ -50,10 +49,37 @@ print(" --- next --- ")
 
 
 # Upper / Lower
-
 whisper = input("What do you want to whisper?: ").lower()
 shout = input("What do you want to shout?: ").upper()
 
 print(whisper)
 print(shout)
+
+
+
+print(" --- next --- ")
+
+
+# Number / Alphabet Presence
+is_digit_present = "123"
+is_digit_present_2 = "i have 5 eggs"
+
+print(is_digit_present.isdigit())
+print(is_digit_present_2.isdigit())
+
+is_alphabet_present = "123"
+is_alphabet_present_2 = "i have 5 eggs"
+is_alphabet_present_3 = "i have five eggs"
+is_alphabet_present_4 = "ihavefiveeggs"
+is_alphabet_present_5 = "iHaveFiveEggs"
+
+print(is_alphabet_present.isalpha())
+print(is_alphabet_present_2.isalpha())
+print(is_alphabet_present_3.isalpha())
+print(is_alphabet_present_4.isalpha())
+print(is_alphabet_present_5.isalpha())
+
+
+
+print(" --- next --- ")
 
