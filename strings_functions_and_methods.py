@@ -83,6 +83,8 @@ print(is_alphabet_present_5.isalpha())
 
 print(" --- next --- ")
 
+
+
 # .count()
 alliteration = "Peter Piper picked a peck of pickled peppers. A peck of pickled peppers Peter Piper picked"
 
@@ -100,3 +102,28 @@ print(f"pe: {pe_count}")
 
 Pe_count = alliteration.count("Pe") # case sensitive
 print(f"CAPITAL 'P'!!! (Pe): {Pe_count}")
+
+
+
+print(" --- next --- ")
+
+
+
+# .replace()
+login_greeting = "Hello User 👋"
+bella = login_greeting.replace("User", "Bella")
+steve = login_greeting.replace("User", "Steve")
+pat = login_greeting.replace("User", "Pat")
+cathy = login_greeting.replace("User", "Cathy")
+
+print(f"Default login: {login_greeting}")
+print(f"Bella logs in: {bella}")
+print(f"Steve logs in: {steve}")
+print(f"Pat logs in: {pat}")
+print(f"Cathy logs in: {cathy}")
+
+# using input()
+default_greeting = "Hello user!"
+entered_username = input("Please enter your name: ")
+dynamic_greeting = default_greeting.replace("user", entered_username)
+print(f"Dynamic Greeting: {dynamic_greeting}")
