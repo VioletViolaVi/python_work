@@ -101,3 +101,22 @@ yellow_word = colours[colours.find("yellow"):colours.find(" | pink")]
 print(f"yellow_word: {yellow_word}")
 
 print(f"whole colours string: {colours[::]}") # gets whole string
+
+
+
+print(" --- new --- ")
+
+
+
+# get last 4 digits of credit card number (from vid)
+credit_card_details = "123-456-7890"
+
+last_4_digits = credit_card_details[8::]
+print(f"last 4 digits: {last_4_digits}")
+
+last_4_digits_ver2 = credit_card_details[-4::]
+print(f"last 4 digits ver 2: {last_4_digits_ver2}")
+
+# reverse number details
+reversed_nums = credit_card_details[::-1]
+print(f"reversed_nums: {reversed_nums}")
