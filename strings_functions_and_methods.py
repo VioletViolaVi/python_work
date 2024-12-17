@@ -12,7 +12,7 @@ print(" --- next --- ")
 
 # .find() / .rfind()
 j_index = username.find('J')
-a_index = username.find('a')
+a_index = username.rfind('A') # .rfind() -> last occurrence
 n_index = username.find('N')
 e_index = username.rfind('e') # .rfind() -> last occurrence
 space_index = username.find(' ')
