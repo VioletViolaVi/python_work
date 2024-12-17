@@ -1,6 +1,6 @@
 # String Functions & Methods
 
-# len()
+# # len()
 username = input("Enter your name: ") # Jane Doe used
 print(len(username))
 
@@ -26,3 +26,19 @@ print(f"e => {e_index}")
 print(f"' ' => {space_index}")
 print(f"D => {d_index}")
 print(f"o => {o_index}")
+
+
+
+print(" --- next --- ")
+
+
+
+# Capitalisation
+
+lowered_username = input("Enter your name: ") # john doe used
+capitalize_method = lowered_username.capitalize()
+title_method = lowered_username.title()
+
+print(f"lowered_username: {lowered_username}")
+print(f"capitalize_method: {capitalize_method}")
+print(f"title_method: {title_method}")
