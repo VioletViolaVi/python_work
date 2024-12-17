@@ -99,3 +99,5 @@ yellow_word = colours[6:12]
 print(f"yellow_word: {yellow_word}")
 yellow_word = colours[colours.find("yellow"):colours.find(" | pink")]
 print(f"yellow_word: {yellow_word}")
+
+print(f"whole colours string: {colours[::]}") # gets whole string
