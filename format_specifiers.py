@@ -12,8 +12,7 @@
     # {value:+} -> adds '+' sign in front of +VE values only (-ve values remain -ve)
     # {value:-} -> adds '-' sign in front of -VE values only (+ve values remain +ve)
     # {value:,} -> adds ',' for 'thousands' numbers (e.g: 1,560 | 2,000 | 6,085 | etc.) 
-    # 
-    # #
+    # {value:^30,.2f} / {value:+,.5f} / {value:-25,.3f} etc. ->  can be mixed w/ diff combinations
 
 chocolate_price = 5632.89534
 ice_cream_price = 2156.253626
@@ -93,3 +92,10 @@ print(" --- next ---")
 print(f"centre aligned: £{chocolate_price:,}")
 print(f"centre aligned: £{ice_cream_price:,}")
 print(f"centre aligned: £{juice_price:,}")
+
+print(" --- next ---")
+
+# mix up
+print(f"centre aligned: £{chocolate_price:^30,.2f}")
+print(f"centre aligned: £{ice_cream_price:+,.5f}")
+print(f"centre aligned: £{juice_price:-25,.3f}")
