@@ -64,9 +64,24 @@
 
 # # entering blanks
 
-name = input("Please enter your name: ")
+# name = input("Please enter your name: ")
 
-while name == "":
-     print("You did not enter your name!")
-     name = input("Please enter your name: ")
-print(f"Hello {name}!👋")
+# while name == "":
+#      print("You did not enter your name!")
+#      name = input("Please enter your name: ")
+# print(f"Hello {name}!👋")
+
+
+# print(" --- next --- ")
+
+
+# checking age
+age = int(input("Enter your age: "))
+while age < 18:
+    print("You are not old enough to enter!🛑")
+    age = int(input("Enter your age: "))
+
+while age >= 18:
+    print("You are old enough to enter!🥂")
+    break
+# 
