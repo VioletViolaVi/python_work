@@ -8,6 +8,9 @@
     # {value:<8} / {value:<4} / {value:<3} etc. -> aligns output to LEFT (space added ON END as needed)
     # {value:>8} / {value:>4} / {value:>3} etc. -> aligns output to RIGHT (space added AT FRONT as needed)
     # {value:^22} etc. -> centers output (space added EITHER SIDE as needed)
+    # {value: } -> used for +VE numbers 
+    # {value:+} -> adds '+' sign in front of +VE values only (-ve values remain -ve)
+    # {value:-} /  etc. -> adds '-' sign in front of -VE values only (+ve values remain +ve)
     # 
     # #
 
@@ -20,40 +23,40 @@ print(f"Default chocolate price: £{chocolate_price}")
 print(f"Default ice cream price: £{ice_cream_price}")
 print(f"Default juice price: £{juice_price}")
 
-# print(" --- next ---")
+print(" --- next ---")
 
-# # decimal places
-# print(f"9 decimal places: £{chocolate_price:.9f}")
-# print(f"2 decimal places: £{ice_cream_price:.2f}")
-# print(f"1 decimal place: £{juice_price:.1f}")
+# decimal places
+print(f"9 decimal places: £{chocolate_price:.9f}")
+print(f"2 decimal places: £{ice_cream_price:.2f}")
+print(f"1 decimal place: £{juice_price:.1f}")
 
-# print(" --- next ---")
+print(" --- next ---")
 
-# # adding spaces in front
-# print(f"20 spaces total: £{chocolate_price:20}")
-# print(f"21 spaces total: £{ice_cream_price:21}")
-# print(f"15 spaces total: £{juice_price:15}")
+# adding spaces in front
+print(f"20 spaces total: £{chocolate_price:20}")
+print(f"21 spaces total: £{ice_cream_price:21}")
+print(f"15 spaces total: £{juice_price:15}")
 
-# print(" --- next ---")
+print(" --- next ---")
 
-# # adding 0's in front
-# print(f"20 spaces total: £{chocolate_price:020}")
-# print(f"21 spaces total: £{ice_cream_price:021}")
-# print(f"15 spaces total: £{juice_price:015}")
+# adding 0's in front
+print(f"20 spaces total: £{chocolate_price:020}")
+print(f"21 spaces total: £{ice_cream_price:021}")
+print(f"15 spaces total: £{juice_price:015}")
 
-# print(" --- next ---")
+print(" --- next ---")
 
-# # left justify
-# print(f"left justified: £{chocolate_price:<20}")
-# print(f"left justified: £{ice_cream_price:<21}")
-# print(f"left justified: £{juice_price:<15}")
+# left justify
+print(f"left justified: £{chocolate_price:<20}")
+print(f"left justified: £{ice_cream_price:<21}")
+print(f"left justified: £{juice_price:<15}")
 
-# print(" --- next ---")
+print(" --- next ---")
 
-# # right justify
-# print(f"right justified: £{chocolate_price:>20}")
-# print(f"right justified: £{ice_cream_price:>21}")
-# print(f"right justified: £{juice_price:>15}")
+# right justify
+print(f"right justified: £{chocolate_price:>20}")
+print(f"right justified: £{ice_cream_price:>21}")
+print(f"right justified: £{juice_price:>15}")
 
 print(" --- next ---")
 
@@ -61,3 +64,24 @@ print(" --- next ---")
 print(f"centre aligned: £{chocolate_price:^22}")
 print(f"centre aligned: £{ice_cream_price:^22}")
 print(f"centre aligned: £{juice_price:^22}")
+
+print(" --- next ---")
+
+# display '+' for +ve values
+print(f"centre aligned: £{chocolate_price:+}")
+print(f"centre aligned: £{ice_cream_price:+}")
+print(f"centre aligned: £{juice_price:+}")
+
+print(" --- next ---")
+
+# display ' ' for +ve values
+print(f"centre aligned: £{chocolate_price: }")
+print(f"centre aligned: £{ice_cream_price: }")
+print(f"centre aligned: £{juice_price: }")
+
+print(" --- next ---")
+
+# display '-' for -ve values
+print(f"centre aligned: £{chocolate_price:-}")
+print(f"centre aligned: £{ice_cream_price:-}")
+print(f"centre aligned: £{juice_price:-}")
