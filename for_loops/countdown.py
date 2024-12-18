@@ -13,3 +13,9 @@ for num in reversed(range(1, 6)):
     print(num)
     time.sleep(1)
 print("happy new year! 🎆🎇🎆")
+
+# opposite to above
+for num in range(5, 0, -1):    
+    print(num)
+    time.sleep(1)
+print("happy new year! 🎆🎇🎆")
