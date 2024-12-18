@@ -10,7 +10,8 @@
     # {value:^22} etc. -> centers output (space added EITHER SIDE as needed)
     # {value: } -> used for +VE numbers 
     # {value:+} -> adds '+' sign in front of +VE values only (-ve values remain -ve)
-    # {value:-} /  etc. -> adds '-' sign in front of -VE values only (+ve values remain +ve)
+    # {value:-} -> adds '-' sign in front of -VE values only (+ve values remain +ve)
+    # {value:,} -> adds ',' for 'thousands' numbers (e.g: 1,560 | 2,000 | 6,085 | etc.) 
     # 
     # #
 
@@ -85,3 +86,10 @@ print(" --- next ---")
 print(f"centre aligned: £{chocolate_price:-}")
 print(f"centre aligned: £{ice_cream_price:-}")
 print(f"centre aligned: £{juice_price:-}")
+
+print(" --- next ---")
+
+# thousand separator
+print(f"centre aligned: £{chocolate_price:,}")
+print(f"centre aligned: £{ice_cream_price:,}")
+print(f"centre aligned: £{juice_price:,}")
