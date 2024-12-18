@@ -12,6 +12,13 @@ chocolate_price = 5632.89534
 ice_cream_price = 2156.253626
 juice_price = -6532.0763
 
+# default
+print(f"Defaut chocolate price: {chocolate_price}")
+print(f"Defaut ice cream price: {ice_cream_price}")
+print(f"Defaut juice price: {juice_price}")
+
+print(" --- next ---")
+
 # decimal places
 print(f"9 decimal places: £{chocolate_price:.9f}")
 print(f"2 decimal places: £{ice_cream_price:.2f}")
