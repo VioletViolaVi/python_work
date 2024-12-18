@@ -44,6 +44,10 @@ for x in range(1, 11):
 for x in reversed(range(1, 11)):
     print(x)
 
+# going backwards
+for num in range(11, 0, -1):
+    print(num)
+
 
 
 print(" --- next --- ")
