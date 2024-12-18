@@ -5,7 +5,9 @@
     # {value:.2f} / {value:.0f} / {value:.5f} etc. -> for decimal places (adds 0's if not enough nums @ end)
     # {value:7} / {value:6} / {value:2} etc. -> adds spaces in front to total 7, 6 and 2 spaces in output
     # {value:07} / {value:06} / {value:02} etc. -> adds 0's instead of spaces in output
-    # {value:<8} / {value:<4} / {value:<3} etc. -> aligns output to left (space added on end as needed)
+    # {value:<8} / {value:<4} / {value:<3} etc. -> aligns output to LEFT (space added ON END as needed)
+    # {value:<<8} / {value:<4} / {value:<3} etc. -> aligns output to RIGHT (space added AT FRONT as needed)
+    # 
     # #
 
 chocolate_price = 5632.89534
@@ -13,9 +15,9 @@ ice_cream_price = 2156.253626
 juice_price = -6532.0763
 
 # default
-print(f"Defaut chocolate price: {chocolate_price}")
-print(f"Defaut ice cream price: {ice_cream_price}")
-print(f"Defaut juice price: {juice_price}")
+print(f"Default chocolate price: £{chocolate_price}")
+print(f"Default ice cream price: £{ice_cream_price}")
+print(f"Default juice price: £{juice_price}")
 
 print(" --- next ---")
 
