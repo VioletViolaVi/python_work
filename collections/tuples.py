@@ -1,10 +1,10 @@
 # Tuples
 
 # Notes:
-    # -
-    # -
-    # -
-    # -
+    # - tuples appear in same order as created
+    # - tuples can have more than 1 of the same item
+    # - items in tuples cannot be changed
+    # - tuples are faster (use instead of lists where possible)
 
 animals = ("mouse", "dog", "fish", "cat", "donkey", "donkey", "donkey", "flamingo")
 
