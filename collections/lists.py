@@ -22,3 +22,29 @@ print(names[3:])
 print(foods[0::2])
 print(weathers[0:2])
 print(animals[-1:-6:-1])
+
+
+
+print(" --- next ---")
+
+
+
+# for loops
+for name in names:
+    print(name)
+
+print()
+
+for food in foods:
+    print(food)
+
+print()
+
+for weather in weathers:
+    print(weather)
+
+print()
+
+for animal in animals:
+    print(animal, end=", ")
+
