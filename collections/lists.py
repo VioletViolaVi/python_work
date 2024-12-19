@@ -5,11 +5,23 @@ foods = ["pizza", "burger", "pie", "chips", "soup"]
 weathers = ["sunny", "rainy", "clear"]
 animals = ["mouse", "dog", "fish", "cat", "donkey", "flamingo"]
 
+# list lengths
+print(len(names))
+print(len(foods))
+print(len(weathers))
+print(len(animals))
+
 # lists printed out
 print(names)
 print(foods)
 print(weathers)
 print(animals)
+
+# using 'in' operator (returns True/False)
+print("stacy" in names)
+print("burger" in foods)
+print("dry" in weathers)
+print("donkey" in animals)
 
 # locate items in lists
 print(names[3])
@@ -22,6 +34,22 @@ print(names[3:])
 print(foods[0::2])
 print(weathers[0:2])
 print(animals[-1:-6:-1])
+
+
+
+print(" --- next ---")
+
+
+
+# changing items
+names[2] = "santa"
+print(names)
+foods[-1] = "sandwich"
+print(foods)
+weathers[0] = "cloudy"
+print(weathers)
+animals[3] = "parrot"
+print(animals)
 
 
 
@@ -107,3 +135,6 @@ for food in foods:
 # remove all items/elements
 foods.clear()
 print(foods)
+
+# get more help
+help(foods)
