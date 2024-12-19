@@ -10,3 +10,9 @@ print(names)
 print(foods)
 print(weathers)
 print(animals)
+
+# locate items in lists
+print(names[3])
+print(foods[1])
+print(weathers[2])
+print(animals[4])
