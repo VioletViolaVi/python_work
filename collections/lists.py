@@ -1,5 +1,11 @@
 # Lists
 
+# Notes:
+    # - lists accepts multiple of the same item
+        # - ["eggs", "eggs", "bacon", "beans"] is allowed
+    # - lists exists in the specific order they're created
+    # - lists can be edited (add/remove/reassign items etc.) 
+
 names = ["vivian", "bella", "steve", "mike", "traci", "duke"]
 foods = ["pizza", "burger", "pie", "chips", "soup"]
 weathers = ["sunny", "rainy", "clear"]
