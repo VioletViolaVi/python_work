@@ -1,4 +1,6 @@
 # Nested Loops
 
-for num in range(1, 10):
-    print(num)
+for outer in range(0, 3):
+    for inner in range(0, 3):   
+        print("inner", end=" ")        
+    print("outer")
