@@ -16,3 +16,9 @@ print(names[3])
 print(foods[1])
 print(weathers[2])
 print(animals[4])
+
+# lists slicing
+print(names[3:])
+print(foods[0::2])
+print(weathers[0:2])
+print(animals[-1:-6:-1])
