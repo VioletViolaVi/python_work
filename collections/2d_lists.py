@@ -27,10 +27,10 @@ print(" --- new --- ")
 # for loops / nested 
 print()
 for restaurant_menu in restaurant:
-    print(restaurant_menu)
     # goes after individual menu items
     for restaurant_item in restaurant_menu:
-        print(restaurant_item)
+        print(restaurant_item, end=" | ")
+    print()
 
 
 
