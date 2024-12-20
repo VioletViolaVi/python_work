@@ -1,5 +1,7 @@
 # 2D Lists
 
 desserts = ["jelly", "ice-cream", "custard", "cake", "muffins", "brownies"]
+mains = ["Vine Tomato & Basil Soup", "Pan-fried Scallops", "New Potato Salad", "Braised Beef Cheek", "Butternut Squash & Pepper Curry"]
 drinks = ["water", "juice", "coffee", "tea", "lemonade", "milkshake", "smoothie"]
-furniture = ["sofa", "table", "bed", "armchair", "cupboard", "drawers", "tv"]
+
+
