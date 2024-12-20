@@ -17,7 +17,14 @@ ques_3_options = ("A) Six", "B) Four", "C) Eight", "D)Zero")
 ques_4_options = ("A) Loc Ness", "B) The North Pole", "C) Atlantis", "D) Townsville")
 ques_5_options = ("A) Christmas", "B) Easter", "C) Valentines Day", "D) Halloween")
 
+# answers
+answer_1 = "B" # Old MacDonald
+answer_2 = "A" # Ice
+answer_3 = "C" # Eight
+answer_4 = "B" # The North Pole
+answer_5 = "D" # Halloween
+
 # nested tuples using above values
 questions = (ques_1, ques_2, ques_3, ques_4, ques_5)
 all_options = (ques_1_options, ques_2_options, ques_3_options, ques_4_options, ques_5_options)
-
+all_answers = (answer_1, answer_2, answer_3, answer_4, answer_5)
