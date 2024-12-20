@@ -47,7 +47,14 @@ for question in all_questions:
         print()
 
     # part of outer loop
-    all_user_guesses.append(input("Enter your answer: ").upper()) # gets each guess, capitalises it & stores in list
+    user_input = input("Enter your answer: ").upper()
+
+    # ensures only A, B, C or D can be selected
+    while not user_input == "A" and not user_input == "B" and not user_input == "C" and not user_input == "D":
+        print("Not Valid. Choose between A, B, C and D")
+        user_input = input("Enter your answer: ").upper()
+
+    all_user_guesses.append(user_input) # gets each guess, capitalises it & stores in list
 
     if all_answers[question_and_option_num] == all_user_guesses[question_and_option_num]: # comparing answers w/ guesses
         score += 1
@@ -59,4 +66,3 @@ for question in all_questions:
 
 # done with loops
 print(f"You scored: {score}/5!")
-# what if they pick diff letter not a,b,c,d?
