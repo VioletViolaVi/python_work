@@ -18,14 +18,14 @@ question_4_options = ("A) Loc Ness", "B) The North Pole", "C) Atlantis", "D) Tow
 question_5_options = ("A) Christmas", "B) Easter", "C) Valentines Day", "D) Halloween")
 
 # answers
-answer_1 = "B" # Old MacDonald
-answer_2 = "A" # Ice
-answer_3 = "C" # Eight
-answer_4 = "B" # The North Pole
-answer_5 = "D" # Halloween
+question_1_answer = "B" # Old MacDonald
+question_2_answer = "A" # Ice
+question_3_answer = "C" # Eight
+question_4_answer = "B" # The North Pole
+question_5_answer = "D" # Halloween
 
 # nested tuples using above values
 all_questions = (question_1, question_2, question_3, question_4, question_5)
 all_options = (question_1_options, question_2_options, question_3_options, question_4_options, question_5_options)
-all_answers = (answer_1, answer_2, answer_3, answer_4, answer_5)
+all_answers = (question_1_answer, question_2_answer, question_3_answer, question_4_answer, question_5_answer)
 
