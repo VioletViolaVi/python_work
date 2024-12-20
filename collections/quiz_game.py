@@ -51,6 +51,9 @@ for question in all_questions:
 
     if all_answers[question_and_option_num] == all_user_guesses[question_and_option_num]: # comparing answers w/ guesses
         score += 1
+        print(f"Correct!") # right answer given
+    else:
+        print(f"Wrong! Correct answer: {all_answers[question_and_option_num]}") # wrong answer given, shows right answer
 
     question_and_option_num += 1 # to move on to next question
 
