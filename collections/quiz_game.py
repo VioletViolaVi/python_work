@@ -29,56 +29,24 @@ all_questions = (question_1, question_2, question_3, question_4, question_5) # s
 all_options = (question_1_options, question_2_options, question_3_options, question_4_options, question_5_options) # tuples
 all_answers = (question_1_answer, question_2_answer, question_3_answer, question_4_answer, question_5_answer) # strings
 
-# question counter
+# question / option set counter
 question_and_option_num = 0
 
+# stores users' guesses
+all_user_guesses = []
+
+# gets all answers then gives result @ end
 for question in all_questions:
     print(" ------------------ ")
     print(question)
     for option_set in all_options[question_and_option_num]:
         print(option_set, end=" ")
         print()
-    question_and_option_num += 1
+    all_user_guesses.append(input("Enter your answer: ").lower()) # gets users' guess & stores it in list
+    question_and_option_num += 1 # to move on to next question
 
-# guesses = []
+print(f"all_user_guesses: {all_user_guesses}")
+
+
 # score = 0
-
-# print(all_questions): ('In the nursery rhyme, who had a farm?', 'If you freeze water, what do you get?', 'How many legs does a spider have?', 'Where does Santa Claus live?', 'On which holiday do you go trick-or-treating?')
-
-# print(question): In the nursery rhyme, who had a farm?
-                 # If you freeze water, what do you get?
-                 # How many legs does a spider have?
-                 # Where does Santa Claus live?
-                 # On which holiday do you go trick-or-treating?
-
-# print(option_set): ('A) Little Bo Peep', 'B) Old MacDonald', 'C) The Muffin Man', 'D) Jack and Jill')
-                   # ('A) Ice', 'B) Lava', 'C) Fire', 'D) Wind')
-                   # ('A) Six', 'B) Four', 'C) Eight', 'D)Zero')
-                   # ('A) Loc Ness', 'B) The North Pole', 'C) Atlantis', 'D) Townsville')
-                   # ('A) Christmas', 'B) Easter', 'C) Valentines Day', 'D) Halloween')
-                   # ('A) Little Bo Peep', 'B) Old MacDonald', 'C) The Muffin Man', 'D) Jack and Jill')
-                   # ('A) Ice', 'B) Lava', 'C) Fire', 'D) Wind')
-                   # ('A) Six', 'B) Four', 'C) Eight', 'D)Zero')
-                   # ('A) Loc Ness', 'B) The North Pole', 'C) Atlantis', 'D) Townsville')
-                   # ('A) Christmas', 'B) Easter', 'C) Valentines Day', 'D) Halloween')
-                   # ('A) Little Bo Peep', 'B) Old MacDonald', 'C) The Muffin Man', 'D) Jack and Jill')
-                   # ('A) Ice', 'B) Lava', 'C) Fire', 'D) Wind')
-                   # ('A) Six', 'B) Four', 'C) Eight', 'D)Zero')
-                   # ('A) Loc Ness', 'B) The North Pole', 'C) Atlantis', 'D) Townsville')
-                   # ('A) Christmas', 'B) Easter', 'C) Valentines Day', 'D) Halloween')
-                   # ('A) Little Bo Peep', 'B) Old MacDonald', 'C) The Muffin Man', 'D) Jack and Jill')
-                   # ('A) Ice', 'B) Lava', 'C) Fire', 'D) Wind')
-                   # ('A) Six', 'B) Four', 'C) Eight', 'D)Zero')
-                   # ('A) Loc Ness', 'B) The North Pole', 'C) Atlantis', 'D) Townsville')
-                   # ('A) Christmas', 'B) Easter', 'C) Valentines Day', 'D) Halloween')
-                   # ('A) Little Bo Peep', 'B) Old MacDonald', 'C) The Muffin Man', 'D) Jack and Jill')
-                   # ('A) Ice', 'B) Lava', 'C) Fire', 'D) Wind')
-                   # ('A) Six', 'B) Four', 'C) Eight', 'D)Zero')
-                   # ('A) Loc Ness', 'B) The North Pole', 'C) Atlantis', 'D) Townsville')
-                   # ('A) Christmas', 'B) Easter', 'C) Valentines Day', 'D) Halloween')                
-
-# print(f"question_num: {question_num}"): question_num: 0
-                                        # question_num: 1
-                                        # question_num: 2
-                                        # question_num: 3
-                                        # question_num: 4
+# what if they pick diff letter not a,b,c,d?
