@@ -4,11 +4,21 @@ foods = []
 prices = []
 total = 0
 
-print(f"start: {foods}")
+print(f"foods start: {foods}")
+print(f"prices start: {prices}")
 
-user_request = input("What food would you like to buy? ('x' to quit): ").lower()
+user_request_food = input("What food would you like to buy? ('x' to quit): ").lower()
+user_request_price = float(input(f"What's the price of {user_request_food} (£)?: "))
 
-while not user_request == "x":
-    foods.append(user_request)
-    user_request = input("What food would you like to buy? ('x' to quit): ").lower()
-print(f"end: {foods}")
+while not user_request_food == "x":
+    # put food & price in lists above
+    foods.append(user_request_food)
+    prices.append(user_request_price)
+
+    # asks users again
+    user_request_food = input("What food would you like to buy? ('x' to quit): ").lower()
+    if user_request_food != "x".lower():
+        user_request_price = float(input(f"What's the price of {user_request_food} (£)?: "))
+
+print(f"foods end: {foods}")
+print(f"prices end: {prices}")
