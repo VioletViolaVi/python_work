@@ -126,7 +126,7 @@ for food in foods:
 print(foods)
 
 # extend -> adds multiple items/elements
-foods.extend("soup") # - adds 's', 'o', 'u', 'p' NOT soup
+foods.extend("soup") # - adds 's', 'o', 'u', 'p' NOT "soup"
 foods.extend(["chicken", "jelly"])
 print(foods)
 
