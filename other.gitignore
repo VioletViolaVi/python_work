@@ -37,3 +37,10 @@
                                         # question_num: 2
                                         # question_num: 3
                                         # question_num: 4
+
+        print(f"score: {score}")
+        print(f"all_answers[question_and_option_num]: {all_answers[question_and_option_num]}")
+        print(f"all_user_guesses[question_and_option_num]: {all_user_guesses[question_and_option_num]}")
+        print(f"all_user_guesses: {all_user_guesses}")
+        print(f"all_answers: {all_answers}")
+        print(f"question_and_option_num: {question_and_option_num}")
