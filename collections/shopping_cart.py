@@ -7,8 +7,10 @@ total = 0
 print(f"foods start: {foods}")
 print(f"prices start: {prices}")
 
+# in case user quits straight away    
 user_request_food = input("What food would you like to buy? ('x' to quit): ").lower()
-user_request_price = float(input(f"What's the price of {user_request_food}? (£): "))
+if user_request_food != "x".lower():
+    user_request_price = float(input(f"What's the price of {user_request_food}? (£): "))
 
 while not user_request_food == "x":
     # put food & price in lists above
@@ -29,7 +31,6 @@ for food in foods:
     print(food)
 
 print(f" --- checkout total --- ")
-total = 0
 for price in prices:
     total += price
     print(price)
