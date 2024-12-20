@@ -1,5 +1,12 @@
 # 2D (Dimensional) Lists
 
+# Notes:
+    # - tuples, sets and lists can be nested in ANY combination:
+        # - ( (...), {...}, [...], {...} )
+        # - { {...}, [...], [...], {...} }
+        # - [ {...}, (...), [...], [...] ]
+        # - { (...), (...), (...), (...) } etc.
+
 desserts = ["jelly", "ice-cream", "custard", "cake", "muffins", "brownies"]
 mains = ["Vine Tomato & Basil Soup", "Pan-fried Scallops", "New Potato Salad", "Braised Beef Cheek", "Butternut Squash & Pepper Curry"]
 drinks = ["water", "juice", "coffee", "tea", "lemonade", "milkshake", "smoothie"]
