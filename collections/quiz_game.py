@@ -64,5 +64,18 @@ for question in all_questions:
 
     question_and_option_num += 1 # to move on to next question
 
-# done with loops
-print(f"You scored: {score}/5!")
+# messages for specific scores
+if score == 5:
+    print(f"WOW! You scored: {score}/5! '🥳")
+elif score == 4:
+    print(f"Great! You scored: {score}/5! 😀")
+elif score == 3:
+        print(f"Good! You scored: {score}/5! 🙂")
+elif score == 2:
+        print(f"Okay! You scored: {score}/5! 😐")
+elif score == 1:
+        print(f"Bad! You scored: {score}/5! ☹️")
+elif score == 0:
+        print(f"Dreadful! You scored: {score}/5! 😧")
+else:
+    print("ERROR!!! 😶")
