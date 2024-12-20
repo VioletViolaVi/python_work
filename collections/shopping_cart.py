@@ -8,7 +8,7 @@ print(f"foods start: {foods}")
 print(f"prices start: {prices}")
 
 user_request_food = input("What food would you like to buy? ('x' to quit): ").lower()
-user_request_price = float(input(f"What's the price of {user_request_food} (£)?: "))
+user_request_price = float(input(f"What's the price of {user_request_food}? (£): "))
 
 while not user_request_food == "x":
     # put food & price in lists above
@@ -18,7 +18,16 @@ while not user_request_food == "x":
     # asks users again
     user_request_food = input("What food would you like to buy? ('x' to quit): ").lower()
     if user_request_food != "x".lower():
-        user_request_price = float(input(f"What's the price of {user_request_food} (£)?: "))
+        user_request_price = float(input(f"What's the price of {user_request_food}? (£): "))
 
 print(f"foods end: {foods}")
 print(f"prices end: {prices}")
+
+
+print(f" --- shopping basket --- ")
+for food in foods:
+    print(food)
+
+print(f" --- checkout total --- ")
+for price in prices:
+    print(price)
