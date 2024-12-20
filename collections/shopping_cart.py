@@ -29,5 +29,9 @@ for food in foods:
     print(food)
 
 print(f" --- checkout total --- ")
+total = 0
 for price in prices:
+    total += price
     print(price)
+
+print(f"Your total shopping cost is £{round(total, 2)}")
