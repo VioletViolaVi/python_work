@@ -32,21 +32,28 @@ all_answers = (question_1_answer, question_2_answer, question_3_answer, question
 # question / option set counter
 question_and_option_num = 0
 
-# stores users' guesses
+# stores user guesses
 all_user_guesses = []
+
+# holds score
+score = 0
 
 # gets all answers then gives result @ end
 for question in all_questions:
     print(" ------------------ ")
-    print(question)
+    print(question) # prints *1 question
     for option_set in all_options[question_and_option_num]:
-        print(option_set, end=" ")
+        print(option_set, end=" ") # prints all options to *1 question
         print()
-    all_user_guesses.append(input("Enter your answer: ").lower()) # gets users' guess & stores it in list
+
+    # part of outer loop
+    all_user_guesses.append(input("Enter your answer: ").upper()) # gets each guess, capitalises it & stores in list
+
+    if all_answers[question_and_option_num] == all_user_guesses[question_and_option_num]: # comparing answers w/ guesses
+        score += 1
+
     question_and_option_num += 1 # to move on to next question
 
-print(f"all_user_guesses: {all_user_guesses}")
-
-
-# score = 0
+# done with loops
+print(f"You scored: {score}/5!")
 # what if they pick diff letter not a,b,c,d?
