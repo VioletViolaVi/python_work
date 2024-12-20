@@ -1,6 +1,6 @@
-# 2D (Dimensional) Lists
+# 2D (Dimensional) Collection - Lists
 
-# Notes:
+# Note:
     # - tuples, sets and lists can be nested in ANY combination:
         # - ( (...), {...}, [...], {...} )
         # - { {...}, [...], [...], {...} }
