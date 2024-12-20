@@ -30,16 +30,15 @@ all_options = (question_1_options, question_2_options, question_3_options, quest
 all_answers = (question_1_answer, question_2_answer, question_3_answer, question_4_answer, question_5_answer) # strings
 
 # question counter
-question_num = -1
+question_and_option_num = 0
 
 for question in all_questions:
     print(" ------------------ ")
     print(question)
-    question_num += 1
-    for option_set in all_options[question_num]:
+    for option_set in all_options[question_and_option_num]:
         print(option_set, end=" ")
         print()
-
+    question_and_option_num += 1
 
 # guesses = []
 # score = 0
@@ -51,7 +50,6 @@ for question in all_questions:
                  # How many legs does a spider have?
                  # Where does Santa Claus live?
                  # On which holiday do you go trick-or-treating?
-
 
 # print(option_set): ('A) Little Bo Peep', 'B) Old MacDonald', 'C) The Muffin Man', 'D) Jack and Jill')
                    # ('A) Ice', 'B) Lava', 'C) Fire', 'D) Wind')
