@@ -72,17 +72,9 @@ score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳") # index positio
 score_percentage = (score/len(all_questions)) * 100 # percentage calculation
 
 # conditional messages for specific scores
-if score == 5:
+if score:
     print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
-elif score == 4:
-    print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
-elif score == 3:
-        print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
-elif score == 2:
-        print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
-elif score == 1:
-        print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
 elif score == 0:
-        print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
+    print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
 else:
     print("ERROR!!! 😶")
