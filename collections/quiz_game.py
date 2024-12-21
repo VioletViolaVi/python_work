@@ -65,17 +65,20 @@ for question in all_questions:
     question_and_option_num += 1 # to move on to next question
 
 # messages for specific scores
+
+print(" --------- RESULT --------- ")
+
 if score == 5:
-    print(f"WOW! You scored: {score}/5! '🥳")
+    print(f"WOW! You scored: {score}/{len(all_questions)}! '🥳")
 elif score == 4:
-    print(f"Great! You scored: {score}/5! 😀")
+    print(f"Great! You scored: {score}/{len(all_questions)}! 😀")
 elif score == 3:
-        print(f"Good! You scored: {score}/5! 🙂")
+        print(f"Good! You scored: {score}/{len(all_questions)}! 🙂")
 elif score == 2:
-        print(f"Okay! You scored: {score}/5! 😐")
+        print(f"Okay! You scored: {score}/{len(all_questions)}! 😐")
 elif score == 1:
-        print(f"Bad! You scored: {score}/5! ☹️")
+        print(f"Bad! You scored: {score}/{len(all_questions)}! ☹️")
 elif score == 0:
-        print(f"Dreadful! You scored: {score}/5! 😧")
+        print(f"Dreadful! You scored: {score}/{len(all_questions)}! 😧")
 else:
     print("ERROR!!! 😶")
