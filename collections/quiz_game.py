@@ -68,12 +68,10 @@ for question in all_questions:
 
 print(" --------- RESULT --------- ")
 
-# percentages - not very dynamic however 🫠*
-
-# - reduce lines of code using list/tuple/set
-score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") # 0 -> 1 -> 2 -> 3 -> 4 -> 5
-score_percentage = (score/len(all_questions)) * 100
+# indexes: 0 -> 1 -> 2 -> 3 -> 4 -> 5
+score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") 
 score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳")
+score_percentage = (score/len(all_questions)) * 100 # percentage calculation
 
 if score == 5:
     print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
