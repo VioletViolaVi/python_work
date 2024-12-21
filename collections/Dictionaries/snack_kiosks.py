@@ -38,12 +38,18 @@ if user_request == "c".lower():
 
     basket.pop() # removes 'x' from list when user stops shopping
     prices.pop() # removes 'None' from list when user stops shopping
-    print(f"prices: {prices}")
+
+print(f"prices: {prices}")
+# adds up all prices
+for price in prices:
+    total += price
+    print(f"price: {price}")
+    print(f"total: {total}")
 
 # display purchases & cost
 print(" ------ Checkout ------  ")
-if basket == [] and total == 0:
+if basket == [] and total == 0: # user fails to enter 'c'.lower()
     print("You did not buy anything.")
 else:
     print(f"Your basket: {basket}")
-    print(f"Your Total: £{total}")
+    print(f"Your Total: £{round(total, 2)}") # avoids long decimal numbers
