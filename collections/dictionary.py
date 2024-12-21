@@ -72,6 +72,16 @@ print(country_capitals)
 print(country_capitals.popitem()) # returns removed key:value as tuple '(..., ...)'
 
 
+
+print(" --- next --- ")
+
+
+
+# removing ALL key:value
+country_capitals.clear() 
+print(country_capitals)
+
+
 # # get assistance
 # print(dir(country_capitals))
 # print(help(country_capitals))
