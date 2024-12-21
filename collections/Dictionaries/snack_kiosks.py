@@ -23,7 +23,7 @@ total = 0
 user_request = input("Welcome to the snack bar. Press 'C' to continue: ").lower()
 print(user_request)
 
-while not user_request == "c":
+while user_request == "c":
     # displays snack menu
     for snack, price in snack_menu.items():
         print(" --- --- ")
