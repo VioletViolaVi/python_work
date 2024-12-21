@@ -89,14 +89,3 @@ elif score == 0:
         print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji}")
 else:
     print("ERROR!!! 😶")
-
-
-percentage_for_five = round( (5 / len(all_questions) ) * 100)
-percentage_for_four = round( (4 / len(all_questions) ) * 100)
-percentage_for_three = round( (3 / len(all_questions) ) * 100)
-percentage_for_two = round( (2 / len(all_questions) ) * 100)
-percentage_for_one = round( (1 / len(all_questions) ) * 100)
-percentage_for_zero = round( (0 / len(all_questions) ) * 100)
-
-
-
