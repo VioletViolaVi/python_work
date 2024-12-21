@@ -16,14 +16,22 @@ snack_menu = {
 
 # user's shopping basket
 basket = []
-
-# shows snack menu
-for snack, price in snack_menu.items():
-    print(" --- --- ")
-    print(f"Snack: {snack.title()}", end=", ")
-    print(f"Price: £{price:.2f}")
-print()
+prices = []
+total = 0
 
 # user enters what they want
-user_request = input("What would you like? Select from above menu: ").lower()
+user_request = input("Welcome to the snack bar. Press 'C' to continue: ").lower()
 print(user_request)
+
+while not user_request == "c":
+    # displays snack menu
+    for snack, price in snack_menu.items():
+        print(" --- --- ")
+        print(f"Snack: {snack.title()}", end=", ")
+        print(f"Price: £{price:.2f}")
+    print()
+
+    # asks user what they want
+    user_request = input("What would you like to buy? Select from above menu ('x' to quit): ").lower()
+    # puts what they want in basket
+    basket = basket.append(user_request)
