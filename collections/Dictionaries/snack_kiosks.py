@@ -14,10 +14,12 @@ snack_menu = {
     "lemonade" : 3.03,
 }
 
-
+# user's shopping basket
+basket = []
 
 # shows snack menu
 for snack, price in snack_menu.items():
     print(" --- --- ")
-    print(f"snack: {snack} ")
-    print(f"price: {price}")
+    print(f"Snack: {snack.title()}", end=", ")
+    print(f"Price: £{price:.2f}")
+print()
