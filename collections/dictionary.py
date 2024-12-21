@@ -1,11 +1,14 @@
 # Dictionaries
 
+# Notes:
+    # - 
+
 # key:value
 country_capitals = {
     "United Kingdom": "London",
     "Japan": "Tokyo",
+    "Ghana": "Accra",
     "China": "Beijing",
-    "Ghana": "Accra"
 }
 
 # retrieves value from key in dictionary
@@ -34,7 +37,39 @@ print(" --- next --- ")
 
 
 
+# updating dictionaries
+    # - can add key:value
+    # - can edit key:value
+country_capitals.update(
+    {
+        "South Africa" : "Cape Town", # added on
+        "United Kingdom": "Manchester", # edited
+        "Angola": "Luanda", # added on
+    }
+)
+print(country_capitals)
 
+
+
+print(" --- next --- ")
+
+
+
+# removing key:value
+country_capitals.pop("United Kingdom")
+country_capitals.pop("Ghana")
+print(country_capitals)
+
+
+
+print(" --- next --- ")
+
+
+
+# removing LAST key:value
+country_capitals.popitem()
+print(country_capitals)
+print(country_capitals.popitem()) # returns removed key:value as tuple '(..., ...)'
 
 
 # # get assistance
