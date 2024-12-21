@@ -69,7 +69,7 @@ print(" --------- RESULT --------- ")
 # dynamic variables for displaying results
 score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") # index positions: [ 0 -> 1 -> 2 -> 3 -> 4 -> 5 ]
 score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳") # index positions: [ 0 -> 1 -> 2 -> 3 -> 4 -> 5 ]
-score_percentage = (score/len(all_questions)) * 100 # percentage calculation
+score_percentage = round(score/len(all_questions)) * 100 # percentage calculation
 
 # conditional messages for specific scores
 if score:
