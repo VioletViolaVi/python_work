@@ -1,7 +1,9 @@
-#  Snack Kiosks / Snack Bars
+# Cinema Snack Kiosks / Snack Bars
+
+# - users select food they want & get told total price
 
 # food keys, price values
-snack_bar_menu = {
+snack_menu = {
     "popcorn" : 1.99,
     "hot dogs" : 7.05,
     "chips" : 4.28,
@@ -11,3 +13,11 @@ snack_bar_menu = {
     "banana smoothie" : 2.00,
     "lemonade" : 3.03,
 }
+
+
+
+# shows snack menu
+for snack, price in snack_menu.items():
+    print(" --- --- ")
+    print(f"snack: {snack} ")
+    print(f"price: {price}")
