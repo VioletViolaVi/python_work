@@ -69,12 +69,12 @@ print(" --------- RESULT --------- ")
 # dynamic variables for displaying results
 score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") # index positions: [ 0 -> 1 -> 2 -> 3 -> 4 -> 5 ]
 score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳") # index positions: [ 0 -> 1 -> 2 -> 3 -> 4 -> 5 ]
-score_percentage = round(score/len(all_questions)) * 100 # percentage calculation
+score_percentage = round( ( score / len(all_questions) ) * 100 ) # percentage calculation
 
 # conditional messages for specific scores
 if score:
     print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
-elif score == 0:
+elif score == 0: # necessary as '0' is falsy
     print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
 else:
     print("ERROR!!! 😶")
