@@ -68,17 +68,25 @@ for question in all_questions:
 
 print(" --------- RESULT --------- ")
 
+# percentages - not very dynamic however 🫠*
+percentage_for_five = round( (5 / len(all_questions) ) * 100)
+percentage_for_four = round( (4 / len(all_questions) ) * 100)
+percentage_for_three = round( (3 / len(all_questions) ) * 100)
+percentage_for_two = round( (2 / len(all_questions) ) * 100)
+percentage_for_one = round( (1 / len(all_questions) ) * 100)
+percentage_for_zero = round( (0 / len(all_questions) ) * 100)
+
 if score == 5:
-    print(f"WOW! You scored: {score}/{len(all_questions)}! '🥳")
+    print(f"WOW! You scored: {score}/{len(all_questions)}! ({ (score/len(all_questions)) * 100}%) 🥳") # dynamic percentage*
 elif score == 4:
-    print(f"Great! You scored: {score}/{len(all_questions)}! 😀")
+    print(f"Great! You scored: {score}/{len(all_questions)}! ({ (score/len(all_questions)) * 100}%) 😀") # dynamic percentage*
 elif score == 3:
-        print(f"Good! You scored: {score}/{len(all_questions)}! 🙂")
+        print(f"Good! You scored: {score}/{len(all_questions)}! ({ (score/len(all_questions)) * 100}%) 🙂") # dynamic percentage*
 elif score == 2:
-        print(f"Okay! You scored: {score}/{len(all_questions)}! 😐")
+        print(f"Okay! You scored: {score}/{len(all_questions)}! ({percentage_for_two}%) 😐")
 elif score == 1:
-        print(f"Bad! You scored: {score}/{len(all_questions)}! ☹️")
+        print(f"Bad! You scored: {score}/{len(all_questions)}! ({percentage_for_one}%) ☹️")
 elif score == 0:
-        print(f"Dreadful! You scored: {score}/{len(all_questions)}! 😧")
+        print(f"Dreadful! You scored: {score}/{len(all_questions)}! ({percentage_for_zero}%) 😧")
 else:
     print("ERROR!!! 😶")
