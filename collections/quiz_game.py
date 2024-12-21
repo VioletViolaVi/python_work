@@ -75,7 +75,7 @@ score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") # 0 -> 1 ->
 score_percentage = (score/len(all_questions)) * 100
 score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳")
 
-
+print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji}")
 
 
 percentage_for_five = round( (5 / len(all_questions) ) * 100)
