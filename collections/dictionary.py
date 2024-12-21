@@ -82,6 +82,33 @@ country_capitals.clear()
 print(country_capitals)
 
 
+
+print(" --- next --- ")
+
+
+
+# retrieves ONLY keys from dictionary
+print(country_capitals.keys()) # returns list, dict_keys[..., ..., ...,]
+
+# iterates through dict_keys[..., ..., ...,]
+for key in country_capitals.keys():
+    print(key)
+
+
+
+print(" --- next --- ")
+
+
+
+# retrieves ONLY values from dictionary
+print(country_capitals.values()) # returns list, dict_keys[..., ..., ...,]
+
+# # iterates through dict_keys[..., ..., ...,]
+for value in country_capitals.values():
+    print(value)
+
+
+
 # # get assistance
 # print(dir(country_capitals))
 # print(help(country_capitals))
