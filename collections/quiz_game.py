@@ -64,15 +64,14 @@ for question in all_questions:
 
     question_and_option_num += 1 # to move on to next question
 
-# messages for specific scores
-
 print(" --------- RESULT --------- ")
 
-# indexes: 0 -> 1 -> 2 -> 3 -> 4 -> 5
-score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") 
-score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳")
+# dynamic variables for displaying results
+score_feedback = ("Dreadful", "Bad", "Okay", "Good", "Great", "WOW") # index positions: [ 0 -> 1 -> 2 -> 3 -> 4 -> 5 ]
+score_emoji = ("😧", "☹️", "😐", "🙂", "😀", "🥳") # index positions: [ 0 -> 1 -> 2 -> 3 -> 4 -> 5 ]
 score_percentage = (score/len(all_questions)) * 100 # percentage calculation
 
+# conditional messages for specific scores
 if score == 5:
     print(f"{score_feedback[score]}! You scored: {score}/{len(all_questions)}! ({score_percentage}%) {score_emoji[score]}")
 elif score == 4:
