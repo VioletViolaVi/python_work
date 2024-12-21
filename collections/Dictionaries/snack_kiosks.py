@@ -24,8 +24,8 @@ user_request = input("Welcome to the snack bar. Press 'C' to continue: ").lower(
 
 if user_request == "c".lower():
     # displays snack menu
-    print(" Snack   Price   ")
-    print(" ------  ------  ")
+    print("  Snack   Price  ")
+    print("-------- --------")
     for snack, price in snack_menu.items():
         print(f"{snack.title()}", end=",  ")
         print(f"£{price:.2f}")
@@ -38,4 +38,10 @@ if user_request == "c".lower():
         basket.append(user_request)
     basket.pop() # removes 'x' from list when user stops shopping
 
-print(f"basket: {basket}")
+# display purchases & cost
+print(" ------ Checkout ------  ")
+if basket == [] and total == 0:
+    print("You did not buy anything.")
+else:
+    print(f"Your basket: {basket}")
+    print(f"Your Total: £{total}")
