@@ -1,15 +1,20 @@
 # Dictionaries
 
 # Notes:
-    # - 
+    # - dictionaries don't accept duplicate key:value pairs
+        # - duplicates wont show as an error, they're 'ignored'
+    # - dictionaries have an order
+    # - dictionaries can be changed
 
 # key:value
 country_capitals = {
     "United Kingdom": "London",
+    "China": "Beijing",
     "Japan": "Tokyo",
     "Ghana": "Accra",
-    "China": "Beijing",
+    "China": "Beijing", # duplicate 'ignored', no error
 }
+print(country_capitals)
 
 # retrieves value from key in dictionary
 print(country_capitals.get("China")) # 'Beijing' returned, key is present
@@ -132,6 +137,11 @@ for test1, test2 in tests:
 print(" --- --- ")
 
 
-# # get assistance
-# print(dir(country_capitals))
-# print(help(country_capitals))
+
+print(" --- next --- ")
+
+
+
+# get assistance
+print(dir(country_capitals))
+print(help(country_capitals))
