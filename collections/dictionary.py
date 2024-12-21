@@ -109,6 +109,29 @@ for value in country_capitals.values():
 
 
 
+print(" --- next --- ")
+
+
+
+# makes key:value tuples in dict_keys[ (..., ...), (..., ...), (..., ...) ] list
+print(country_capitals.items())
+print(" --- --- ")
+
+for item in country_capitals.items():
+    print(item) # brings out tuple items
+print(" --- --- ")
+
+for key, value in country_capitals.items():
+    print(f"key: {key} value: {value}") # brings out 2 separate strings for both variables -> key, value
+print(" --- --- ")
+
+# extra practice iterating out more than 1 value via for loops
+tests = (["happy", "sad"], ["angry", "upset"], ["scared", "excited"], ["calm", "bored"])
+for test1, test2 in tests:
+    print(f"test1: {test1}, test2: {test2}")
+print(" --- --- ")
+
+
 # # get assistance
 # print(dir(country_capitals))
 # print(help(country_capitals))
