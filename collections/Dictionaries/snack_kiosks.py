@@ -23,3 +23,7 @@ for snack, price in snack_menu.items():
     print(f"Snack: {snack.title()}", end=", ")
     print(f"Price: £{price:.2f}")
 print()
+
+# user enters what they want
+user_request = input("What would you like? Select from above menu: ").lower()
+print(user_request)
