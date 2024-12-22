@@ -35,21 +35,24 @@ if user_request == "c".lower():
     print("-------- --------")
     user_snack_order = input("Enter what you want to order (Press 'X' to leave): ").lower()
    
+   # check each available snack
     if not user_snack_order == "x":
         print(f"entered item: {user_snack_order}") 
         for snack_key in snack_menu.keys():
-            print(f"dict item: {snack_key}")  
-            if user_snack_order == snack_key:
+            print(f"dict item: {snack_key}") 
+            if snack_key == user_snack_order:
                 print("This item is available")
                 basket.append(snack_key)
                 print(f"snack key put in list: {snack_key}")
                 print(f"basket list: {basket}")
                 break
-            # else:
-            #     input("Sorry, that's not available. Enter what you want to order: ").lower()
+
+    # snack not in dictionary
+    if snack_menu.get(user_snack_order) == None:
+        print("This item is NOT available")
+        input("Sorry, that's not available. Enter what you want to order (Press 'X' to leave): ").lower()   
 
 
-    
     
     
     
