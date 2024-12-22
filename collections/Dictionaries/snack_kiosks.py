@@ -35,26 +35,21 @@ if user_request == "c".lower():
     print("-------- --------")
     user_snack_order = input("2) Enter what you want to order: ").lower()
 
+    # continuous checking for if entered snack is available or not to be added
+    while snack_menu.get(user_snack_order) != None or snack_menu.get(user_snack_order) == None: 
+        # snack is present in dictionary
+        while snack_menu.get(user_snack_order) != None:
+            basket.append(user_snack_order)
+            print(f"This entered item is available & has been put in basket list: {user_snack_order}")
+            print(f"basket list so far: {basket}")
+            user_snack_order = input("4) What else do what you want to order: ").lower()
 
-    # snack not in dictionary, keep picking snack until dictionary option selected
-    while snack_menu.get(user_snack_order) == None:
-                user_snack_order = input("3) Sorry, that's not available. Enter what you want to order: ").lower()
-                print(f"REASSIGN user snack order: {user_snack_order}")
-
-   
-   # check each available snack
-    print(f"entered item: {user_snack_order}") 
-    for snack_key in snack_menu.keys():
-        print(f"dict item: {snack_key}") 
-        if snack_key == user_snack_order:
-            print("This item is available")
-            basket.append(snack_key)
-            print(f"snack key put in list: {snack_key}")
-            print(f"basket list: {basket}")
-            break
+        # snack not in dictionary, keep picking snack until dictionary option selected
+        while snack_menu.get(user_snack_order) == None:
+                    user_snack_order = input("3) Sorry, that's not available. Enter a different order: ").lower()
+                    print(f"REASSIGN user snack order: {user_snack_order}")
 
 
-        
 
 
 # display purchases & cost
