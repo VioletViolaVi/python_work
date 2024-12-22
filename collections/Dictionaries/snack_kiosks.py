@@ -32,53 +32,30 @@ if user_request == "c".lower():
         print(f"£{price:.2f}")
     print()
 
-    # # asks user what they want 
-    # user_request = input("A) Select from above menu what you want to buy ('x' to quit): ").lower()
-
-    # purchasing snacks
-    while not user_request == "x".lower():
-    
-        # asks user what they want 
-        user_request = input("A) Select from above menu what you want to buy ('x' to quit): ").lower()
-        if user_request == "x".lower():
-            break
-    
-        # user enters item not on menu
-        if snack_menu.get(user_request) == None:
-
-            user_request = input("B) Sorry, that's not available. Select from above menu what you want to buy ('x' to quit): ").lower()
-            if user_request == "x".lower():
+    print("-------- --------")
+    user_snack_order = input("Enter what you want to order (Press 'X' to leave): ").lower()
+   
+    if not user_snack_order == "x":
+        print(f"entered item: {user_snack_order}") 
+        for snack_key in snack_menu.keys():
+            print(f"dict item: {snack_key}")  
+            if user_snack_order == snack_key:
+                print("This item is available")
                 break
+            # else:
+            #     input("Sorry, that's not available. Enter what you want to order: ").lower()
 
-            while snack_menu.get(user_request) == None: # i.e. user is STILL entering an item not in the dictionary at this point
 
-                user_request = input("C) Sorry, that's not available. Select from above menu what you want to buy ('x' to quit): ").lower()
-                if user_request == "x".lower():
-                    break
-        else:
-            # asks user what they want 
-            user_request = input("D) Select from above menu what you want to buy ('x' to quit): ").lower()
-            if user_request == "x".lower():
-                break
-            
-            # puts what they want in basket        
-            basket.append(user_request)
-            # get respective snack prices stored
-            prices.append(snack_menu.get(user_request))
-
-    # stops .pop() on empty lists, only 'pops' on lists with items inside
-    if not basket == [] and not prices == []:
-        basket.pop() # removes 'x' from list when user stops shopping
-        prices.pop() # removes 'None' from list when user stops shopping
     
-    # adds all prices
-    for price in prices:
-        total += price
-        print(f"price: {price}")
-        print(f"total: {total}")
+    
+    
+    
+    
 
-print(f"basket: {basket}") # delete later
-print(f"prices: {prices}") # delete later
+    
+
+
+
 
 # display purchases & cost
 print(" ------ Checkout ------  ")
