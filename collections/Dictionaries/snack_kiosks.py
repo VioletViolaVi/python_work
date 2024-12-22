@@ -33,29 +33,25 @@ if user_request == "c".lower():
     print()
 
     print("-------- --------")
-    user_snack_order = input("2) Enter what you want to order (Press 'X' to leave): ").lower()
+    user_snack_order = input("2) Enter what you want to order: ").lower()
 
 
-    # snack not in dictionary, so pick new snack
+    # snack not in dictionary, keep picking snack until dictionary option selected
     while snack_menu.get(user_snack_order) == None:
-        if not user_snack_order == "x":
-            while not user_snack_order == "x": 
-                user_snack_order = input("3) Sorry, that's not available. Enter what you want to order (Press 'X' to leave): ").lower()
-                print(f"REASSIGN user_snack_order: {user_snack_order}")
-        break
+                user_snack_order = input("3) Sorry, that's not available. Enter what you want to order: ").lower()
+                print(f"REASSIGN user snack order: {user_snack_order}")
 
    
    # check each available snack
-    if not user_snack_order == "x":
-        print(f"entered item: {user_snack_order}") 
-        for snack_key in snack_menu.keys():
-            print(f"dict item: {snack_key}") 
-            if snack_key == user_snack_order:
-                print("This item is available")
-                basket.append(snack_key)
-                print(f"snack key put in list: {snack_key}")
-                print(f"basket list: {basket}")
-                break
+    print(f"entered item: {user_snack_order}") 
+    for snack_key in snack_menu.keys():
+        print(f"dict item: {snack_key}") 
+        if snack_key == user_snack_order:
+            print("This item is available")
+            basket.append(snack_key)
+            print(f"snack key put in list: {snack_key}")
+            print(f"basket list: {basket}")
+            break
 
 
         
