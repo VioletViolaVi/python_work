@@ -20,7 +20,7 @@ prices = []
 total = 0
 
 # user enters what they want
-user_request = input("Welcome to the snack bar. Press 'C' to continue: ").lower()
+user_request = input("1) Welcome to the snack bar. Press 'C' to continue: ").lower()
 
 if user_request == "c".lower():
     # displays snack menu
@@ -33,7 +33,17 @@ if user_request == "c".lower():
     print()
 
     print("-------- --------")
-    user_snack_order = input("Enter what you want to order (Press 'X' to leave): ").lower()
+    user_snack_order = input("2) Enter what you want to order (Press 'X' to leave): ").lower()
+
+
+    # snack not in dictionary, so pick new snack
+    while snack_menu.get(user_snack_order) == None:
+        if not user_snack_order == "x":
+            while not user_snack_order == "x": 
+                user_snack_order = input("3) Sorry, that's not available. Enter what you want to order (Press 'X' to leave): ").lower()
+                print(f"REASSIGN user_snack_order: {user_snack_order}")
+        break
+
    
    # check each available snack
     if not user_snack_order == "x":
@@ -47,20 +57,8 @@ if user_request == "c".lower():
                 print(f"basket list: {basket}")
                 break
 
-    # snack not in dictionary
-    if snack_menu.get(user_snack_order) == None:
-        print("This item is NOT available")
-        input("Sorry, that's not available. Enter what you want to order (Press 'X' to leave): ").lower()   
 
-
-    
-    
-    
-    
-
-    
-
-
+        
 
 
 # display purchases & cost
