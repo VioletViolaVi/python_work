@@ -20,7 +20,7 @@ prices = []
 total = 0
 
 # any key pressed, except "x".lower(), moves user to 1st if code block
-greeting = input("1) Welcome to the snack bar. Press 'X' to leave: ").lower()
+greeting = input("Welcome to the snack bar. Press 'X' to leave: ").lower()
 if greeting != "x":
     # displays snack menu
     print("-------- --------")
@@ -32,48 +32,45 @@ if greeting != "x":
     print()
 
     print("-------- --------")
-    user_snack_order = input("2) Enter what you want to order. Press 'X' to leave: ").lower()
+    user_snack_order = input("Enter what you want to order. Press 'X' to leave: ").lower()
 
     # continuous checking for if entered snack is available or not to be added
     while snack_menu.get(user_snack_order) != None or snack_menu.get(user_snack_order) == None:
+
         # helps prevents infinite loop when exiting further down
         if user_snack_order == "x":
             break
 
         # snack is present in dictionary
         while snack_menu.get(user_snack_order) != None:
+
             # add snacks to list
             basket.append(user_snack_order)
-            print(f"This entered item is available & has been put in basket list: {user_snack_order}")
-            print(f"basket list so far: {basket}")
             # add snack prices to list
             prices.append(snack_menu.get(user_snack_order))
-            print(f"prices list so far: {prices}")
-            user_snack_order = input("3) What else do what you want to order. Press 'X' to leave: ").lower()
+
+            user_snack_order = input("What else do what you want to order. Press 'X' to leave: ").lower()
 
         # snack not in dictionary, keeps running until snack in dictionary chosen
         while snack_menu.get(user_snack_order) == None:
+                    
                     # helps allow users to exit
                     if user_snack_order == "x":
-                        print("can you see this (X)? ")
                         break
-                         
-                    user_snack_order = input("4) Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
-                    print(f"REASSIGN user snack order: {user_snack_order}")
+
+                    # opportunity to change snack     
+                    user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
 
 # calculates total cost of items
 for price in prices:
-     print(f"total: {total}")
      total += price
 
 # display purchases & cost
 print(" ------ Checkout ------  ")
-if basket == [] and total == 0: # user fails to enter 'c'.lower()
-    print("You did not buy anything.")
+if basket == [] and total == 0:
+    # user leaves w/out picking snacks
+    print("Thank you for visiting. Goodbye!")
 else:
-    print(f"Your basket: {basket}")
-    print(f"prices: £{prices}")
+    # user picks snacks, now needs to pay
+    print(f"Your Basket: {basket}")
     print(f"Your Total: £{round(total, 2)}") # avoids long decimal numbers
-
-# - ensure u can quit at any stage!
-# - ensure items are added at any stage!
