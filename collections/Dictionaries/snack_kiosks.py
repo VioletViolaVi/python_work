@@ -19,10 +19,9 @@ basket = []
 prices = []
 total = 0
 
-# user enters what they want
-user_request = input("1) Welcome to the snack bar. Press 'C' to continue: ").lower()
-
-if user_request == "c".lower():
+# any key pressed, except "x".lower(), moves user to 1st if code block
+greeting = input("1) Welcome to the snack bar. Press 'X' to leave: ").lower()
+if greeting != "x":
     # displays snack menu
     print("-------- --------")
     print("  Snack   Price  ")
