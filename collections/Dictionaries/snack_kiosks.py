@@ -32,21 +32,35 @@ if user_request == "c".lower():
         print(f"£{price:.2f}")
     print()
 
-    # asks user what they want 
-    user_request = input("A) Select from above menu what you want to buy ('x' to quit): ").lower()
+    # # asks user what they want 
+    # user_request = input("A) Select from above menu what you want to buy ('x' to quit): ").lower()
 
     # purchasing snacks
     while not user_request == "x".lower():
-        # # asks user what they want 
-        # user_request = input("A) Select from above menu what you want to buy ('x' to quit): ").lower()
+    
+        # asks user what they want 
+        user_request = input("A) Select from above menu what you want to buy ('x' to quit): ").lower()
+        if user_request == "x".lower():
+            break
+    
         # user enters item not on menu
         if snack_menu.get(user_request) == None:
+
             user_request = input("B) Sorry, that's not available. Select from above menu what you want to buy ('x' to quit): ").lower()
+            if user_request == "x".lower():
+                break
+
             while snack_menu.get(user_request) == None: # i.e. user is STILL entering an item not in the dictionary at this point
+
                 user_request = input("C) Sorry, that's not available. Select from above menu what you want to buy ('x' to quit): ").lower()
+                if user_request == "x".lower():
+                    break
         else:
             # asks user what they want 
             user_request = input("D) Select from above menu what you want to buy ('x' to quit): ").lower()
+            if user_request == "x".lower():
+                break
+            
             # puts what they want in basket        
             basket.append(user_request)
             # get respective snack prices stored
@@ -75,3 +89,4 @@ else:
     print(f"Your Total: £{round(total, 2)}") # avoids long decimal numbers
 
 # - ensure u can quit at any stage!
+# - ensure items are added at any stage!
