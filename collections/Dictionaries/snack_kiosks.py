@@ -67,10 +67,30 @@ for price in prices:
 
 # display purchases & cost
 print(" ------ Checkout ------  ")
+print()
+
+# user leaves w/out picking snacks
 if basket == [] and total == 0:
-    # user leaves w/out picking snacks
     print("Thank you for visiting. Goodbye!")
+
+# user picks snacks, now needs to pay
 else:
-    # user picks snacks, now needs to pay
+    # designs receipt
+    print("--------- ---------")
+    print("     Your Bill     ")
+    print("--------- ---------")
+
+    # checkout process
+    checkout_counter = 0
+    while checkout_counter < len(basket):
+        print(f"{basket[checkout_counter].title()} - £{prices[checkout_counter]:.2f}")
+        checkout_counter += 1
+    print()
+
+    # avoids long decimal numbers     
+    print(f"Your Total: £{round(total, 2):.2f}")    
+    print("--------- ---------")
+
+
     print(f"Your Basket: {basket}")
-    print(f"Your Total: £{round(total, 2)}") # avoids long decimal numbers
+    print(f"Your Prices: {prices}")
