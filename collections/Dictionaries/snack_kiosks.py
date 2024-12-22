@@ -33,20 +33,29 @@ if user_request == "c".lower():
     print()
 
     print("-------- --------")
-    user_snack_order = input("2) Enter what you want to order: ").lower()
+    user_snack_order = input("2) Enter what you want to order. Press 'X' to leave: ").lower()
 
     # continuous checking for if entered snack is available or not to be added
-    while snack_menu.get(user_snack_order) != None or snack_menu.get(user_snack_order) == None: 
+    while snack_menu.get(user_snack_order) != None or snack_menu.get(user_snack_order) == None:
+        # helps prevents infinite loop when exiting further down
+        if user_snack_order == "x":
+            break
+
         # snack is present in dictionary
         while snack_menu.get(user_snack_order) != None:
             basket.append(user_snack_order)
             print(f"This entered item is available & has been put in basket list: {user_snack_order}")
             print(f"basket list so far: {basket}")
-            user_snack_order = input("4) What else do what you want to order: ").lower()
+            user_snack_order = input("3) What else do what you want to order. Press 'X' to leave: ").lower()
 
-        # snack not in dictionary, keep picking snack until dictionary option selected
+        # snack not in dictionary, keeps running until snack in dictionary chosen
         while snack_menu.get(user_snack_order) == None:
-                    user_snack_order = input("3) Sorry, that's not available. Enter a different order: ").lower()
+                    # helps allow users to exit
+                    if user_snack_order == "x":
+                        print("can you see this (X)? ")
+                        break
+                         
+                    user_snack_order = input("4) Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
                     print(f"REASSIGN user snack order: {user_snack_order}")
 
 
