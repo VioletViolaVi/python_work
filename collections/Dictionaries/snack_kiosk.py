@@ -69,7 +69,8 @@ for price in prices:
          pennies = total * 100
 
 # display purchases & cost
-print(" ------ Checkout ------  ")
+print()
+print(" -- Checkout -- ")
 print()
 
 # user leaves w/out picking snacks
@@ -79,9 +80,10 @@ if basket == [] and total == 0:
 # user picks snacks, now needs to pay
 else:
     # designs receipt
-    print("-------------------")
-    print("     Your Bill     ")
-    print("--------- ---------")
+    print("=====================")
+    print("      Your Bill      ")
+    print("========== ==========")
+    print()
 
     # checkout process
     checkout_counter = 0
@@ -96,8 +98,4 @@ else:
     else:
         # displays using £ sign
         print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
-    print("--------- ---------")
-
-    # delete later
-    print(f"Your Basket: {basket}")
-    print(f"Your Prices: {prices}")
+    print("========== ==========")
