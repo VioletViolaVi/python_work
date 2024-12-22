@@ -61,6 +61,8 @@ if greeting != "x":
                     # opportunity to change snack     
                     user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
 
+# --------------------------------------------------------------------------------------------------------------------------------------------- #
+
 # calculates total cost of items
 pennies = 0 # get pennies
 for price in prices:
@@ -88,7 +90,17 @@ else:
     # checkout process
     checkout_counter = 0
     while checkout_counter < len(basket):
-        print(f"{basket[checkout_counter].title()} - £{prices[checkout_counter]:.2f}")
+
+        # count multi purchases of same snacks e.g.: 2x Water | 2x Chips | 1x Popcorn
+        for item in basket:
+            print(f"2x Water: {basket.count(item)}x {item.title()}")
+            # count = basket.count(item)
+            # print(f"{count}x {item.title()} - £{prices[checkout_counter]:.2f}")
+            # print(f"item: {item}")
+            # if item == basket[checkout_counter]:
+            #     continue 
+
+        # print(f"{basket[checkout_counter].title()} - £{prices[checkout_counter]:.2f}")
         checkout_counter += 1
     print()
 
