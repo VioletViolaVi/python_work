@@ -42,9 +42,13 @@ if greeting != "x":
 
         # snack is present in dictionary
         while snack_menu.get(user_snack_order) != None:
+            # add snacks to list
             basket.append(user_snack_order)
             print(f"This entered item is available & has been put in basket list: {user_snack_order}")
             print(f"basket list so far: {basket}")
+            # add snack prices to list
+            prices.append(snack_menu.get(user_snack_order))
+            print(f"prices list so far: {prices}")
             user_snack_order = input("3) What else do what you want to order. Press 'X' to leave: ").lower()
 
         # snack not in dictionary, keeps running until snack in dictionary chosen
@@ -57,8 +61,10 @@ if greeting != "x":
                     user_snack_order = input("4) Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
                     print(f"REASSIGN user snack order: {user_snack_order}")
 
-
-
+# calculates total cost of items
+for price in prices:
+     print(f"total: {total}")
+     total += price
 
 # display purchases & cost
 print(" ------ Checkout ------  ")
@@ -66,6 +72,7 @@ if basket == [] and total == 0: # user fails to enter 'c'.lower()
     print("You did not buy anything.")
 else:
     print(f"Your basket: {basket}")
+    print(f"prices: £{prices}")
     print(f"Your Total: £{round(total, 2)}") # avoids long decimal numbers
 
 # - ensure u can quit at any stage!
