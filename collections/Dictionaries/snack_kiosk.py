@@ -69,6 +69,13 @@ if greeting != "x":
                     if user_snack_order == "r":
                         # to remove snacks from basket if user changes their mind
                         while user_snack_order == "r":
+
+                            # when basket is empty i.e. nothing else to remove
+                            if basket == []:
+                                 print("Your basket is empty")
+                                 # give user chance to buy anew
+                                 user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
+                                 break
                             
                             # to keep removing snacks
                             remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower()
@@ -77,6 +84,10 @@ if greeting != "x":
                             print(f"'old' basket: {basket}")
                             basket.remove(remove_snack)
                             print(f"'new' basket: {basket}")
+
+                    # helps user pick snacks from beginning after removing all snacks
+                    if basket == []:
+                        break
         
                     # opportunity to change snack     
                     user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave, 'R' to remove: ").lower() 
