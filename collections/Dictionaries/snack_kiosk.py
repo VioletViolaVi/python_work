@@ -55,7 +55,6 @@ if greeting != "x":
             # add snack prices to list
             prices.append(snack_menu.get(user_snack_order))
 
-            print(f"basket after adding, after removing: {basket}") # delete later!!!
             user_snack_order = input("What else do what you want to order. Press 'X' to leave, 'R' to remove: ").lower()
 
         # snack not in dictionary, keeps running until snack in dictionary chosen
@@ -75,7 +74,7 @@ if greeting != "x":
                                 print("Your current basket is empty")
 
                                 # give user chance to buy anew
-                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower() # error
+                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
                                 print(f"user_snack_order: {user_snack_order}")
 
                                 break
