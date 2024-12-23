@@ -88,9 +88,6 @@ else:
 
     # todo still:
         # - remove commented out print statements
-        # - need to FORMAT single & total price/cost on receipt***
-
-
 
     # creates list of unique snacks
     unique_list = list(set(basket)) # -> turns to a: 'list' then 'set' then 'list' again
@@ -112,7 +109,11 @@ else:
         total_price = snack_quantity * snack_item_price
 
         # formats display of snack count quantity, single price cost & multi price cost
-        print(f"{snack_quantity}x {snack_item.title()} - £{snack_menu.get(snack_item):.2f} - £{total_price:.2f}")
+        print(f"{snack_quantity}x {snack_item.title()} - £{total_price:.2f}")
+
+        # only shows single price when multiples of the same snack is bought
+        if snack_quantity > 1:
+            print(f"                  (£{snack_menu.get(snack_item):.2f})")
 
     print()
 
