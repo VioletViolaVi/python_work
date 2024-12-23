@@ -81,9 +81,9 @@ if basket == [] and total == 0:
 # user gets receipt for buying snacks
 else:
     # designs receipt
-    print("=====================")
-    print("      Your Bill      ")
-    print("========== ==========")
+    print("===================================")
+    print("             Your Bill             ")
+    print("===================================")
     print()
 
     # creates list of unique snacks
@@ -104,9 +104,14 @@ else:
         # formats display of snack count quantity, single price cost & multi price cost
         print(f"{snack_quantity}x {snack_item.title()} - £{total_price:.2f}")
 
-        # only shows single price when multiples of the same snack is bought
+        # used for multi purchases
         if snack_quantity > 1:
-            print(f"                  (£{snack_menu.get(snack_item):.2f})")
+            # only shows single price when multiples of the same snack bought
+            print(f"                    (£{snack_menu.get(snack_item):.2f})") # displays price for 1 snack
+
+        # adds line space below single bought snacks only
+        if snack_quantity == 1:
+             print()
 
     print()
 
@@ -116,4 +121,4 @@ else:
     else:
         # displays full total using £ sign
         print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
-    print("========= =========")
+    print("===================================")
