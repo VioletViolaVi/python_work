@@ -87,21 +87,38 @@ else:
     print("========== ==========")
     print()
 
-    # checkout process
-    checkout_counter = 0
-    while checkout_counter < len(basket):
+    
 
-        # count multi purchases of same snacks e.g.: 2x Water | 2x Chips | 1x Popcorn
-        for item in basket:
-            print(f"2x Water: {basket.count(item)}x {item.title()}")
-            # count = basket.count(item)
-            # print(f"{count}x {item.title()} - £{prices[checkout_counter]:.2f}")
-            # print(f"item: {item}")
-            # if item == basket[checkout_counter]:
-            #     continue 
+    # count multi purchases of same snacks e.g.: 2x Water | 2x Chips | 1x Popcorn
+    
+    # stores basket's list containing duplicate snacks
+    # duplicate_list = basket
 
-        # print(f"{basket[checkout_counter].title()} - £{prices[checkout_counter]:.2f}")
-        checkout_counter += 1
+    # creates list of unique snacks
+    unique_list = list(set(basket)) # -> turns to a: 'list' then 'set' then 'list' again
+    print(f"basket: {basket}")
+    print(f"set(basket): {set(basket)}")
+    print(f"unique_list: {unique_list}")
+    print(f"prices: {prices}")
+
+    # formats snack count quantity w/ its respective snack item
+    for snack_item in unique_list:
+        print(f"{basket.count(snack_item)}x {snack_item.title()} - £{snack_menu.get(snack_item):.2f}")
+
+
+    # # checkout process
+    # checkout_counter = 0
+    # while checkout_counter < len(basket):
+    #     # for item in basket:
+    #     #     print(f"can you see '2x Water'?: {basket.count(item)}x {item.title()}")
+    #         # count = basket.count(item)
+    #         # print(f"{count}x {item.title()} - £{prices[checkout_counter]:.2f}")
+    #         # print(f"item: {item}")
+    #         # if item == basket[checkout_counter]:
+    #         #     continue 
+
+    #     # print(f"{basket[checkout_counter].title()} - £{prices[checkout_counter]:.2f}")
+    #     checkout_counter += 1
     print()
 
     if total < 1:
