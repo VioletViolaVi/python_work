@@ -72,15 +72,15 @@ if greeting != "x":
 
                             # when basket is empty i.e. nothing else to remove
                             if basket == []:
-                                 print("Your basket is empty")
-                                 # give user chance to buy anew
-                                 user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
-                                 break
+                                print("Your current basket is empty")
+                                # give user chance to buy anew
+                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower() # error continues w/ 'x'
+                                break
                             
                             # for removing snacks from basket
-                            print("-------- --------")
                             print(f"Your current basket: {basket}")
                             remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower() # NEXT HERE FIX 'D' OPTION
+                            print("-------- --------")
 
                             # checks if snack is present to be removed
                             if remove_snack in basket:                                 
@@ -88,12 +88,9 @@ if greeting != "x":
                                 basket.remove(remove_snack)
                                 prices.remove(snack_menu.get(remove_snack))
 
-                                # messages for user to keep them informed
-                                print("-------- --------")
+                                # messages for user to keep them informed                                
                                 print(f"You removed: {remove_snack.title()}")
-                                # message toggles if basket is empty or not
-                                print(f"Your current basket {'is empty' if basket == [] else ': ' + basket}")
-                                print("-------- --------")
+
                             else:
                                 # if user enters snack not in basket
                                 print("Sorry, that snack is not in your basket.")                                
