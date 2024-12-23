@@ -1,6 +1,10 @@
 # Cinema Snack Kiosk / Snack Bar
 
-# - users select food they want & get told total price
+# Notes:
+    # - users select food they want & get told total price
+    # - unique_list = list(set(basket))*
+        #  - *can work as just a set i.e. set(basket)
+        #  - *list() still good to wrap set(), in case user wants a duplicate receipt, snacks would print same order
 
 # food keys, price values
 snack_menu = {
