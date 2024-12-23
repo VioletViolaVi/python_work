@@ -70,20 +70,23 @@ for price in prices:
     if total < 1:
          pennies = total * 100
 
-print()
-print(" -- Checkout -- ")
-print()
-
 # user leaves w/out picking snacks
 if basket == [] and total == 0:
+    print()
     print("Thank you for visiting. Goodbye!")
 
 # user gets receipt for buying snacks
 else:
+
+    # at checkout
+    print()
+    print(" -- Checkout -- ")
+    print()
+
     # designs receipt
-    print("===================================")
-    print("             Your Bill             ")
-    print("===================================")
+    print("====================================")
+    print("            Your Receipt            ")
+    print("====================================")
     print()
 
     # creates list of unique snacks
@@ -121,4 +124,4 @@ else:
     else:
         # displays full total using £ sign
         print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
-    print("===================================")
+    print("====================================")
