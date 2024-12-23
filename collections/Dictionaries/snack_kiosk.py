@@ -55,7 +55,7 @@ if greeting != "x":
             # add snack prices to list
             prices.append(snack_menu.get(user_snack_order))
 
-            user_snack_order = input("What else do what you want to order. Press 'X' to leave: ").lower()
+            user_snack_order = input("What else do what you want to order. Press 'X' to leave, 'R' to remove: ").lower()
 
         # snack not in dictionary, keeps running until snack in dictionary chosen
         while snack_menu.get(user_snack_order) == None:
@@ -64,8 +64,14 @@ if greeting != "x":
                     if user_snack_order == "x":
                         break
 
+                    # helps allow users to remove snacks
+                    if user_snack_order == "r":
+                        # to remove snacks from basket if user changes their mind
+                        while user_snack_order == "r":
+                            print("you want to remove a snack, this is where that will happen!")  
+
                     # opportunity to change snack     
-                    user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
+                    user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave, 'R' to remove: ").lower() 
 
 # --------------------------------------------------------------------------------------------------------------------------------------------- #
 
