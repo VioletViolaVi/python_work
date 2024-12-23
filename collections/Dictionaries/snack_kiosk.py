@@ -80,7 +80,7 @@ if greeting != "x":
                             # for removing snacks from basket
                             print("-------- --------")
                             print(f"Your current basket: {basket}")
-                            remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower()
+                            remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower() # NEXT HERE FIX 'D' OPTION
 
                             # checks if snack is present to be removed
                             if remove_snack in basket:                                 
@@ -91,18 +91,22 @@ if greeting != "x":
                                 # messages for user to keep them informed
                                 print("-------- --------")
                                 print(f"You removed: {remove_snack.title()}")
+                                # message toggles if basket is empty or not
                                 print(f"Your current basket {'is empty' if basket == [] else ': ' + basket}")
                                 print("-------- --------")
                             else:
                                 # if user enters snack not in basket
                                 print("Sorry, that snack is not in your basket.")                                
-
+                    
+                    # opportunity to change snack
+                    if basket == []:     
+                        user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
+                    else:
+                        user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave, 'R' to remove: ").lower()
+                    
                     # helps user pick snacks from beginning after removing all snacks
                     if basket == []:
-                        break
-        
-                    # opportunity to change snack     
-                    user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave, 'R' to remove: ").lower() 
+                        break       
 
 # --------------------------------------------------------------------------------------------------------------------------------------------- #
 
