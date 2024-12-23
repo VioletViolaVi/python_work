@@ -38,6 +38,8 @@ if greeting != "x":
     print("-------- --------")
     user_snack_order = input("Enter what you want to order. Press 'X' to leave: ").lower()
 
+# --------------------------------------------------------------------------------------------------------------------------------------------- #
+
     # continuous checking for if entered snack is available or not to be added
     while snack_menu.get(user_snack_order) != None or snack_menu.get(user_snack_order) == None:
 
