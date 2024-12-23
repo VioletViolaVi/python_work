@@ -86,15 +86,8 @@ else:
     print("========== ==========")
     print()
 
-    # todo still:
-        # - remove commented out print statements
-
     # creates list of unique snacks
     unique_list = list(set(basket)) # -> turns to a: 'list' then 'set' then 'list' again
-    # print(f"basket: {basket}")
-    # print(f"set(basket): {set(basket)}")
-    # print(f"unique_list: {unique_list}")
-    # print(f"prices: {prices}")
 
     # iterates through newly made list(), made from set(), that no longer contains duplicates
     for snack_item in unique_list:
