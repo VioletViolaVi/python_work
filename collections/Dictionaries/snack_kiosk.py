@@ -70,7 +70,6 @@ for price in prices:
     if total < 1:
          pennies = total * 100
 
-# display purchases & cost
 print()
 print(" -- Checkout -- ")
 print()
@@ -79,7 +78,7 @@ print()
 if basket == [] and total == 0:
     print("Thank you for visiting. Goodbye!")
 
-# user picks snacks, now needs to pay
+# user gets receipt for buying snacks
 else:
     # designs receipt
     print("=====================")
@@ -87,44 +86,40 @@ else:
     print("========== ==========")
     print()
 
-    
+    # todo still:
+        # - remove commented out print statements
+        # - need to FORMAT single & total price/cost on receipt***
 
-    # count multi purchases of same snacks e.g.: 2x Water | 2x Chips | 1x Popcorn
-    
-    # stores basket's list containing duplicate snacks
-    # duplicate_list = basket
+
 
     # creates list of unique snacks
     unique_list = list(set(basket)) # -> turns to a: 'list' then 'set' then 'list' again
-    print(f"basket: {basket}")
-    print(f"set(basket): {set(basket)}")
-    print(f"unique_list: {unique_list}")
-    print(f"prices: {prices}")
+    # print(f"basket: {basket}")
+    # print(f"set(basket): {set(basket)}")
+    # print(f"unique_list: {unique_list}")
+    # print(f"prices: {prices}")
 
-    # formats snack count quantity w/ its respective snack item
+    # iterates through newly made list(), made from set(), that no longer contains duplicates
     for snack_item in unique_list:
-        print(f"{basket.count(snack_item)}x {snack_item.title()} - £{snack_menu.get(snack_item):.2f}")
 
+        # gets quantity of respective snack
+        snack_quantity = basket.count(snack_item)
 
-    # # checkout process
-    # checkout_counter = 0
-    # while checkout_counter < len(basket):
-    #     # for item in basket:
-    #     #     print(f"can you see '2x Water'?: {basket.count(item)}x {item.title()}")
-    #         # count = basket.count(item)
-    #         # print(f"{count}x {item.title()} - £{prices[checkout_counter]:.2f}")
-    #         # print(f"item: {item}")
-    #         # if item == basket[checkout_counter]:
-    #         #     continue 
+        # gets price of respective snack
+        snack_item_price = snack_menu.get(snack_item)
 
-    #     # print(f"{basket[checkout_counter].title()} - £{prices[checkout_counter]:.2f}")
-    #     checkout_counter += 1
+        # snack price & amount of the respective snacks selected multiplied together
+        total_price = snack_quantity * snack_item_price
+
+        # formats display of snack count quantity, single price cost & multi price cost
+        print(f"{snack_quantity}x {snack_item.title()} - £{snack_menu.get(snack_item):.2f} - £{total_price:.2f}")
+
     print()
 
     if total < 1:
-        # displays using pence (e.g. 15p)
+        # displays full total using pence (e.g. 15p)
         print(f"Your Total: {int(pennies)}p")   
     else:
-        # displays using £ sign
+        # displays full total using £ sign
         print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
-    print("========== ==========")
+    print("========= =========")
