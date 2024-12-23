@@ -73,13 +73,16 @@ if greeting != "x":
                             # when basket is empty i.e. nothing else to remove
                             if basket == []:
                                 print("Your current basket is empty")
+
                                 # give user chance to buy anew
-                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower() # error continues w/ 'x'
+                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower() # error
+                                print(f"user_snack_order: {user_snack_order}")
+
                                 break
                             
                             # for removing snacks from basket
                             print(f"Your current basket: {basket}")
-                            remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower() # NEXT HERE FIX 'D' OPTION
+                            remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower() # ERROR FIX 'D' OPTION
                             print("-------- --------")
 
                             # checks if snack is present to be removed
@@ -95,6 +98,11 @@ if greeting != "x":
                                 # if user enters snack not in basket
                                 print("Sorry, that snack is not in your basket.")                                
                     
+
+                    # helps user exit after removing all items
+                    if user_snack_order == "x":
+                        break
+
                     # opportunity to change snack
                     if basket == []:     
                         user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
