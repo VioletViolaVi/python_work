@@ -77,13 +77,23 @@ if greeting != "x":
                                  user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
                                  break
                             
-                            # to keep removing snacks
+                            # for removing snacks from basket
+                            print("-------- --------")
+                            print(f"Your current basket: {basket}")
                             remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower()
-                            print(f"user_snack_order: {user_snack_order}")
-                            print(f"remove_snack: {remove_snack}")
-                            print(f"'old' basket: {basket}")
-                            basket.remove(remove_snack)
-                            print(f"'new' basket: {basket}")
+
+                            # checks if snack is present to be removed
+                            if remove_snack in basket:                                 
+                                # to keep removing snacks
+                                print(f"user_snack_order: {user_snack_order}") # delete later!!!
+                                print(f"remove_snack: {remove_snack}") #  edit this for user!!! (you have removed...)
+                                print(f"'old' basket: {basket}") # edit this for user!!! (your current basket...)
+                                basket.remove(remove_snack)
+                                # need to also remove price
+                                prices.remove(snack_menu.get(remove_snack))
+                                print(f"'new' basket: {basket}") # edit this for user!!! (your new basket...)
+                            else:
+                                print("Sorry, that snack is not in your basket.")                                
 
                     # helps user pick snacks from beginning after removing all snacks
                     if basket == []:
