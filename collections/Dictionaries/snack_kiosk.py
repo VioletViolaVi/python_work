@@ -176,3 +176,8 @@ else:
         # displays full total using £ sign
         print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
     print("====================================")
+
+
+# todo:
+# - ask for duplicate receipt
+# - create 'd' for done ability
