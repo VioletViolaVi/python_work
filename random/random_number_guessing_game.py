@@ -35,4 +35,8 @@ while not user_guess == correct_num:
     print(f"2) user_guess: {user_guess}")
     print(f"2) correct_num: {correct_num}")
 
-
+# user guesses correct number
+if user_guess == correct_num:
+    print("Well done! You guessed correctly! 🥳")
+    print(f"3) user_guess: {user_guess}")
+    print(f"3) correct_num: {correct_num}")
