@@ -92,3 +92,28 @@ player_two = random.choice(hand_shape)
 
 print(f"player_one: {player_one}  |  player_two: {player_two}")
 
+# - game: rock, paper, scissors
+if player_one == player_two:
+    print("DRAW!")
+
+elif player_one == "rock":
+    if player_two == "scissors":
+        print("rock / player one wins!")
+    else:
+        print("paper / player two wins!")
+
+elif player_one == "paper":
+    if player_two == "rock":
+        print("paper / player one wins!")
+    else:
+        print("scissors / player two wins!")
+
+elif player_one == "scissors":
+    if player_two == "paper":
+        print("scissors / player one wins!")
+    else:
+        print("rock / player two wins!")
+
+else:
+    print("error 😶")
+   
