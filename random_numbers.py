@@ -51,3 +51,19 @@ if coin_side == 1:
     print("heads!")
 else:
     print("tails!")
+
+
+print()
+print("========= new ========= ")
+print()
+
+
+# create random decimal numbers between 0 and 1
+rand_decimal_num = random.random()
+print(f"rand_decimal_num: {rand_decimal_num}")
+rand_decimal_num = random.random()
+print(f"rand_decimal_num: {rand_decimal_num}")
+rand_decimal_num = random.random()
+print(f"rand_decimal_num: {rand_decimal_num}")
+rand_decimal_num = random.random()
+print(f"rand_decimal_num: {rand_decimal_num}")
