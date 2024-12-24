@@ -147,9 +147,6 @@ if greeting != "x":
 
 # --------------------------------------------------------------------------------------------------------------------------------------------- #
 
-# to help create duplicate receipt  
-duplicate_receipt = False
-
 # calculates total cost of items
 pennies = 0 # get pennies
 for price in prices:
@@ -170,52 +167,84 @@ else:
     print(" -- Checkout -- ")
     print()
 
-    # designs receipt
+    # designs original/1st receipt (b4 any duplicates)
+    print()
     print("====================================")
     print("            Your Receipt            ")
     print("====================================")
-    print()
+    print()    
 
-    # creates list of unique snacks
-    unique_list = list(set(basket)) # -> turns to a: 'list' then 'set' then 'list' again
+    # helps create duplicate receipt on request
+    duplicate_receipt = False
 
-    # iterates through newly made list(), made from set(), that no longer contains duplicates
-    for snack_item in unique_list:
+    # helps stop outputting more receipts after duplicate
+    stop_duplicate_receipt = False ###############################################
 
-        # gets quantity of respective snack
-        snack_quantity = basket.count(snack_item)
+    # ----------------------------------------------------------------------------------------------------
+    while not duplicate_receipt:
+        
+        # creates list of unique snacks
+        unique_list = list(set(basket)) # -> turns to a: 'list' then 'set' then 'list' again
 
-        # gets price of respective snack
-        snack_item_price = snack_menu.get(snack_item)
+        # iterates through newly made list(), made from set(), that no longer contains duplicates
+        for snack_item in unique_list:
 
-        # snack price & amount of the respective snacks selected multiplied together
-        total_price = snack_quantity * snack_item_price
+            # gets quantity of respective snack
+            snack_quantity = basket.count(snack_item)
 
-        # formats display of snack count quantity, single price cost & multi price cost
-        print(f"{snack_quantity}x {snack_item.title()} - £{total_price:.2f}")
+            # gets price of respective snack
+            snack_item_price = snack_menu.get(snack_item)
 
-        # used for multi purchases
-        if snack_quantity > 1:
-            # only shows single price when multiples of the same snack bought
-            print(f"                    (£{snack_menu.get(snack_item):.2f})") # displays price for 1 snack
+            # snack price & amount of the respective snacks selected multiplied together
+            total_price = snack_quantity * snack_item_price
 
-        # adds line space below single bought snacks only
-        if snack_quantity == 1:
-             print()
+            # formats display of snack count quantity, single price cost & multi price cost
+            print(f"{snack_quantity}x {snack_item.title()} - £{total_price:.2f}")
 
-    print()
+            # used for multi purchases
+            if snack_quantity > 1:
+                # only shows single price when multiples of the same snack bought
+                print(f"                    (£{snack_menu.get(snack_item):.2f})") # displays price for 1 snack
 
-    if total < 1:
-        # displays full total using pence (e.g. 15p)
-        print(f"Your Total: {int(pennies)}p")   
-    else:
-        # displays full total using £ sign
-        print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
-    print("====================================")
-    
-    # ask user if they need duplicate receipt
-    duplicate_receipt_user_response = input("Do you need a duplicate receipt? Enter 'Y' for Yes or 'N' for No): ").lower()
-    if duplicate_receipt_user_response == "n":
-        print("Thank you buying snacks from us. Goodbye!")
-    else:
-        print("get duplicate receipt")
+            # adds line space below single bought snacks only
+            if snack_quantity == 1:
+                print()
+
+        print()
+
+        if total < 1:
+            # displays full total using pence (e.g. 15p)
+            print(f"Your Total: {int(pennies)}p")   
+        else:
+            # displays full total using £ sign
+            print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
+        print("====================================")      
+
+        # only allows below question to show if duplicate has not been given already
+        if stop_duplicate_receipt: ###############################################
+            print("Thank you buying snacks from us. Goodbye!")
+            break
+
+        # ask user if they need duplicate receipt
+        duplicate_receipt_user_response = input("Do you need a duplicate receipt? Enter 'Y' for Yes or 'N' for No): ").lower()
+
+        # user sees goodbye message, not needing duplicate receipt
+        if duplicate_receipt_user_response == "n":
+            print("Thank you buying snacks from us. Goodbye!")
+            
+            # prevents infinite loop of this receipt continuously outputting, only outputs once to begin w/
+            duplicate_receipt = True
+        
+        # repeats while loop to show same receipt
+        else:        
+            # designs duplicate receipt
+            print()
+            print("====================================")
+            print("       Your Duplicate Receipt       ")
+            print("====================================")
+            print()
+
+            # helps stop question asking if user needs duplicate receipt
+            # helps stop another receipt be given after duplicate
+            stop_duplicate_receipt = True ###############################################
+    # ----------------------------------------------------------------------------------------------------
