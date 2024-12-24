@@ -80,6 +80,10 @@ if greeting != "x":
                                 print("Your current basket is empty")
                                 # give user chance to buy anew
                                 user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
+
+                                # stops non available snacks being added after 'order more' stage
+                                while snack_menu.get(user_snack_order) == None:
+                                    user_snack_order = input("Please only choose from our menu above. Press 'X' to leave: ").lower()
                                 
                                 # prevents 'basket' list being empty so "# opportunity to change snack if basket == []..." below code doesn't happen
                                 basket.append(user_snack_order)
