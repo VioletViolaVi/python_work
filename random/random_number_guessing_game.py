@@ -15,7 +15,9 @@ print(f"1) correct_num: {correct_num}")
 
 while not done:
     # get number guess from user between 'start_range' and 'end_range'
+    print("--------------------------------------")
     user_guess = int(input(f"Guess the number between {start_range} and {end_range} (inclusively): "))
+    print("--------------------------------------")
 
     # prevent number being out of range of 'start_range' and 'end_range'
     while user_guess < start_range or user_guess > end_range:
@@ -27,26 +29,31 @@ while not done:
         # prevent number being out of range of {start_range} and {end_range} after at least 1 guess made
         while user_guess < start_range or user_guess > end_range:
             user_guess = int(input(f"Not accepted! Out of range! Guess the number between {start_range} and {end_range} (inclusively): "))
+            print("--------------------------------------")
 
         # informing user how far off they're WRONG guess is
         if user_guess > correct_num:
             user_guess = int(input(f"It's lower than that! Guess the number between {start_range} and {end_range} (inclusively): "))
+            print("--------------------------------------")
         elif user_guess < correct_num:
             user_guess = int(input(f"It's higher than that! Guess the number between {start_range} and {end_range} (inclusively): "))
+            print("--------------------------------------")
 
     # user guesses correct number
     if user_guess == correct_num:
         print("Well done! You guessed correctly! 🥳")
+        print("--------------------------------------")
         
         # asks if user wants to play again
         play_again = input("Play again? Enter yes (Y), no (N): ").lower()
+        print("--------------------------------------")
 
         # continues or ends game based on user response
         if play_again == "y":
             done = False
         else:
             done = True
-            print("See you next time!")
+            print("See you next time!👋")
             break
 
     # changes random number after user wins
