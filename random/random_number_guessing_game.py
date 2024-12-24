@@ -7,11 +7,10 @@ done = False
 
 # numbers for guess range
 start_range = 1
-end_range = 10
+end_range = 100
 
 # random number to guess
 correct_num = random.randint(start_range, end_range) # both numbers i.e. 'start_range' and 'end_range' are included in range!!!
-print(f"1) correct_num: {correct_num}")
 
 while not done:
     # get number guess from user between 'start_range' and 'end_range'
