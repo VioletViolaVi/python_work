@@ -222,7 +222,7 @@ else:
 
         # only allows below question to show if duplicate has not been given already
         if stop_duplicate_receipt:
-            print("Thank you buying snacks from us. Goodbye!")
+            print("Thank you for buying snacks from us. Goodbye!")
             break
 
         # ask user if they need duplicate receipt
@@ -234,12 +234,11 @@ else:
 
         # user sees goodbye message, not needing duplicate receipt
         if duplicate_receipt_response == "n":
-            print("Thank you buying snacks from us. Goodbye!")
+            print("Thank you for buying snacks from us. Goodbye!")
             
             # prevents infinite loop of this receipt continuously outputting, only outputs once to begin w/
             duplicate_receipt = True
         
-
         # repeats while loop to show same receipt
         elif duplicate_receipt_response == "y":
             # designs duplicate receipt
