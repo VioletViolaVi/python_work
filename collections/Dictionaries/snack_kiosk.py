@@ -77,7 +77,11 @@ if greeting != "x":
                             if basket == []:
                                 print("Your current basket is empty")
                                 # give user chance to buy anew
-                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower() # error cant add more
+                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
+                                
+                                # prevents 'basket' list being empty so "# opportunity to change snack if basket == []..." below code doesn't happen
+                                basket.append(user_snack_order)
+                                prices.append(snack_menu.get(user_snack_order))
                                 print(f"Your current basket: {basket}")
                                 print("-------- --------")
                                 break
@@ -133,7 +137,8 @@ if greeting != "x":
                         # helps break while loop as user is done with removing snacks                    
                         break                         
 
-                    else:
+                    # changed from 'else' to 'elif' to stop users seeing this message after ordering more for empty basket (code: 'Order more?...')
+                    elif not user_snack_order in basket:
                         user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave, 'R' to remove: ").lower()
                     
                     # helps user pick snacks from beginning after removing all snacks
