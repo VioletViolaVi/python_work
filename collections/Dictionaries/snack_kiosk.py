@@ -23,6 +23,9 @@ basket = []
 prices = []
 total = 0
 
+# helps toggle ability for user to be done with removing snacks & return to the 'snack selection' stage
+done_with_removing = False
+
 # any key pressed, except "x".lower(), moves user to 1st if code block
 greeting = input("Welcome to the snack bar. Press 'X' to leave: ").lower()
 if greeting != "x":
@@ -66,24 +69,30 @@ if greeting != "x":
 
                     # helps allow users to remove snacks
                     if user_snack_order == "r":
-                        # to remove snacks from basket if user changes their mind
-                        while user_snack_order == "r":
+
+                        # to remove snacks from basket if user changes their mind & user is not trying to end process of removing snacks
+                        while user_snack_order == "r" and not done_with_removing:
 
                             # when basket is empty i.e. nothing else to remove
                             if basket == []:
                                 print("Your current basket is empty")
-
                                 # give user chance to buy anew
-                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
-                                print(f"user_snack_order: {user_snack_order}")
-
+                                user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower() # error cant add more
+                                print(f"Your current basket: {basket}")
+                                print("-------- --------")
                                 break
                             
                             # for removing snacks from basket
                             print(f"Your current basket: {basket}")
-                            remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower() # ERROR FIX 'D' OPTION
+                            remove_snack = input("Enter snack you wish to remove. Press 'D' for Done: ").lower()
                             print("-------- --------")
 
+                            # user wants to end process of removing snacks
+                            if remove_snack == "d":
+                                # helps stop while loop from asking user to enter snack again for removal, as they are done with this
+                                done_with_removing = True
+                                break
+                                           
                             # checks if snack is present to be removed
                             if remove_snack in basket:                                 
                                 # to keep removing snacks & their respective price from prices list
@@ -93,10 +102,14 @@ if greeting != "x":
                                 # messages for user to keep them informed                                
                                 print(f"You removed: {remove_snack.title()}")
 
+                            # prevents "d" being interpreted as 'snack not in basket'
+                            # helps break while loop as user is done with removing snacks
+                            elif done_with_removing:
+                                break 
+
                             else:
                                 # if user enters snack not in basket
-                                print("Sorry, that snack is not in your basket.")                                
-                    
+                                print("Sorry, that snack is not in your basket.")                       
 
                     # helps user exit after removing all items
                     if user_snack_order == "x":
@@ -105,6 +118,21 @@ if greeting != "x":
                     # opportunity to change snack
                     if basket == []:     
                         user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
+                    
+                    # prevents "d" being interpreted as item in 'basket' list, so 'sorry' message below does not show
+                    elif done_with_removing:
+
+                        # resets to default value so user can be done w/ removing snacks at any stage at any number of times
+                        done_with_removing = False
+
+                        # give user chance to continue selecting snacks after being done with removing
+                        user_snack_order = input("Anything else you want to order? Enter what you want to order. Press 'X' to leave: ").lower()
+                        print(f"Your current basket: {basket}")
+                        print("-------- --------")
+                        
+                        # helps break while loop as user is done with removing snacks                    
+                        break                         
+
                     else:
                         user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave, 'R' to remove: ").lower()
                     
@@ -180,4 +208,3 @@ else:
 
 # todo:
 # - ask for duplicate receipt
-# - create 'd' for done ability
