@@ -30,9 +30,11 @@ done_with_removing = False
 greeting = input("Welcome to the snack bar. Press 'X' to leave: ").lower()
 if greeting != "x":
     # displays snack menu
-    print("-------- --------")
-    print("  Snack   Price  ")
-    print("-------- --------")
+    print("=================")
+    print("       Menu      ")
+    print("      ------     ")
+    print("   Snack   Price ")
+    print("=================")
     for snack, price in snack_menu.items():
         print(f"{snack.title()}", end=",  ")
         print(f"£{price:.2f}")
