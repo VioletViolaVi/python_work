@@ -8,7 +8,6 @@ end_range = 10
 
 # random number to guess
 correct_num = random.randint(start_range, end_range) # both numbers i.e. 'start_range' and 'end_range' are included in range!!!
-print(f"correct_num: {correct_num}")
 
 # get number guess from user between 'start_range' and 'end_range'
 user_guess = int(input(f"Guess the number between {start_range} and {end_range} (inclusively): "))
@@ -29,8 +28,6 @@ while not user_guess == correct_num:
         user_guess = int(input(f"It's lower than that! Guess the number between {start_range} and {end_range} (inclusively): "))
     elif user_guess < correct_num:
         user_guess = int(input(f"It's higher than that! Guess the number between {start_range} and {end_range} (inclusively): "))
-    else:
-        print("Error! 🫠")
 
 # user guesses correct number
 if user_guess == correct_num:
