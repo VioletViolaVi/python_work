@@ -178,7 +178,7 @@ else:
     duplicate_receipt = False
 
     # helps stop outputting more receipts after duplicate
-    stop_duplicate_receipt = False ###############################################
+    stop_duplicate_receipt = False
 
     # ----------------------------------------------------------------------------------------------------
     while not duplicate_receipt:
@@ -221,22 +221,27 @@ else:
         print("====================================")      
 
         # only allows below question to show if duplicate has not been given already
-        if stop_duplicate_receipt: ###############################################
+        if stop_duplicate_receipt:
             print("Thank you buying snacks from us. Goodbye!")
             break
 
         # ask user if they need duplicate receipt
-        duplicate_receipt_user_response = input("Do you need a duplicate receipt? Enter 'Y' for Yes or 'N' for No): ").lower()
+        duplicate_receipt_response = input("Do you need a duplicate receipt? Enter 'Y' for Yes or 'N' for No): ").lower()
+
+        # makes user pick between 'Y' or 'N' only
+        while duplicate_receipt_response != "y" and duplicate_receipt_response != "n":
+            duplicate_receipt_response = input("Do you need a duplicate receipt? Please only choose between 'Y' for Yes or 'N' for No: ").lower()
 
         # user sees goodbye message, not needing duplicate receipt
-        if duplicate_receipt_user_response == "n":
+        if duplicate_receipt_response == "n":
             print("Thank you buying snacks from us. Goodbye!")
             
             # prevents infinite loop of this receipt continuously outputting, only outputs once to begin w/
             duplicate_receipt = True
         
+
         # repeats while loop to show same receipt
-        else:        
+        elif duplicate_receipt_response == "y":
             # designs duplicate receipt
             print()
             print("====================================")
@@ -246,5 +251,5 @@ else:
 
             # helps stop question asking if user needs duplicate receipt
             # helps stop another receipt be given after duplicate
-            stop_duplicate_receipt = True ###############################################
+            stop_duplicate_receipt = True    
     # ----------------------------------------------------------------------------------------------------
