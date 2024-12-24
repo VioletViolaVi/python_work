@@ -2,6 +2,9 @@
 
 import random
 
+# ends game
+done = False
+
 # numbers for guess range
 start_range = 1
 end_range = 10
@@ -10,7 +13,7 @@ end_range = 10
 correct_num = random.randint(start_range, end_range) # both numbers i.e. 'start_range' and 'end_range' are included in range!!!
 print(f"1) correct_num: {correct_num}")
 
-while True:
+while not done:
     # get number guess from user between 'start_range' and 'end_range'
     user_guess = int(input(f"Guess the number between {start_range} and {end_range} (inclusively): "))
 
@@ -34,7 +37,18 @@ while True:
     # user guesses correct number
     if user_guess == correct_num:
         print("Well done! You guessed correctly! 🥳")
+        
+        # asks if user wants to play again
+        play_again = input("Play again? Enter yes (Y), no (N): ").lower()
 
-    # random number to guess
+        # continues or ends game based on user response
+        if play_again == "y":
+            done = False
+        else:
+            done = True
+            print("See you next time!")
+            break
+
+    # changes random number after user wins
     correct_num = random.randint(start_range, end_range) # both numbers i.e. 'start_range' and 'end_range' are included in range!!!
     print(f"2) correct_num: {correct_num}")
