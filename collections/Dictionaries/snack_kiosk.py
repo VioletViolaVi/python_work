@@ -80,6 +80,10 @@ if greeting != "x":
                                 print("Your current basket is empty")
                                 # give user chance to buy anew
                                 user_snack_order = input("Order more? Enter what you want to order. Press 'X' to leave: ").lower()
+                                
+                                # helps allow users to exit after 'order more' stage
+                                if user_snack_order == "x":
+                                    break
 
                                 # stops non available snacks being added after 'order more' stage
                                 while snack_menu.get(user_snack_order) == None:
