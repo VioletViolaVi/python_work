@@ -115,7 +115,7 @@ while counter < 5:
     user_choice = input("choose: rock, paper or scissors: ").lower()
     
     # to only accept rock, paper or scissors
-    while not user_choice == "rock" and user_choice == "paper" and user_choice == "scissors":
+    while not user_choice == "rock" and not user_choice == "paper" and not user_choice == "scissors":
             user_choice = input("you can only choose from: rock, paper or scissors: ").lower()
 
     # picks rock, paper or scissors from list
