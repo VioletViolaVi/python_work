@@ -109,11 +109,15 @@ computer_score = 0
 counter = 0
 
 # plays game 5 times
-while counter < 1:
+while counter < 5:
 
     # gets choices made from user and computer
     user_choice = input("choose: rock, paper or scissors: ").lower()
     
+    # to only accept rock, paper or scissors
+    while not user_choice == "rock" and user_choice == "paper" and user_choice == "scissors":
+            user_choice = input("you can only choose from: rock, paper or scissors: ").lower()
+
     # picks rock, paper or scissors from list
     computer_choice = random.choice(all_options)
 
