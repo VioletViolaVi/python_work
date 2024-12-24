@@ -89,7 +89,7 @@ if greeting != "x":
                                 while snack_menu.get(user_snack_order) == None:
                                     user_snack_order = input("Please only choose from our menu above. Press 'X' to leave: ").lower()
                                 
-                                # prevents 'basket' list being empty so "# opportunity to change snack if basket == []..." below code doesn't happen
+                                # prevents 'basket' list being empty so "# stops users from adding snacks... into basket" below code doesn't happen
                                 basket.append(user_snack_order)
                                 prices.append(snack_menu.get(user_snack_order))
                                 print(f"Your current basket: {basket}")
@@ -129,8 +129,10 @@ if greeting != "x":
                     if user_snack_order == "x":
                         break
 
-                    # opportunity to change snack
+                    # stops users from adding snacks, not available in menu, into basket
+                        # - basket is empty @ this stage, therefore 'R' for remove doesn't need to be in print() statement
                     if basket == []:     
+                        # - gives users opportunity to pick different snack that is available
                         user_snack_order = input("Sorry, that's not available. Enter a different order. Press 'X' to leave: ").lower()
                     
                     # prevents "d" being interpreted as item in 'basket' list, so 'sorry' message below does not show
