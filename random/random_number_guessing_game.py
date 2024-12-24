@@ -26,9 +26,9 @@ while not user_guess == correct_num:
 
     # informing user how far off they're WRONG guess is
     if user_guess > correct_num:
-        user_guess = int(input("Wrong! Too high! Guess the number between 1 and 5 (inclusively): "))
+        user_guess = int(input("It's lower than that! Guess the number between 1 and 5 (inclusively): "))
     elif user_guess < correct_num:
-        user_guess = int(input("Wrong! Too low! Guess the number between 1 and 5 (inclusively): "))
+        user_guess = int(input("It's higher than that! Guess the number between 1 and 5 (inclusively): "))
     else:
         print("Error! 🫠")
 
