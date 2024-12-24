@@ -92,41 +92,64 @@ player_two = random.choice(hand_shape)
 
 print(f"player_one: {player_one}  |  player_two: {player_two}")
 
-# - game: rock, paper, scissors
+
+print()
+print("========= new ========= ")
+print()
+
+
+# user vs computer rock, paper, scissors game
+all_options = ["rock", "paper", "scissors"]
+
 # keeping score
-player_one_score = 0
-player_two_score = 0
+user_score = 0
+computer_score = 0
 
-if player_one == player_two:
-    print("DRAW!")
+# start num for while loop
+counter = 0
 
-elif player_one == "rock":
-    if player_two == "scissors":
-        print("rock / player one wins!")
-        player_one_score += 1
+# plays game 5 times
+while counter < 5:
+
+    # gets choices made from user and computer
+    user_choice = input("choose: rock (r), paper (p) or scissors (s): ").lower()
+    
+    # picks rock, paper or scissors from list
+    computer_choice = random.choice(all_options)
+
+    if user_choice == computer_choice:
+        print("DRAW!")
+
+    elif user_choice == "r":
+        if computer_choice == "scissors":
+            print("you win! rock beats scissors!")
+            user_score += 1
+        else:
+            print("you lose! paper beats rock!")
+            computer_score += 1
+
+    elif user_choice == "p":
+        if computer_choice == "rock":
+            print("you win! paper beats rock!")
+            user_score += 1
+        else:
+            print("you lose! scissors beats paper!")
+            computer_score += 1
+
+    elif user_choice == "s":
+        if computer_choice == "paper":
+            print("you win! scissors beats paper!")
+            user_score += 1
+        else:
+            print("you lose! rock beats scissors!")
+            computer_score += 1
+
     else:
-        print("paper / player two wins!")
-        player_two_score += 1
+        print("error 😶")
 
-elif player_one == "paper":
-    if player_two == "rock":
-        print("paper / player one wins!")
-        player_one_score += 1
-    else:
-        print("scissors / player two wins!")
-        player_two_score += 1
-
-elif player_one == "scissors":
-    if player_two == "paper":
-        print("scissors / player one wins!")
-        player_one_score += 1
-    else:
-        print("rock / player two wins!")
-        player_two_score += 1
-
-else:
-    print("error 😶")
+    # increase counter to make while loop statement false after 5 iterations
+    counter += 1
 
 print("------")
 print("Scores")
-print(f"player one: {player_one_score} player two: {player_two_score}")
+print(f"player one: {user_score} player two: {computer_score}")
