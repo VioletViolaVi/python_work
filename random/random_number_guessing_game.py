@@ -48,6 +48,10 @@ while not done:
         play_again = input("Play again? Enter yes (Y), no (N): ").lower()
         print("--------------------------------------")
 
+        # prevents anything but "y" or "n" being accepted to play on or leave
+        while not play_again == "y" and not play_again == "n":
+            play_again = input("Choose 'Y' or 'N' only. Play again? Enter yes (Y), no (N): ").lower()
+
         # continues or ends game based on user response
         if play_again == "y":
             done = False
