@@ -67,3 +67,28 @@ rand_decimal_num = random.random()
 print(f"rand_decimal_num: {rand_decimal_num}")
 rand_decimal_num = random.random()
 print(f"rand_decimal_num: {rand_decimal_num}")
+
+
+print()
+print("========= new ========= ")
+print()
+
+
+# coin flipping using .choices() method
+# - tuple
+coin_side_option_tuple =  ("heads", "tails")
+rand_coin_side_tuple = random.choice(coin_side_option_tuple)
+print(f"rand_coin_side_tuple: {rand_coin_side_tuple}")
+
+# - list
+coin_side_options_list =  ["heads", "tails"]
+rand_coin_side_tuple_list = random.choice(coin_side_option_tuple)
+print(f"rand_coin_side_list: {rand_coin_side_tuple_list}")
+
+# rock, paper, scissors
+hand_shape = ["rock", "paper", "scissors"]
+player_one = random.choice(hand_shape)
+player_two = random.choice(hand_shape)
+
+print(f"player_one: {player_one}  |  player_two: {player_two}")
+
