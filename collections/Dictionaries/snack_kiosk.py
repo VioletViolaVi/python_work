@@ -147,6 +147,9 @@ if greeting != "x":
 
 # --------------------------------------------------------------------------------------------------------------------------------------------- #
 
+# to help create duplicate receipt  
+duplicate_receipt = False
+
 # calculates total cost of items
 pennies = 0 # get pennies
 for price in prices:
@@ -209,7 +212,10 @@ else:
         # displays full total using £ sign
         print(f"Your Total: £{round(total, 2):.2f}") # avoids long decimal numbers   
     print("====================================")
-
-
-# todo:
-# - ask for duplicate receipt
+    
+    # ask user if they need duplicate receipt
+    duplicate_receipt_user_response = input("Do you need a duplicate receipt? Enter 'Y' for Yes or 'N' for No): ").lower()
+    if duplicate_receipt_user_response == "n":
+        print("Thank you buying snacks from us. Goodbye!")
+    else:
+        print("get duplicate receipt")
