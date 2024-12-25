@@ -37,8 +37,24 @@ while not done_playing:
 
     # get number guess from user between 'start_range' and 'official_end_range'
     print("--------------------------------------")
-    user_guess = int(input(f"Guess the number between {start_range} and {official_end_range} (inclusively): "))
+    # user_guess = int(input(f"Guess the number between {start_range} and {official_end_range} (inclusively): ")) # delete later, maybe
+    
+    # starts off with taking user input as a string
+    user_str_guess = input(f"Guess the number between {start_range} and {official_end_range} (inclusively): ")
     print("--------------------------------------")
+
+    # ensures entered user guess is a number
+    # checks if string is 'wrapping' negative number
+    if user_str_guess[0] == "-":
+        print("this is a negative number in the string")
+        print("--------------------------------------")
+    elif user_str_guess.isdigit():
+        print("this is a number in the string")
+        print("--------------------------------------")
+    else:
+        print("this is a NOT a number in the string")
+        print("--------------------------------------")
+
 
     # prevent number being out of range of 'start_range' and 'official_end_range'
     while user_guess < start_range or user_guess > official_end_range:
