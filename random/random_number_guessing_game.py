@@ -3,18 +3,18 @@
 import random
 
 # ends game
-done = False
+done_playing = False
 
 # start number for guess range
 start_range = 1
 
-# varied end number for game difficulty
+# varied end numbers for game difficulty
 official_end_range = 0
 easy_end_range = 10
 mid_end_range = 50
 hard_end_range = 100
 
-while not done:
+while not done_playing:
     # user chooses game difficulty
     user_difficulty = input(f"Choose level difficulty - easy (E), medium (M), hard (H): ").lower()
 
@@ -73,11 +73,12 @@ while not done:
         # prevents anything but "y" or "n" being accepted to play on or leave
         while not play_again == "y" and not play_again == "n":
             play_again = input("Choose 'Y' or 'N' only. Play again? Enter yes (Y), no (N): ").lower()
+            print("--------------------------------------")
 
         # continues or ends game based on user response
         if play_again == "y":
-            done = False
+            done_playing = False
         else:
-            done = True
+            done_playing = True
             print("See you next time!👋")
             break
