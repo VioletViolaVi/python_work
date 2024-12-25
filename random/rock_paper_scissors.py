@@ -23,8 +23,8 @@ print("===============================")
 while is_still_playing:
 
     # ----------------------------------------------------------------------------------------------------------------------------------------
-    # plays game 5 times
-    while counter < 5:
+    # plays game 3 times
+    while counter < 3:
 
         # gets choices made from user and computer
         user_choice = input("Choose, letters only -> rock (R), paper (P) or scissors (S): ").lower()
