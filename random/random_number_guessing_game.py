@@ -45,18 +45,12 @@ while not done_playing:
 
     # ensures entered user guess is a number
     while True:
-
-        # checks if string is a number
-        if user_str_guess.isdigit():
-            print("can u see this")
+        try: 
             user_guess = int(user_str_guess)
-            print("--------------------------------------")          
             break
-        
-        # rejects strings that contain non-number characters inside
-        else:
+        except ValueError: 
+            print("this is invalid")
             user_str_guess = input(f"Cannot accept! Pick a number between {start_range} and {official_end_range} (inclusively): ")
-            print("--------------------------------------")
 
     # prevent number being out of range of 'start_range' and 'official_end_range'
     while user_guess < start_range or user_guess > official_end_range:
@@ -74,7 +68,8 @@ while not done_playing:
         # informing user how far off they're WRONG guess is
         if user_guess > correct_num:
             user_guess = int(input(f"It's lower than that! Guess the number between {start_range} and {official_end_range} (inclusively): "))
-            print("--------------------------------------")
+            print("--------------------------------------")         
+     
         elif user_guess < correct_num:
             user_guess = int(input(f"It's higher than that! Guess the number between {start_range} and {official_end_range} (inclusively): "))
             print("--------------------------------------")
