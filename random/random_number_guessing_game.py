@@ -17,12 +17,11 @@ hard_end_range = 100
 while not done:
     # user chooses game difficulty
     user_difficulty = input(f"Choose level difficulty - easy (E), medium (M), hard (H): ").lower()
-    print("--------------------------------------")
 
     # prevents anything but "e", "m" or "h" being accepted as level difficulty
     while not user_difficulty == "e" and not user_difficulty == "m" and not user_difficulty == "h":
-        user_difficulty = input("Choose 'E', 'M' or 'H' only. Choose level difficulty - easy (E), medium (M), hard (H): ").lower()
         print("--------------------------------------")
+        user_difficulty = input("Choose 'E', 'M' or 'H' only. Choose level difficulty - easy (E), medium (M), hard (H): ").lower()
     
     # change game difficulty
     if user_difficulty == "e":
@@ -44,6 +43,7 @@ while not done:
     # prevent number being out of range of 'start_range' and 'official_end_range'
     while user_guess < start_range or user_guess > official_end_range:
         user_guess = int(input(f"Number out of range! Guess the number between {start_range} and {official_end_range} (inclusively): "))
+        print("--------------------------------------")
 
     # user keeps trying to guess correct num
     while not user_guess == correct_num:
