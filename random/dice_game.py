@@ -8,18 +8,33 @@ dice_quantity = 0
 # stores total dice numbers add up to
 total = 0
 
-# helps control number of plays per round
-game_round = 0
+# helps control number of plays by counting rounds
+game_round_counter = 0
 
-# helps users control continuous gameplay
+# helps allow user to choose number of plays they want
+num_of_plays = 0
+
+# helps users control continuous game playing
 still_playing = True
 
 # to give user option to keep playing or stop
 while still_playing:
 
-    # lets user role dice 4 times
+    # asks users how many rounds they want to play
+    num_of_plays_str = input("How many times do you want to roll the dice? (1-10 inclusively): ")
+
+    # checks amount of plays entered is a 'number' in a string
+    while True:
+        if num_of_plays_str.isdigit():
+            num_of_plays = int(num_of_plays_str)
+            print("this is a number")
+            break
+        else:
+            num_of_plays_str = input("Please enter the NUMBER of times you want to play (1-10 inclusively): ")
+
     # ----------------------------------------------------------------------------------------------------------------------------------------
-    while game_round < 4:
+    # lets user role dice 4 times
+    while game_round_counter < 4:
 
         # user is to submit empty string
         user_input = input("Press enter to roll dice 🎲: ")
@@ -104,7 +119,7 @@ while still_playing:
             print("Error!")
 
         # increases counter so while loop can end
-        game_round += 1
+        game_round_counter += 1
 
         # keeps track of number of dice rolled
         dice_quantity += 1
@@ -138,8 +153,8 @@ while still_playing:
         # plays game again
         still_playing = True
 
-        # resets game rounds and total so user can play again from beginning
-        game_round = 0
+        # resets counting game rounds and total so user can play again from beginning
+        game_round_counter = 0
         total = 0
     
     else:
