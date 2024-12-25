@@ -50,6 +50,8 @@ dice_quantity = 0
 # stores total dice numbers add up to
 total = 0
 
-# all dice sides
-dice_numbers = (1, 2, 3, 4, 5, 6)
+# gets random side of dice
+rand_dice_side = random.randint(1,6)
+print(f"rand_dice_side: {rand_dice_side}")
+
 
