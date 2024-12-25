@@ -115,12 +115,9 @@ while still_playing:
         # displays total as game is played
         print(f"Current dice number total: {total}")
         print()
-        print(f"game_round: {game_round}")
         # ----------------------------------------------------------------------------------------------------------------------------------------
-    print(f"game_round: {game_round}")
+
     # displays final total at end of game
-    print()
-    print("------")
     print(f"Final dice total: {total}")
     print("------")
 
@@ -137,12 +134,13 @@ while still_playing:
     # continues or ends game based on user response
     if play_again == "y":
         print()
-        
+
         # plays game again
         still_playing = True
 
-        # resets game rounds so user can play again
+        # resets game rounds and total so user can play again from beginning
         game_round = 0
+        total = 0
     
     else:
         # stops infinite game playing
