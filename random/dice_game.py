@@ -4,16 +4,12 @@ import random
 
 # counts number of dice used
 dice_quantity = 0
-
 # stores total dice numbers add up to
 total = 0
-
 # helps control number of plays by counting rounds
 game_round_counter = 0
-
 # helps allow user to choose number of plays they want
 num_of_plays = 0
-
 # helps users control continuous game playing
 still_playing = True
 
@@ -25,12 +21,28 @@ while still_playing:
 
     # checks amount of plays entered is a 'number' in a string
     while True:
-        if num_of_plays_str.isdigit():
+
+        # handles 'ValueError'
+        try:
+            # changes string to integer
             num_of_plays = int(num_of_plays_str)
-            print("this is a number")
+
+            # ensures string contains only numbers
+            if num_of_plays_str.isdigit():
+                num_of_plays = int(num_of_plays_str)
+                print(f"num_of_plays: {num_of_plays}")
+                
+            # ensures number stays w/ in 1-10 range                
+            while num_of_plays < 1 or num_of_plays > 10:
+                num_of_plays = int(input("Number out of range! Please pick number or plays between 1 and 10, inclusively): "))
+
+            # leaves loop once input is verified as number
             break
-        else:
-            num_of_plays_str = input("Please enter the NUMBER of times you want to play (1-10 inclusively): ")
+
+        # handles 'ValueError'
+        except ValueError:
+            # keeps showing user message until +ve number is entered
+            num_of_plays_str = input("Invalid! Please enter the number of times you want to play (1-10 inclusively): ")        
 
     # ----------------------------------------------------------------------------------------------------------------------------------------
     # lets user role dice 4 times
