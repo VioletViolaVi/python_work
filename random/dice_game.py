@@ -30,7 +30,6 @@ while still_playing:
             # ensures string contains only numbers
             if num_of_plays_str.isdigit():
                 num_of_plays = int(num_of_plays_str)
-                print(f"num_of_plays: {num_of_plays}")
                 
             # ensures number stays w/ in 1-10 range                
             while num_of_plays < 1 or num_of_plays > 10:
@@ -45,8 +44,8 @@ while still_playing:
             num_of_plays_str = input("Invalid! Please enter the number of times you want to play (1-10 inclusively): ")        
 
     # ----------------------------------------------------------------------------------------------------------------------------------------
-    # lets user role dice 4 times
-    while game_round_counter < 4:
+    # lets user role dice 'num_of_plays' times
+    while game_round_counter < num_of_plays:
 
         # user is to submit empty string
         user_input = input("Press enter to roll dice 🎲: ")
