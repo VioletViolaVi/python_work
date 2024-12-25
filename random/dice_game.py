@@ -23,22 +23,21 @@ while still_playing:
 
         # user is to submit empty string
         user_input = input("Press enter to roll dice 🎲: ")
-        print("===============================")
+        print("--------------------------")
         
         # when users don't enter empty strings
         while not user_input == "":
             user_input = input("Just press enter to roll dice 🎲: ")
-            print("===============================")
+            print()
         
         # gets random side of dice
         rand_dice_side = random.randint(1, 6) # inside loop allows for different num each time
-        print(f"rand_dice_side: {rand_dice_side}")
 
         # specific conditions for specific dice sides
         if rand_dice_side == 1:
             # add to total
             total += rand_dice_side
-            
+            print(f"You rolled {rand_dice_side}")
             # 'one' side
             print("+-------+")
             print("|       |")
@@ -46,11 +45,10 @@ while still_playing:
             print("|       |")
             print("+-------+")
 
-            print(f"You rolled {rand_dice_side}")
         elif rand_dice_side == 2:
             # add to total
             total += rand_dice_side
-
+            print(f"You rolled {rand_dice_side}")
             # 'two' side
             print("+-------+")
             print("| O     |")
@@ -58,11 +56,10 @@ while still_playing:
             print("|     O |")
             print("+-------+")
 
-            print(f"You rolled {rand_dice_side}")
         elif rand_dice_side == 3:
             # add to total
             total += rand_dice_side
-            
+            print(f"You rolled {rand_dice_side}")            
             # 'three' side
             print("+-------+")
             print("| O     |")
@@ -70,11 +67,10 @@ while still_playing:
             print("|     O |")
             print("+-------+")
 
-            print(f"You rolled {rand_dice_side}")
         elif rand_dice_side == 4:
             # add to total
             total += rand_dice_side
-            
+            print(f"You rolled {rand_dice_side}")            
             # 'four' side
             print("+-------+")
             print("| O   O |")
@@ -82,11 +78,10 @@ while still_playing:
             print("| O   O |")
             print("+-------+")
 
-            print(f"You rolled {rand_dice_side}")
         elif rand_dice_side == 5:
             # add to total
             total += rand_dice_side
-            
+            print(f"You rolled {rand_dice_side}")            
             # 'five' side
             print("+-------+")
             print("| O   O |")
@@ -94,11 +89,10 @@ while still_playing:
             print("| O   O |")
             print("+-------+")
 
-            print(f"You rolled {rand_dice_side}")
         elif rand_dice_side == 6:
             # add to total
             total += rand_dice_side
-            
+            print(f"You rolled {rand_dice_side}")            
             # 'six' side
             print("+-------+")
             print("| O   O |")
@@ -106,7 +100,6 @@ while still_playing:
             print("| O   O |")
             print("+-------+")
 
-            print(f"You rolled {rand_dice_side}")
         else:
             print("Error!")
 
@@ -117,28 +110,28 @@ while still_playing:
         dice_quantity += 1
 
         # displays number of dice rolled as game is played
-        print(f"Number of dice rolled: {dice_quantity}")
-        print("===============================")
+        print(f"Dice rolled: {dice_quantity}")
 
         # displays total as game is played
-        print(f"Your current dice total is: {total}")
-        print("===============================")
+        print(f"Current dice number total: {total}")
+        print()
         # ----------------------------------------------------------------------------------------------------------------------------------------
 
     # displays final total at end of game
-    print(f"Your final dice total is: {total}")
-    print("===============================")
+    print()
+    print("------")
+    print(f"Final dice total: {total}")
+    print("------")
 
     # asks if user wants to play again
-    print("------")
     # start of 'play_again' variable
     play_again = input("Play again? Yes (Y) or No (N): ").lower()
-    print("===============================")
+    print()
 
     # prevents anything but "y" or "n" being accepted to play on or leave
     while not play_again == "y" and not play_again == "n":
         play_again = input("Y / N Only. Play again? Yes (Y) or No (N): ").lower()
-        print("===============================")
+        print()
 
     # continues or ends game based on user response
     if play_again == "y":
