@@ -12,83 +12,111 @@ computer_score = 0
 # start num for while loop
 counter = 0
 
+# controls if game playing is infinite or not
+is_still_playing = True
+
 # greets user
 print("Hi! Lets Play! 🪨   🗞️   ✂️")
 print("===============================")
 
-# plays game 5 times
-while counter < 5:
+# makes game playing infinite until user leaves
+while is_still_playing:
 
-    # gets choices made from user and computer
-    user_choice = input("Choose, letters only -> rock (R), paper (P) or scissors (S): ").lower()
-    print("===============================")
-    
-    # to only accept rock, paper or scissors
-    while not user_choice == "r" and not user_choice == "p" and not user_choice == "s":
-            user_choice = input("You can only choose from: rock (R), paper (P) or scissors (S): ").lower()
-            print("===============================")
+    # ----------------------------------------------------------------------------------------------------------------------------------------
+    # plays game 5 times
+    while counter < 5:
 
-    # picks rock, paper or scissors from list
-    computer_choice = random.choice(all_options)
-
-    if user_choice == computer_choice:
-        print("DRAW!")
+        # gets choices made from user and computer
+        user_choice = input("Choose, letters only -> rock (R), paper (P) or scissors (S): ").lower()
         print("===============================")
+        
+        # to only accept rock, paper or scissors
+        while not user_choice == "r" and not user_choice == "p" and not user_choice == "s":
+                user_choice = input("You can only choose from: rock (R), paper (P) or scissors (S): ").lower()
+                print("===============================")
 
-    elif user_choice == "r":
-        if computer_choice == "s":
-            print("You win! rock beats scissors!")
-            print("===============================")
-            user_score += 1
-        else:
-            print("You lose! paper beats rock!")
-            print("===============================")
-            computer_score += 1
+        # picks rock, paper or scissors from list
+        computer_choice = random.choice(all_options)
 
-    elif user_choice == "p":
-        if computer_choice == "r":
-            print("You win! paper beats rock!")
+        if user_choice == computer_choice:
+            print("DRAW!")
             print("===============================")
-            user_score += 1
-        else:
-            print("You lose! scissors beats paper!")
-            print("===============================")
-            computer_score += 1
 
-    elif user_choice == "s":
-        if computer_choice == "p":
-            print("You win! scissors beats paper!")
-            print("===============================")
-            user_score += 1
+        elif user_choice == "r":
+            if computer_choice == "s":
+                print("You win! Rock beats scissors!")
+                print("===============================")
+                user_score += 1
+            else:
+                print("You lose! Paper beats rock!")
+                print("===============================")
+                computer_score += 1
+
+        elif user_choice == "p":
+            if computer_choice == "r":
+                print("You win! Paper beats rock!")
+                print("===============================")
+                user_score += 1
+            else:
+                print("You lose! Scissors beats paper!")
+                print("===============================")
+                computer_score += 1
+
+        elif user_choice == "s":
+            if computer_choice == "p":
+                print("You win! Scissors beats paper!")
+                print("===============================")
+                user_score += 1
+            else:
+                print("You lose! Rock beats scissors!")
+                print("===============================")
+                computer_score += 1
+
         else:
-            print("You lose! rock beats scissors!")
-            print("===============================")
-            computer_score += 1
+            print("Error  😶")
+
+        # increase counter to make while loop statement false after 5 iterations
+        counter += 1
+    # ----------------------------------------------------------------------------------------------------------------------------------------
+
+    print("Scores  🏆  🥇  🥈  🥉  🏆")
+    print("------")
+    print(f"Your score: {user_score}")
+    print(f"Computer's score: {computer_score}")
+    print("------")
+
+    # stores bigger score
+    higher_score = max(user_score, computer_score)
+
+    # states who wins
+    if higher_score == user_score and higher_score == computer_score:
+        print(f"It's a tie! 😑  👔  😐")
+
+    elif higher_score == user_score:
+        print(f"You are the winner! 🥇  😁  🙌")
+
+    elif higher_score == computer_score:
+        print(f"Computer is the winner! 🤖  🖥️   😈")
 
     else:
-        print("Error 😶")
+        print("Error!!! 😶")
 
-    # increase counter to make while loop statement false after 5 iterations
-    counter += 1
+    # asks if user wants to play again
+    print("------")
+    play_again = input("Play again? Yes (Y) or No (N): ").lower()
+    print("===============================")
 
+    # prevents anything but "y" or "n" being accepted to play on or leave
+    while not play_again == "y" and not play_again == "n":
+        play_again = input("(Y) or No (N) Only. Play again? Yes (Y) or No (N): ").lower()
+        print("===============================")
 
-print("Scores")
-print("------")
-print(f"Your score: {user_score}")
-print(f"Computer's score: {computer_score}")
-
-# stores bigger score
-higher_score = max(user_score, computer_score)
-
-# states who wins
-if higher_score == user_score and higher_score == computer_score:
-    print(f"It's a tie! 😑  👔  😐")
-
-elif higher_score == user_score:
-    print(f"You are the winner! 🥇  😁  🙌")
-
-elif higher_score == computer_score:
-    print(f"Computer is the winner! 🤖  🖥️   😈")
-
-else:
-    print("Error!!! 😶")
+    # continues or ends game based on user response
+    if play_again == "y":
+        # plays game again
+        is_still_playing = True
+    else:
+        # stops infinite game playing
+        is_still_playing = False
+        print("See you next time!👋")
+        break
