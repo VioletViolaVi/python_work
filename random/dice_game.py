@@ -44,12 +44,12 @@ print("| O   O |")
 print("| O   O |")
 print("+-------+")
 
+# counts number of dice used
+dice_quantity = 0
 
-dice_sides = {
-    1: "",
-    2: "",
-    3: "",
-    4: "",
-    5: "",
-    6: "",
-}
+# stores total dice numbers add up to
+total = 0
+
+# all dice sides
+dice_numbers = (1, 2, 3, 4, 5, 6)
+
