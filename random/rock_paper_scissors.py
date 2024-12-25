@@ -108,7 +108,7 @@ while is_still_playing:
 
     # prevents anything but "y" or "n" being accepted to play on or leave
     while not play_again == "y" and not play_again == "n":
-        play_again = input("(Y) or No (N) Only. Play again? Yes (Y) or No (N): ").lower()
+        play_again = input("(Y) or (N) Only. Play again? Yes (Y) or No (N): ").lower()
         print("===============================")
 
     # continues or ends game based on user response
