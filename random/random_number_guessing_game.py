@@ -36,42 +36,48 @@ while not done_playing:
     correct_num = random.randint(start_range, official_end_range)
 
     # get number guess from user between 'start_range' and 'official_end_range'
-    print("--------------------------------------")
-    # user_guess = int(input(f"Guess the number between {start_range} and {official_end_range} (inclusively): ")) # delete later, maybe
-    
+    print("--------------------------------------")    
     # starts off with taking user input as a string
     user_str_guess = input(f"Guess the number between {start_range} and {official_end_range} (inclusively): ")
     print("--------------------------------------")
 
-    # ensures entered user guess is a number
+    # ensures user guess is a number, otherwise user will not be able to move on to next stage, respective to where they are in game
     while True:
+        # if user input is NOT a number (-ve / +ve) the except block will run to catch 'ValueError' so project can keep moving w/out stopping
         try: 
+            # changes string to integer
             user_guess = int(user_str_guess)
+
+            # prevent number being out of range of 'start_range' and 'official_end_range'
+            while user_guess < start_range or user_guess > official_end_range:
+                user_guess = int(input(f"Number out of range! Guess the number between {start_range} and {official_end_range} (inclusively): "))
+                print("--------------------------------------")
+
+            # user keeps trying to guess correct num
+            while not user_guess == correct_num:
+
+                # prevent number being out of range of {start_range} and {official_end_range} after at least 1 guess made
+                while user_guess < start_range or user_guess > official_end_range:
+                    user_guess = int(input(f"Not accepted! Out of range! Guess the number between {start_range} and {official_end_range} (inclusively): "))
+                    print("--------------------------------------")
+
+                # informing user how far off their WRONG guess is
+                if user_guess > correct_num:
+                    user_guess = int(input(f"It's lower than that! Guess the number between {start_range} and {official_end_range} (inclusively): "))
+                    print("--------------------------------------")         
+            
+                # informing user how far off their WRONG guess is
+                elif user_guess < correct_num:
+                    user_guess = int(input(f"It's higher than that! Guess the number between {start_range} and {official_end_range} (inclusively): "))
+                    print("--------------------------------------")
+
+            # user entered valid input i.e. (-ve / +ve) number, so loop stops & user can move on to rest of code
             break
+
+        # 'catches' error when user input is not a number (-ve / +ve)
         except ValueError: 
-            print("this is invalid")
+            # user given another chance to change entered data
             user_str_guess = input(f"Cannot accept! Pick a number between {start_range} and {official_end_range} (inclusively): ")
-
-    # prevent number being out of range of 'start_range' and 'official_end_range'
-    while user_guess < start_range or user_guess > official_end_range:
-        user_guess = int(input(f"Number out of range! Guess the number between {start_range} and {official_end_range} (inclusively): "))
-        print("--------------------------------------")
-
-    # user keeps trying to guess correct num
-    while not user_guess == correct_num:
-
-        # prevent number being out of range of {start_range} and {official_end_range} after at least 1 guess made
-        while user_guess < start_range or user_guess > official_end_range:
-            user_guess = int(input(f"Not accepted! Out of range! Guess the number between {start_range} and {official_end_range} (inclusively): "))
-            print("--------------------------------------")
-
-        # informing user how far off they're WRONG guess is
-        if user_guess > correct_num:
-            user_guess = int(input(f"It's lower than that! Guess the number between {start_range} and {official_end_range} (inclusively): "))
-            print("--------------------------------------")         
-     
-        elif user_guess < correct_num:
-            user_guess = int(input(f"It's higher than that! Guess the number between {start_range} and {official_end_range} (inclusively): "))
             print("--------------------------------------")
 
     # user guesses correct number
