@@ -18,6 +18,16 @@ game_round = 0
 # lets user role dice 4 times
 while game_round < 4:
 
+    # user is to submit empty string
+    user_input = input("Press enter to roll dice 🎲: ")
+    print("===============================")
+    
+    # when users don't enter empty strings
+    while not user_input == "":
+        user_input = input("Just press enter to roll dice 🎲: ")
+        print("===============================")
+
+
 # specific conditions for specific dice sides
     if rand_dice_side == 1:
         # 'one' side
