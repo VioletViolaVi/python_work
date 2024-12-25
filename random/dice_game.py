@@ -29,6 +29,9 @@ while game_round < 4:
 
     # specific conditions for specific dice sides
     if rand_dice_side == 1:
+        # add to total
+        total += rand_dice_side
+        
         # 'one' side
         print("+-------+")
         print("|       |")
@@ -38,6 +41,9 @@ while game_round < 4:
 
         print(f"You rolled {rand_dice_side}")
     elif rand_dice_side == 2:
+        # add to total
+        total += rand_dice_side
+
         # 'two' side
         print("+-------+")
         print("| O     |")
@@ -47,6 +53,9 @@ while game_round < 4:
 
         print(f"You rolled {rand_dice_side}")
     elif rand_dice_side == 3:
+        # add to total
+        total += rand_dice_side
+        
         # 'three' side
         print("+-------+")
         print("| O     |")
@@ -56,6 +65,9 @@ while game_round < 4:
 
         print(f"You rolled {rand_dice_side}")
     elif rand_dice_side == 4:
+        # add to total
+        total += rand_dice_side
+        
         # 'four' side
         print("+-------+")
         print("| O   O |")
@@ -65,6 +77,9 @@ while game_round < 4:
 
         print(f"You rolled {rand_dice_side}")
     elif rand_dice_side == 5:
+        # add to total
+        total += rand_dice_side
+        
         # 'five' side
         print("+-------+")
         print("| O   O |")
@@ -74,6 +89,9 @@ while game_round < 4:
 
         print(f"You rolled {rand_dice_side}")
     elif rand_dice_side == 6:
+        # add to total
+        total += rand_dice_side
+        
         # 'six' side
         print("+-------+")
         print("| O   O |")
@@ -98,3 +116,7 @@ while game_round < 4:
     # displays total as game is played
     print(f"Your current dice total is: {total}")
     print("===============================")
+
+# displays final total at end of game
+print(f"Your final dice total is: {total}")
+print("===============================")
