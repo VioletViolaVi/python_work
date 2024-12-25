@@ -8,7 +8,6 @@ dice_quantity = 0
 # stores total dice numbers add up to
 total = 0
 
-
 # helps control number of plays per round
 game_round = 0
 
@@ -88,3 +87,14 @@ while game_round < 4:
 
     # increases counter so while loop can end
     game_round += 1
+
+    # keeps track of number of dice rolled
+    dice_quantity += 1
+
+    # displays number of dice rolled as game is played
+    print(f"Number of dice rolled: {dice_quantity}")
+    print("===============================")
+
+    # displays total as game is played
+    print(f"Your current dice total is: {total}")
+    print("===============================")
