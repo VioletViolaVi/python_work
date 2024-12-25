@@ -8,9 +8,6 @@ dice_quantity = 0
 # stores total dice numbers add up to
 total = 0
 
-# gets random side of dice
-rand_dice_side = random.randint(1, 6)
-print(f"rand_dice_side: {rand_dice_side}")
 
 # helps control number of plays per round
 game_round = 0
@@ -26,9 +23,12 @@ while game_round < 4:
     while not user_input == "":
         user_input = input("Just press enter to roll dice 🎲: ")
         print("===============================")
+    
+    # gets random side of dice
+    rand_dice_side = random.randint(1, 6) # inside loop allows for different num each time
+    print(f"rand_dice_side: {rand_dice_side}")
 
-
-# specific conditions for specific dice sides
+    # specific conditions for specific dice sides
     if rand_dice_side == 1:
         # 'one' side
         print("+-------+")
