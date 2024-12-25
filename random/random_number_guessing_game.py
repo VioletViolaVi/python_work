@@ -44,17 +44,19 @@ while not done_playing:
     print("--------------------------------------")
 
     # ensures entered user guess is a number
-    # checks if string is 'wrapping' negative number
-    if user_str_guess[0] == "-":
-        print("this is a negative number in the string")
-        print("--------------------------------------")
-    elif user_str_guess.isdigit():
-        print("this is a number in the string")
-        print("--------------------------------------")
-    else:
-        print("this is a NOT a number in the string")
-        print("--------------------------------------")
+    while True:
 
+        # checks if string is a number
+        if user_str_guess.isdigit():
+            print("can u see this")
+            user_guess = int(user_str_guess)
+            print("--------------------------------------")          
+            break
+        
+        # rejects strings that contain non-number characters inside
+        else:
+            user_str_guess = input(f"Cannot accept! Pick a number between {start_range} and {official_end_range} (inclusively): ")
+            print("--------------------------------------")
 
     # prevent number being out of range of 'start_range' and 'official_end_range'
     while user_guess < start_range or user_guess > official_end_range:
