@@ -62,3 +62,19 @@ def display_invoice(account_holder, amount, due_date):
 display_invoice("Mr Smith", "3031.53", "21st November 2022")
 display_invoice("Mrs Adams", "25.11", "2nd April 2023")
 display_invoice("Miss Lyon", "46.90", "15th March 2023")
+
+
+print("------ new ------")
+print()
+
+
+# using return statements
+def add_nums(num1, num2):
+    return num1 + num2
+
+print(add_nums(1, 1))
+
+def add_more_nums(num1, num2, num3):
+    return num1 + num2 + num3
+
+print(add_more_nums(1, 1, 1))
