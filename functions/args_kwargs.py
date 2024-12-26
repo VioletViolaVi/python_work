@@ -138,3 +138,41 @@ capital_cities(ghana="Accra",
                china="Beijing",
                )
 
+
+print()
+print("------ new ------")
+
+
+# shopkeeper inventory
+def shop_inventory(**inventory):
+    print(f"inventory: {inventory}")
+    print()
+    
+    # gets values from dictionary & stores in list
+    values = []
+    for key_name in inventory:
+        values.append(inventory[key_name])
+    
+    print(f"values: {values}")
+    print()
+
+    # uses values of dictionary to complete formatted string sentence
+    return f"{values[0].title()} is priced at £{float(values[1]):.2f}. It has sold {values[2]} units and still has {values[3]} units left."
+    
+
+print(shop_inventory(product_name="birds eye chicken breast",
+               price=4.89,
+               products_sold=110,
+               products_left=90,))
+    
+
+print(shop_inventory(product_name="duck curry & lamb hotpot soup",
+               price=89.41,
+               products_sold=23,
+               products_left=177,))
+    
+
+print(shop_inventory(product_name="cream vanilla and frosted sticky coffee sorbet",
+               price=19.70,
+               products_sold=154,
+               products_left=46,))
