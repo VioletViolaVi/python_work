@@ -44,6 +44,7 @@ while still_playing:
         # handles 'ValueError' so output doesn't 'crash'
         except ValueError:
             # keeps showing user message until +ve number is entered
+            print("------")
             num_of_plays_str = input("Invalid! Please enter the number of times you want to play (1-10 inclusively): ")
             print("------")      
 
