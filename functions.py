@@ -99,6 +99,31 @@ print("------ new ------")
 print()
 
 
-#
+# creating full names using return statements
+def creating_full_names(fname, lname):
+    # return f"{fname} {lname}"
+    return fname + " " + lname
 
+print(creating_full_names("Billy", "Johns"))
+print(creating_full_names("Tracy", "Beaker"))
+print(creating_full_names("Clover", "Lee"))
 
+# using variables to store called functions
+def create_cities(name1, name2):
+    capitalised_name1 = name1.capitalize()
+    capitalised_name2 = name2.capitalize()
+
+    return capitalised_name1 + " " + capitalised_name2
+
+capitalised_city1 = create_cities("hiGH", "strEeT")
+print(capitalised_city1)
+
+capitalised_city2 = create_cities("wOkan", "dA")
+print(capitalised_city2)
+
+capitalised_city3 = create_cities("tOwNs", "viLlE")
+print(capitalised_city3)
+
+print("------ new ------")
+print()
+# 
