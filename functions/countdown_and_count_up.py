@@ -1,4 +1,4 @@
-# Countdown timer
+# Countdown & Count Up Timer
 
 import time
 
