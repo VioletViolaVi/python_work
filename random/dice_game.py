@@ -16,15 +16,16 @@ still_playing = True
 # to give user option to keep playing or stop
 while still_playing:
 
-    # asks users how many rounds they want to play
+    # asks users how many rounds they want to play, takes input as string
     num_of_plays_str = input("How many times do you want to roll the dice? (1-10 inclusively): ")
+    print("------")
 
     # checks amount of plays entered is a 'number' in a string
     while True:
 
         # handles 'ValueError'
         try:
-            # changes string to integer
+            # changes string to integer, especially for -ve numbers e.g. '-1'
             num_of_plays = int(num_of_plays_str)
 
             # ensures string contains only numbers
@@ -33,15 +34,18 @@ while still_playing:
                 
             # ensures number stays w/ in 1-10 range                
             while num_of_plays < 1 or num_of_plays > 10:
-                num_of_plays = int(input("Number out of range! Please pick number or plays between 1 and 10, inclusively): "))
+                # entering 'bag' for example, will be sent to 'except' as 'ValueError'
+                num_of_plays = int(input("Number out of range! Please pick number or plays between 1 and 10, (inclusively): "))
+                print("------")
 
             # leaves loop once input is verified as number
             break
 
-        # handles 'ValueError'
+        # handles 'ValueError' so output doesn't 'crash'
         except ValueError:
             # keeps showing user message until +ve number is entered
-            num_of_plays_str = input("Invalid! Please enter the number of times you want to play (1-10 inclusively): ")        
+            num_of_plays_str = input("Invalid! Please enter the number of times you want to play (1-10 inclusively): ")
+            print("------")      
 
     # ----------------------------------------------------------------------------------------------------------------------------------------
     # lets user role dice 'num_of_plays' times
@@ -164,7 +168,8 @@ while still_playing:
         # plays game again
         still_playing = True
 
-        # resets counting game rounds and total so user can play again from beginning
+        # resets game round, dice count and total so user can play again from beginning
+        dice_quantity = 0
         game_round_counter = 0
         total = 0
     
