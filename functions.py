@@ -124,6 +124,47 @@ print(capitalised_city2)
 capitalised_city3 = create_cities("tOwNs", "viLlE")
 print(capitalised_city3)
 
+
 print("------ new ------")
 print()
-# 
+
+# functions using default arguments
+
+# greeting users when they login
+default_username = "nEw uSEr".title()
+def login_greeting(user_name=default_username):
+    return f"Hello {user_name}! Welcome back!"
+print(login_greeting())
+print(login_greeting("Bella"))
+print(login_greeting("Paul"))
+print()
+
+# pizza topping ordering
+def pizza_topping_request(topping="cheese"):
+    info = f"Your pizza will contain {topping} on top."
+    return info
+
+default_order = pizza_topping_request()
+print(default_order)
+
+my_order = pizza_topping_request("pepperoni")
+print(my_order)
+
+# ice cream topping ordering
+    # - default arguments have to be written after parameters
+    # - there's a specific order in how parameters, default arguments & others appear in the brackets below
+def ice_cream_order(option1, option2, option3="sprinkles"):
+    order = f"This ice-cream has {option1}, {option2} and {option3} on top."
+    return order
+
+default_ice_cream_order = ice_cream_order("chocolate chips", "frosting")
+print(default_ice_cream_order)
+
+default_ice_cream_order = ice_cream_order("strawberry sauce", "jelly babies", "coconut shavings")
+print(default_ice_cream_order)
+
+
+print("------ new ------")
+print()
+
+#
