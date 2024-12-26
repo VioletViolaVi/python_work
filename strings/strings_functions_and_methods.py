@@ -42,7 +42,8 @@ print(f"lowered_username: {lowered_username}")
 print(f"capitalize_method: {capitalize_method}")
 print(f"title_method: {title_method}")
 
-
+print("vIviAN vIviAN".title()) # Vivian Vivian
+print("vIviAN vIviAN".capitalize()) # Vivian vivian
 
 print(" --- next --- ")
 
