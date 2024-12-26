@@ -61,3 +61,12 @@ print()
 print("------ new ------")
 
 
+# list out foods
+# '*foods' used as any parameter/placeholder name can be used w/ '*'
+def foods(*foods):
+    # iterates throughout *foods tuple
+    for num in range(len(foods)):
+        # avoids printing out 0. first
+        print(f"{num+1}. {foods[num]}")
+
+foods("pizza", "burger", "pie", "chips", "soup", "curry", "rice")
