@@ -40,3 +40,22 @@ print(shopping_order_2)
     # - once called function's brackets contain keywords assigned to values, where in order they are written becomes irrelevant
 shopping_order_3 = shopping(cost=60.7, item="computers")
 print(shopping_order_3)
+
+
+print()
+print("------ new ------")
+
+
+# using end="" & sep=""
+for num in range(1, 11):
+    print(num, end=",")
+print()
+
+print("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", sep=",")
+
+
+print()
+print("------ new ------")
+
+
+# 
