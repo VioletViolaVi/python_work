@@ -69,12 +69,36 @@ print()
 
 
 # using return statements
-def add_nums(num1, num2):
-    return num1 + num2
-
-print(add_nums(1, 1))
-
 def add_more_nums(num1, num2, num3):
     return num1 + num2 + num3
+print("should be fifteen: ", end=" ")
+print(add_more_nums(5, 5, 5))
 
-print(add_more_nums(1, 1, 1))
+def add_nums(num1, num2):
+    return num1 + num2
+print("should be six: ", end=" ")
+print(add_nums(5, 1))
+
+def subtract_nums(num1, num2):
+    return num1 - num2
+print("should be three: ", end=" ")
+print(subtract_nums(5, 2,))
+
+def multiply_nums(num1, num2):
+    return num1 * num2
+print("should be ten: ", end=" ")
+print(multiply_nums(5, 2,))
+
+def divide_nums(num1, num2):
+    return num1 / num2
+print("should be two point five: ", end=" ")
+print(divide_nums(5, 2,))
+
+
+print("------ new ------")
+print()
+
+
+#
+
+
