@@ -20,3 +20,29 @@ hello_world()
 hello_world()
 hello_world()
 hello_world()
+
+
+print("------ new ------")
+
+
+# passing arguments through functions
+def greeting(name):
+    print(f"Hello. My name is {name}")
+
+greeting("Helen")
+
+def age(age):
+    print(f"I'm {age} years old")
+
+age("19")
+
+def fav_food(food):
+    print(f"My favourite food is {food}")
+
+fav_food("chips")
+
+# passing multiple arguments through functions
+def self_bio(name, age, fav_food):
+    print(f"Hello. My name is {name}. I'm {age} years old. My favourite food to eat is {fav_food}")
+
+self_bio("Helen", "19", "chips")
