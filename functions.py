@@ -131,7 +131,8 @@ print()
 # functions using default arguments
 
 # greeting users when they login
-default_username = "nEw uSEr".title()
+default_username = "nEw guEst".title()
+# default_username = "nEw uSEr".title()
 def login_greeting(user_name=default_username):
     return f"Hello {user_name}! Welcome back!"
 print(login_greeting())
@@ -153,6 +154,7 @@ print(my_order)
 # ice cream topping ordering
     # - default arguments have to be written after parameters
     # - there's a specific order in how parameters, default arguments & others appear in the brackets below
+        # - positional, default, keyword, arbitrary -> is the order
 def ice_cream_order(option1, option2, option3="sprinkles"):
     order = f"This ice-cream has {option1}, {option2} and {option3} on top."
     return order
