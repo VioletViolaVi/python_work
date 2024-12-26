@@ -107,3 +107,34 @@ produce_address(flat_num="66a",
                 street="Filler Road", 
                 city="Goldstone",
                 post_code="HJ5 N34",)
+
+
+print()
+print("------ new ------")
+
+
+# printing out capital cities
+def capital_cities(**capitals):
+    print(f"**capitals: {capitals}")
+
+    # produce sentences using keys, values
+    for key, value in capitals.items():
+        print()
+        print(f"The capital of the {key.capitalize() if not key == 'uk' else key.upper()} is {value}.")
+        print()
+
+capital_cities(uk="London",
+               china="Beijing",
+               japan="Tokyo",
+               ghana="Accra",
+               )
+
+capital_cities(uk="London",
+               japan="Tokyo",
+               ghana="Accra",
+               )
+
+capital_cities(ghana="Accra",
+               china="Beijing",
+               )
+
