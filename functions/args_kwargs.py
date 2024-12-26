@@ -5,5 +5,6 @@
     # - 'args' and 'kwargs' don't have to be used but they are convention among developers
         # - '*' and '**' are what's important to add in 'def python_func()' brackets
             # - e.g. *test, **test_dict, *example, **example_dict, etc.
-    # - 
+    # - '*' stores arguments in tuple
+    # - '**' stores arguments in dictionaries
 
