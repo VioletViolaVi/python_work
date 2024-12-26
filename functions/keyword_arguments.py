@@ -58,4 +58,15 @@ print()
 print("------ new ------")
 
 
-# 
+# generates phone numbers for uk landlines e.g. '+44 (10) 0000 0000'
+def generate_landline_number(country, country_code, area_code, first_4_nums, last_4_nums):
+
+    return f"{country.upper()}: +{country_code} ({area_code}) {first_4_nums} {last_4_nums}"
+
+# for uk international landlines
+uk_int_num = generate_landline_number(country="UK", country_code="44", area_code="20", first_4_nums="5412", last_4_nums="7895")
+print(uk_int_num)
+
+# for usa international landlines
+usa_int_num = generate_landline_number(area_code="55", last_4_nums="3335", first_4_nums="1248", country="USA", country_code="1",)
+print(usa_int_num)
