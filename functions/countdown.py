@@ -20,3 +20,18 @@ countdown(3)
 
 print("------ new ------")
 print()
+
+
+# count up 5 fish song
+def fish_song(end_num, start_num=1):
+    for counter in range(start_num, end_num + 1):
+        print(counter)
+        time.sleep(1)
+
+# order! -> 'end_num, start_num=1'    
+fish_song(5, 1) 
+print("once i caught a fish alive!")
+
+# order! -> 'end_num, start_num=1'
+fish_song(10, 6)
+print("then i let it go again")
