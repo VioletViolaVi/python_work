@@ -7,7 +7,8 @@
             # - e.g. *test, **test_dict, *example, **example_dict, etc.
     # - '*' stores arguments in tuple
     # - '**' stores arguments in dictionaries
-    # Example:
+    #
+    # Error example for *args:
     #
     # def add_nums_error(num1, num2):
     #     return num1 + num2
@@ -15,7 +16,8 @@
     # print( add_nums_error(2,2,2) ) --> w/ out '*' putting more than 2 arguments when calling function leads to error
 
 
- # corrected code for adding values
+# *args
+# corrected code for adding values
 def add_nums_corrected(*args):
     print(f"'*args' tuple: {args}") # e.g. (2, 2, 2, 2)
     print(f"'*args' length: {len(args)}") # e.g. 4
@@ -70,3 +72,38 @@ def foods(*foods):
         print(f"{num+1}. {foods[num]}")
 
 foods("pizza", "burger", "pie", "chips", "soup", "curry", "rice")
+
+
+print()
+print("------ new ------")
+
+
+# *kwargs 
+# printing out addresses
+def produce_address(**kwargs):
+    print()
+    print(f"*kwargs: {kwargs}")
+    print()
+    print(f"key: {kwargs.keys()}, value: {kwargs.values()}")
+    print()
+
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+produce_address(building_num=1, 
+                street="Test Street", 
+                city="Test City", 
+                country="UK", 
+                post_code="ab1 cd2")
+
+produce_address(building_num=789, 
+                street="Jam Lane", 
+                city="Tower City",
+                county="Ham-shire",
+                country="UK", 
+                post_code="ef5 h98",)
+
+produce_address(flat_num="66a", 
+                street="Filler Road", 
+                city="Goldstone",
+                post_code="HJ5 N34",)
