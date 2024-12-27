@@ -176,3 +176,59 @@ print(shop_inventory(product_name="cream vanilla and frosted sticky coffee sorbe
                price=19.70,
                products_sold=154,
                products_left=46,))
+
+
+print()
+print("------ new ------")
+
+
+# using both *args & **kwargs
+# generate billing addresses
+def billing_address(*args, **kwargs):
+
+    # iterates through values in tuple
+    for item in args:
+        print(item)
+    print()
+    # iterates through keys in dictionary to get values
+    for value in kwargs.values():
+        print(value)
+    print()
+
+    # '\' at end & front helps stop line of code being too long, output same as if it were to stay on same line
+    return f"Address:\n{args[0]} {args[1]} {args[2]} {args[3]}\
+    \
+    \n{kwargs.get('house_num') if kwargs.get('house_num') != None else kwargs.get('apt_num')} {kwargs.get('street_name')}\
+    \
+    \n{kwargs.get('town')}\n{kwargs.get('post_code')}"
+
+
+print(billing_address("Mrs", "Jane", "Ann", "Doe",
+                house_num=101,
+                street_name="Garden Street",
+                town="Utopia",
+                post_code="GH1 6DW"))
+print()
+
+
+print(billing_address("Mr", "Dave", "Luke", "Smith",
+                house_num=89,
+                street_name="Hopes St.",
+                town="Arcane Falls",
+                post_code="AB4 8PL"))
+print()
+
+
+print(billing_address("Ms", "Hallie", "Susan", "Robinson",
+                apt_num="Apt. 50c",
+                street_name="Crystal Cove",
+                town="Cascade Meadows",
+                post_code="XZ3 0BC"))
+print()
+
+
+print(billing_address("Miss", "Kathy", "Wendy", "Hilton",
+                house_num=781,
+                street_name="Ember Hollow",
+                town="Enchanted Glade",
+                post_code="FJ7 5OP"))
