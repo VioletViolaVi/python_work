@@ -23,3 +23,22 @@ drinks = ("water", "lemonade", "tea", "coffee", "juice")
 
 for drink in drinks:
     print(drink)
+
+
+print(" -- new -- ")
+
+
+# set of fruits
+fruits = {"orange", "apple", "pear", "mango", "coconut"}
+
+for fruit in fruits:
+    print(fruit)
+
+print()
+
+# set of vegetables
+vegetables = {"sweetcorn", "cucumber", "carrot", "tomato", "peas"}
+
+for vegetable in vegetables:
+    print(vegetable)
+
