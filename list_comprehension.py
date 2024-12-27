@@ -1,8 +1,8 @@
 # List Comprehension
 
 # Notes:
-    # - 
-    # - 
+    # - for loops can be written w/ 1 line of code
+        # - structure: [ 'expression' '1st for loop line' ] *don't include quotations tho.
     # -
 
 # iterating to double numbers from 1-10 inclusively
