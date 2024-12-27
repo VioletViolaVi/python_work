@@ -87,3 +87,18 @@ odd_nums = [num for num in numbers if num % 2 != 0]
 print(odd_nums)
 
 
+print(" --- new --- ")
+
+
+# put all +ve numbers in new list
+all_numbers = [-1, 2, -3, 4, -5]
+
+# the 'num' before the for loop means it's being returned (like what the return statement does)
+positive_nums = [ num for num in all_numbers if num > 0 ]
+print(positive_nums)
+
+print()
+
+# put all -ve numbers in new list
+negative_nums = [ num for num in all_numbers if num < 0 ]
+print(negative_nums)
