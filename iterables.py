@@ -13,3 +13,13 @@ print()
 for colour in reversed(colours):
     print(f"colour: {colour}", end=" ][ ")
 print()
+
+
+print(" -- new -- ")
+
+
+# tuple of drinks
+drinks = ("water", "lemonade", "tea", "coffee", "juice")
+
+for drink in drinks:
+    print(drink)
