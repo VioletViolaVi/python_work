@@ -88,4 +88,20 @@ else:
 print(" --- new ---")
 
 
-#
+# using 'in' to check if email's valid i.e. contains '@' / '.'
+email = "fakeemail@fake.com"
+
+if "@" in email and "." in email:
+    print("this is a valid email address")
+else:
+    print("this is an invalid email address")
+
+print()
+
+# using 'not in' to check if email's valid i.e. contains '@' / '.'
+email_2 = "fakeemail@fakecom"
+
+if "@" not in email_2 and "." not in email_2:
+    print("this is a valid email address")
+else:
+    print("this is an invalid email address")
