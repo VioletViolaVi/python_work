@@ -59,3 +59,9 @@ fruits = ["orange", "apple", "pear", "mango", "coconut"]
 
 fruit_output = [ fruit.capitalize() for fruit in fruits ]
 print(fruit_output)
+
+print()
+
+# take 1st letter of each list's string & place in new list
+first_letter_fruits = [ fruit[0] for fruit in fruits ]
+print(first_letter_fruits)
