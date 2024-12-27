@@ -78,3 +78,16 @@ def is_weekend(user_input):
         case _:
             print("Error!")
 is_weekend(user_input)
+
+print()
+
+# condensed match case statement for is_weekend() above
+def is_weekend(user_input):
+    match user_input:
+        case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
+            print("No. This is a weekday.")
+        case "Saturday" | "Sunday":
+            print("Yes. This is a weekend.")
+        case _:
+            print("Error!")
+is_weekend(user_input)
