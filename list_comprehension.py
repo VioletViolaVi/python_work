@@ -50,3 +50,16 @@ print(result)
 
 
 print(" --- new --- ")
+
+
+# iterate over strings via single for loop
+fruits = ["orange", "apple", "pear", "mango", "coconut"]
+
+fruit_output = [ fruit.capitalize() for fruit in fruits ]
+print(fruit_output)
+
+
+print(" --- new --- ")
+
+
+#
