@@ -20,3 +20,17 @@ print()
 doubled = [num*2 for num in range(1, 11)]
 print(doubled)
 
+
+print(" --- new --- ")
+
+
+# iterate triple the numbers via single for loop
+tripled = [ number * 3 for number in range(1, 11) ]
+print(original)
+print(tripled)
+
+
+print(" --- new --- ")
+
+
+#
