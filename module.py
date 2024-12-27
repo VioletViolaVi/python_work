@@ -13,4 +13,17 @@
 # # shows all features present in math module
 # print(help("math"))
 
+# different ways to import modules
+import math
+print(math.ceil(9.1))
 
+# uses alias
+import math as m 
+print(m.ceil(9.1))
+
+# directly noting what from math module is to be used
+from math import pi, ceil
+
+# didn't need to use dot notation
+print(pi)
+print(ceil(9.1))
