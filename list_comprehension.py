@@ -102,3 +102,37 @@ print()
 # put all -ve numbers in new list
 negative_nums = [ num for num in all_numbers if num < 0 ]
 print(negative_nums)
+
+
+print(" --- new --- ")
+
+
+# list of grades
+grades = ["A*", "A", "B", "C", "D", "U"]
+
+# returns string & stores in variable, while iterating, when truthy
+passed = ["you passed!" for grade in grades if grade != "U"]
+print(passed)
+
+print()
+
+# returns string & stores in variable, while iterating, when truthy
+failed = ["you failed!" for grade in grades if grade == "U"]
+print(failed)
+
+
+print(" --- new --- ")
+
+
+# percentages for scoring
+# where pass mark is 50% or more
+percentage_scores = [50, 25, 13, 78, 66]
+pass_mark = [ str(percentage_score) + "%" for percentage_score in percentage_scores if percentage_score >= 50 ]
+print(pass_mark)
+
+print()
+
+# where fail mark is less than 50%
+fail_mark = [ str(percentage_score) + "%" for percentage_score in percentage_scores if percentage_score < 50 ]
+print(fail_mark)
+
