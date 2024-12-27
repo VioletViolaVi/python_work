@@ -68,3 +68,22 @@ print()
 # take 1st letter of each list's string & place in new list
 first_letter_fruits = [ fruit[0] for fruit in fruits ]
 print(first_letter_fruits)
+
+
+print(" --- new --- ")
+
+
+# using if conditions in list comprehensions
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# put all even numbers in this list
+even_nums = [num for num in numbers if num % 2 == 0]
+print(even_nums)
+
+print()
+
+# put all odd numbers in this list
+odd_nums = [num for num in numbers if num % 2 != 0]
+print(odd_nums)
+
+
