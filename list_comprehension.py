@@ -3,7 +3,9 @@
 # Notes:
     # - for loops can be written w/ 1 line of code
         # - structure: [ 'expression' '1st for loop line' ] *don't include quotations tho.
-    # -
+    # - if condition can be added in single line written for loops
+        # - structure: [ 'expression' '1st for loop line' 'if:' ] *don't include quotations tho. 
+    # - 
 
 # iterating to double numbers from 1-10 inclusively
 original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -57,9 +59,3 @@ fruits = ["orange", "apple", "pear", "mango", "coconut"]
 
 fruit_output = [ fruit.capitalize() for fruit in fruits ]
 print(fruit_output)
-
-
-print(" --- new --- ")
-
-
-#
