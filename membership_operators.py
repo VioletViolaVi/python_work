@@ -22,7 +22,6 @@ print(" --- new ---")
 
 
 # practicing 'in' membership operator
-
 # guess the number
 correct_num_list = [8]
 
@@ -35,3 +34,32 @@ if user_num_guess in correct_num_list:
     print(f"Yes. '{user_letter_guess}' was the correct number!")
 else:
     print("No! You are wrong!")
+
+
+print(" --- new ---")
+
+
+# using sets to practice 'in' and 'not in'
+# set of sports
+sports = {"tennis", "basketball", "football", "rugby", "swimming"}
+# sports = {"tennis", "basketball", "football", "rugby", "swimming", "rock climbing"}
+
+# using 'in' membership operator w/ if else
+if "rock climbing" in sports:
+    print(f"This sport is in the set.")
+else:
+    print("This sport is not in the set.")
+
+print()
+
+# using 'not in' membership operator w/ if else
+if "rugby" not in sports:
+    print("This sport is not in the set.")
+else:
+    print(f"This sport is in the set.")
+
+
+print(" --- new ---")
+
+
+#
