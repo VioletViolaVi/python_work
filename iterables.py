@@ -42,3 +42,22 @@ vegetables = {"sweetcorn", "cucumber", "carrot", "tomato", "peas"}
 for vegetable in vegetables:
     print(vegetable)
 
+
+print(" -- new -- ")
+
+
+# iterating through strings
+song = "We built this city on rock and roll!"
+
+for char in song:
+    print(char)
+
+print()
+
+song_2 = "And this christmas, will be, very special christmas, for me!!!"
+
+for char_2 in song_2:
+    print(char_2, end="/ ")
+
+
+
