@@ -42,7 +42,6 @@ print(" --- new ---")
 # using sets to practice 'in' and 'not in'
 # set of sports
 sports = {"tennis", "basketball", "football", "rugby", "swimming"}
-# sports = {"tennis", "basketball", "football", "rugby", "swimming", "rock climbing"}
 
 # using 'in' membership operator w/ if else
 if "rock climbing" in sports:
@@ -57,6 +56,33 @@ if "rugby" not in sports:
     print("This sport is not in the set.")
 else:
     print(f"This sport is in the set.")
+
+
+print(" --- new ---")
+
+
+# using dictionaries to practice 'in' and 'not in' membership operators
+colours_dict = {
+    "red": "primary",
+    "orange": "secondary",
+    "yellow": "primary",
+    "green": "primary",
+    "purple": "secondary"
+}
+
+# iterates through dictionary values to find "primary"
+if "primary" in colours_dict.values():
+    print("This is in the dictionary")
+else:
+    print("This is not in the dictionary")
+
+print()
+
+# iterates through dictionary keys to find "blue"
+if "blue" not in colours_dict:
+    print("This is not in the dictionary")
+else:
+    print("This is in the dictionary")
 
 
 print(" --- new ---")
