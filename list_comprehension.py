@@ -37,3 +37,16 @@ print(" --- new --- ")
 squared = [ number **2 for number in range(1, 11) ]
 print(original)
 print(squared)
+
+
+print(" --- new --- ")
+
+
+# iterate over strings via single for loop
+test_str = "this is a test"
+
+result = [ string.upper() for string in test_str ]
+print(result)
+
+
+print(" --- new --- ")
