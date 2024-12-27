@@ -1,10 +1,13 @@
 # List Comprehension
 
 # Notes:
+    # - every output in this .py file is in a list
+        # - list comprehensions can reduce for loops (and if conditions when added) to 1 line of code
+            # - whatever the result, it will be outputted in a list, [ ... ]
     # - for loops can be written w/ 1 line of code
         # - structure: [ 'expression' '1st for loop line' ] *don't include quotations tho.
     # - if condition can be added in single line written for loops
-        # - structure: [ 'expression' '1st for loop line' 'if:' ] *don't include quotations tho. 
+        # - structure: [ 'expression' '1st for loop line' 'if' ] *don't include quotations tho. 
     # - 
 
 # iterating to double numbers from 1-10 inclusively
