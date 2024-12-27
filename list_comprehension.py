@@ -13,3 +13,10 @@ for num in range(1,11):
     doubled.append(num)
 print(original)
 print(doubled)
+
+print()
+
+# same for loop as above but written w/ 1 line of code
+doubled = [num*2 for num in range(1, 11)]
+print(doubled)
+
