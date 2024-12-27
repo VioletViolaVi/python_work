@@ -58,6 +58,39 @@ song_2 = "And this christmas, will be, very special christmas, for me!!!"
 
 for char_2 in song_2:
     print(char_2, end="/ ")
+print()
 
 
+print(" -- new -- ")
+
+
+# iterating through dictionaries
+person = {
+    "name": "Patty",
+    "age": 21,
+    "height": "58.7cm",
+    "weight": "83.6kg"
+}
+
+# gets keys from dictionary only
+for item in person:
+    print(item)
+
+print()
+
+# gets keys and values from dictionary
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+print()
+
+# gets keys from dictionary using .keys()
+for key in person.keys():
+    print(f"key: {key}")
+
+print()
+
+# gets values from dictionary using .keys()
+for value in person.values():
+    print(f"value: {value}")
 
