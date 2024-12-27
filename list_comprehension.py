@@ -33,4 +33,7 @@ print(tripled)
 print(" --- new --- ")
 
 
-#
+# iterate the square of numbers via single for loop
+squared = [ number **2 for number in range(1, 11) ]
+print(original)
+print(squared)
