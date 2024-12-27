@@ -48,7 +48,9 @@ def find_day(day):
             print(f"It's {day}!")
         case "Sunday":
             print(f"It's {day}!")
-        case _: # this ( _ ) is a wildcard & this case occurs if there's no matching cases from above
+        # ' _ ' is a wildcard 
+        # this case occurs if there's no matching cases from above
+        case _:
             print("Error!")
 find_day(day)
 
@@ -84,6 +86,7 @@ print()
 # condensed match case statement for is_weekend() above
 def is_weekend(user_input):
     match user_input:
+        # '|' is the or operator
         case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
             print("No. This is a weekday.")
         case "Saturday" | "Sunday":
