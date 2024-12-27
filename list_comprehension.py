@@ -135,4 +135,3 @@ print()
 # where fail mark is less than 50%
 fail_mark = [ str(percentage_score) + "%" for percentage_score in percentage_scores if percentage_score < 50 ]
 print(fail_mark)
-
