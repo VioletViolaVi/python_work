@@ -68,7 +68,12 @@ while is_banking:
     while user_request == "2": # uses string not number!
         
         # placed out of the while loop for the try/except section so users wont keep seeing this message when invalid entry occurs
-        withdrawal_amount_str = input("Please enter amount you want to withdraw: £ ")           
+        withdrawal_amount_str = input("Please enter amount you want to withdraw: £ ")
+
+        # continuously ensures to stop any input with '-' in front e.g. negative numbers -> this code is specifically made for these
+        while withdrawal_amount_str[0] == "-":
+            print(" ------ ")
+            withdrawal_amount_str = input("Invalid option! Please enter a positive numerical amount: ")           
        
         # keeps user in this try/except area until a valid entry in entered
         while True:
