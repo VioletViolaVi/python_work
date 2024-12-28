@@ -63,3 +63,21 @@ def function_3():
 # this is the 'func_1' variable 'function_3()' refers to as this variable has global scoping
 func_1 = 3
 function_3() # note the function had to be called after the global variable above had been declared and assigned, otherwise error!
+
+
+print(" --- new --- ")
+
+
+# built in scope
+from math import pi #'pi' is built in scope as this already exists, it is built in python 
+
+# creating a function to print out a variable that shares the same name as 'pi'
+def function_4():
+    # this function needs 'pi' to exist and be defined/declared/assigned locally otherwise nothing gets printed out
+    print(pi)
+
+pi = "the new pi in global scope"
+# this function prints out the string above as 'pi' above has been defined/declared/assigned globally
+print(pi)
+
+# follow (L, E, G, B): local, enclosed, global, built in
