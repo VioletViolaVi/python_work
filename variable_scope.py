@@ -2,7 +2,8 @@
 
 # Notes:
 # - variables defined w/ in local scope would not be accessible by other code outside it
-# - 
+# - scoping occurs in specific order
+#   - local -> enclosed -> global
 # - 
 
 # functions w/ local scope as variables have been defined inside functions
@@ -43,7 +44,7 @@ def outer_func():
     fave_colour = "green" # enclosed scope
     def inner_func():
         # as there's no 'fave_colour' variable in this function (local scope) & this function is inside another function, the outer function is looked into to find if there's a 'fave_colour' variable fo use, otherwise, error.
-        print(f"fav colour is: {fave_colour}")   
+        print(f"fav colour is: {fave_colour}") 
     inner_func()
 outer_func()
 
