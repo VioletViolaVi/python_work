@@ -5,7 +5,7 @@ print("Welcome to your bank account. How can we help you?")
 print(" ------ ")
 
 # user picks which action they want to take
-user_request =  input("Enter number 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ") # returns strings!
+user_request =  input("Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ") # returns strings!
 print(" ------ ")
 
 # helps user leave banking process
@@ -20,12 +20,8 @@ while is_banking:
     # keeps asking user to enter valid option until they enter a valid option
     # if users pick from outside of provided options
     while not user_request == "1" and not user_request == "2" and not user_request == "3" and not user_request == "4": # uses strings not numbers!
-        user_request = input("Invalid option! Enter number 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        user_request = input("Invalid option! Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
-
-    # displays current bank balance
-    print(f"Your current bank balance is £{current_balance:.2f}")
-    print(" ------ ")
         
     # user wants to deposit money into bank - keeps going until they choose a different option
     while user_request == "1": # uses string not number!
@@ -42,11 +38,11 @@ while is_banking:
         print(" ------ ")
 
         # asks user what they want to do next
-        user_request = input("What would you like to do next? Enter number 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        user_request = input("What would you like to do next? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
 
     # user wants to withdraw money from account
-    while user_request == "2":
+    while user_request == "2": # uses string not number!
 
         # asks user for amount of money they want to withdraw
         withdrawal_amount =  float(input("Please enter amount you want to withdraw: £ "))
@@ -60,11 +56,22 @@ while is_banking:
         print(" ------ ")
 
         # asks user what they want to do next
-        user_request = input("What would you like to do next? Enter number 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        user_request = input("What would you like to do next? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        print(" ------ ")
+
+    # user wants to check bank balance
+    while user_request == "3": # uses string not number!
+
+        # displays current bank balance to user
+        print(f"Your current bank balance is £{current_balance:.2f}")
+        print(" ------ ")
+
+        # asks user what they want to do next
+        user_request = input("What would you like to do next? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
 
 
-
-
-
+# to do list
+# - put not DRY code in functions
+# - handle non-numbers entered in float()
 
