@@ -29,6 +29,11 @@ while is_banking:
         # placed out of the while loop for the try/except section so users wont keep seeing this message when invalid entry occurs
         deposit_amount_str = input("Please enter amount you want to deposit: £ ")
 
+        # continuously ensures to stop any input with '-' in front e.g. negative numbers -> this code is specifically made for these
+        while deposit_amount_str[0] == "-":
+            print(" ------ ")
+            deposit_amount_str = input("Invalid option! Please enter a positive numerical amount: ")
+
         # keeps user in this try/except area until a valid entry in entered
         while True:
 
@@ -112,8 +117,7 @@ while is_banking:
         is_banking = False
 
 # to do list
-# - put not DRY code in functions
-# - handle non-numbers entered in float()
 # - stop allowance for negative numbers
+# - put not DRY code in functions
 # - tell user when there's no money left to withdraw or make it where it shows the owe money due to being 'in the negative'
 
