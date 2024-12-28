@@ -1,6 +1,11 @@
 # Variable Scope
 
-# functions w/ local scope
+# Notes:
+# - variables defined w/ in local scope would not be accessible by other code outside it
+# - 
+# - 
+
+# functions w/ local scope as variables have been defined inside functions
 def function_1():
     func_1 = 10
     print(func_1)
