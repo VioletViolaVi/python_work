@@ -34,15 +34,37 @@ while is_banking:
         deposit_amount =  float(input("Please enter amount you want to deposit: £ "))
 
         # stores the addition of deposit amount to current amount in account
-        new_balance = current_balance + deposit_amount
+        current_balance += deposit_amount
 
         # displays new balance after deposit
-        print(f"Your new bank balance is £{new_balance:.2f}")
+        print(" ------ ")
+        print(f"Your new bank balance after deposit is £{current_balance:.2f}")
         print(" ------ ")
 
         # asks user what they want to do next
         user_request = input("What would you like to do next? Enter number 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
+
+    # user wants to withdraw money from account
+    while user_request == "2":
+
+        # asks user for amount of money they want to withdraw
+        withdrawal_amount =  float(input("Please enter amount you want to withdraw: £ "))
+        
+        # calculates current amount left in account once money is taken
+        current_balance -= withdrawal_amount
+
+        # displays new balance after withdrawal
+        print(" ------ ")
+        print(f"Your new bank balance after withdrawal is £{current_balance:.2f}")
+        print(" ------ ")
+
+        # asks user what they want to do next
+        user_request = input("What would you like to do next? Enter number 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        print(" ------ ")
+
+
+
 
 
 
