@@ -70,6 +70,10 @@ while is_banking:
         user_request = input("What would you like to do next? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
 
+    # user wants to leave
+    while user_request == "4": # uses string not number!
+        print("Thank you for banking with us! Bye!")
+        is_banking = False
 
 # to do list
 # - put not DRY code in functions
