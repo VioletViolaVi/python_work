@@ -52,4 +52,11 @@ outer_func()
 print(" --- new --- ")
 
 
-# 
+# global scoping
+def function_3():
+    # this 'func_1' doesn't refer to the variable written in the 1st function at top of page as that variable is local
+    print(func_1)
+
+# this is the 'func_1' variable 'function_3()' refers to as this variable has global scoping
+func_1 = 3
+function_3() # note the function had to be called after the global variable above had been declared and assigned, otherwise error!
