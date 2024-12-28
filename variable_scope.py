@@ -2,9 +2,12 @@
 
 # Notes:
 # - variables defined w/ in local scope would not be accessible by other code outside it
-# - scoping occurs in specific order
-#   - local -> enclosed -> global
-# - 
+# - scoping occurs in specific order of operations (FOR LOCATING VARIABLES)
+#   - local -> enclosed -> global -> built in
+#       - built in scope
+#           - refers to accessing variables/functions/methods etc. that already exist in python
+#           - e.g. print(), len(), range(), etc.
+
 
 # functions w/ local scope as variables have been defined inside functions
 def function_1():
