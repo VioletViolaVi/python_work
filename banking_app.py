@@ -71,7 +71,7 @@ while is_banking:
         print(" ------ ")
 
     # user wants to leave
-    while user_request == "4": # uses string not number!
+    if user_request == "4": # uses string not number!
         print("Thank you for banking with us! Bye!")
         is_banking = False
 
