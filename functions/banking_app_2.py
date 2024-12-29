@@ -22,7 +22,7 @@ def check_balance():
 # deposits in balance (adds to balance)
 def to_deposit(user_balance_local_scope): # passes parameter for argument value to be passed through
 
-    # takes in user's deposit amount as a decimal
+    # takes in user's deposit amount as a decimal & stores in variable
     deposit_amount = float(input("How much do you want to deposit into your account?: £ "))
 
     # adds inputted deposit amount into parameter
@@ -36,10 +36,19 @@ def to_deposit(user_balance_local_scope): # passes parameter for argument value 
 
 
 # withdraws from balance
-def withdraws_from_balance():
+def withdraws_from_balance(user_balance_local_scope):
+
+    # stores user's requested amount for withdrawal
     withdrawal_amount = float(input("How much do you want to withdraw from your account?: £ "))
-    user_balance -= withdrawal_amount
-    return user_balance
+
+    # removes withdrawal amount inputted by user from parameter representing user's current balance 
+    #   - parameter gets replaced with argument value when function is called
+    user_balance_local_scope -= withdrawal_amount
+    
+    # stores message informing user of current balance using parameter, after withdrawal input has been subtracted from it
+    current_balance = f"Your current balance is £{user_balance_local_scope:.2f}"
+
+    return current_balance
 
 
 # leaves banking app
@@ -64,7 +73,7 @@ def main():
         case "2":
             print(to_deposit(user_balance_global_scope))
         case "3":
-            print(withdraws_from_balance())
+            print(withdraws_from_balance(user_balance_global_scope))
         case "4":
             print(leaves_bank_app())
         case _:
