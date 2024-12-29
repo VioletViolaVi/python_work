@@ -3,6 +3,7 @@
 # stores users' selected option
 print("Choose option: 1-4")
 user_input = input("1. Check balance, 2. Make deposit, 3. Withdraw money, 4. Exit: ")
+print(" ------ ")
 
 # stores users' current amount of money they have
 user_balance_global_scope = 100
