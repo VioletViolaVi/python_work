@@ -9,11 +9,9 @@ user_balance = 100
 
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
-# helps prevent code running when this file is ran from different file's server
-
 # checks balance
 def check_balance():
-    message = f"Your current balance is {user_balance:.2f}"
+    message = f"Your current balance is £{user_balance:.2f}"
     return message
 
 # deposits in balance (adds to balance)
@@ -30,22 +28,25 @@ def withdraws_from_balance():
 
 # leaves banking app
 def leaves_bank_app():
-    print("Thank you for banking with us. Goodbye.")
+    goodbye_message = "Thank you for banking with us. Goodbye."
+    return goodbye_message
 
 
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
+# helps prevent code running when this file is ran from different file's server
+# will only run on other files when imported & then called instead of automatically 
 def main():
     # controls what users see based on option they choose
     match user_input:
         case "1":
-            check_balance()
+            print(check_balance())
         case "2":
-            to_deposit()
+            print(to_deposit())
         case "3":
-            withdraws_from_balance()
+            print(withdraws_from_balance())
         case "4":
-            leaves_bank_app()
+            print(leaves_bank_app())
         case _:
             print("Error!")
 
