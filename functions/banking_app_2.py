@@ -5,20 +5,21 @@ print("Choose option: 1-4")
 user_input = input("1. Check balance, 2. Make deposit, 3. Withdraw money, 4. Exit: ")
 
 # stores users' current amount of money they have
-user_balance = 100
+user_balance_global_scope = 100
 
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
 # checks balance
 def check_balance():
-    message = f"Your current balance is £{user_balance:.2f}"
+    message = f"Your current balance is £{user_balance_global_scope:.2f}"
     return message
 
 # deposits in balance (adds to balance)
-def to_deposit():
+def to_deposit(user_balance_local_scope):
     deposit_amount = float(input("How much do you want to deposit into your account?: £ "))
-    user_balance += deposit_amount
-    return user_balance
+    user_balance_local_scope += deposit_amount
+    current_balance = f"Your current balance is £{user_balance_local_scope:.2f}"
+    return current_balance
 
 # withdraws from balance
 def withdraws_from_balance():
@@ -42,7 +43,7 @@ def main():
         case "1":
             print(check_balance())
         case "2":
-            print(to_deposit())
+            print(to_deposit(user_balance_global_scope))
         case "3":
             print(withdraws_from_balance())
         case "4":
