@@ -4,6 +4,18 @@
 print("Welcome to your bank account. How can we help you?")
 print(" ------ ")
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------- #
+# functions
+
+# updates user's option choices
+# def change_option():
+#         # asks user what they want to do next
+#         user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+#         print(" ------ ")
+#         return user_request
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------- #
+
 # user picks which action they want to take
 user_request =  input("Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ") # returns strings!
 print(" ------ ")
@@ -136,6 +148,7 @@ while is_banking:
         # asks user what they want to do next
         user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
+        # change_option() ERROR!!!!! NOT WORKING!!!
 
     # user wants to leave
     if user_request == "4": # uses string not number!
@@ -143,4 +156,4 @@ while is_banking:
         is_banking = False
 
 # to do list
-# - put not DRY code in functions
+# - put not DRY code in functions -> start w/ 1 correct func b4 adding more
