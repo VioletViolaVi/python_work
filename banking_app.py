@@ -8,18 +8,17 @@ print(" ------ ")
 # functions
 
 # updates user's option choices
-# def change_option():
-#         # asks user what they want to do next
-#         user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
-#         print(" ------ ")
-#         return user_request
+def change_option():
+        # asks user what they want to do next
+        user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        print(" ------ ")
+        return user_request
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------- #
 
 # user picks which action they want to take
 user_request =  input("Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ") # returns strings!
 print(" ------ ")
-
 # helps user leave banking process
 is_banking = True
 
@@ -44,7 +43,7 @@ while is_banking:
         # continuously ensures to stop any input with '-' in front e.g. negative numbers -> this code is specifically made for these
         while deposit_amount_str[0] == "-":
             print(" ------ ")
-            deposit_amount_str = input("Invalid option! Please enter a positive numerical amount: ")
+            deposit_amount_str = input("Invalid option! Please enter a positive numerical amount: £ ")
 
         # keeps user in this try/except area until a valid entry in entered
         while True:
@@ -55,17 +54,21 @@ while is_banking:
                 # converts string inputted amount into float number
                 deposit_amount =  float(deposit_amount_str)
 
+                # stops negative numbers coming through
+                while deposit_amount < 0:
+                    deposit_amount = float(input("Please enter an amount greater than 0: £ "))
+                    print(" ------ ")                
+
                 # stores the addition of deposit amount to current amount in account
                 current_balance += deposit_amount
 
                 # displays new balance after deposit
                 print(" ------ ")
                 print(f"Your new bank balance after deposit is £{current_balance:.2f}")
-                print(" ------ ")
 
                 # asks user what they want to do next
-                user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
                 print(" ------ ")
+                user_request = change_option()                   
 
                 # allows user to leave this try/except area once a valid number has been entered, so rest of code can work
                 break
@@ -74,7 +77,7 @@ while is_banking:
             except ValueError:
                 # shows readable message asking for number input instead
                 print(" ------ ")
-                deposit_amount_str = input("Invalid option! Please enter a positive numerical amount: ")
+                deposit_amount_str = input("Invalid option! Please enter a positive numerical amount: £ ")
 
     # user wants to withdraw money from account
     while user_request == "2": # uses string not number!
@@ -94,7 +97,7 @@ while is_banking:
             # continuously ensures to stop any input with '-' in front e.g. negative numbers -> this code is specifically made for these
             while withdrawal_amount_str[0] == "-":
                 print(" ------ ")
-                withdrawal_amount_str = input("Invalid option! Please enter a positive numerical amount: ")           
+                withdrawal_amount_str = input("Invalid option! Please enter a positive numerical amount: £ ")           
        
             # keeps user in this try/except area until a valid entry in entered
             while True:
@@ -123,11 +126,10 @@ while is_banking:
                     # displays new balance after withdrawal
                     print(" ------ ")
                     print(f"Your new bank balance after withdrawal is £{current_balance:.2f}")
-                    print(" ------ ")
 
                     # asks user what they want to do next
-                    user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
                     print(" ------ ")
+                    user_request = change_option()                    
 
                     # allows user to leave this try/except area once a valid number has been entered, so rest of code can work
                     break                
@@ -136,24 +138,19 @@ while is_banking:
                 except ValueError:
                     # shows readable message asking for number input instead
                     print(" ------ ")
-                    withdrawal_amount_str = input("Invalid option! Please enter a positive numerical amount: ") 
+                    withdrawal_amount_str = input("Invalid option! Please enter a positive numerical amount: £ ") 
 
     # user wants to check bank balance
     while user_request == "3": # uses string not number!
 
         # displays current bank balance to user
         print(f"Your current bank balance is £{current_balance:.2f}")
-        print(" ------ ")
 
         # asks user what they want to do next
-        user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
-        # change_option() ERROR!!!!! NOT WORKING!!!
+        user_request = change_option()
 
     # user wants to leave
     if user_request == "4": # uses string not number!
         print("Thank you for banking with us! Bye!")
         is_banking = False
-
-# to do list
-# - put not DRY code in functions -> start w/ 1 correct func b4 adding more
