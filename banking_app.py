@@ -134,7 +134,7 @@ while is_banking:
         print(" ------ ")
 
         # asks user what they want to do next
-        user_request = input("What would you like to do now Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
+        user_request = input("What would you like to do now? Enter number, 1) Deposit money, 2) Withdraw money, 3) Check balance, 4) Exit: ")
         print(" ------ ")
 
     # user wants to leave
@@ -144,4 +144,3 @@ while is_banking:
 
 # to do list
 # - put not DRY code in functions
-# - tell user when there's no money left to withdraw or make it where it shows the owe money due to being 'in the negative'
