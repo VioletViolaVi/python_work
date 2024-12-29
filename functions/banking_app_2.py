@@ -31,3 +31,6 @@ def main():
 
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
+# so functions in this file don't have to be run from this file's server
+if __name__ == "__main__":
+    main()
