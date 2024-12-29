@@ -11,15 +11,29 @@ user_balance_global_scope = 100
 
 # checks balance
 def check_balance():
+
+    # displays message to user regarding what their current balance is
     message = f"Your current balance is £{user_balance_global_scope:.2f}"
+
+    # returns full message from above - needs printing in match case statements below
     return message
 
+
 # deposits in balance (adds to balance)
-def to_deposit(user_balance_local_scope):
+def to_deposit(user_balance_local_scope): # passes parameter for argument value to be passed through
+
+    # takes in user's deposit amount as a decimal
     deposit_amount = float(input("How much do you want to deposit into your account?: £ "))
+
+    # adds inputted deposit amount into parameter
     user_balance_local_scope += deposit_amount
+
+    # stores message informing user of current balance using parameter, after deposit input has been added to it
     current_balance = f"Your current balance is £{user_balance_local_scope:.2f}"
+
+    # returns full message from above - needs printing in match case statements below
     return current_balance
+
 
 # withdraws from balance
 def withdraws_from_balance():
@@ -27,9 +41,14 @@ def withdraws_from_balance():
     user_balance -= withdrawal_amount
     return user_balance
 
+
 # leaves banking app
 def leaves_bank_app():
+    
+    # stores message to say bye to user when they leave
     goodbye_message = "Thank you for banking with us. Goodbye."
+
+    # returns full message from above - needs printing in match case statements below
     return goodbye_message
 
 
