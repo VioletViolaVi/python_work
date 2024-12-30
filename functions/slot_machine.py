@@ -5,8 +5,7 @@ import random
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
 
-
-# to check if 3 in a row occurs
+# to produce 3 different fruit icons
 def slot_machine(fruit_icons, slot_result):
 
     # start counter to change in while loop to help prevent infinite loop
@@ -31,6 +30,10 @@ def slot_machine(fruit_icons, slot_result):
     return slot_result
 
 
+# to check if 3 in a row occurs
+def jackpot(fruit_icons, slot_result):
+    print(slot_machine(fruit_icons, slot_result))
+
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
 
@@ -52,7 +55,8 @@ def main():
     slot_result = []
 
     # calls function, passes through fruit icon dict & slot machine result list, respectively
-    print(slot_machine(fruit_icons, slot_result))
+    # print(slot_machine(fruit_icons, slot_result))
+    jackpot(fruit_icons, slot_result)    
 
 
 # stops this file running automatically if this file is used in another file via imports
