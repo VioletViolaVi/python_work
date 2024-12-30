@@ -95,7 +95,18 @@ def main():
         # informs user if the get a jackpot or not
         print(jackpot(fruit_icons, slot_result))
 
+        # asks if user wants to keep playing
+        user_request = input("Keep playing? 🎮 : Yes (Y) | No (N): ").lower()
 
+        # stops game if user says yes
+        match user_request:
+            case "n":
+                is_playing = False
+                print("Thanks for playing! Goodbye!")
+            case "y":
+                is_playing = True
+            case _:
+                print("Error!!! 💀 ")
 
         
 
