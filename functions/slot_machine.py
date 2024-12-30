@@ -2,12 +2,11 @@
 
 import random, time
 
-# functions ----------------------------------------------------------------------------------------------------------------------------
 
+# functions ----------------------------------------------------------------------------------------------------------------------------
 
 # to produce 3 different fruit icons
 def slot_machine(fruit_icons, slot_result):
-
     # start counter to change in while loop to help prevent infinite loop
     counter = 0
     
@@ -44,15 +43,15 @@ def slot_machine(fruit_icons, slot_result):
                 print("Error!!! 💀 ")
     
         # increases counter to avoid infinite loop
-        counter += 1
-
+        counter += 1    
+    
     # returns 3 different fruit icons in list
     return slot_result
 
-
 # checks if the 3 fruit icons are the same i.e. checks if there's a jackpot
-def jackpot(fruit_icons, slot_result):
-
+def money_won(fruit_icons, slot_result):
+    
+    # converts slot result [list] into {set} to get {set} length - used to check if there were duplicates so correct money sum can be awarded
     # the current 3 fruit icons gotten by user
     current_fruit_list = slot_machine(fruit_icons, slot_result)
 
@@ -62,22 +61,30 @@ def jackpot(fruit_icons, slot_result):
     # gets length of the {set} of fruit icons
     set_fruit_icons_len = len( fruit_icons_set )
 
-    # checks if the length of the {set} fruit icons is the same as 1
-    if set_fruit_icons_len == 1:
+    # different £££ amount to win
+    # not same | not same | not same
+    none_same = 10 
+    # not same | same | same
+    two_same = 50 
+    # same | same | same
+    three_same = 100
 
-        # occurs if set only contains 1 fruit icon as duplicates are not allowed - the other 2 would have been the same therefore, jackpot!
-        return "Jackpot!"
-    else:
+    # means all 3 fruits are different
+    if set_fruit_icons_len == 3:
+        return f"With no same fruits, you only won £{none_same}!"
+    
+    # means there were 2 of the same fruits in list b4 becoming 2 in {set}
+    elif set_fruit_icons_len == 2:
+        return f"With 2 same fruits, you won £{two_same}!"
 
-        # occurs if there's only 2 duplicates or all 3 are different as set would take in more than 1 fruit icon if they're not all the same
-        return "not a jackpot"
+    # means all 3 fruits were the same/duplicates so {set} could all take in 1 - therefore, jackpot!
+    elif set_fruit_icons_len == 1:
+        return f"Jackpot! With all 3 slots as the same fruit! You won £{three_same}!"
 
-
-# functions ----------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------- functions
 
 
 # continuous play ----------------------------------------------------------------------------------------------------------------------------
-
 
 # helps stops this file running automatically if this file is used in another file via imports 
 def main():
@@ -92,8 +99,9 @@ def main():
     while is_playing:
         
         # speaks to user
+        print()
         print("---------                 ")
-        print("   🎰 Lets Gamble? 🎰   ")
+        print("   🎰 Lets Gamble! 🎰   ")
         print("                 ---------")
         print()
 
@@ -101,7 +109,7 @@ def main():
         game_round_num += 1
         
         # shows which round user is on
-        print(f"Round {game_round_num} 🏁🏇🚩")
+        print(f"Round {game_round_num} 🏁 🏇 🚩")
 
         # dict containing all slot machine icons
         fruit_icons = {
@@ -114,7 +122,7 @@ def main():
         slot_result = []
 
         # informs user if the get a jackpot or not
-        print(jackpot(fruit_icons, slot_result))
+        print(money_won(fruit_icons, slot_result))
 
         # asks if user wants to keep playing
         user_request = input("Keep playing? 🎮 : Yes (Y) | No (N): ").lower()
@@ -127,28 +135,30 @@ def main():
         match user_request:
             case "n":
                 is_playing = False
+                print()
+                print("--------------                  ")
                 print("Thanks for playing! Goodbye! ⛳ ")
+                print("                  --------------")
+                print()
             case "y":
                 is_playing = True
             case _:
                 print("Error!!! 💀 ")
 
+# ---------------------------------------------------------------------------------------------------------------------------- continuous play
 
-# continuous play ----------------------------------------------------------------------------------------------------------------------------
 
-
-# running from this file ----------------------------------------------------------------------------------------------------------------------------
+# run from this file -----------------------------------------------------------------------------------------------------------------------
 
 # stops this file running automatically if this file is used in another file via imports
 if __name__ == "__main__":
     main()
 
-
-# running from this file ----------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------- run from this file
 
 
 # to do:
-# - user starts off w/ money sum then is to lose money per play
+# - user starts off w/ money sum then is to lose money per play - via purchases (could be its own func)
 # - user is to win money for jackpot
-# - could allow user to win small amounts for 2 same fruit icons
+#   - could allow user to win small amounts for 2 same fruit icons
 # - state how much user won/lost
