@@ -42,8 +42,6 @@ def jackpot(fruit_icons, slot_result):
     # gets length of the {set} of fruit icons
     set_fruit_icons_len = len( fruit_icons_set )
 
-
-    print(f"slot_result: {current_fruit_list}")
     print(f"set(slot_result): {set(current_fruit_list)}")
     print(f"len(set(slot_result)): {len(set(current_fruit_list))}")
 
@@ -52,11 +50,11 @@ def jackpot(fruit_icons, slot_result):
     if set_fruit_icons_len == 1:
 
         # occurs if set only contains 1 fruit icon as duplicates are not allowed - the other 2 would have been the same therefore, jackpot!
-        print("Jackpot!")
+        return "Jackpot!"
     else:
 
         # occurs if there's only 2 duplicates or all 3 are different as set would take in more than 1 fruit icon if they're not all the same
-        print("not a jackpot")
+        return "not a jackpot"
 
 
 # functions ----------------------------------------------------------------------------------------------------------------------------
@@ -80,10 +78,20 @@ def main():
     slot_result = []
 
     # calls function, passes through fruit icon dict & slot machine result list, respectively
-    # print(slot_machine(fruit_icons, slot_result))
-    jackpot(fruit_icons, slot_result)    
+    # shows result of slot machine
+    print(f"slot machine result: {slot_machine(fruit_icons, slot_result)}")
+
+    # informs user if the get a jackpot or not
+    print(jackpot(fruit_icons, slot_result))    
 
 
 # stops this file running automatically if this file is used in another file via imports
 if __name__ == "__main__":
     main()
+
+# to do:
+# - make game- play continuous
+# - add slow down timer for each icon to show
+# - user starts off w/ money sum then is to lose money per play
+# - user is to win money for jackpot
+# - could allow user to win small amounts for 2 same fruit icons
