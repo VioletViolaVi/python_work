@@ -92,16 +92,16 @@ def main():
     while is_playing:
         
         # speaks to user
-        print("        ---------         ")
-        print("   🎰 Wanna Gamble? 🎰   ")
-        print("        ---------         ")
+        print("---------                 ")
+        print("   🎰 Lets Gamble? 🎰   ")
+        print("                 ---------")
         print()
 
         # increases game round number by 1 before first/next round starts
         game_round_num += 1
         
         # shows which round user is on
-        print(f"Round {game_round_num} 🏁🏇🏃‍♀️🏎️🏃‍♂️🚩")
+        print(f"Round {game_round_num} 🏁🏇🚩")
 
         # dict containing all slot machine icons
         fruit_icons = {
@@ -119,6 +119,10 @@ def main():
         # asks if user wants to keep playing
         user_request = input("Keep playing? 🎮 : Yes (Y) | No (N): ").lower()
 
+        # stops users from entering any other key other than y or n
+        while not user_request == "y" and not user_request == "n":
+            user_request = input("Please only choose between Yes (Y) | No (N): ").lower()
+
         # stops game if user says yes
         match user_request:
             case "n":
@@ -128,8 +132,6 @@ def main():
                 is_playing = True
             case _:
                 print("Error!!! 💀 ")
-
-        
 
 
 # continuous play ----------------------------------------------------------------------------------------------------------------------------
@@ -150,4 +152,3 @@ if __name__ == "__main__":
 # - user is to win money for jackpot
 # - could allow user to win small amounts for 2 same fruit icons
 # - state how much user won/lost
-# - can only pick y or n
