@@ -1,20 +1,12 @@
 # Banking App (function focussed)
 
-# stores users' selected option
-print("Choose option: 1-4")
-user_input = input("1. Check balance, 2. Make deposit, 3. Withdraw money, 4. Exit: ")
-print(" ------ ")
-
-# stores users' current amount of money they have
-user_balance_global_scope = 100
-
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
 # checks balance
-def check_balance():
+def check_balance(user_balance_local_scope):
 
     # displays message to user regarding what their current balance is
-    message = f"Your current balance is £{user_balance_global_scope:.2f}"
+    message = f"Your current balance is £{user_balance_local_scope:.2f}"
 
     # returns full message from above - needs printing in match case statements below
     return message
@@ -67,10 +59,19 @@ def leaves_bank_app():
 # helps prevent code running when this file is ran from different file's server
 # will only run on other files when imported & then called instead of automatically 
 def main():
+
+    # stores users' selected option
+    print("Choose option: 1-4")
+    user_input = input("1. Check balance, 2. Make deposit, 3. Withdraw money, 4. Exit: ")
+    print(" ------ ")
+
+    # stores users' current amount of money they have
+    user_balance_global_scope = 100
+
     # controls what users see based on option they choose
     match user_input:
         case "1":
-            print(check_balance())
+            print(check_balance(user_balance_global_scope))
         case "2":
             print(to_deposit(user_balance_global_scope))
         case "3":
