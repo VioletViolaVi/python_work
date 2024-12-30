@@ -1,6 +1,6 @@
 # Slot Machine
 
-import random
+import random, time
 
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
@@ -23,6 +23,26 @@ def slot_machine(fruit_icons, slot_result):
         # randomly puts 3 fruit icons in list 1 by 1
         slot_result.append(random_icon)
 
+        # takes longer time to show fruit icons 1 @ a time - like a real slot machine
+        time.sleep(1)
+
+        match counter:
+            # during 1st while loop iteration, display only 1st fruit icon
+            case 0:
+                print(slot_result[0])
+
+            # during 2nd while loop iteration, display 1st & 2nd fruit icons
+            case 1:
+                print(f"{slot_result[0]}  {slot_result[1]}") 
+
+            # during 3rd/last while loop iteration, display 1st, 2nd & 3rd fruit icons   
+            case 2:
+                print(f"{slot_result[0]}  {slot_result[1]}  {slot_result[2]}")  
+
+            # if this is seen, something else has gone wrong!!!
+            case _:
+                print("Error!!! 💀 ")
+    
         # increases counter to avoid infinite loop
         counter += 1
 
@@ -41,10 +61,6 @@ def jackpot(fruit_icons, slot_result):
 
     # gets length of the {set} of fruit icons
     set_fruit_icons_len = len( fruit_icons_set )
-
-    print(f"set(slot_result): {set(current_fruit_list)}")
-    print(f"len(set(slot_result)): {len(set(current_fruit_list))}")
-
 
     # checks if the length of the {set} fruit icons is the same as 1
     if set_fruit_icons_len == 1:
@@ -85,7 +101,7 @@ def main():
         game_round_num += 1
         
         # shows which round user is on
-        print(f"Round {game_round_num} 🏁🏇🏃‍♀️🏎️🏃‍♂️")
+        print(f"Round {game_round_num} 🏁🏇🏃‍♀️🏎️🏃‍♂️🚩")
 
         # dict containing all slot machine icons
         fruit_icons = {
@@ -97,10 +113,6 @@ def main():
         # stores fruits gotten when slot machine is pulled
         slot_result = []
 
-        # calls function, passes through fruit icon dict & slot machine result list, respectively
-        # shows result of slot machine
-        print(f"slot machine result: {slot_machine(fruit_icons, slot_result)}")
-
         # informs user if the get a jackpot or not
         print(jackpot(fruit_icons, slot_result))
 
@@ -111,7 +123,7 @@ def main():
         match user_request:
             case "n":
                 is_playing = False
-                print("Thanks for playing! Goodbye!")
+                print("Thanks for playing! Goodbye! ⛳ ")
             case "y":
                 is_playing = True
             case _:
@@ -134,8 +146,8 @@ if __name__ == "__main__":
 
 
 # to do:
-# - add slow down timer for each icon to show
 # - user starts off w/ money sum then is to lose money per play
 # - user is to win money for jackpot
 # - could allow user to win small amounts for 2 same fruit icons
 # - state how much user won/lost
+# - can only pick y or n
