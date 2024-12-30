@@ -69,14 +69,23 @@ def main():
     # helps make game continuous until user wants to stop playing
     is_playing = True
 
+    # keeps track of game round number
+    game_round_num = 0
+
     # helps make game continuous until user wants to stop playing - makes condition falsy
     while is_playing:
         
         # speaks to user
-        print("        --------        ")
-        print("   🎰 Wanna play? 🎰   ")
-        print("        --------        ")
+        print("        ---------         ")
+        print("   🎰 Wanna Gamble? 🎰   ")
+        print("        ---------         ")
         print()
+
+        # increases game round number by 1 before first/next round starts
+        game_round_num += 1
+        
+        # shows which round user is on
+        print(f"Round {game_round_num} 🏁🏇🏃‍♀️🏎️🏃‍♂️")
 
         # dict containing all slot machine icons
         fruit_icons = {
@@ -125,7 +134,6 @@ if __name__ == "__main__":
 
 
 # to do:
-# - make game- play continuous
 # - add slow down timer for each icon to show
 # - user starts off w/ money sum then is to lose money per play
 # - user is to win money for jackpot
