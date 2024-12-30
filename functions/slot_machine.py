@@ -60,34 +60,58 @@ def jackpot(fruit_icons, slot_result):
 # functions ----------------------------------------------------------------------------------------------------------------------------
 
 
+# continuous play ----------------------------------------------------------------------------------------------------------------------------
+
+
 # helps stops this file running automatically if this file is used in another file via imports 
 def main():
+    
+    # helps make game continuous until user wants to stop playing
+    is_playing = True
 
-    # speaks to user
-    print("Wanna play? 🎰 ")
-    print("  --- --- ---  ")
+    # helps make game continuous until user wants to stop playing - makes condition falsy
+    while is_playing:
+        
+        # speaks to user
+        print("        --------        ")
+        print("   🎰 Wanna play? 🎰   ")
+        print("        --------        ")
+        print()
 
-    # dict containing all slot machine icons
-    fruit_icons = {
-        1: "🍋",
-        2: "🍏",
-        3: "🍉",
-    }
+        # dict containing all slot machine icons
+        fruit_icons = {
+            1: "🍋",
+            2: "🍏",
+            3: "🍉",
+        }
 
-    # stores fruits gotten when slot machine is pulled
-    slot_result = []
+        # stores fruits gotten when slot machine is pulled
+        slot_result = []
 
-    # calls function, passes through fruit icon dict & slot machine result list, respectively
-    # shows result of slot machine
-    print(f"slot machine result: {slot_machine(fruit_icons, slot_result)}")
+        # calls function, passes through fruit icon dict & slot machine result list, respectively
+        # shows result of slot machine
+        print(f"slot machine result: {slot_machine(fruit_icons, slot_result)}")
 
-    # informs user if the get a jackpot or not
-    print(jackpot(fruit_icons, slot_result))    
+        # informs user if the get a jackpot or not
+        print(jackpot(fruit_icons, slot_result))
 
+
+
+        
+
+
+# continuous play ----------------------------------------------------------------------------------------------------------------------------
+
+
+# running from this file ----------------------------------------------------------------------------------------------------------------------------
 
 # stops this file running automatically if this file is used in another file via imports
 if __name__ == "__main__":
     main()
+
+
+# running from this file ----------------------------------------------------------------------------------------------------------------------------
+
 
 # to do:
 # - make game- play continuous
@@ -95,3 +119,4 @@ if __name__ == "__main__":
 # - user starts off w/ money sum then is to lose money per play
 # - user is to win money for jackpot
 # - could allow user to win small amounts for 2 same fruit icons
+# - state how much user won/lost
