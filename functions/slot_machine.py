@@ -28,14 +28,17 @@ def slot_machine(fruit_icons, slot_result):
         match counter:
             # during 1st while loop iteration, display only 1st fruit icon
             case 0:
+                time.sleep(1)
                 print(slot_result[0])
 
             # during 2nd while loop iteration, display 1st & 2nd fruit icons
             case 1:
+                time.sleep(1)
                 print(f"{slot_result[0]}  {slot_result[1]}") 
 
             # during 3rd/last while loop iteration, display 1st, 2nd & 3rd fruit icons   
             case 2:
+                time.sleep(1)
                 print(f"{slot_result[0]}  {slot_result[1]}  {slot_result[2]}")  
 
             # if this is seen, something else has gone wrong!!!
@@ -63,7 +66,7 @@ def money_won(fruit_icons, slot_result):
 
     # different £££ amount to win
     # not same | not same | not same
-    none_same = 10 
+    none_same = 0 
     # not same | same | same
     two_same = 50 
     # same | same | same
@@ -71,15 +74,22 @@ def money_won(fruit_icons, slot_result):
 
     # means all 3 fruits are different
     if set_fruit_icons_len == 3:
-        return f"With no same fruits, you only won £{none_same}!"
+        # adds least amount of money to user's pot
+        print(f"No matching fruits!") 
+        print(f"You won £{none_same}!") 
     
     # means there were 2 of the same fruits in list b4 becoming 2 in {set}
-    elif set_fruit_icons_len == 2:
-        return f"With 2 same fruits, you won £{two_same}!"
+    elif set_fruit_icons_len == 2:     
+        # adds 2nd least amount of money to user's pot
+        print(f"You got 2 matching fruits!") 
+        print(f"You won £{two_same}!") 
 
     # means all 3 fruits were the same/duplicates so {set} could all take in 1 - therefore, jackpot!
     elif set_fruit_icons_len == 1:
-        return f"Jackpot! With all 3 slots as the same fruit! You won £{three_same}!"
+        # adds highest amount of money to user's pot
+        print(f"Jackpot!")
+        print(f"All matching fruits!")
+        print(f"You won £{three_same}!")
 
 # ---------------------------------------------------------------------------------------------------------------------------- functions
 
@@ -87,7 +97,7 @@ def money_won(fruit_icons, slot_result):
 # continuous play ----------------------------------------------------------------------------------------------------------------------------
 
 # helps stops this file running automatically if this file is used in another file via imports 
-def main():
+def main():      
     
     # helps make game continuous until user wants to stop playing
     is_playing = True
@@ -104,6 +114,12 @@ def main():
         print("   🎰 Lets Gamble! 🎰   ")
         print("                 ---------")
         print()
+
+        start_game = input("Press enter to start: ")
+        print()
+        while start_game != "":
+            start_game = input("Just press enter to start!: ")
+            print()
 
         # increases game round number by 1 before first/next round starts
         game_round_num += 1
@@ -122,10 +138,13 @@ def main():
         slot_result = []
 
         # informs user if the get a jackpot or not
-        print(money_won(fruit_icons, slot_result))
+        money_won(fruit_icons, slot_result)
 
         # asks if user wants to keep playing
+        print()
+        print("---------                 ")
         user_request = input("Keep playing? 🎮 : Yes (Y) | No (N): ").lower()
+        print()
 
         # stops users from entering any other key other than y or n
         while not user_request == "y" and not user_request == "n":
@@ -155,10 +174,3 @@ if __name__ == "__main__":
     main()
 
 # ------------------------------------------------------------------------------------------------------------------------- run from this file
-
-
-# to do:
-# - user starts off w/ money sum then is to lose money per play - via purchases (could be its own func)
-# - user is to win money for jackpot
-#   - could allow user to win small amounts for 2 same fruit icons
-# - state how much user won/lost
