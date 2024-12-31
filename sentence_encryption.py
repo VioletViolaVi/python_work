@@ -1,38 +1,29 @@
 # Sentence Encryption
 
-import string, random
+import string
 
-# stores all different characters available
-chars = string.printable
+# original order of characters as string
+original_chars = string.printable
 
-# converts chars "string" into [list]
-chars_list = list(chars)
+# reversed order of characters as string
+mixed_up_chars = original_chars[::-1]
 
-# creates copy of chars [list]
-chars_list_copy = chars_list.copy()
+# user enters message to be encrypted
+message = input("Enter a sentence: ")
 
-# to shuffle copy of chars list
-random.shuffle(chars_list_copy)
+# shows new encrypted message
+encrypt_message = ""
 
-# stores shuffled characters
-shuffled_chars_list_copy = chars_list_copy
+# encrypt user message
+for character in message:
 
-# get sentence from user to encrypt
-user_sentence = input("Enter a sentence to encrypt: ")
+    # gets index number of inputted character from index location of letter in mixed_up_chars string
+    encrypt_letter_num_index = original_chars.index(character)
+    print(f"encrypt_letter_num_index for OG: {encrypt_letter_num_index}")
 
-# stores encrypted message
-encrypted_sentence = ""
+    # puts letter gotten from mixed_up_chars string in empty string above
+    encrypt_message += mixed_up_chars[encrypt_letter_num_index]
+    print(f"encrypt_message: {encrypt_message}")
 
-# replace each user sentence character with character from [shuffled_chars_list_copy list]
-for char in user_sentence:
-
-    # gets random number for selecting random char from shuffled list
-    # uses length of [shuffled_chars_list_copy list] for passed number value
-    rand_num = random.randint( 0, ( len(shuffled_chars_list_copy) - 1 ) )
-
-    # stores random character from [shuffled_chars_list_copy list] for every character entered in user sentence
-    encrypted_sentence += shuffled_chars_list_copy[rand_num]
-    
-    print(f"char: {char} | encrypted_sentence: {encrypted_sentence}")
-
-print(f"The final encrypted message: {encrypted_sentence}")
+# shows encrypted message
+print(f"encrypt_message: {encrypt_message}")
