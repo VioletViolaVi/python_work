@@ -29,7 +29,7 @@ def show_dashes(param_1, param_2):
     # shows characters in word as underscores w/ correct amount
     for _ in param_2:
         print(_) # shows word being used - remove @ end
-        param_1 += "_" 
+        param_1 += "_ " 
     return param_1
 
 
@@ -38,7 +38,7 @@ def letter_guess(param):
 
     # asks user for letter guess
     param += input("Enter letter guess: ").lower()
-    print(f"You guessed: {param}")
+    # print(f"You guessed: {param}")
 
     # returns letter inputted by user
     return param
@@ -50,16 +50,25 @@ def show_correct_letters(param_1, param_2, param_3, param_4):
     if param_2.find(param_1) == -1:
         # displays dashes if letter is not in word
         print(f"Wrong: {param_3}")
-    elif param_2.find(param_1) != -1:
-        print(f"Correct:", end=" ")
-        
+        # print(f"Wrong: {param_4}")
+    
+    elif param_2.find(param_1) != -1:        
         # displays letter if in word, otherwise leaves dashes
+        print(f"Correct:", end=" ")
         for char in param_2:
+            # char are individual letters in word to guess, param_1 is user's letter guess
             if char == param_1:
+                # puts individual letters, from word to guess, in correct positions, inside variable
+                param_4 += char
                 print(char , end=" ")
             else:
-                print("_", end=" ")
-        # return param_4
+                # puts dashes in new variable as the user's letter guess doesn't 'go there'
+                param_4 += "_ "
+                print("_ ", end=" ")
+        print()
+        print(f"param_4: {param_4}")
+        # returns word with dashes and letters; if guessed
+        return param_4
     else:
         print("Error!")
 
