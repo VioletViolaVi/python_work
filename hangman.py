@@ -26,8 +26,14 @@ def show_dashes(param_1, param_2):
     # shows characters in word as underscores w/ correct amount 
     for _ in random_word(param_1):
         param_2 += "_" 
-    print(f"Guess a letter: {param_2}")
+    print(f"Can you guess the word?: {param_2}")
 
+
+def letter_guess(param):
+
+    # asks user for letter guess
+    param = input("Enter letter guess: ").lower()
+    print(f"You guessed: {param}")
 
 def show_correct_letters():
     pass
@@ -50,6 +56,9 @@ def main():
     # displays full dashes/hidden word
     show_dashes(words, dashed_word)
     
+    # stores user's letter guess
+    user_guess = ""
+    letter_guess(user_guess)
 
 # allows file to run from other files w/out repeats
 if __name__ == "__main__":
