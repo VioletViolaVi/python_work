@@ -11,12 +11,23 @@ import random
 # - scores
 # - continuous play
 # - greeting & goodbye
+# - add more words
 
-def random_word(words_param):
-    return random.choice(words_param)
+# param == words list
+def random_word(param):
 
-def show_dashes():
-    pass
+    # returns random word from list passed through in main() below
+    return random.choice(param)
+
+
+# param_1 == words list, param_2 == dashed_word
+def show_dashes(param_1, param_2):
+
+    # shows characters in word as underscores w/ correct amount 
+    for _ in random_word(param_1):
+        param_2 += "_" 
+    print(f"Guess a letter: {param_2}")
+
 
 def show_correct_letters():
     pass
@@ -30,12 +41,15 @@ def show_full_answer():
 # helps allow file to run from other files w/out repeats
 def main():
 
-    # stores list of words for game
-    words = ["lunch", "knee", "town", "fly", "lollipop"]
+    # stores list of words for game - [5, 4, 2, 3, 8]
+    words = ["lunch", "knee", "it", "fly", "lollipop"]
 
-    # selects random word from list
-    print(random_word(words))
-    pass
+    # stores word as dashes e.g. "_ _ _"
+    dashed_word = ""
+
+    # displays full dashes/hidden word
+    show_dashes(words, dashed_word)
+    
 
 # allows file to run from other files w/out repeats
 if __name__ == "__main__":
