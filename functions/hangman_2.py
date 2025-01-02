@@ -89,8 +89,15 @@ def app():
         # stores letter user entered
         user_guess = input("Guess a letter: ").lower()
 
-        # switches dashes for letters when guessed correctly by user
+        # prevents users from entering input longer that 1 letter
+        # also prevents users from entering input that are not letters
+        if len(user_guess) != 1 or not user_guess.isalpha():
+            print("Single letters only!")
+            
+            # stops rest of code, underneath & still in while loop from occurring, instead code goes back to while loop condition to start again
+            continue
 
+        # switches dashes for letters when guessed correctly by user
         # when user's letter guess is in randomly chosen word
         if user_guess in correct_word:
 
