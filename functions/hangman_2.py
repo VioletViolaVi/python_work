@@ -39,8 +39,11 @@ hangman_art = {
 # functions
 
 # shows correct hangman art based on num of wrong guesses dict key
-def display_hangman_art(incorrect_guess_num):
-    pass
+def display_hangman_art(wrong_guess_total):
+
+    # uses assigned num, from app() below, to find respective key in hangman_art dict to produce its correct art value
+    for code_line in hangman_art[wrong_guess_total]:
+        print(code_line)
 
 # shows [list] of dashes for letters to guess
 def display_dashes(dashes):
@@ -60,7 +63,7 @@ def app():
     dashes = " _ " * len(correct_word)
 
     # stores num of incorrect guesses made so correct hangman art can be shown
-    incorrect_guess_num = 0
+    wrong_guess_total = 0
 
     # stores all letters guessed by user, wrong or not
     all_user_guesses = ""
@@ -70,7 +73,7 @@ def app():
 
     # runs the game
     while is_playing:
-        display_hangman_art(incorrect_guess_num)
+        display_hangman_art(wrong_guess_total)
         display_dashes(dashes)
         user_guess = input("Guess a letter: ").lower()
 
