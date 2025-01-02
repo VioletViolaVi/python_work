@@ -68,10 +68,15 @@ def app():
     # to turn game on and off once game has been won/lost
     is_playing = True
 
-
+    # runs the game
+    while is_playing:
+        display_hangman_art(incorrect_guess_num)
+        display_dashes(dashes)
+        user_guess = input("Guess a letter: ").lower()
 
     print(f"correct_word: {correct_word}")
     print(f"dashes: {dashes}")
+    print(f"user_guess: {user_guess}")
 
 # app() function gets called only when this code is ran directly
 if __name__ == "__main__":
