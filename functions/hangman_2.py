@@ -2,44 +2,10 @@
 
 import random
 
-# stores words for game
-words = ["lunch", "knee", "it", "fly", "lollipop"]
-
-# different hangman states - {num of wrong guesses: art}
-hangman_art = {
-    0 : ("   ", 
-         "   ", 
-         "   "),
-
-    1 : (" O ", 
-         "   ", 
-         "   "),
-
-    2 : (" O ", 
-         " | ", 
-         "   "),
-
-    3 : (" O ", 
-         "/| ", 
-         "   "),
-
-    4 : (" O ", 
-         "/|\\", 
-         "   "),
-
-    5 : (" O ", 
-         "/|\\", 
-         "/  "),
-
-    6 : (" O ", 
-         "/|\\", 
-         "/ \\")
-}
-
 # functions
 
 # shows correct hangman art based on num of wrong guesses dict key
-def display_hangman_art(wrong_guess_total):
+def display_hangman_art(hangman_art, wrong_guess_total):
 
     # uses assigned num, from app() below, to find respective key in hangman_art dict to produce its correct art value
     for code_line in hangman_art[wrong_guess_total]:
@@ -55,7 +21,41 @@ def display_answer(correct_word):
 
 # to contain main body of code
 def app():
-    
+
+    # different hangman states - {num of wrong guesses: art}
+    hangman_art = {
+        0 : ("   ", 
+            "   ", 
+            "   "),
+
+        1 : (" O ", 
+            "   ", 
+            "   "),
+
+        2 : (" O ", 
+            " | ", 
+            "   "),
+
+        3 : (" O ", 
+            "/| ", 
+            "   "),
+
+        4 : (" O ", 
+            "/|\\", 
+            "   "),
+
+        5 : (" O ", 
+            "/|\\", 
+            "/  "),
+
+        6 : (" O ", 
+            "/|\\", 
+            "/ \\")
+    }    
+
+    # stores words for game
+    words = ["lunch", "knee", "it", "fly", "lollipop"]    
+
     # gets random word from [words] list above
     correct_word =  random.choice(words)
     
@@ -78,7 +78,7 @@ def app():
     
     # runs the game
     while is_playing:
-        display_hangman_art(wrong_guess_total)
+        display_hangman_art(hangman_art, wrong_guess_total)
         display_dashes(dashes)
         user_guess = input("Guess a letter: ").lower()
 
