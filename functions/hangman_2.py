@@ -36,8 +36,24 @@ hangman_art = {
          "/ \\")
 }
 
-x = 0
-while x <= 6:
-    for line in hangman_art[x]:
-        print(line)
-    x += 1
+# functions
+
+# shows correct hangman art based on num of wrong guesses dict key
+def display_man(wrong_guesses):
+    pass
+
+# shows [list] of dashes for letters to guess
+def display_hint(hint):
+    pass
+
+# shows correct answer when game is won or lost
+def display_answer(answer):
+    pass
+
+# to contain main body of code
+def app():
+    pass
+
+# app() function gets called only when this code is ran directly
+if __name__ == "__main__":
+    app()
