@@ -90,9 +90,20 @@ def app():
         user_guess = input("Guess a letter: ").lower()
 
         # switches dashes for letters when guessed correctly by user
+
+        # when user's letter guess is in randomly chosen word
         if user_guess in correct_word:
+
+            # iterates throughout the length of the randomly chosen word, e.g. fly=3, knee=4, etc.
+            #   - this for loop condition provides all different [index] numbers needed to dynamically check each letter in random word individually
             for index_num in range( len(correct_word) ):
+
+                # checks to see if the current random word's character matches letter the user entered
+                #   - e.g. lunch-> checks 'l' matches user's input, checks 'u' matches user's input, checks 'n' matches user's input, etc.
                 if correct_word[index_num] == user_guess:
+
+                    # when current random word's letter matches user's input, the same index positioned dash in [LIST] is reassigned to user's input
+                    #   - e.g. l[u]nch -> the 2nd '_' in '_  _  _  _  _' is reassigned to 'u' as user entered 'u' when dashes[index_num] is dashes[1]
                     dashes[index_num] = user_guess
                     print(f"dashes[index_num]: {dashes[index_num]}")
                     print(f"dashes: {dashes}")
