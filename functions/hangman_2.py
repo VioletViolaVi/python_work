@@ -4,6 +4,7 @@ import random
 
 # functions
 
+
 # shows correct hangman art based on num of wrong guesses dict key
 def display_hangman_art(hangman_art, wrong_guess_total):
 
@@ -11,54 +12,37 @@ def display_hangman_art(hangman_art, wrong_guess_total):
     for code_line in hangman_art[wrong_guess_total]:
         print(code_line)
 
+
 # shows [list] of dashes for letters to guess
 def display_dashes(dashes):
-    print(" ".join(dashes)) # .join() being used as 'dashes' variable is a [list]
+    print(" ".join(dashes))  # .join() being used as 'dashes' variable is a [list]
+
 
 # shows correct answer when game is won or lost
 def display_answer(correct_word):
     return correct_word
+
 
 # to contain main body of code
 def app():
 
     # different hangman states - {num of wrong guesses: art}
     hangman_art = {
-        0 : ("   ", 
-            "   ", 
-            "   "),
-
-        1 : (" O ", 
-            "   ", 
-            "   "),
-
-        2 : (" O ", 
-            " | ", 
-            "   "),
-
-        3 : (" O ", 
-            "/| ", 
-            "   "),
-
-        4 : (" O ", 
-            "/|\\", 
-            "   "),
-
-        5 : (" O ", 
-            "/|\\", 
-            "/  "),
-
-        6 : (" O ", 
-            "/|\\", 
-            "/ \\")
-    }    
+        0: ("   ", "   ", "   "),
+        1: (" O ", "   ", "   "),
+        2: (" O ", " | ", "   "),
+        3: (" O ", "/| ", "   "),
+        4: (" O ", "/|\\", "   "),
+        5: (" O ", "/|\\", "/  "),
+        6: (" O ", "/|\\", "/ \\"),
+    }
 
     # stores words for game
-    words = ["lunch", "knee", "it", "fly", "lollipop"]    
+    words = ["lunch", "knee", "it", "fly", "lollipop"]
 
     # gets random word from [words] list above
-    correct_word =  random.choice(words)
-    
+    correct_word = random.choice(words)
+
     # produces same num of dashes as there are in word to guess
     #   - needs to NOT BE A STRING as items need to be reassigned (to swap dashes for correct letters)
     #   - reassignment of characters in strings is not possible as strings are immutable
@@ -72,7 +56,7 @@ def app():
 
     # to turn game on and off once game has been won/lost
     is_playing = True
-    
+
     # runs the game
     while is_playing:
 
@@ -89,14 +73,14 @@ def app():
         if len(user_guess) != 1 or not user_guess.isalpha():
             print("Enter single letters only!")
             print()
-            
+
             # stops rest of code, underneath & still in while loop from occurring, instead code goes back to while loop condition to start again
             continue
 
-        # adds letter guess to 'all_user_guesses' variable 
+        # adds letter guess to 'all_user_guesses' variable
         #   - so this variable's content can be referred to when checking if letter had already been guessed before
         all_user_guesses.append(user_guess)
-        
+
         # ensures the latest letter guess has been made
         if user_guess in all_user_guesses:
 
@@ -108,8 +92,8 @@ def app():
                 print()
 
                 # removes latest letter guess so max num of letter remains @ 1 to allow '== 2' portion of if condition to continue working
-                del all_user_guesses[-1]                
-  
+                del all_user_guesses[-1]
+
                 # stops user from proceeding with hangman game until they enter a letter they have not used before
                 continue
 
@@ -127,21 +111,21 @@ def app():
             print()
 
             # inform user game is over as they have now guessed wrong 6 times
-            if wrong_guess_total == ( len(hangman_art) - 1):  
-                
+            if wrong_guess_total == (len(hangman_art) - 1):
+
                 # messages to user about losing game
                 print("Game Over! You lose!")
                 print()
-                
+
                 # displays correct word spaced out between letters
-                print(' '.join(display_answer(correct_word)))
+                print(" ".join(display_answer(correct_word)))
                 print()
 
                 # turns game 'off' by making while loop condition statement falsy to stop looping - game has been lost
                 is_playing = False
 
                 # displays correct answer
-                print(f"The correct answer was '{display_answer(correct_word)}'!")             
+                print(f"The correct answer was '{display_answer(correct_word)}'!")
 
         # switches dashes for letters when guessed correctly by user
         # when user's letter guess is in randomly chosen word
@@ -149,7 +133,7 @@ def app():
 
             # iterates throughout the length of the randomly chosen word, e.g. fly=3, knee=4, etc.
             #   - this for loop condition provides all different [index] numbers needed to dynamically check each letter in random word individually
-            for index_num in range( len(correct_word) ):
+            for index_num in range(len(correct_word)):
 
                 # checks to see if the current random word's character matches letter the user entered
                 #   - e.g. lunch-> checks 'l' matches user's input, checks 'u' matches user's input, checks 'n' matches user's input, etc.
@@ -157,8 +141,8 @@ def app():
 
                     # when current random word's letter matches user's input, the same index positioned dash in [LIST] is reassigned to user's input
                     #   - e.g. l[u]nch -> the 2nd '_' in '_  _  _  _  _' is reassigned to 'u' as user entered 'u' when dashes[index_num] is dashes[1]
-                    dashes[index_num] = user_guess                    
-        
+                    dashes[index_num] = user_guess
+
         # informs user when they win game
         if dashes.count(" _ ") == 0:
 
@@ -173,6 +157,7 @@ def app():
 
             # turns game 'off' by making while loop condition statement falsy to stop looping - game has been won
             is_playing = False
+
 
 # app() function gets called only when this code is ran directly
 if __name__ == "__main__":
