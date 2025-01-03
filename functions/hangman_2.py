@@ -119,20 +119,25 @@ def app():
             # increases wrong guess total from 0 so it can get to 6 if needed (i.e. if user guesses wrong 6 times)
             wrong_guess_total += 1
 
+            # messages to user about getting guess wrong
             print(f"Wrong! ({wrong_guess_total}/6)")
+
+            # displays respective hangman art - based on how many wrong guesses had been made
             display_hangman_art(hangman_art, wrong_guess_total)
             print()
 
             # inform user game is over as they have now guessed wrong 6 times
-            if wrong_guess_total == 6:
-                print("Game Over!")
+            if wrong_guess_total == 6:               
+
+                # messages to user about losing game
+                print("Game Over! You lose!")
                 print()
 
                 # turns game 'off' by making while loop condition statement falsy to stop looping - game has been lost
                 is_playing = False
 
                 # displays correct answer
-                print(f"The correct answer was '{correct_word}'")
+                print(f"The correct answer was '{correct_word}'!")             
 
         # switches dashes for letters when guessed correctly by user
         # when user's letter guess is in randomly chosen word
@@ -157,7 +162,7 @@ def app():
             print(" ".join(dashes))
             print()
 
-            # messages to user
+            # messages to user about wining
             print("You win!")
             print()
             print(f"The correct answer is '{correct_word}'!")
