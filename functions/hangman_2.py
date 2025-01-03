@@ -127,8 +127,8 @@ def app():
             print()
 
             # inform user game is over as they have now guessed wrong 6 times
-            if wrong_guess_total == 6:               
-
+            if wrong_guess_total == ( len(hangman_art) - 1):  
+                
                 # messages to user about losing game
                 print("Game Over! You lose!")
                 print()
