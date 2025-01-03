@@ -68,7 +68,7 @@ def app():
     wrong_guess_total = 0
 
     # stores all letters guessed by user, wrong or not
-    all_user_guesses = ""
+    all_user_guesses = []
 
     # to turn game on and off once game has been won/lost
     is_playing = True
@@ -92,10 +92,33 @@ def app():
         # prevents users from entering input longer that 1 letter
         # also prevents users from entering input that are not letters
         if len(user_guess) != 1 or not user_guess.isalpha():
-            print("Single letters only!")
+            print("Enter single letters only!")
             
             # stops rest of code, underneath & still in while loop from occurring, instead code goes back to while loop condition to start again
             continue
+
+        # adds letter guess to 'all_user_guesses' variable 
+        #   - so this variable's content can be referred to when checking if letter had already been guessed before
+        all_user_guesses.append(user_guess)
+        
+        # ensures the latest letter guess has been made
+        if user_guess in all_user_guesses:
+
+            # checks if latest letter guess has been made for the 2nd time
+            if all_user_guesses.count(user_guess) == 2:
+                print(f"1) all_user_guesses: {all_user_guesses}")
+                print(f"1) user_guess: {user_guess}")
+
+                # informs user they have already made the latest letter guess once before
+                print(f"You've already guessed the letter '{user_guess}'!")
+
+                # removes latest letter guess so max num of letter remains @ 1 to allow '== 2' portion of if condition to continue working
+                del all_user_guesses[-1]                
+
+                print(f"2) all_user_guesses: {all_user_guesses}")
+
+                # stops user from proceeding with hangman game until they enter a letter they have not used before
+                continue
 
         # switches dashes for letters when guessed correctly by user
         # when user's letter guess is in randomly chosen word
