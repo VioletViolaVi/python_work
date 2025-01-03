@@ -13,7 +13,7 @@ def display_hangman_art(hangman_art, wrong_guess_total):
 
 # shows [list] of dashes for letters to guess
 def display_dashes(dashes):
-    print(" ".join(dashes)) # .join() being used as dashes variable is a [list]
+    print(" ".join(dashes)) # .join() being used as 'dashes' variable is a [list]
 
 # shows correct answer when game is won or lost
 def display_answer(correct_word):
@@ -72,16 +72,9 @@ def app():
 
     # to turn game on and off once game has been won/lost
     is_playing = True
-
-    # print(f"correct_word: {correct_word}")
-    # print(f"dashes: {dashes}")    
-    # print(f"user_guess: {user_guess}")
     
     # runs the game
     while is_playing:
-
-        # calls function to show respective hangman art based on number of wrong guesses
-        # display_hangman_art(hangman_art, wrong_guess_total)
 
         # calls function to show respective num of dashes based on the length of the random word gotten
         display_dashes(dashes)
@@ -106,17 +99,13 @@ def app():
 
             # checks if latest letter guess has been made for the 2nd time
             if all_user_guesses.count(user_guess) == 2:
-                print(f"1) all_user_guesses: {all_user_guesses}")
-                print(f"1) user_guess: {user_guess}")
 
                 # informs user they have already made the latest letter guess once before
                 print(f"You've already guessed the letter '{user_guess}'!")
 
                 # removes latest letter guess so max num of letter remains @ 1 to allow '== 2' portion of if condition to continue working
                 del all_user_guesses[-1]                
-
-                print(f"2) all_user_guesses: {all_user_guesses}")
-
+  
                 # stops user from proceeding with hangman game until they enter a letter they have not used before
                 continue
 
@@ -125,15 +114,15 @@ def app():
 
             # increases wrong guess total from 0 so it can get to 6 if needed (i.e. if user guesses wrong 6 times)
             wrong_guess_total += 1
-            print("not in word")
-            print(f"wrong_guess_total: {wrong_guess_total}")
+
+            print(f"Wrong! ({wrong_guess_total}/6)")
             display_hangman_art(hangman_art, wrong_guess_total)
 
             # inform user game is over as they have now guessed wrong 6 times
             if wrong_guess_total == 6:
                 print("Game Over!")
 
-                # turns game 'off' by making while loop condition statement falsy to stop looping
+                # turns game 'off' by making while loop condition statement falsy to stop looping - game has been lost
                 is_playing = False
 
                 # displays correct answer
@@ -153,10 +142,20 @@ def app():
 
                     # when current random word's letter matches user's input, the same index positioned dash in [LIST] is reassigned to user's input
                     #   - e.g. l[u]nch -> the 2nd '_' in '_  _  _  _  _' is reassigned to 'u' as user entered 'u' when dashes[index_num] is dashes[1]
-                    dashes[index_num] = user_guess
-                    print(f"dashes[index_num]: {dashes[index_num]}")
-                    print(f"dashes: {dashes}")
+                    dashes[index_num] = user_guess                    
+        
+        # informs user when they win game
+        if dashes.count(" _ ") == 0:
 
+            # .join() being used to combine correct letters in [list] into string, separated by space
+            print(" ".join(dashes))
+
+            # messages to user
+            print("You win!")
+            print(f"The correct answer is '{correct_word}'!")
+
+            # turns game 'off' by making while loop condition statement falsy to stop looping - game has been won
+            is_playing = False
 
 # app() function gets called only when this code is ran directly
 if __name__ == "__main__":
