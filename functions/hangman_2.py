@@ -81,7 +81,7 @@ def app():
     while is_playing:
 
         # calls function to show respective hangman art based on number of wrong guesses
-        display_hangman_art(hangman_art, wrong_guess_total)
+        # display_hangman_art(hangman_art, wrong_guess_total)
 
         # calls function to show respective num of dashes based on the length of the random word gotten
         display_dashes(dashes)
@@ -119,6 +119,25 @@ def app():
 
                 # stops user from proceeding with hangman game until they enter a letter they have not used before
                 continue
+
+        # shows hangman art as wrong guesses are made
+        if user_guess not in correct_word:
+
+            # increases wrong guess total from 0 so it can get to 6 if needed (i.e. if user guesses wrong 6 times)
+            wrong_guess_total += 1
+            print("not in word")
+            print(f"wrong_guess_total: {wrong_guess_total}")
+            display_hangman_art(hangman_art, wrong_guess_total)
+
+            # inform user game is over as they have now guessed wrong 6 times
+            if wrong_guess_total == 6:
+                print("Game Over!")
+
+                # turns game 'off' by making while loop condition statement falsy to stop looping
+                is_playing = False
+
+                # displays correct answer
+                print(f"The correct answer was '{correct_word}'")
 
         # switches dashes for letters when guessed correctly by user
         # when user's letter guess is in randomly chosen word
