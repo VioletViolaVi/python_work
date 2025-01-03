@@ -78,14 +78,17 @@ def app():
 
         # calls function to show respective num of dashes based on the length of the random word gotten
         display_dashes(dashes)
+        print()
 
         # stores letter user entered
         user_guess = input("Guess a letter: ").lower()
+        print()
 
         # prevents users from entering input longer that 1 letter
         # also prevents users from entering input that are not letters
         if len(user_guess) != 1 or not user_guess.isalpha():
             print("Enter single letters only!")
+            print()
             
             # stops rest of code, underneath & still in while loop from occurring, instead code goes back to while loop condition to start again
             continue
@@ -102,6 +105,7 @@ def app():
 
                 # informs user they have already made the latest letter guess once before
                 print(f"You've already guessed the letter '{user_guess}'!")
+                print()
 
                 # removes latest letter guess so max num of letter remains @ 1 to allow '== 2' portion of if condition to continue working
                 del all_user_guesses[-1]                
@@ -117,10 +121,12 @@ def app():
 
             print(f"Wrong! ({wrong_guess_total}/6)")
             display_hangman_art(hangman_art, wrong_guess_total)
+            print()
 
             # inform user game is over as they have now guessed wrong 6 times
             if wrong_guess_total == 6:
                 print("Game Over!")
+                print()
 
                 # turns game 'off' by making while loop condition statement falsy to stop looping - game has been lost
                 is_playing = False
@@ -149,9 +155,11 @@ def app():
 
             # .join() being used to combine correct letters in [list] into string, separated by space
             print(" ".join(dashes))
+            print()
 
             # messages to user
             print("You win!")
+            print()
             print(f"The correct answer is '{correct_word}'!")
 
             # turns game 'off' by making while loop condition statement falsy to stop looping - game has been won
