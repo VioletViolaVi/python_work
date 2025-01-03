@@ -17,7 +17,7 @@ def display_dashes(dashes):
 
 # shows correct answer when game is won or lost
 def display_answer(correct_word):
-    print(correct_word) 
+    return correct_word
 
 # to contain main body of code
 def app():
@@ -132,12 +132,16 @@ def app():
                 # messages to user about losing game
                 print("Game Over! You lose!")
                 print()
+                
+                # displays correct word spaced out between letters
+                print(' '.join(display_answer(correct_word)))
+                print()
 
                 # turns game 'off' by making while loop condition statement falsy to stop looping - game has been lost
                 is_playing = False
 
                 # displays correct answer
-                print(f"The correct answer was '{correct_word}'!")             
+                print(f"The correct answer was '{display_answer(correct_word)}'!")             
 
         # switches dashes for letters when guessed correctly by user
         # when user's letter guess is in randomly chosen word
