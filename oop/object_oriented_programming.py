@@ -35,3 +35,19 @@ class Car:
         self.year = year
         self.colour = colour
         self.for_sale = for_sale
+
+# constructing Car objects
+# 'self' is already provided
+    # - if u try to use 'self' a TypeError gets thrown
+car_1 = Car("limo", 2025, "blue", True)
+
+# this prints memory address of where car_1 object is located, see below:
+    # - <__main__.Car object at 0x0000026A63E3B190>
+print(car_1)
+
+# to get the attributes located at the object's (car_1) memory address
+# the dot '.' used, just b4 the attribute, is called the attribute access operator
+print(car_1.model)
+print(car_1.year)
+print(car_1.colour)
+print(car_1.for_sale)
