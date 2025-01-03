@@ -15,11 +15,15 @@ def display_hangman_art(hangman_art, wrong_guess_total):
 
 # shows [list] of dashes for letters to guess
 def display_dashes(dashes):
-    print(" ".join(dashes))  # .join() being used as 'dashes' variable is a [list]
+
+    # .join() being used as 'dashes' variable is a [list]
+    print(" ".join(dashes))
 
 
 # shows correct answer when game is won or lost
 def display_answer(correct_word):
+
+    # simply returns correct random word to be guessed
     return correct_word
 
 
