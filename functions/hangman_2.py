@@ -1,6 +1,6 @@
 # Hangman Game
 
-import random
+import random, hang_man_words
 
 # functions
 
@@ -42,7 +42,10 @@ def app():
     }
 
     # stores words for game
-    words = ["lunch", "knee", "it", "fly", "lollipop"]
+    # words = ["lunch", "knee", "it", "fly", "lollipop"] # OG shorter word list
+
+    # words taken from separate file, containing a longer list of words
+    words = hang_man_words.extended_word_list
 
     # gets random word from [words] list above
     correct_word = random.choice(words)
