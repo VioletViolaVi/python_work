@@ -95,6 +95,7 @@ def app():
             if all_user_guesses.count(user_guess) == 2:
 
                 # informs user they have already made the latest letter guess once before
+                print(f"You already guessed the letter '{user_guess}'!")
                 print()
 
                 # removes latest letter guess so max num of letter remains @ 1 to allow '== 2' portion of if condition to continue working
