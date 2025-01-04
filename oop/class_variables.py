@@ -21,8 +21,14 @@ class Student:
     # class variable
     grad_year = 2025
 
+    # keeps track of how many student objects have been created
+    student_total = 0
+
     # constructor
+
     # when Student object is created, this constructor gets automatically called
+    # constructor code will always be executed when object is instantiated
+        # - i.e. when object is made, this constructor code will run
     def __init__(self, name_param, age_param):
 
         # 'self.' is to refer to object currently being worked w/
@@ -30,6 +36,11 @@ class Student:
             # - think of attributes here as the same/similar to variables u've written in other coding files a bunch of times b4
         self.name = name_param
         self.age = age_param
+
+        # increases student total by 1 every time object is instantiated/made
+            # - to make changes to class variable i.e. 'student_total', replace 'self' keyword w/ class name 'Student'
+                # - 'self.student_total' becomes 'Student.student_total'
+        Student.student_total += 1
 
 # Student objects created below
 student_1 = Student("Milo", 24)
@@ -67,3 +78,12 @@ print()
     # - as it's clear '.grad_year' is a class variable since it's attached to Student (the class) 
     # - writing like this helps w/ clarity & readability
 print(Student.grad_year)
+print()
+
+# shows value of 'student_total' class variable
+    # - all show 4 as 4 objects were made w/ the constructor
+print(Student.student_total)
+print(student_1.student_total)
+print(student_2.student_total)
+print(student_3.student_total)
+print(student_4.student_total)
