@@ -2,7 +2,7 @@
 
 # Notes:
 
-# - class variables are variables shared among all instances/objects made from the same class
+# class variables are variables shared among all instances/objects made from the same class
 
 # instance variables:
     # - these are defined INSIDE a constructor
@@ -11,10 +11,15 @@
 # class variables:
     # - these are defined OUTSIDE a constructor
     # - these can share their data with all objects made from the same class
+        # - these are shared by all objects created by the same respective class
+    # - when calling/getting values of class variables, use the (.) 'attribute access operator' on the class name, not on its objects
 
 
 # class of Student made
 class Student:
+
+    # class variable
+    grad_year = 2025
 
     # constructor
     # when Student object is created, this constructor gets automatically called
@@ -32,7 +37,7 @@ student_2 = Student("Fizz", 23)
 student_3 = Student("Jake", 22)
 student_4 = Student("Bella", 25)
 
-# get values by calling their variables (attributes)
+# get values by calling their variables (attributes) - using constructor attributes
 print(student_1.name)
 print(student_1.age)
 print()
@@ -44,3 +49,21 @@ print(student_3.age)
 print()
 print(student_4.name)
 print(student_4.age)
+print()
+
+# getting value of class attribute - below in print() statements work however...
+
+# below is NOT good practice of getting the value of a class variable 
+    # - as code is not clear on if '.grad_year' is a class variable or attribute variable
+    # - '.grad_year' looks like it could be an attribute variable in the constructor - however, it's not!
+    # - still works, but NOT good practice
+print(student_1.grad_year)
+print(student_2.grad_year)
+print(student_3.grad_year)
+print(student_4.grad_year)
+print()
+
+# below is good practice in getting value of class variable 
+    # - as it's clear '.grad_year' is a class variable since it's attached to Student (the class) 
+    # - writing like this helps w/ clarity & readability
+print(Student.grad_year)
