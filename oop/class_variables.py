@@ -151,3 +151,10 @@ print()
 # prints out 'describe_class_var()' sentence from class
 for single_object in all_objects:
     print(single_object.describe_class_var())
+
+print()
+
+# prints out only 'name' values from class
+print("This graduation class contains 4 people. They are: ")
+for single_object in all_objects:
+    print(f"❇️  {single_object.name}")
