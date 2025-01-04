@@ -26,3 +26,21 @@ class Student:
         self.name = name_param
         self.age = age_param
 
+# Student objects created below
+student_1 = Student("Milo", 24)
+student_2 = Student("Fizz", 23)
+student_3 = Student("Jake", 22)
+student_4 = Student("Bella", 25)
+
+# get values by calling their variables (attributes)
+print(student_1.name)
+print(student_1.age)
+print()
+print(student_2.name)
+print(student_2.age)
+print()
+print(student_3.name)
+print(student_3.age)
+print()
+print(student_4.name)
+print(student_4.age)
