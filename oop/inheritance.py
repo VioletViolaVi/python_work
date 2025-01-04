@@ -69,3 +69,24 @@ cat = Cat("Tom", False, "cat")
 
 # pig object
 pig = Pig("Miss Piggy", True, "pig")
+
+# formatting strings using attributes from parent class
+print(f"The {dog.animal_type}'s name is {dog.name}. The {dog.animal_type} is {'Alive! 😊' if dog.is_alive else 'Dead! 😢'}")
+print(f"The {cat.animal_type}'s name is {cat.name}. The {cat.animal_type} is {'Alive! 😊' if cat.is_alive else 'Dead! 😢'}")
+print(f"The {pig.animal_type}'s name is {pig.name}. The {pig.animal_type} is {'Alive! 😊' if pig.is_alive else 'Dead! 😢'}")
+print()
+
+# formatting strings using methods for own respective child/sub classes
+print(f"What sound the {dog.animal_type} say? {dog.speak()}!")
+print(f"What sound the {cat.animal_type} say? {cat.speak()}!")
+print(f"What sound the {pig.animal_type} say? {pig.speak()}!")
+print()
+
+# formatting strings using methods from parent class
+print(f"{dog.eating()} 🍴")
+print(f"{cat.eating()} 🍴")
+print(f"{pig.eating()} 🍴")
+print()
+print(f"{dog.sleeping()} 💤")
+print(f"{cat.sleeping()} 💤")
+print(f"{pig.sleeping()} 💤")
