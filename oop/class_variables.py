@@ -13,3 +13,16 @@
     # - these can share their data with all objects made from the same class
 
 
+# class of Student made
+class Student:
+
+    # constructor
+    # when Student object is created, this constructor gets automatically called
+    def __init__(self, name_param, age_param):
+
+        # 'self.' is to refer to object currently being worked w/
+        # attributes = values
+            # - think of attributes here as the same/similar to variables u've written in other coding files a bunch of times b4
+        self.name = name_param
+        self.age = age_param
+
