@@ -28,6 +28,8 @@ print(f"Is animal 1 dead or alive?: {'Alive! 😊' if animal_obj_1.is_alive else
 print()
 print(f"Animal 2's name is: {animal_obj_2.name}")
 print(f"Is animal 2 dead or alive?: {'Alive! 😊' if animal_obj_2.is_alive else 'Dead! 😢'}")
+print()
+print(" ------------------------------------------------------------------------------------------------------------------- ")
 
 # ------------------------------------------------------------------------------------------------------------------- parent class
 
@@ -49,9 +51,19 @@ class Cat(Animal):
         return "Meow! 😺"
 
 
-# duck child/sub class
-class Duck(Animal):
+# pig child/sub class
+class Pig(Animal):
 
     # methods
     def speak():
-        return "Quack! 🦆"
+        return "Oink! 🐷"
+
+# creating objects from child/sub classes
+# dog object
+dog = Dog("Clifford", True)
+
+# cat object
+cat = Cat("Tom", False)
+
+# pig object
+pig = Pig("Miss Piggy", True)
