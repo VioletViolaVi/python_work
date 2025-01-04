@@ -118,3 +118,36 @@ print(student_1.describe_class_var())
 print(student_2.describe_class_var())
 print(student_3.describe_class_var())
 print(student_4.describe_class_var())
+print()
+
+# (extra) for loops -------------------------------------------------------------------------------------------------------------
+print(" # (extra) for loops ----------------------------------------------------------------------------------- ")
+print()
+
+# using for loop to iterate objects
+all_objects = [student_1, student_2, student_3, student_4]
+
+# prints out all students name, age & description from constructor
+for single_object in all_objects:
+    print(single_object.name)
+    print(single_object.age)
+    print(single_object.describe())
+    print()
+
+print()
+
+# prints out grad year
+for single_object in all_objects:
+    print(single_object.grad_year)
+
+print()
+
+# prints out total student number
+for single_object in all_objects:
+    print(single_object.student_total)
+
+print()
+
+# prints out 'describe_class_var()' sentence from class
+for single_object in all_objects:
+    print(single_object.describe_class_var())
