@@ -14,3 +14,11 @@ class Car:
         self.year = year
         self.colour = colour
         self.for_sale = for_sale
+
+    # methods
+    # 'self' is added & will already be provided
+    def driving(self):
+        print("You are driving the car!")
+
+    def stop_driving(self):
+        print("You stopped the car from driving!")
