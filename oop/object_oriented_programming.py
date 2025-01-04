@@ -71,4 +71,15 @@ print()
 # u need to call methods on the OBJECTS/INSTANCES of the class not on the class itself
 # disregard {note above} - however, it's been left for future reference, in case this happens again
 
-
+# calling methods on objects made from the class
+car_1.driving()
+car_1.stop_driving()
+car_1.describe()
+print()
+car_2.driving()
+car_2.stop_driving()
+car_2.describe()
+print()
+car_3.driving()
+car_3.stop_driving()
+car_3.describe()
