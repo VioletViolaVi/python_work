@@ -97,3 +97,10 @@ print(student_1.student_total)
 print(student_2.student_total)
 print(student_3.student_total)
 print(student_4.student_total)
+print()
+
+# format sentence using class variables from class
+    # - this sentence contains placeholders
+        # - the real values, taken from the Student class, will be passed through & shown in output
+            # - the real values are the CLASS VARIABLES not attribute variables
+print(f"Graduation year: {Student.grad_year}, Total number of students: {Student.student_total}")
