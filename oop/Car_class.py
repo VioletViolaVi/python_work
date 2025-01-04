@@ -18,7 +18,18 @@ class Car:
     # methods
     # 'self' is added & will already be provided
     def driving(self):
-        print("You are driving the car!")
 
+        # 'self.' is used as it's referring to the class's attributes being used
+        print(f"You are driving the {self.colour} {self.model.title()}!")
+
+    # 'self' is added & will already be provided
     def stop_driving(self):
-        print("You stopped the car from driving!")
+
+        # 'self.' is used as it's referring to the class's attributes being used
+        print(f"You stopped the {self.colour} {self.model.title()} driving!")
+
+    # method for describing the different cars
+    def describe(self):
+
+        # 'self.' is used as it's referring to the class's attributes being used
+        print(f"""What you're looking at right here is the new '{self.year} {self.colour.capitalize()} {self.model.title()}' make. {"Fortunately, it's" if self.for_sale else "Unfortunately, it's not"} for sale!""")
