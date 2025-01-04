@@ -44,6 +44,9 @@ class Student:
     
     def describe(self):
         return f"Hi!👋 My name is {self.name} and I'm {self.age} years old! 📏"
+    
+    def describe_class_var(self):
+        return f"In my school, there are {Student.student_total} students including me. We're all graduating this year in {Student.grad_year}!"
 
 # Student objects created below
 student_1 = Student("Milo", 24)
@@ -104,3 +107,14 @@ print()
         # - the real values, taken from the Student class, will be passed through & shown in output
             # - the real values are the CLASS VARIABLES not attribute variables
 print(f"Graduation year: {Student.grad_year}, Total number of students: {Student.student_total}")
+print()
+
+# all produce the same sentence
+    # - 'In my school, there are 4 students including me. We're all graduating this year in 2025!'
+# cannot call 'describe_class_var()' directly on class otherwise error will occur
+    # - create object/instance then call 'describe_class_var()' on the object/instance
+    # - Student.describe_class_var() is NOT ALLOWED!!!
+print(student_1.describe_class_var())
+print(student_2.describe_class_var())
+print(student_3.describe_class_var())
+print(student_4.describe_class_var())
