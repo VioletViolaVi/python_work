@@ -4,7 +4,7 @@
 
 # 
 
-# parent class
+# parent class -------------------------------------------------------------------------------------------------------------------
 class Animal:
 
     # constructor
@@ -29,4 +29,29 @@ print()
 print(f"Animal 2's name is: {animal_obj_2.name}")
 print(f"Is animal 2 dead or alive?: {'Alive! 😊' if animal_obj_2.is_alive else 'Dead! 😢'}")
 
+# ------------------------------------------------------------------------------------------------------------------- parent class
 
+# creating child classes that inherit from parent class
+
+# dog child/sub class
+class Dog(Animal):
+
+    # methods
+    def speak():
+        return "Woof! 🐶"
+
+
+# cat child/sub class
+class Cat(Animal):
+
+    # methods
+    def speak():
+        return "Meow! 😺"
+
+
+# duck child/sub class
+class Duck(Animal):
+
+    # methods
+    def speak():
+        return "Quack! 🦆"
