@@ -23,19 +23,19 @@
 
 # (Car class relocated to separate file)
 
-# imports everything from 'car_class.py' file 
-#   - need to use '.' to call specific part of file u want to use i.e. car_class.Car()
-#       - import car_class
-
 # imports only the 'Car' class from the 'car_class.py' file
-from car_class import Car
+#   - from car_class import Car
+
+# imports everything from 'car_class.py' file
+#   - need to use '.' to call specific part of file u want to use i.e. car_class.Car()
+import car_class
 
 # constructing Car objects
 # 'self' is already provided
     # - if u try to use 'self' a TypeError gets thrown
-car_1 = Car("limo", 2025, "blue", True)
-car_2 = Car("jeep", 2026, "orange", False)
-car_3 = Car("mercedes", 2027, "pink", True)
+car_1 = car_class.Car("limo", 2025, "blue", True)
+car_2 = car_class.Car("jeep", 2026, "orange", False)
+car_3 = car_class.Car("mercedes", 2027, "pink", True)
 
 # this prints memory address of where car_1 object is located, see below:
     # - <__main__.Car object at 0x0000026A63E3B190>
@@ -62,7 +62,13 @@ print(car_3.for_sale)
 print()
 
 # invoking the 'def drive(self)' method from the 'Car' class
-# - has a problem w/ calling method w/ no values passed through due to 'self' in 'def drive(self)'
-#       - left empty string in place as result, correct output was still produced tho. ¯\_(ツ)_/¯
-Car.driving("")
-Car.stop_driving("")
+
+# mini notes:
+    # {- has a problem w/ calling method w/ no values passed through due to 'self' in 'def drive(self)'
+    #  - left empty string in place as result, correct output was still produced tho. ¯\_(ツ)_/¯}
+
+# the reason u had this problem {see above} is because u called the methods directly on the 'Car' class
+# u need to call methods on the OBJECTS/INSTANCES of the class not on the class itself
+# disregard {note above} - however, it's been left for future reference, in case this happens again
+
+
