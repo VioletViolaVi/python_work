@@ -41,6 +41,9 @@ class Student:
             # - to make changes to class variable i.e. 'student_total', replace 'self' keyword w/ class name 'Student'
                 # - 'self.student_total' becomes 'Student.student_total'
         Student.student_total += 1
+    
+    def describe(self):
+        return f"Hi!👋 My name is {self.name} and I'm {self.age} years old! 📏"
 
 # Student objects created below
 student_1 = Student("Milo", 24)
@@ -51,15 +54,22 @@ student_4 = Student("Bella", 25)
 # get values by calling their variables (attributes) - using constructor attributes
 print(student_1.name)
 print(student_1.age)
+print(student_1.describe())
 print()
+
 print(student_2.name)
 print(student_2.age)
+print (student_2.describe())
 print()
+
 print(student_3.name)
 print(student_3.age)
+print (student_3.describe())
 print()
+
 print(student_4.name)
 print(student_4.age)
+print (student_4.describe())
 print()
 
 # getting value of class attribute - below in print() statements work however...
