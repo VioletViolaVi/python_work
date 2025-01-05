@@ -6,6 +6,8 @@
 # inheritance:
     # - makes code reusable
     # - makes code extensive
+# parent classes are called superclasses
+# child classes are called subclasses
 
 # parent class -------------------------------------------------------------------------------------------------------------------
 class Animal:
