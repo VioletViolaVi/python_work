@@ -1,6 +1,7 @@
 # Super Function - super()
 
 # Notes:
+
 # super()
     # - it's a function
     # - used in child classes
@@ -11,9 +12,22 @@
 # child class == subclass
 # parent class == superclass
 
+# best practice to write constructor code once then reuse it by allowing other classes to inherit attributes from it
+    # - super() helps achieve this
 
-# shape classes
-class Triangle:
+
+# parent class containing all common attributes from other classes below
+class Shape:
+    def __init__(self, sides, colour, is_filled_in):
+        self.sides = sides
+        self.colour = colour
+        self.is_filled_in = is_filled_in
+
+
+# shape classes - turned into child classes
+
+# inheriting from 'Shape' class
+class Triangle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, breadth):
@@ -24,7 +38,8 @@ class Triangle:
         self.breadth = breadth
 
 
-class Square:
+# inheriting from 'Shape' class
+class Square(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
@@ -35,7 +50,8 @@ class Square:
         self.width = width
 
 
-class Circle:
+# inheriting from 'Shape' class
+class Circle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, pi, radius):
@@ -46,7 +62,8 @@ class Circle:
         self.radius = radius
 
 
-class Rectangle:
+# inheriting from 'Shape' class
+class Rectangle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
