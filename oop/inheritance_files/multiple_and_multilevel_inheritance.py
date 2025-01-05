@@ -21,13 +21,23 @@
 # classes with 'Animal' in the brackets '()' will inherit this class
     # - classes that inherit a class that is inheriting 'Animal' will also inherit 'Animal' i.e. access to 'Animal' attributes and/or methods
 class Animal:
-    pass
+    
+    # method to sleep in Animal class
+    def sleep(self):
+        print()
+        print("This is an animal that sleeps!")
+    
+    # method to eat in Animal class
+    def eat(self):
+        print()
+        print("This is an animal that eats!")
 
 
 # parent class -------------------------------------------------
 
 # prey class
 # adding 'Animal' in the brackets '()' after the class name, makes this class inherit from the class w/ the name 'Animal'
+# this is multilevel inheritance
 class Prey(Animal):
     
     # method for Prey() class
@@ -37,6 +47,7 @@ class Prey(Animal):
 
 # predator class
 # adding 'Animal' in the brackets '()' after the class name, makes this class inherit from the class w/ the name 'Animal'
+# this is multilevel inheritance
 class Predator(Animal):
     
     # method for Predator() class
@@ -52,10 +63,12 @@ class Killer_Whale(Predator):
     pass
 
 # penguin class - penguins eat fish - penguins get eaten by sharks
+# this is multiple inheritance
 class Penguin(Prey, Predator):
     pass
 
 # fish class - fish eat other fish - fish gets eaten by penguins & sharks
+# this is multiple inheritance
 class Fish(Prey, Predator):
     pass
 
@@ -67,12 +80,14 @@ killer_whale = Killer_Whale()
 penguin = Penguin()
 fish = Fish()
 
+
 # calling methods from parent class on child classes
 
 # killer whale:
     # - only the '.hunt()' method can be used on the 'killer_whale' object because 'killer_whale' only inherits the 'Prey()' class
     # - 'killer_whale.run()' will throw an error as '.run()' method is in the 'Prey()' class, which is NOT inherited by 'Killer_Whale()' class
 killer_whale.hunt()
+
 
 # penguin:
     # - both '.hunt()' & '.run()' methods are inherited by 'Penguin()' class, via the 'Animal()' parent class so its object can call either method
@@ -83,3 +98,4 @@ penguin.run()
     # - both '.hunt()' & '.run()' methods are inherited by the 'Fish()' class, via the 'Animal()' parent class so its object can call either method
 fish.run()
 fish.hunt()
+
