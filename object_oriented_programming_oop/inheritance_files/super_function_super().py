@@ -2,6 +2,12 @@
 
 # Notes:
 
+# child class == subclass
+# parent class == superclass
+
+# best practice to write constructor code once then reuse it by allowing other classes to inherit attributes from it
+    # - super() helps achieve this
+
 # super()
     # - it's a function
     # - used in child classes
@@ -9,11 +15,10 @@
     # - extends functionality of inherited methods
         # - e.g. putting 'super()' in a (grand) child class's method
 
-# child class == subclass
-# parent class == superclass
-
-# best practice to write constructor code once then reuse it by allowing other classes to inherit attributes from it
-    # - super() helps achieve this
+# extending functionality
+    # - 'super()' is used to extend functionality from parent class to the child class
+        # - e.g., parent class has 'def eats(self)...', child class has 'def eats(self)...'
+            # - put 'super()' in child's 'def eats(self)...' method
 
 # method overriding
     # - if a child class inherits a method from the parent class, whilst holding a method with the same name in its own class, the child's method will be outputted and override the parent's method
@@ -56,6 +61,12 @@ class Triangle(Shape):
     # this method will be produce in output, not 'describe()' from parent class
     def describe(self):
         print(f"(from its own class) This shape has a height of {self.height}cm and a breadth of {self.breadth}cm.")
+
+        # extends functionality from parent class to this child class
+        # allows this child class to use the '.describe()' method from the parent
+        # handy to use this as both the parent and child class have methods with the same name
+            # - as a result, extending functionality like this allows developers to use both methods w/out any of them getting overridden
+        super().describe()
 
 
 # inheriting from 'Shape' class
@@ -121,6 +132,8 @@ print(triangle.breadth)
 print()
 
 # using 'describe()' method child class inherited from parent class
+# when 'super().describe()' is inside the 'describe()' method, both print statements from the parent & child classes are displayed
+    # - can help avoid method overriding
 triangle.describe()
 print()
 
