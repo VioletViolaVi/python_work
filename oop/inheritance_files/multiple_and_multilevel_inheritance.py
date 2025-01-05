@@ -12,11 +12,23 @@
             # - child class: C, child's parent class: B, parent class of the child's parent class: A
                 # - C inherits from B, C also inherits from A because B inherits from A & C inherits everything from B
 
+# inheriting occurs when brackets are present e.g. Prey(), Predator(), Penguin(Predator, Prey), Killer_Whale(Predator), etc.
+    # - NOT 'class Animal:' -> there's no brackets
+
+
+# (grand) parent class -------------------------------------------------
+
+# classes with 'Animal' in the brackets '()' will inherit this class
+    # - classes that inherit a class that is inheriting 'Animal' will also inherit 'Animal' i.e. access to 'Animal' attributes and/or methods
+class Animal:
+    pass
+
 
 # parent class -------------------------------------------------
 
 # prey class
-class Prey():
+# adding 'Animal' in the brackets '()' after the class name, makes this class inherit from the class w/ the name 'Animal'
+class Prey(Animal):
     
     # method for Prey() class
     def run(self):
@@ -24,7 +36,8 @@ class Prey():
         print("This animal prey needs to run or it'll get eaten!")
 
 # predator class
-class Predator():
+# adding 'Animal' in the brackets '()' after the class name, makes this class inherit from the class w/ the name 'Animal'
+class Predator(Animal):
     
     # method for Predator() class
     def hunt(self):
