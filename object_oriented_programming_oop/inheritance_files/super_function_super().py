@@ -31,7 +31,11 @@ class Triangle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, breadth):
+        
+        # inherits from parent class so its attribute variables can be accessible in this child class
         super().__init__(sides, colour, is_filled_in)
+        
+        # attribute variables unique to this child class
         self.height = height
         self.breadth = breadth
 
@@ -41,7 +45,11 @@ class Square(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
+        
+        # inherits from parent class so its attribute variables can be accessible in this child class
         super().__init__(sides, colour, is_filled_in)
+        
+        # attribute variables unique to this child class
         self.height = height
         self.width = width
 
@@ -51,7 +59,11 @@ class Circle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, pi, radius):
+        
+        # inherits from parent class so its attribute variables can be accessible in this child class
         super().__init__(sides, colour, is_filled_in)
+        
+        # attribute variables unique to this child class
         self.pi = pi
         self.radius = radius
 
@@ -61,7 +73,12 @@ class Rectangle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
+        
+        # inherits from parent class so its attribute variables can be accessible in this child class
         super().__init__(sides, colour, is_filled_in)
+        
+        # attribute variables unique to this child class
         self.height = height
         self.width = width
+
 
