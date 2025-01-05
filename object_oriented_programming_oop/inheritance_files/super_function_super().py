@@ -13,7 +13,7 @@
 
 
 # shape classes
-class triangle:
+class Triangle:
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, breadth):
@@ -24,7 +24,7 @@ class triangle:
         self.breadth = breadth
 
 
-class square:
+class Square:
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
@@ -35,7 +35,7 @@ class square:
         self.width = width
 
 
-class circle:
+class Circle:
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, pi, radius):
@@ -46,7 +46,7 @@ class circle:
         self.radius = radius
 
 
-class rectangle:
+class Rectangle:
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
