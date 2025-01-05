@@ -44,3 +44,10 @@ class Penguin(Prey, Predator):
 class Fish(Prey, Predator):
     pass
 
+
+# accessing methods from parent classes from child classes
+
+# create objects from child classes
+killer_whale = Killer_Whale()
+penguin = Penguin()
+fish = Fish()
