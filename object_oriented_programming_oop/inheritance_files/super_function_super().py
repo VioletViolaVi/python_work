@@ -60,13 +60,14 @@ class Triangle(Shape):
     # method
     # this method will be produce in output, not 'describe()' from parent class
     def describe(self):
-        print(f"(from its own class) This shape has a height of {self.height}cm and a breadth of {self.breadth}cm.")
 
         # extends functionality from parent class to this child class
         # allows this child class to use the '.describe()' method from the parent
         # handy to use this as both the parent and child class have methods with the same name
             # - as a result, extending functionality like this allows developers to use both methods w/out any of them getting overridden
         super().describe()
+
+        print(f"(from its own class) This shape has a height of {self.height}cm and a breadth of {self.breadth}cm.")
 
 
 # inheriting from 'Shape' class
@@ -81,6 +82,18 @@ class Square(Shape):
         # attribute variables unique to this child class
         self.height = height
         self.width = width
+    
+    # method
+    # this method will be produce in output, not 'describe()' from parent class
+    def describe(self):
+        
+        # extends functionality from parent class to this child class
+        # allows this child class to use the '.describe()' method from the parent
+        # handy to use this as both the parent and child class have methods with the same name
+            # - as a result, extending functionality like this allows developers to use both methods w/out any of them getting overridden
+        super().describe()
+
+        print(f"(from its own class) This shape has a height of {self.height}cm and a width of {self.width}cm.")
 
 
 # inheriting from 'Shape' class
@@ -95,6 +108,18 @@ class Circle(Shape):
         # attribute variables unique to this child class
         self.pi = pi
         self.radius = radius
+    
+    # method
+    # this method will be produce in output, not 'describe()' from parent class
+    def describe(self):
+
+        # extends functionality from parent class to this child class
+        # allows this child class to use the '.describe()' method from the parent
+        # handy to use this as both the parent and child class have methods with the same name
+            # - as a result, extending functionality like this allows developers to use both methods w/out any of them getting overridden
+        super().describe()
+
+        print(f"(from its own class) This shape has a pi value of approx. {self.pi} and a radius of {self.radius}cm.")
 
 
 # inheriting from 'Shape' class
@@ -109,6 +134,18 @@ class Rectangle(Shape):
         # attribute variables unique to this child class
         self.height = height
         self.width = width
+    
+    # method
+    # this method will be produce in output, not 'describe()' from parent class
+    def describe(self):
+
+        # extends functionality from parent class to this child class
+        # allows this child class to use the '.describe()' method from the parent
+        # handy to use this as both the parent and child class have methods with the same name
+            # - as a result, extending functionality like this allows developers to use both methods w/out any of them getting overridden
+        super().describe()
+
+        print(f"(from its own class) This shape has a height of {self.height}cm and a width of {self.width}cm.")
 
 
 # creates objects
@@ -147,6 +184,8 @@ print(square.width)
 print()
 
 # using 'describe()' method child class inherited from parent class
+# when 'super().describe()' is inside the 'describe()' method, both print statements from the parent & child classes are displayed
+    # - can help avoid method overriding
 square.describe()
 print()
 
@@ -160,9 +199,10 @@ print(circle.radius)
 print()
 
 # using 'describe()' method child class inherited from parent class
+# when 'super().describe()' is inside the 'describe()' method, both print statements from the parent & child classes are displayed
+    # - can help avoid method overriding
 circle.describe()
 print()
-
 
 # rectangle
 print(" --------------------- rectangle --------------------- ")
@@ -174,5 +214,7 @@ print(rectangle.width)
 print()
 
 # using 'describe()' method child class inherited from parent class
+# when 'super().describe()' is inside the 'describe()' method, both print statements from the parent & child classes are displayed
+    # - can help avoid method overriding
 rectangle.describe()
 print()
