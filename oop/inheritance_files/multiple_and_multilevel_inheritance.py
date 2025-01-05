@@ -17,25 +17,30 @@
 
 # prey class
 class Prey():
-    pass
+    
+    # method for Prey() class
+    def run(self):
+        print("This animal prey needs to run or it'll get eaten!")
 
 # predator class
 class Predator():
-    pass
+    
+    # method for Predator() class
+    def hunt(self):
+        print("This animal predator hunts for its food!")
 
 
 # child class --------------------------------------------------
 
-# killer whales class - sharks eat penguins
-class Killer_Whales():
+# killer whale class - sharks eat penguins - top of food chain so is prey to no animal
+class Killer_Whale(Predator):
     pass
 
-# penguins class - penguins eat fish, penguins get eaten by sharks
-class Penguins():
+# penguin class - penguins eat fish - penguins get eaten by sharks
+class Penguin(Prey, Predator):
     pass
 
-
-# fish class - fish eat other fish, fish gets eaten by penguins & sharks
-class Fish():
+# fish class - fish eat other fish - fish gets eaten by penguins & sharks
+class Fish(Prey, Predator):
     pass
 
