@@ -68,14 +68,14 @@ class Predator(Animal):
 class Killer_Whale(Predator):
     pass
 
-# penguin class - penguins eat fish - penguins get eaten by sharks
+# penguin class - penguins eat crab - penguins get eaten by sharks
 # this is multiple inheritance
 class Penguin(Prey, Predator):
     pass
 
-# fish class - fish eat other fish - fish gets eaten by penguins & sharks
+# crab class - crab eat worms, shrimp, seaweed, etc. - crab gets eaten by penguins & sharks
 # this is multiple inheritance
-class Fish(Prey, Predator):
+class Crab(Prey, Predator):
     pass
 
 
@@ -84,7 +84,7 @@ class Fish(Prey, Predator):
 # create objects from child classes
 killer_whale = Killer_Whale("Lenny")
 penguin = Penguin("Pingu")
-fish = Fish("Sebastian")
+crab = Crab("Sebastian")
 
 
 # calling methods from parent class on child classes
@@ -109,12 +109,12 @@ penguin.run()
 penguin.eat()
 penguin.sleep()
 
-# fish:
-    # - both '.hunt()' & '.run()' methods are inherited by the 'Fish()' class, via the 'Animal()' parent class so its object can call either method
-fish.hunt()
-fish.run()
+# crab:
+    # - both '.hunt()' & '.run()' methods are inherited by the 'Crab()' class, via the 'Animal()' parent class so its object can call either method
+crab.hunt()
+crab.run()
 
 # these methods are from the 'Animal' (grand) parent class
-# these methods are inherited for 'fish' object to use as 'Fish' class inherits from both 'Prey()' & 'Predator()' that inherits from 'Animal'
-fish.eat()
-fish.sleep()
+# these methods are inherited for 'crab' object to use as 'Crab' class inherits from both 'Prey()' & 'Predator()' that inherits from 'Animal'
+crab.eat()
+crab.sleep()
