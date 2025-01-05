@@ -22,19 +22,21 @@
     # - classes that inherit a class that is inheriting 'Animal' will also inherit 'Animal' i.e. access to 'Animal' attributes and/or methods
 class Animal:
 
-    # constructor attributes
+    # constructor containing assigned attributes
     def __init__(self, name_param):
-        self.animal_name: name_param
+
+        # must use '=' sign to work ':' will throw an error!!!
+        self.animal_name = name_param
     
     # method to sleep in Animal class
     def sleep(self):
         print()
-        print("This is an animal that sleeps!")
+        print(f"{self.animal_name} is an animal that sleeps!")
     
     # method to eat in Animal class
     def eat(self):
         print()
-        print("This is an animal that eats!")
+        print(f"{self.animal_name} is an animal that eats!")
 
 
 # parent classes -------------------------------------------------
@@ -47,7 +49,7 @@ class Prey(Animal):
     # method for Prey() class
     def run(self):
         print()
-        print("This animal prey needs to run or it'll get eaten!")
+        print(f"{self.animal_name} (prey) needs to run or it'll get eaten!")
 
 # predator class
 # adding 'Animal' in the brackets '()' after the class name, makes this class inherit from the class w/ the name 'Animal'
@@ -57,7 +59,7 @@ class Predator(Animal):
     # method for Predator() class
     def hunt(self):
         print()
-        print("This animal predator hunts for its food!")
+        print(f"{self.animal_name} (predator) hunts for its food!")
 
 
 # child classes --------------------------------------------------
