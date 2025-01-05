@@ -28,7 +28,7 @@ class Shape:
     # method - child classes underneath will inherit this method so they'd be able to call it
     # ensure to add 'self' in '()' so attributes written in 'print()' are recognised
     def describe(self):
-        print(f"This shape has {self.sides} sides, it's colour is {self.colour} and it's {'filled in' if self.is_filled_in else 'empty'}.")
+        print(f"(from parent class) This shape has {self.sides} side{'s' if self.sides > 1 else ''}, it's colour is {self.colour} and it's {'filled' if self.is_filled_in else 'empty'}.")
 
 
 # shape classes - turned into child classes
@@ -109,6 +109,10 @@ print(triangle.height)
 print(triangle.breadth)
 print()
 
+# using 'describe()' method child class inherited from parent class
+triangle.describe()
+print()
+
 # square
 print(" --------------------- square --------------------- ")
 print(square.sides)
@@ -116,6 +120,10 @@ print(square.colour)
 print(square.is_filled_in)
 print(square.height)
 print(square.width)
+print()
+
+# using 'describe()' method child class inherited from parent class
+square.describe()
 print()
 
 # circle
@@ -127,6 +135,10 @@ print(circle.pi)
 print(circle.radius)
 print()
 
+# using 'describe()' method child class inherited from parent class
+circle.describe()
+print()
+
 
 # rectangle
 print(" --------------------- rectangle --------------------- ")
@@ -135,4 +147,8 @@ print(rectangle.colour)
 print(rectangle.is_filled_in)
 print(rectangle.height)
 print(rectangle.width)
+print()
+
+# using 'describe()' method child class inherited from parent class
+rectangle.describe()
 print()
