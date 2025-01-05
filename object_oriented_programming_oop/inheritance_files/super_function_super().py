@@ -16,7 +16,10 @@
     # - super() helps achieve this
 
 # method overriding
-    # - 
+    # - if a child class inherits a method from the parent class, whilst holding a method with the same name in its own class, the child's method will be outputted and override the parent's method
+        # - e.g., parent class has 'def describe(self)...', child class has 'def describe(self)...'
+            # - the 'def describe(self)...' in the child class will be outputted 
+                # - NOT the one in the parent class
 
 
 # parent class containing all common attributes from other classes below
@@ -50,6 +53,7 @@ class Triangle(Shape):
         self.breadth = breadth
     
     # method
+    # this method will be produce in output, not 'describe()' from parent class
     def describe(self):
         print(f"(from its own class) This shape has a height of {self.height}cm and a breadth of {self.breadth}cm.")
 
