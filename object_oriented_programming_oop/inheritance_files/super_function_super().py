@@ -12,3 +12,15 @@
 # parent class == superclass
 
 
+# shape classes
+class triangle:
+    pass
+
+class square:
+    pass
+
+class circle:
+    pass
+
+class rectangle:
+    pass
