@@ -31,9 +31,7 @@ class Triangle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, breadth):
-        self.sides = sides
-        self.colour = colour
-        self.is_filled_in = is_filled_in
+        super().__init__(sides, colour, is_filled_in)
         self.height = height
         self.breadth = breadth
 
@@ -43,9 +41,7 @@ class Square(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
-        self.sides = sides
-        self.colour = colour
-        self.is_filled_in = is_filled_in
+        super().__init__(sides, colour, is_filled_in)
         self.height = height
         self.width = width
 
@@ -55,9 +51,7 @@ class Circle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, pi, radius):
-        self.sides = sides
-        self.colour = colour
-        self.is_filled_in = is_filled_in
+        super().__init__(sides, colour, is_filled_in)
         self.pi = pi
         self.radius = radius
 
@@ -67,9 +61,7 @@ class Rectangle(Shape):
     
     # constructor
     def __init__(self, sides, colour, is_filled_in, height, width):
-        self.sides = sides
-        self.colour = colour
-        self.is_filled_in = is_filled_in
+        super().__init__(sides, colour, is_filled_in)
         self.height = height
         self.width = width
 
