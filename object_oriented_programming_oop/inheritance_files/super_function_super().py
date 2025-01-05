@@ -15,6 +15,9 @@
 # best practice to write constructor code once then reuse it by allowing other classes to inherit attributes from it
     # - super() helps achieve this
 
+# method overriding
+    # - 
+
 
 # parent class containing all common attributes from other classes below
 class Shape:
@@ -45,6 +48,10 @@ class Triangle(Shape):
         # attribute variables unique to this child class
         self.height = height
         self.breadth = breadth
+    
+    # method
+    def describe(self):
+        print(f"(from its own class) This shape has a height of {self.height}cm and a breadth of {self.breadth}cm.")
 
 
 # inheriting from 'Shape' class
