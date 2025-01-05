@@ -2,7 +2,10 @@
 
 # Notes:
 
-# 
+# inheritance allows a class to inherit attributes & methods from another class
+# inheritance:
+    # - makes code reusable
+    # - makes code extensive
 
 # parent class -------------------------------------------------------------------------------------------------------------------
 class Animal:
