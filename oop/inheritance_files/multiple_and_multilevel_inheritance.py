@@ -88,14 +88,27 @@ fish = Fish()
     # - 'killer_whale.run()' will throw an error as '.run()' method is in the 'Prey()' class, which is NOT inherited by 'Killer_Whale()' class
 killer_whale.hunt()
 
+# these methods are from the 'Animal' (grand) parent class
+# these methods are inherited for 'killer_whale' object to use as 'Killer_Whale' class is inheriting from 'Prey()' which is inheriting from 'Animal'
+killer_whale.eat()
+killer_whale.sleep()
 
 # penguin:
     # - both '.hunt()' & '.run()' methods are inherited by 'Penguin()' class, via the 'Animal()' parent class so its object can call either method
 penguin.hunt()
 penguin.run()
 
+# these methods are from the 'Animal' (grand) parent class
+# these methods are inherited for 'penguin' object to use as 'Penguin' class inherits from both 'Prey()' & 'Predator()' that inherits from 'Animal'
+penguin.eat()
+penguin.sleep()
+
 # fish:
     # - both '.hunt()' & '.run()' methods are inherited by the 'Fish()' class, via the 'Animal()' parent class so its object can call either method
-fish.run()
 fish.hunt()
+fish.run()
 
+# these methods are from the 'Animal' (grand) parent class
+# these methods are inherited for 'fish' object to use as 'Fish' class inherits from both 'Prey()' & 'Predator()' that inherits from 'Animal'
+fish.eat()
+fish.sleep()
