@@ -21,6 +21,10 @@
 # classes with 'Animal' in the brackets '()' will inherit this class
     # - classes that inherit a class that is inheriting 'Animal' will also inherit 'Animal' i.e. access to 'Animal' attributes and/or methods
 class Animal:
+
+    # constructor attributes
+    def __init__(self, name_param):
+        self.animal_name: name_param
     
     # method to sleep in Animal class
     def sleep(self):
@@ -33,7 +37,7 @@ class Animal:
         print("This is an animal that eats!")
 
 
-# parent class -------------------------------------------------
+# parent classes -------------------------------------------------
 
 # prey class
 # adding 'Animal' in the brackets '()' after the class name, makes this class inherit from the class w/ the name 'Animal'
@@ -56,7 +60,7 @@ class Predator(Animal):
         print("This animal predator hunts for its food!")
 
 
-# child class --------------------------------------------------
+# child classes --------------------------------------------------
 
 # killer whale class - sharks eat penguins - top of food chain so is prey to no animal
 class Killer_Whale(Predator):
@@ -76,9 +80,9 @@ class Fish(Prey, Predator):
 # accessing methods from parent classes from child classes
 
 # create objects from child classes
-killer_whale = Killer_Whale()
-penguin = Penguin()
-fish = Fish()
+killer_whale = Killer_Whale("Lenny")
+penguin = Penguin("Pingu")
+fish = Fish("Sebastian")
 
 
 # calling methods from parent class on child classes
