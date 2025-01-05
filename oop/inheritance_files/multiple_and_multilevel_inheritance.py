@@ -56,7 +56,17 @@ fish = Fish()
 
 # calling methods from parent class on child classes
 
-# killer whale
+# killer whale:
     # - only the '.hunt()' method can be used on the 'killer_whale' object because 'killer_whale' only inherits the 'Prey()' class
     # - 'killer_whale.run()' will throw an error as '.run()' method is in the 'Prey()' class, which is NOT inherited by 'Killer_Whale()' class
 killer_whale.hunt()
+
+# penguin:
+    # - both '.hunt()' & '.run()' methods are inherited by 'Penguin()' class, via the 'Animal()' parent class so its object can call either method
+penguin.hunt()
+penguin.run()
+
+# fish:
+    # - both '.hunt()' & '.run()' methods are inherited by the 'Fish()' class, via the 'Animal()' parent class so its object can call either method
+fish.run()
+fish.hunt()
