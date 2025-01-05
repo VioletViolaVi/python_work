@@ -20,6 +20,7 @@ class Prey():
     
     # method for Prey() class
     def run(self):
+        print()
         print("This animal prey needs to run or it'll get eaten!")
 
 # predator class
@@ -27,6 +28,7 @@ class Predator():
     
     # method for Predator() class
     def hunt(self):
+        print()
         print("This animal predator hunts for its food!")
 
 
@@ -51,3 +53,10 @@ class Fish(Prey, Predator):
 killer_whale = Killer_Whale()
 penguin = Penguin()
 fish = Fish()
+
+# calling methods from parent class on child classes
+
+# killer whale
+    # - only the '.hunt()' method can be used on the 'killer_whale' object because 'killer_whale' only inherits the 'Prey()' class
+    # - 'killer_whale.run()' will throw an error as '.run()' method is in the 'Prey()' class, which is NOT inherited by 'Killer_Whale()' class
+killer_whale.hunt()
