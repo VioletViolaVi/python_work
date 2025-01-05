@@ -18,10 +18,17 @@
 
 # parent class containing all common attributes from other classes below
 class Shape:
+
+    # constructor - child classes underneath will inherit attribute variables from here
     def __init__(self, sides, colour, is_filled_in):
         self.sides = sides
         self.colour = colour
         self.is_filled_in = is_filled_in
+    
+    # method - child classes underneath will inherit this method so they'd be able to call it
+    # ensure to add 'self' in '()' so attributes written in 'print()' are recognised
+    def describe(self):
+        print(f"This shape has {self.sides} sides, it's colour is {self.colour} and it's {'filled in' if self.is_filled_in else 'empty'}.")
 
 
 # shape classes - turned into child classes
@@ -91,9 +98,7 @@ circle= Circle(sides=1, colour="pink", is_filled_in=True, pi=3.14, radius=5)
 
 rectangle= Rectangle(sides=4, colour="green", is_filled_in=False, height=10, width=5)
 
-
 print()
-
 
 # triangle
 print(" --------------------- triangle --------------------- ")
