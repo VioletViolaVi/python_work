@@ -14,13 +14,45 @@
 
 # shape classes
 class triangle:
-    pass
+    
+    # constructor
+    def __init__(self, sides, colour, is_filled_in, height, breadth):
+        self.sides = sides
+        self.colour = colour
+        self.is_filled_in = is_filled_in
+        self.height = height
+        self.breadth = breadth
+
 
 class square:
-    pass
+    
+    # constructor
+    def __init__(self, sides, colour, is_filled_in, height, width):
+        self.sides = sides
+        self.colour = colour
+        self.is_filled_in = is_filled_in
+        self.height = height
+        self.width = width
+
 
 class circle:
-    pass
+    
+    # constructor
+    def __init__(self, sides, colour, is_filled_in, pi, radius):
+        self.sides = sides
+        self.colour = colour
+        self.is_filled_in = is_filled_in
+        self.pi = pi
+        self.radius = radius
+
 
 class rectangle:
-    pass
+    
+    # constructor
+    def __init__(self, sides, colour, is_filled_in, height, width):
+        self.sides = sides
+        self.colour = colour
+        self.is_filled_in = is_filled_in
+        self.height = height
+        self.width = width
+
