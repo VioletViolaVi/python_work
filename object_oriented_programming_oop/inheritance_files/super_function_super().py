@@ -82,3 +82,11 @@ class Rectangle(Shape):
         self.width = width
 
 
+# creates objects
+triangle= Triangle(sides=3, colour="yellow", is_filled_in=True, height=10, breadth=5)
+
+square= Square(sides=4, colour="orange", is_filled_in=False, height=5, width=5)
+
+circle= Circle(sides=1, colour="pink", is_filled_in=True, pi=3.14, radius=5)
+
+rectangle= Rectangle(sides=4, colour="green", is_filled_in=False, height=10, width=5)
