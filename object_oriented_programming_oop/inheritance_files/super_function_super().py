@@ -90,3 +90,44 @@ square= Square(sides=4, colour="orange", is_filled_in=False, height=5, width=5)
 circle= Circle(sides=1, colour="pink", is_filled_in=True, pi=3.14, radius=5)
 
 rectangle= Rectangle(sides=4, colour="green", is_filled_in=False, height=10, width=5)
+
+
+print()
+
+
+# triangle
+print(" --------------------- triangle --------------------- ")
+print(triangle.sides)
+print(triangle.colour)
+print(triangle.is_filled_in)
+print(triangle.height)
+print(triangle.breadth)
+print()
+
+# square
+print(" --------------------- square --------------------- ")
+print(square.sides)
+print(square.colour)
+print(square.is_filled_in)
+print(square.height)
+print(square.width)
+print()
+
+# circle
+print(" --------------------- circle --------------------- ")
+print(circle.sides)
+print(circle.colour)
+print(circle.is_filled_in)
+print(circle.pi)
+print(circle.radius)
+print()
+
+
+# rectangle
+print(" --------------------- rectangle --------------------- ")
+print(rectangle.sides)
+print(rectangle.colour)
+print(rectangle.is_filled_in)
+print(rectangle.height)
+print(rectangle.width)
+print()
