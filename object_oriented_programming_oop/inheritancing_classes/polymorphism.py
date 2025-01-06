@@ -57,3 +57,10 @@ nonagon = Nonagon()
     # - form 1 -> 'Decagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Hexagon() or Nonagon()
 decagon = Decagon()
+
+
+# list of objects instantiated from child classes, inheriting from parent class
+
+# same as below:
+    # - shape_list = [Pentagon(), Hexagon(), Nonagon(), Decagon()]
+shapes_list = [pentagon, hexagon, nonagon, decagon]
