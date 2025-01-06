@@ -14,8 +14,11 @@
     # - duck typing
 
 
+# imports the abstract base class (ABC) module
+from abc import ABC, abstractmethod
+
 # parent class
-class Shape():
+class Shape(ABC):
 
     # constructor
     def __init__(self, name, sides):
@@ -31,6 +34,7 @@ class Shape():
     # - form 1 -> as they exist as themselves
     # - form 2 -> their parent class
 class Pentagon(Shape):
+    
     pass
 
 class Hexagon(Shape):
@@ -74,6 +78,8 @@ decagon = Decagon(name="decagon", sides=10)
 shape_list = [pentagon, hexagon, nonagon, decagon]
 
 # looping through objects list to use parent class method on each object - as they're all inheriting the method from the parent class
+# these child classes where able to use the 'how_many_sides()' method from the parent class due to polymorphism
+    # - the 'how_many_sides()' method is in the parent class which is being inherited by the child classes
 for shape in shape_list:
     print()
     print(shape.how_many_sides())
