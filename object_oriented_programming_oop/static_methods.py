@@ -10,6 +10,7 @@
     # - these methods wont have access to attributes/data within constructors
     # - these methods are called directly on methods
         # - you don't make an object 1st then call the method like you would for instance methods
+    # - best to use these for general utility functions w/in a class
 
 # instance methods
     # - these are methods that BELONG to the objects that will be instantiated/created from the class
