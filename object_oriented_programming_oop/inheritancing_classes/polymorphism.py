@@ -29,6 +29,11 @@ class Shape(ABC):
     def how_many_sides(self):
         return f"A {self.name} has {self.sides} sides."
 
+    # uses the abc module to make this function abstract
+    @abstractmethod
+    def calculate_perimeter(self):
+        pass
+
 
 # child classes
 # as all of these classes inherit the 'Shape()' class, they take 2 forms, this is Polymorphism
