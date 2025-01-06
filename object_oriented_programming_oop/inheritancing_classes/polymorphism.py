@@ -30,3 +30,14 @@ class Nonagon(Shape):
 
 class Decagon(Shape):
     pass
+
+
+# objects made from classes
+pentagon = Pentagon()
+
+hexagon = Hexagon()
+
+nonagon = Nonagon()
+
+decagon = Decagon()
+
