@@ -1,7 +1,6 @@
 # Polymorphism - Duck Typing
 
 # Notes:
-
 # duck typing
     # - another way to achieve polymorphism (the other way is inheritance)
     # - an unrelated object of class can be treated the same way as other classes that are children to a separate class
@@ -15,7 +14,6 @@
 # create classes
 
 # Notes (again):
-
 # - below, classes have been made
     # - 1 parent, 2 children, 1 separate/unrelated to anybody!
 # - 'Bathroom(Rooms)' & 'Bedroom(Rooms)' will inherit the attribute from the 'Rooms()' class, 'Limo()' will not
@@ -43,17 +41,21 @@ class Limo():
         print("You are sitting on a seat in the limo. 🚘")
 
 
+# Notes (again... again):
+# iterating through '[Bathroom(), Bedroom()]':
+    # - this will NOT cause an 'AttributeError' as objects are from classes that can use the same 'sit()' method via parent class inheritance
+# iterating through '[Bathroom(), Bedroom(), Limo()]':
+    # - this WILL cause an 'AttributeError' as 'Limo()' doesn't have access to the 'sit()' method, it's NOT a child class
+
 # creates list of objects
+
+# will NOT cause an 'AttributeError'
 rooms = [Bathroom(), Bedroom()]
-# rooms = [Bathroom(), Bedroom(), Limo()]
+
+# WILL cause an 'AttributeError'
+rooms = [Bathroom(), Bedroom(), Limo()] # 'Limo()' doesn't have access to the 'sit()' method
 
 # iterates through list
-
-# Notes (again... again):
-
-# - 
-# -
-
 for room in rooms:
     print()
     room.sit()
