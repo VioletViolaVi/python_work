@@ -41,16 +41,27 @@ class Shape(ABC):
     # - form 2 -> their parent class
 class Pentagon(Shape):
     
-    pass
+    # is overriding 'calculate_perimeter()' method from its parent being inherited from
+    def calculate_perimeter(self):
+        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
 
 class Hexagon(Shape):
-    pass
+    
+    # is overriding 'calculate_perimeter()' method from its parent being inherited from
+    def calculate_perimeter(self):
+        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
 
 class Nonagon(Shape):
-    pass
+    
+    # is overriding 'calculate_perimeter()' method from its parent being inherited from
+    def calculate_perimeter(self):
+        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
 
 class Decagon(Shape):
-    pass
+    
+    # is overriding 'calculate_perimeter()' method from its parent being inherited from
+    def calculate_perimeter(self):
+        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
 
 
 # objects made from classes
