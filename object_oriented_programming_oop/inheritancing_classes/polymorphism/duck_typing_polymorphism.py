@@ -27,15 +27,23 @@ class Bathroom(Rooms):
     
     def sit(self):
         print("You are sitting in a bathtub in the bathroom. 🛀")
+        print(f"True/False - The bathtub is occupied: {self.is_occupied}.")
 
 # child class
 class Bedroom(Rooms):
     
     def sit(self):
         print("You are sitting on the bed in the bedroom. 🛌")
+        print(f"True/False - The bedroom is occupied: {self.is_occupied}.")
 
 # NOT ONE OF THE CHILD CLASSES!!!
 class Limo():
+
+    # adding the same attribute variable 'is_occupied' as the one in 'Room()' class above, enables this class to get access
+        # adding this helps this 'Limo()' class meet the minimum necessary requirements to be considered & treated as a child of the 'Room()' class
+            # - it's still NOT a child of the 'Room()' class!!!
+            # - polymorphism has still occurred
+    is_occupied = True
     
     # method name as 'def seat(self)' is different to 'def sit(self)' causing 'Limo()' class to not work in for loop below
     def seat(self):
@@ -43,10 +51,14 @@ class Limo():
 
     # renaming it to 'def sit(self)' will enable the 'Limo()' class to work in the for loop
         # - this is the case despite not being a sibling of the other classes
+        # - this class has the minimum number of methods to be considered & treated as one of the child classes
             # - polymorphism has still occurred
     # looks like a duck, quacks like a duck, it'll be treated like a duck (duck typing)
     def sit(self):
         print("2, You are sitting on a seat in the limo. 🚘")
+
+        # causes 'AttributeError' as attribute variable 'is_occupied' comes from the 'Room()' class, which is NOT accessible by this class
+        print(f"True/False - The limo is occupied: {self.is_occupied}.")
 
 
 # Notes (again... again):
@@ -68,3 +80,5 @@ rooms = [Bathroom(), Bedroom(), Limo()]
 for room in rooms:
     print()
     room.sit()
+    print()
+    room.is_occupied
