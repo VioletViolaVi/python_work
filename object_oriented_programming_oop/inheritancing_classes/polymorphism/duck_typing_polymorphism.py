@@ -16,16 +16,22 @@
 
 # parent class
 class Rooms():
-    pass
+    is_occupied = True
 
 # child class
 class Bathroom(Rooms):
-    pass
+    
+    def sit(self):
+        print("You are sitting in a bathtub in the bathroom. 🛀")
 
 # child class
 class Bedroom(Rooms):
-    pass
+    
+    def sit(self):
+        print("You are sitting on the bed in the bedroom. 🛌")
 
 # NOT ONE OF THE CHILD CLASSES!!!
 class Limo():
-    pass
+    
+    def seats(self):
+        print("You are sitting on a seat in the limo. 🚘")
