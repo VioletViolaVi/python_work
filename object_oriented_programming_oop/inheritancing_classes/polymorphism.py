@@ -21,15 +21,17 @@ from abc import ABC, abstractmethod
 class Shape(ABC):
 
     # constructor
-    def __init__(self, name, sides, perimeter):
+    def __init__(self, name, sides, length):
         self.name = name
         self.sides = sides
-        self.perimeter = perimeter
+        self.length = length
+        self.perimeter = length * sides
 
     def how_many_sides(self):
         return f"A {self.name} has {self.sides} sides."
 
     # uses the abc module to make this function abstract
+    # method is undefined & needs to be overridden by its children classes
     @abstractmethod
     def calculate_perimeter(self):
         pass
@@ -43,25 +45,25 @@ class Pentagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
+        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm."
 
 class Hexagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
+        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm."
 
 class Nonagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
+        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm."
 
 class Decagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter * self.sides}cm"
+        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm."
 
 
 # objects made from classes
@@ -70,22 +72,22 @@ class Decagon(Shape):
 # its forms are:
     # - form 1 -> 'Pentagon()', form 2 -> 'Shape()'
     # this is NOT a Hexagon(), Nonagon() or Decagon()
-pentagon = Pentagon(name="pentagon", sides=5)
+pentagon = Pentagon(name="pentagon", sides=5, length=5)
 
 # its forms are:
     # - form 1 -> 'Hexagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Nonagon() or Decagon()
-hexagon = Hexagon(name="hexagon", sides=6)
+hexagon = Hexagon(name="hexagon", sides=6, length=5)
 
 # its forms are:
     # - form 1 -> 'Nonagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Hexagon() or Decagon()
-nonagon = Nonagon(name="nonagon", sides=9)
+nonagon = Nonagon(name="nonagon", sides=9, length=5)
 
 # its forms are:
     # - form 1 -> 'Decagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Hexagon() or Nonagon()
-decagon = Decagon(name="decagon", sides=10)
+decagon = Decagon(name="decagon", sides=10, length=5)
 
 
 # list of objects instantiated from child classes, inheriting from parent class
@@ -100,3 +102,4 @@ shape_list = [pentagon, hexagon, nonagon, decagon]
 for shape in shape_list:
     print()
     print(shape.how_many_sides())
+    print(shape.calculate_perimeter())
