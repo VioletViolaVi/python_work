@@ -28,7 +28,7 @@ class Shape(ABC):
         self.perimeter = length * sides
 
     def how_many_sides(self):
-        return f"A {self.name} has {self.sides} sides."
+        return f"A {self.name} has {self.sides} side{'s' if self.sides > 1 else ''}."
 
     # uses the abc module to make this function abstract
     # method is undefined & needs to be overridden by its children classes
@@ -45,31 +45,36 @@ class Pentagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm per side."
+        return f"The perimeter of a {self.name} is {self.perimeter}cm at {self.length}cm per side."
 
 class Hexagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm per side."
+        return f"The perimeter of a {self.name} is {self.perimeter}cm at {self.length}cm per side."
 
 class Nonagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm per side."
+        return f"The perimeter of a {self.name} is {self.perimeter}cm at {self.length}cm per side."
 
 class Decagon(Shape):
     
     # is overriding 'calculate_perimeter()' method from its parent being inherited from
     def calculate_perimeter(self):
-        return f"The perimeter of {self.name} is {self.perimeter}cm at {self.length}cm per side."
+        return f"The perimeter of a {self.name} is {self.perimeter}cm at {self.length}cm per side."
 
 
 # unrelated class to 'Shape()'
-class Pancake():
+class Pancake(Decagon):
     # constructor
-    def __init__(self, flavour):
+    def __init__(self, name, sides, length, flavour):
+        
+        # inherits from parent class so its attribute variables can be accessible in this child class
+        super().__init__(name, sides, length)
+        
+        # unique to this class
         self.flavour = flavour
 
 
@@ -96,8 +101,9 @@ nonagon = Nonagon(name="nonagon", sides=9, length=5)
     # this is NOT a Pentagon(), Hexagon() or Nonagon()
 decagon = Decagon(name="decagon", sides=10, length=5)
 
+
 # creates pancake object from 'Pancake()' class
-pancake = Pancake(flavour="plain")
+pancake = Pancake(name="pancake", sides=1, length=5, flavour="plain")
 
 
 
