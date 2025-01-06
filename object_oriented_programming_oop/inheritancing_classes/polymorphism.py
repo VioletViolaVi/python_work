@@ -49,22 +49,22 @@ class Decagon(Shape):
 # its forms are:
     # - form 1 -> 'Pentagon()', form 2 -> 'Shape()'
     # this is NOT a Hexagon(), Nonagon() or Decagon()
-pentagon = Pentagon()
+pentagon = Pentagon(name="pentagon", sides=5)
 
 # its forms are:
     # - form 1 -> 'Hexagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Nonagon() or Decagon()
-hexagon = Hexagon()
+hexagon = Hexagon(name="hexagon", sides=6)
 
 # its forms are:
     # - form 1 -> 'Nonagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Hexagon() or Decagon()
-nonagon = Nonagon()
+nonagon = Nonagon(name="nonagon", sides=9)
 
 # its forms are:
     # - form 1 -> 'Decagon()', form 2 -> 'Shape()'
     # this is NOT a Pentagon(), Hexagon() or Nonagon()
-decagon = Decagon()
+decagon = Decagon(name="decagon", sides=10)
 
 
 # list of objects instantiated from child classes, inheriting from parent class
