@@ -67,3 +67,22 @@ Employee(name="Bob", job_role="The Builder"). bio()
 # static method is called directly on class
 # value is passed through brackets of method being called
 Employee.salary("56,000")
+
+
+# extra code showing both static and instance methods can still be inherited by child classes
+print(" ------------------------------ ")
+class Sandy(Employee): # inherited
+    def __init__(self, name, job_role, in_uniform): # inherited plus own parameter
+        super().__init__(name, job_role) # inherited
+        self.in_uniform = in_uniform # own parameter
+
+    def still_employed(self): # will be instance method as it relies on data (self.in_uniform) from constructor 
+        print(f"Sandy has been {'hired' if self.in_uniform else 'fired'}!")
+
+sandy = Sandy(name="Sandy", job_role="Dancer", in_uniform=False) # object creation
+print()
+sandy.bio() # calling instance method
+print()
+sandy.still_employed() # calling instance method
+print()
+Sandy.salary("34,500") # calling static method
