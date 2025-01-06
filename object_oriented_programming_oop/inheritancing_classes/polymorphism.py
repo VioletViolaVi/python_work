@@ -67,6 +67,9 @@ class Decagon(Shape):
 
 
 # unrelated class to 'Shape()'
+# making 'Pancake' class inherit from 'Decagon' class, so it can have access to methods in 'Shape' class for the for loop below
+    # 'Pancake' class now has 3 forms
+        # - form 1 -> 'Pancake()', form 1 -> 'Decagon()', form 3 -> 'Shape()'
 class Pancake(Decagon):
     # constructor
     def __init__(self, name, sides, length, flavour):
@@ -103,6 +106,10 @@ decagon = Decagon(name="decagon", sides=10, length=5)
 
 
 # creates pancake object from 'Pancake()' class
+
+# its forms are:
+    # - form 1 -> 'Pancake()', form 1 -> 'Decagon()', form 3 -> 'Shape()'
+    # this is NOT a Pentagon(), Hexagon() or Nonagon()
 pancake = Pancake(name="pancake", sides=1, length=5, flavour="plain")
 
 
