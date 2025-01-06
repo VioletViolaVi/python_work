@@ -16,7 +16,15 @@
 
 # parent class
 class Shape():
-    pass
+
+    # constructor
+    def __init__(self, name, sides):
+        self.name = name
+        self.sides = sides
+
+    def how_many_sides(self):
+        return f"A {self.name} has {self.sides} sides."
+
 
 # child classes
 # as all of these classes inherit the 'Shape()' class, they take 2 forms, this is Polymorphism
@@ -63,4 +71,4 @@ decagon = Decagon()
 
 # same as below:
     # - shape_list = [Pentagon(), Hexagon(), Nonagon(), Decagon()]
-shapes_list = [pentagon, hexagon, nonagon, decagon]
+shape_list = [pentagon, hexagon, nonagon, decagon]
