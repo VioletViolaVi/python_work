@@ -19,8 +19,6 @@
 # - below, classes have been made
     # - 1 parent, 2 children, 1 separate/unrelated to anybody!
 # - 'Bathroom(Rooms)' & 'Bedroom(Rooms)' will inherit the attribute from the 'Rooms()' class, 'Limo()' will not
-# - 
-# -
 
 # parent class
 class Rooms():
@@ -43,3 +41,19 @@ class Limo():
     
     def seats(self):
         print("You are sitting on a seat in the limo. 🚘")
+
+
+# creates list of objects
+rooms = [Bathroom(), Bedroom()]
+# rooms = [Bathroom(), Bedroom(), Limo()]
+
+# iterates through list
+
+# Notes (again... again):
+
+# - 
+# -
+
+for room in rooms:
+    print()
+    room.sit()
