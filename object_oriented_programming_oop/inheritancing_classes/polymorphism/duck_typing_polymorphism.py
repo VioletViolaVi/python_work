@@ -38,9 +38,15 @@ class Bedroom(Rooms):
 class Limo():
     
     # method name as 'def seat(self)' is different to 'def sit(self)' causing 'Limo()' class to not work in for loop below
+    def seat(self):
+        print("1, You are sitting on a seat in the limo. 🚘")
+
     # renaming it to 'def sit(self)' will enable the 'Limo()' class to work in the for loop
+        # - this is the case despite not being a sibling of the other classes
+            # - polymorphism has still occurred
+    # looks like a duck, quacks like a duck, it'll be treated like a duck (duck typing)
     def sit(self):
-        print("You are sitting on a seat in the limo. 🚘")
+        print("2, You are sitting on a seat in the limo. 🚘")
 
 
 # Notes (again... again):
