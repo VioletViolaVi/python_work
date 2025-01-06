@@ -40,17 +40,20 @@ class Decagon(Shape):
 
 # its forms are:
     # - form 1 -> 'Pentagon()', form 2 -> 'Shape()'
+    # this is NOT a Hexagon(), Nonagon() or Decagon()
 pentagon = Pentagon()
 
 # its forms are:
     # - form 1 -> 'Hexagon()', form 2 -> 'Shape()'
+    # this is NOT a Pentagon(), Nonagon() or Decagon()
 hexagon = Hexagon()
 
 # its forms are:
     # - form 1 -> 'Nonagon()', form 2 -> 'Shape()'
+    # this is NOT a Pentagon(), Hexagon() or Decagon()
 nonagon = Nonagon()
 
 # its forms are:
     # - form 1 -> 'Decagon()', form 2 -> 'Shape()'
+    # this is NOT a Pentagon(), Hexagon() or Nonagon()
 decagon = Decagon()
-
