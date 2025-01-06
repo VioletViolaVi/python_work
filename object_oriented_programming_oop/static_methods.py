@@ -28,6 +28,20 @@ class Employee:
         self.job_role = job_role
 
     # instance method
-        # this is an instance method as it requires use of attributes from constructor & will make an object
+        # this is an instance method as it requires use of attributes from constructor
+        # all objects made from this class will have access the their own 'bio()' instance method
     def bio(self):
         return f"Name: {self.name}, Job Role:{self.job_role}"
+    
+    # static method
+    # '@staticmethod' decorator needs to be added 1st
+    # no 'self' needs to be added in brackets as this is NOT an instance method, it is static!!!
+    # you can still pass through parameters/placeholders in brackets for values later
+    # this static method does not have nor need access to attributes in constructor
+        # - therefore, creating objects will not be needed
+            # - static methods are called directly on class i.e. 'Employee().salary()'
+    @staticmethod
+    def salary(pay):
+        return f"The salary of this employee is £{pay}."
+
+
