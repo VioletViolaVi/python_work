@@ -21,9 +21,10 @@ from abc import ABC, abstractmethod
 class Shape(ABC):
 
     # constructor
-    def __init__(self, name, sides):
+    def __init__(self, name, sides, perimeter):
         self.name = name
         self.sides = sides
+        self.perimeter = perimeter
 
     def how_many_sides(self):
         return f"A {self.name} has {self.sides} sides."
