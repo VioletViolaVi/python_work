@@ -1,4 +1,4 @@
-# Polymorphism
+# Polymorphism - Inheritance
 
 # Notes
 
