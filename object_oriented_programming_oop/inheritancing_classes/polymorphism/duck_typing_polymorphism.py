@@ -37,7 +37,9 @@ class Bedroom(Rooms):
 # NOT ONE OF THE CHILD CLASSES!!!
 class Limo():
     
-    def seats(self):
+    # method name as 'def seat(self)' is different to 'def sit(self)' causing 'Limo()' class to not work in for loop below
+    # renaming it to 'def sit(self)' will enable the 'Limo()' class to work in the for loop
+    def sit(self):
         print("You are sitting on a seat in the limo. 🚘")
 
 
@@ -49,11 +51,12 @@ class Limo():
 
 # creates list of objects
 
-# will NOT cause an 'AttributeError'
+# will NOT cause an 'AttributeError' - as long as 'Limo()' is 'def seat(self)'
 rooms = [Bathroom(), Bedroom()]
 
-# WILL cause an 'AttributeError'
-rooms = [Bathroom(), Bedroom(), Limo()] # 'Limo()' doesn't have access to the 'sit()' method
+# WILL cause an 'AttributeError' - as long as 'Limo()' is 'def seat(self)'
+# 'Limo()' doesn't have access to the 'sit()' method
+rooms = [Bathroom(), Bedroom(), Limo()]
 
 # iterates through list
 for room in rooms:
