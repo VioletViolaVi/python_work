@@ -15,3 +15,19 @@
     # - these are methods that BELONG to the objects that will be instantiated/created from the class
     # - these are the methods that use 'self' in their brackets
     # - these methods require to be called on objects of a class as they cannot be called directly on the class
+
+
+# class
+class Employee:
+
+    # constructor
+    def __init__(self, name, job_role):
+
+        # attributes
+        self.name = name
+        self.job_role = job_role
+
+    # instance method
+        # this is an instance method as it requires use of attributes from constructor & will make an object
+    def bio(self):
+        return f"Name: {self.name}, Job Role:{self.job_role}"
