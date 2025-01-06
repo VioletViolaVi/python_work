@@ -19,6 +19,9 @@ class Shape():
     pass
 
 # child classes
+# as all of these classes inherit the 'Shape()' class, they take 2 forms, this is Polymorphism
+    # - form 1 -> as they exist as themselves
+    # - form 2 -> their parent class
 class Pentagon(Shape):
     pass
 
@@ -33,11 +36,21 @@ class Decagon(Shape):
 
 
 # objects made from classes
+# due to polymorphism, these objects take the form of their own respective classes & their parent class
+
+# its forms are:
+    # - form 1 -> 'Pentagon()', form 2 -> 'Shape()'
 pentagon = Pentagon()
 
+# its forms are:
+    # - form 1 -> 'Hexagon()', form 2 -> 'Shape()'
 hexagon = Hexagon()
 
+# its forms are:
+    # - form 1 -> 'Nonagon()', form 2 -> 'Shape()'
 nonagon = Nonagon()
 
+# its forms are:
+    # - form 1 -> 'Decagon()', form 2 -> 'Shape()'
 decagon = Decagon()
 
