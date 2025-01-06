@@ -72,3 +72,8 @@ decagon = Decagon(name="decagon", sides=10)
 # same as below:
     # - shape_list = [Pentagon(), Hexagon(), Nonagon(), Decagon()]
 shape_list = [pentagon, hexagon, nonagon, decagon]
+
+# looping through objects list to use parent class method on each object - as they're all inheriting the method from the parent class
+for shape in shape_list:
+    print()
+    print(shape.how_many_sides())
