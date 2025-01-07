@@ -23,33 +23,43 @@ class Student:
     # simple instance method
         # - 'self' is used in brackets
     def student_bio(self):
-        return f"Name: {self.name}, Exam Title: {self.exam_title}, Percentage Score: {self.percentage_score}%"
+        
+        # string has been formatted to make text appear clearer to read
+        return f"Name: {self.name:<10} Exam Title: {self.exam_title:<10} Percentage Score (%): {self.percentage_score:<10}"
     
     # class method
         # - 'cls' is used in brackets
     # '@classmethod' decorator to be added whenever a class method is to be made
     @classmethod
     def student_total(cls):
-        return f"Total number of students: {Student.student_counter}"
+        return f"Total number of students so far: {Student.student_counter}"
     
     
 # object creation
 muffy = Student(name="Muffy", exam_title="Science", percentage_score=78)
+
+# shows how many objects from 'Student' class has been made up to this point
+print(Student.student_total())
+
 arthur = Student(name="Arthur", exam_title="Maths", percentage_score=92)
+
+# shows how many objects from 'Student' class has been made up to this point
+print(Student.student_total())
 buster = Student(name="Buster", exam_title="Geography", percentage_score=85)
+
+# shows how many objects from 'Student' class has been made up to this point
+print(Student.student_total())
 francine = Student(name="Francine", exam_title="ICT", percentage_score=100)
 
-# printing out objects
-print()
-print(muffy.student_bio())
-print()
-print(arthur.student_bio())
-print()
-print(buster.student_bio())
-print()
-print(francine.student_bio())
-print()
+# shows how many objects from 'Student' class has been made up to this point
 # displays 4 as there has been 4 objects created from the class
 print(Student.student_total())
+
+# printing out objects from 'Student' class
+print()
+print(muffy.student_bio())
+print(arthur.student_bio())
+print(buster.student_bio())
+print(francine.student_bio())
 print()
 print("Congratulations to all! 🥳")
