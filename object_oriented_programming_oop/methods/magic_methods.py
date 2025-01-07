@@ -86,6 +86,35 @@ class Song:
         return keyword in self.genre
 
 
+
+    # w/ out this '__getitem__' magic method, using the 'print(song_1['recording_artist'])' function would result in an error
+        # - TypeError: 'Song' object is not subscriptable
+        # - must have this magic method included to customise this 'error producing' & avoid the error
+    def __getitem__(self, keyword):
+
+        # needs 'index[]' operator to be able to return the value & work correctly w/out error
+        # 'keyword' is whatever value is being passed in 'print()' function
+            # - in print statements below u used 'recording_artist' & the 'if' condition checks if what u put in the print statements equal 'recording_artist'
+                # - as they match, condition becomes truthy so 'if' condition block is executed
+                    # - therefore, the value of 'self.recording_artist' is returned
+                        # - this value is gotten from what was passed during object creation (i.e. recording_artist="...")
+        if keyword == "recording_artist":
+            return self.recording_artist
+        
+        # can use elif to get the different values if the 'key' being referenced to is not 'recording_artist'
+        # does same as above but only if the passed in 'key' value is 'title' when indexing in the print() statement
+        elif keyword == "title":
+            return self.title
+
+        # does same as above but only if the passed in 'key' value is 'genre' when indexing in the print() statement
+        elif keyword == "genre":
+            return self.genre
+
+        # does same as above but only if the passed in 'key' value is 'sales' when indexing in the print() statement
+        elif keyword == "sales":
+            return f"{self.sales:,}"
+
+
 # create objects from class
 song_1 = Song(title="Manager of your nightmares", genre="Pop Ballad", recording_artist="FrontRoad Guys", sales=500000)
 song_2 = Song(title="Get ready for the jellies", genre="Rock", recording_artist="The Jellies", sales=175000)
@@ -150,3 +179,54 @@ print(f"(is rock in genre vale) song_1: {'Rock' in song_1}") # False
 print(f"(is rock in genre vale) song_2: {'Rock' in song_2}") # True
 print(f"(is rock in genre vale) song_3: {'Rock' in song_3}") # False
 print(f"(is rock in genre vale) song_4: {'Rock' in song_4}") # True, (song_4 is a copy of song_2)
+
+
+# to find key in an object
+# using the 'index[]' operator allows you to find the value of the attribute variable 'key' name
+
+# go into 'song_1' object & get the value that has the same attribute variable name as the value being passed as the index below
+print()
+# Manager of your nightmares
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_1: {song_1['title']}")
+# Pop Ballad
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_1: {song_1['genre']}")
+# FrontRoad Guys 
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_1: {song_1['recording_artist']}") 
+# 500,000
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_1: {song_1['sales']}")
+
+
+# go into 'song_2' object & get the value that has the same attribute variable name as the value being passed as the index below
+print()
+# Get ready for the jellies
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_2: {song_2['title']}")
+# Rock
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_2: {song_2['genre']}")
+# The Jellies
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_2: {song_2['recording_artist']}")
+# 175,000
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_2: {song_2['sales']}")
+
+
+# go into 'song_3' object & get the value that has the same attribute variable name as the value being passed as the index below
+print()
+# Let it stop
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_3: {song_3['title']}")
+# Jazz
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_3: {song_3['genre']}")
+# Nene Moore
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_3: {song_3['recording_artist']}")
+# 986,300
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_3: {song_3['sales']}")
+
+
+# go into 'song_4' object & get the value that has the same attribute variable name as the value being passed as the index below (same as song_2)
+print()
+# Get ready for the jellies
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['title']}")
+# Rock
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['genre']}")
+# The Jellies
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['recording_artist']}")
+# 175,000
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['sales']}")
