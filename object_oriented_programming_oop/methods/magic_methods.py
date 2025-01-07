@@ -31,7 +31,8 @@ class Song:
 
 # create objects from class
 song_1 = Song(title="Manager of your nightmares", genre="Pop Ballad", recording_artist="FrontRoad Guys", sales=500000)
-song_2 = Song(title="Get ready for the Kellies", genre="Rock", recording_artist="The Kellies", sales=175000)
+song_2 = Song(title="Get ready for the jellies", genre="Rock", recording_artist="The Jellies", sales=175000)
+song_3 = Song(title="Let it stop", genre="Jazz", recording_artist="Nene Moore", sales=986300)
 
 # using the 'print()' function alone like this will get a memory address
 # a magic method can be used to customise this 'song_1' object as 'print()' is a built in python operation that is being used on the object
@@ -40,3 +41,5 @@ print()
 print(song_1)
 print()
 print(song_2)
+print()
+print(song_3)
