@@ -113,6 +113,10 @@ class Song:
         # does same as above but only if the passed in 'key' value is 'sales' when indexing in the print() statement
         elif keyword == "sales":
             return f"{self.sales:,}"
+        
+        # executes if value passed through for the 'index[...]' is not an attribute variable present in the object/constructor
+        else:
+            return f"This is not an attribute variable in the object/constructor"
 
 
 # create objects from class
@@ -183,6 +187,7 @@ print(f"(is rock in genre vale) song_4: {'Rock' in song_4}") # True, (song_4 is 
 
 # to find key in an object
 # using the 'index[]' operator allows you to find the value of the attribute variable 'key' name
+# works with '__getitem__' magic method to find corresponding attribute variable name in object/constructor
 
 # go into 'song_1' object & get the value that has the same attribute variable name as the value being passed as the index below
 print()
@@ -230,3 +235,10 @@ print(f"(gets respective attribute value from created object using whatever is p
 print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['recording_artist']}")
 # 175,000
 print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['sales']}")
+
+
+print()
+# test - passing a value in the index that is NOT present in the object/constructor
+# else condition is executed in '__getitem__' magic method
+    # - 'This is not an attribute variable in the object/constructor' displayed in output
+print(f"(gets respective attribute value from created object using whatever is passed in this index) song_4: {song_4['FAKE']}")
