@@ -22,15 +22,16 @@ class Song:
         self.recording_artist = recording_artist
         self.sales = sales
 
-    # a different type of magic/dunder method
+    # a different type of magic/dunder method (str)
     # makes object display a string instead of a memory address, when printed out using 'print()'
         # - this is the act of customising the behaviour of the 'print()' function showing a memory address
     def __str__(self):
 
         # must be a STRING value for '__str__(self)' otherwise a TypeError will occur
         return f"Song name: {self.title} | Music genre: {self.genre} | Artist/Band: {self.recording_artist} | Number of sales: {self.sales:,}"
-    
-    # another magic/dunder method
+
+
+    # another magic/dunder method (eq)
         # - this magic/dunder method checks if values are equal to each other
     # this magic/dunder methods defines behaviour for the '==' operator
         # '==' needs to be present in order to use this (see below in print statement)
@@ -42,7 +43,7 @@ class Song:
         return self.sales == other_song_value.sales
     
 
-    # another magic/dunder method
+    # another magic/dunder method (lt)
     # this magic method is needed otherwise a TypeError is thrown if you attempt 'print(song_2 < song_3)'
         # - error goes on to say: " '<' not supported between instances of 'Song' and 'Song' "
         # error is due to not being able to use '<' on objects
@@ -54,14 +55,24 @@ class Song:
         return self.sales < other_value.sales
     
 
-    # another magic/dunder method
-    # 'print(song_2 > song_3)' w/out this magic method will cause output to be 'False' every time, regardless on whether it's correct or not
+    # another magic/dunder method (gt)
+    # 'print(song_4 > song_4)' w/out this magic method will cause output to be 'False' every time, regardless on whether it's correct or not
     # checks if 1 value is greater than the other
         # '>' needs to be present in order to use this (see below in print statement)
     def __gt__(self, other_value):
 
         # returns boolean value True/False
         return self.sales > other_value.sales
+
+
+    # another magic/dunder method (add)
+    # 'print(song_1 + song_2)' w/out this magic method will cause a TypeError as you cannot add objects together
+    # gets the sum of all values
+        # '+' needs to be present in order to use this (see below in print statement)
+    def __add__(self, other_value):
+
+        # returns boolean value True/False
+        return self.sales + other_value.sales
 
 
 # create objects from class
@@ -108,3 +119,13 @@ print()
 print(f"(greater sales) song_4 greater than song_4: {song_4 > song_4}") # False
 print(f"(greater sales) song_3 greater than song_2: {song_3 > song_2}") # True
 print(f"(greater sales) song_1 greater than song_2: {song_1 > song_2}") # True
+
+
+# using '+' (add)  in 'print()' function, along with the '__add__' magic/dunder method to add values together
+    # - focusses on sales amount (see '__add__' magic method)
+# w/out '__add__' magic method, print statement below throws TypeError due to adding objects together (not possible)
+    # - ensure to include '__add__' magic method
+print()
+print(f"(adding sales) song_1 add song_2: {song_1 + song_2:,}") # 675,000
+print(f"(adding sales) song_3 add song_1: {song_3 + song_1:,}") # 1,486,300
+print(f"(adding sales) song_1 add song_1: {song_1 + song_1:,}") # 1,000,000
