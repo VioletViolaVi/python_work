@@ -15,6 +15,7 @@ class Song:
     
     # this constructor is a 'magic method' aka 'dunder method'
         # double underscores before & after 'init' makes it a magic/dunder method
+    # '__init__' gets automatically called when the 'Song' class is called
     def __init__(self, title, genre, recording_artist, sales):
         self.title = title
         self.genre = genre
@@ -22,7 +23,10 @@ class Song:
         self.sales = sales
 
     # a different type of magic/dunder method
+    # makes object display a formatted string instead of a memory address, when printed out using 'print()'
     def __str__(self):
+
+        # must be a STRING value for '__str__(self)' otherwise a TypeError will occur
         return f"Song name: {self.title} | Music genre: {self.genre} | Artist/Band: {self.recording_artist} | Number of sales: {self.sales:,}"
 
 # create objects from class
@@ -30,4 +34,6 @@ song_1 = Song(title="Manager of your dreams", genre="Pop Ballad", recording_arti
 
 # using the 'print()' function alone like this will get a memory address
 # a magic method can be used to customise this 'song_1' object as 'print()' is a built in python operation that is being used on the object
+    # - e.g. '__str__' would make 'print(song_1)' show the formatted string (not memory address) w/out need to make an instance method like b4
+print()
 print(song_1)
