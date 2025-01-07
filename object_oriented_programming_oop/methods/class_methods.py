@@ -13,6 +13,7 @@ class Student:
     # class variables
     student_counter = 0
     total_percentage_score = 0
+    average_percentage_score = 0
 
     # constructor
     def __init__(self, name, exam_title, percentage_score):
@@ -21,6 +22,9 @@ class Student:
         self.percentage_score = percentage_score
         Student.student_counter += 1
         Student.total_percentage_score += percentage_score
+        # average -> addition of all numbers then divide by number of numbers
+        # calculates average percentage score of all students
+        Student.average_percentage_score = Student.total_percentage_score / Student.student_counter
 
     # simple instance method
         # - 'self' is used in brackets
@@ -41,6 +45,7 @@ class Student:
             # - DO NOT use class name to get class variable when inside a '@classmethod'
                 # - i.e.: NO!!! ----- {Class_name.class_variable} ----- NO!!!
         return f"Total number of students so far: {cls.student_counter}"
+    
     
     
 # object creation
@@ -65,11 +70,12 @@ francine = Student(name="Francine", exam_title="ICT", percentage_score=100)
 # displays 4 as there has been 4 objects created from the class
 print(Student.student_total())
 
-# printing out objects from 'Student' class
 print()
+# printing out objects from 'Student' class
 print(muffy.student_bio())
 print(arthur.student_bio())
 print(buster.student_bio())
 print(francine.student_bio())
+print()
 print()
 print("Congratulations to all! 🥳")
