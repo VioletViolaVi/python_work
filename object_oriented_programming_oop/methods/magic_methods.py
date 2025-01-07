@@ -18,3 +18,6 @@ class Song:
     def __init__(self, title, singer, sales):
         self.title = title
         self.singer = singer
+        self.sales = sales
+
+
