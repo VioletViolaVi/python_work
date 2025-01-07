@@ -33,12 +33,24 @@ class Song:
     # another magic/dunder method
         # - this magic/dunder method checks if values are equal to each other
     # this magic/dunder methods defines behaviour for the '==' operator
+        # '==' needs to be present in order to use this (see below in print statement)
     # other_value represents the other value passed through when this function is used
         # - it can be named anything, - just be consistent, as usual
-    def __eq__(self, other_value):
+    def __eq__(self, other_song_value):
 
         # checks values of the 'self.sales' attribute value for both objects passed through print() function e.g. 'print(song_1 == song_3)'
-        return self.sales == other_value.sales
+        return self.sales == other_song_value.sales
+    
+
+    # another magic/dunder method
+    # this magic method is needed otherwise a TypeError is thrown if you attempt 'print(song_2 < song_3)'
+        # - error goes on to say: " '<' not supported between instances of 'Song' and 'Song' "
+    # checks if 1 value is less than the other
+        # '<' needs to be present in order to use this (see below in print statement)
+    def __lt__(self, other_value):
+
+        # returns boolean value True/False
+        return self.sales < other_value.sales
 
 
 # create objects from class
@@ -62,7 +74,16 @@ print(song_3)
 # using '==' in 'print()' function, along with the '__eq__' magic/dunder method to check if values are equal to each other
 # shows False as sales amounts are not the same
 print()
-print(f"song_1 same as song_3?: {song_1 == song_3}")
+print(f"(about sales amount) song_1 same as song_3: {song_1 == song_3}")
 
 # shows True as sales amounts are the same
-print(f"song_2 same as song_4?: {song_2 == song_4}")
+# use of '==' needed here in order to see results of '__eq__' magic method
+print(f"(about sales amount) song_2 same as song_4: {song_2 == song_4}")
+
+
+# using '<' (less than)  in 'print()' function, along with the '__eq__' magic/dunder method to check if 1 value is less than the other
+    # - focusses on sales amount (see '__eq__' magic method)
+print()
+print(f"(sales) song_2 less than song_3: {song_2 < song_3}")
+print(f"(sales) song_3 less than song_1: {song_3 < song_1}")
+
