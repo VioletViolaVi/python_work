@@ -15,8 +15,9 @@ class Song:
     
     # this constructor is a 'magic method' aka 'dunder method'
         # double underscores before & after 'init' makes it a magic/dunder method
-    def __init__(self, title, singer, sales):
+    def __init__(self, title, genre, singer, sales):
         self.title = title
+        self.genre = genre
         self.singer = singer
         self.sales = sales
 
