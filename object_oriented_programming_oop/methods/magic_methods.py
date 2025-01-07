@@ -24,3 +24,10 @@ class Song:
     # a different type of magic/dunder method
     def __str__(self):
         return f"Song name: {self.title} | Music genre: {self.genre} | Artist/Band: {self.recording_artist} | Number of sales: {self.sales:,}"
+
+# create objects from class
+song_1 = Song(title="Manager of your dreams", genre="Pop Ballad", recording_artist="FrontRoad Guys", sales=500000)
+
+# using the 'print()' function alone like this will get a memory address
+# a magic method can be used to customise this 'song_1' object as 'print()' is a built in python operation that is being used on the object
+print(song_1)
