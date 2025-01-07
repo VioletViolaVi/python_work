@@ -29,13 +29,16 @@ class Student:
     
     # class method
         # - 'cls' is used in brackets
+            # - 'cls' means class
     # '@classmethod' decorator to be added whenever a class method is to be made
     # this '@classmethod' is used to get the value of the class variable & use it in the f string
     @classmethod
     def student_total(cls):
 
-        # class variable to gotten via dot notation on the class name -> 'Class_name.class_variable'
-        return f"Total number of students so far: {Student.student_counter}"
+        # class variable to gotten via dot notation using 'cls' parameter/keyword
+            # - DO NOT use class name to get class variable when inside a '@classmethod'
+                # - i.e.: NO!!! ----- {Class_name.class_variable} ----- NO!!!
+        return f"Total number of students so far: {cls.student_counter}"
     
     
 # object creation
