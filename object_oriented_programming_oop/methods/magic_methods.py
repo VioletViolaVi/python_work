@@ -23,23 +23,46 @@ class Song:
         self.sales = sales
 
     # a different type of magic/dunder method
-    # makes object display a formatted string instead of a memory address, when printed out using 'print()'
+    # makes object display a string instead of a memory address, when printed out using 'print()'
+        # - this is the act of customising the behaviour of the 'print()' function showing a memory address
     def __str__(self):
 
         # must be a STRING value for '__str__(self)' otherwise a TypeError will occur
         return f"Song name: {self.title} | Music genre: {self.genre} | Artist/Band: {self.recording_artist} | Number of sales: {self.sales:,}"
+    
+    # another magic/dunder method
+        # - this magic/dunder method checks if values are equal to each other
+    # this magic/dunder methods defines behaviour for the '==' operator
+    # other_value represents the other value passed through when this function is used
+        # - it can be named anything, - just be consistent, as usual
+    def __eq__(self, other_value):
+
+        # checks values of the 'self.sales' attribute value for both objects passed through print() function e.g. 'print(song_1 == song_3)'
+        return self.sales == other_value.sales
+
 
 # create objects from class
 song_1 = Song(title="Manager of your nightmares", genre="Pop Ballad", recording_artist="FrontRoad Guys", sales=500000)
 song_2 = Song(title="Get ready for the jellies", genre="Rock", recording_artist="The Jellies", sales=175000)
 song_3 = Song(title="Let it stop", genre="Jazz", recording_artist="Nene Moore", sales=986300)
 
+# this is the same as song_2 - for testing purposes '__eq__(self)' (see below)
+song_4 = Song(title="Get ready for the jellies", genre="Rock", recording_artist="The Jellies", sales=175000)
+
+
 # using the 'print()' function alone like this will get a memory address
 # a magic method can be used to customise this 'song_1' object as 'print()' is a built in python operation that is being used on the object
     # - e.g. '__str__' would make 'print(song_1)' show the formatted string (not memory address) w/out need to make an instance method like b4
 print()
 print(song_1)
-print()
 print(song_2)
-print()
 print(song_3)
+
+
+# using '==' in 'print()' function, along with the '__eq__' magic/dunder method to check if values are equal to each other
+# shows False as sales amounts are not the same
+print()
+print(f"song_1 same as song_3?: {song_1 == song_3}")
+
+# shows True as sales amounts are the same
+print(f"song_2 same as song_4?: {song_2 == song_4}")
