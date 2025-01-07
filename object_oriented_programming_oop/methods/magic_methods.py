@@ -45,12 +45,23 @@ class Song:
     # another magic/dunder method
     # this magic method is needed otherwise a TypeError is thrown if you attempt 'print(song_2 < song_3)'
         # - error goes on to say: " '<' not supported between instances of 'Song' and 'Song' "
+        # error is due to not being able to use '<' on objects
     # checks if 1 value is less than the other
         # '<' needs to be present in order to use this (see below in print statement)
     def __lt__(self, other_value):
 
         # returns boolean value True/False
         return self.sales < other_value.sales
+    
+
+    # another magic/dunder method
+    # 'print(song_2 > song_3)' w/out this magic method will cause output to be 'False' every time, regardless on whether it's correct or not
+    # checks if 1 value is greater than the other
+        # '>' needs to be present in order to use this (see below in print statement)
+    def __gt__(self, other_value):
+
+        # returns boolean value True/False
+        return self.sales > other_value.sales
 
 
 # create objects from class
@@ -74,16 +85,26 @@ print(song_3)
 # using '==' in 'print()' function, along with the '__eq__' magic/dunder method to check if values are equal to each other
 # shows False as sales amounts are not the same
 print()
-print(f"(about sales amount) song_1 same as song_3: {song_1 == song_3}")
+print(f"(same sales) song_1 same as song_3: {song_1 == song_3}")
 
 # shows True as sales amounts are the same
 # use of '==' needed here in order to see results of '__eq__' magic method
-print(f"(about sales amount) song_2 same as song_4: {song_2 == song_4}")
+print(f"(same sales) song_2 same as song_4: {song_2 == song_4}")
 
 
-# using '<' (less than)  in 'print()' function, along with the '__eq__' magic/dunder method to check if 1 value is less than the other
-    # - focusses on sales amount (see '__eq__' magic method)
+# using '<' (less than)  in 'print()' function, along with the '__lt__' magic/dunder method to check if 1 value is less than the other
+    # - focusses on sales amount (see '__lt__' magic method)
 print()
-print(f"(sales) song_2 less than song_3: {song_2 < song_3}")
-print(f"(sales) song_3 less than song_1: {song_3 < song_1}")
+print(f"(less sales) song_2 less than song_3: {song_2 < song_3}") # True
+print(f"(less sales) song_3 less than song_1: {song_3 < song_1}") # False
+print(f"(less sales) song_4 less than song_2: {song_4 < song_2}") # False
 
+
+# using '>' (greater than)  in 'print()' function, along with the '__gt__' magic/dunder method to check if 1 value is greater than the other
+    # - focusses on sales amount (see '__gt__' magic method)
+# w/out '__gt__' magic method created, all these print statements will print 'False' whether that's correct or not
+    # - therefore, ensure to include '__gt__' magic method
+print()
+print(f"(greater sales) song_4 greater than song_4: {song_4 > song_4}") # False
+print(f"(greater sales) song_3 greater than song_2: {song_3 > song_2}") # True
+print(f"(greater sales) song_1 greater than song_2: {song_1 > song_2}") # True
