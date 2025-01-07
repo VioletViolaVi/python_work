@@ -19,3 +19,9 @@ class Student:
     # simple instance method
     def student_bio(self):
         return f"Name: {self.name}, Exam Title: {self.exam_title}, Percentage Score: {self.percentage_score}%"
+    
+# object creation
+muffy = Student(name="Muffy", exam_title="Science", percentage_score=78)
+arthur = Student(name="Arthur", exam_title="Maths", percentage_score=92)
+buster = Student(name="Buster", exam_title="Geography", percentage_score=85)
+francine = Student(name="Francine", exam_title="ICT", percentage_score=100)
