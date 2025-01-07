@@ -20,3 +20,7 @@ class Song:
         self.genre = genre
         self.recording_artist = recording_artist
         self.sales = sales
+
+    # a different type of magic/dunder method
+    def __str__(self):
+        return f"Song name: {self.title} | Music genre: {self.genre} | Artist/Band: {self.recording_artist} | Number of sales: {self.sales:,}"
