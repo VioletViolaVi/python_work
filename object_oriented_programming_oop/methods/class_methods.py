@@ -30,8 +30,11 @@ class Student:
     # class method
         # - 'cls' is used in brackets
     # '@classmethod' decorator to be added whenever a class method is to be made
+    # this '@classmethod' is used to get the value of the class variable & use it in the f string
     @classmethod
     def student_total(cls):
+
+        # class variable to gotten via dot notation on the class name -> 'Class_name.class_variable'
         return f"Total number of students so far: {Student.student_counter}"
     
     
@@ -45,10 +48,12 @@ arthur = Student(name="Arthur", exam_title="Maths", percentage_score=92)
 
 # shows how many objects from 'Student' class has been made up to this point
 print(Student.student_total())
+
 buster = Student(name="Buster", exam_title="Geography", percentage_score=85)
 
 # shows how many objects from 'Student' class has been made up to this point
 print(Student.student_total())
+
 francine = Student(name="Francine", exam_title="ICT", percentage_score=100)
 
 # shows how many objects from 'Student' class has been made up to this point
