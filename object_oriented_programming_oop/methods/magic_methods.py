@@ -90,33 +90,33 @@ class Song:
     # w/ out this '__getitem__' magic method, using the 'print(song_1['recording_artist'])' function would result in an error
         # - TypeError: 'Song' object is not subscriptable
         # - must have this magic method included to customise this 'error producing' & avoid the error
-    def __getitem__(self, keyword):
+    def __getitem__(self, value):
 
         # needs 'index[]' operator to be able to return the value & work correctly w/out error
-        # 'keyword' is whatever value is being passed in 'print()' function
+        # 'value' is whatever value is being passed in 'print()' function
             # - in print statements below u used 'recording_artist' & the 'if' condition checks if what u put in the print statements equal 'recording_artist'
                 # - as they match, condition becomes truthy so 'if' condition block is executed
                     # - therefore, the value of 'self.recording_artist' is returned
                         # - this value is gotten from what was passed during object creation (i.e. recording_artist="...")
-        if keyword == "recording_artist":
+        if value == "recording_artist":
             return self.recording_artist
         
         # can use elif to get the different values if the 'key' being referenced to is not 'recording_artist'
         # does same as above but only if the passed in 'key' value is 'title' when indexing in the print() statement
-        elif keyword == "title":
+        elif value == "title":
             return self.title
 
         # does same as above but only if the passed in 'key' value is 'genre' when indexing in the print() statement
-        elif keyword == "genre":
+        elif value == "genre":
             return self.genre
 
         # does same as above but only if the passed in 'key' value is 'sales' when indexing in the print() statement
-        elif keyword == "sales":
+        elif value == "sales":
             return f"{self.sales:,}"
         
         # executes if value passed through for the 'index[...]' is not an attribute variable present in the object/constructor
         else:
-            return f"This is not an attribute variable in the object/constructor"
+            return f"'{value}' is not an attribute variable in the object/constructor"
 
 
 # create objects from class
