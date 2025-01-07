@@ -75,6 +75,17 @@ class Song:
         return self.sales + other_value.sales
 
 
+    # '__contains__' is another magic/dunder method
+    # use this magic method when 'in' python word is being used
+    # checks if passed through value exists as the value in the object, for the respective attribute variable
+        # - e.g. can 'Rock' be found in the value of 'self.genre', according to what the created objects say
+    def __contains__(self, keyword):
+
+        # 'in' is used
+        # value being looked for is written 1st then 'in' then location to look for the value, in this case the attribute variable
+        return keyword in self.genre
+
+
 # create objects from class
 song_1 = Song(title="Manager of your nightmares", genre="Pop Ballad", recording_artist="FrontRoad Guys", sales=500000)
 song_2 = Song(title="Get ready for the jellies", genre="Rock", recording_artist="The Jellies", sales=175000)
@@ -129,3 +140,13 @@ print()
 print(f"(adding sales) song_1 add song_2: {song_1 + song_2:,}") # 675,000
 print(f"(adding sales) song_3 add song_1: {song_3 + song_1:,}") # 1,486,300
 print(f"(adding sales) song_1 add song_1: {song_1 + song_1:,}") # 1,000,000
+
+
+# 'in' used to look for & find string in object
+# '__contains__' is to be used when 'in' python word is used in 'print()' function
+# below is checking to see if 'Rock' (incl. capital R) can be found as the value
+print()
+print(f"(is rock in genre vale) song_1: {'Rock' in song_1}") # False
+print(f"(is rock in genre vale) song_2: {'Rock' in song_2}") # True
+print(f"(is rock in genre vale) song_3: {'Rock' in song_3}") # False
+print(f"(is rock in genre vale) song_4: {'Rock' in song_4}") # True, (song_4 is a copy of song_2)
