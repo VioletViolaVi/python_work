@@ -15,3 +15,7 @@ class Student:
         self.name = name
         self.exam_title = exam_title
         self.percentage_score = percentage_score
+
+    # simple instance method
+    def student_bio(self):
+        return f"Name: {self.name}, Exam Title: {self.exam_title}, Percentage Score: {self.percentage_score}%"
