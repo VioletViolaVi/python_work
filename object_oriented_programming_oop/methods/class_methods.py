@@ -5,7 +5,7 @@
 # class methods use 'cls' as their keyword parameter in their brackets
     # - e.g. def class_method(cls)...
         # - similar to how instance methods use 'self'
-# - 
+
 
 # a simple class
 class Student:
@@ -21,11 +21,16 @@ class Student:
         Student.student_counter += 1
 
     # simple instance method
+        # - 'self' is used in brackets
     def student_bio(self):
         return f"Name: {self.name}, Exam Title: {self.exam_title}, Percentage Score: {self.percentage_score}%"
     
-
-    
+    # class method
+        # - 'cls' is used in brackets
+    # '@classmethod' decorator to be added whenever a class method is to be made
+    @classmethod
+    def student_total(cls):
+        return f"Total number of students: {Student.student_counter}"
     
     
 # object creation
@@ -45,6 +50,6 @@ print()
 print(francine.student_bio())
 print()
 # displays 4 as there has been 4 objects created from the class
-print(f"Total number of students: {Student.student_counter}")
+print(Student.student_total())
 print()
 print("Congratulations to all! 🥳")
