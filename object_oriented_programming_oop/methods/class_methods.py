@@ -10,8 +10,9 @@
 # a simple class
 class Student:
 
-    # class variable
+    # class variables
     student_counter = 0
+    total_percentage_score = 0
 
     # constructor
     def __init__(self, name, exam_title, percentage_score):
@@ -19,6 +20,7 @@ class Student:
         self.exam_title = exam_title
         self.percentage_score = percentage_score
         Student.student_counter += 1
+        Student.total_percentage_score += percentage_score
 
     # simple instance method
         # - 'self' is used in brackets
