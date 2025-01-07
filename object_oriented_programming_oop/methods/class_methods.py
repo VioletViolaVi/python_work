@@ -46,6 +46,10 @@ class Student:
                 # - i.e.: NO!!! ----- {Class_name.class_variable} ----- NO!!!
         return f"Total number of students so far: {cls.student_counter}"
     
+    # gets average percentage score of all students
+    @classmethod
+    def average_score(cls):
+        return f"The average score of all the students(%): {cls.average_percentage_score}"
     
     
 # object creation
@@ -77,5 +81,7 @@ print(arthur.student_bio())
 print(buster.student_bio())
 print(francine.student_bio())
 print()
+# prints out average score from class method above
+print(Student.average_score())
 print()
 print("Congratulations to all! 🥳")
