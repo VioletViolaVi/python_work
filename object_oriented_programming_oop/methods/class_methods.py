@@ -5,6 +5,7 @@
 # class methods use 'cls' as their keyword parameter in their brackets
     # - e.g. def class_method(cls)...
         # - similar to how instance methods use 'self'
+# use class methods when you need access to class data, e.g. class variables, or the class itself
 
 
 # a simple class
