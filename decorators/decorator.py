@@ -16,6 +16,8 @@ def add_sugar(func_param):
     def layer():
 
         # function being passed through as the argument/value gets called inside inner function
+        print()
+        print("Add sugar!🍚")
         func_param()
     
     # returns entire function
@@ -24,6 +26,8 @@ def add_sugar(func_param):
     return layer
 
 # decorator added on code line above base function
+# makes its function above run
+# this decorator makes no changes to the base function below, it merely extends it
 @add_sugar
 # base function
 def bake_cake():
