@@ -3,7 +3,9 @@
 # Notes:
 
 # @property decorator enables the ability to define a method as a property
-# @property decorator makes respective part of code able to be accessed/treated as if it's an attribute 
+# @property decorator makes respective part of code able to be accessed/treated as if it's an attribute
+    #   - e.g. when @property method is created, the name of the method can be called w/out its brackets
+        #   - 'human.weight' instead of 'human.weight()' (see print statements below)
 # additional logic can be added using the @property decorator
     #   - additional logic can be added when reading, writing & deleting attributes
 # @property methods provides the following when working w/ attributes:
@@ -20,6 +22,10 @@ class Human:
 
         # '_' need to be added to attribute variable names otherwise AttributeError will throw
             #   - e.g.: AttributeError: property 'age' of 'Human' object has no setter
+        # adding the '_' tells you & other developers reading this code that the attributes are to be protected/private
+            # - these '_' attributes should not be used/accessed outside the class
+            # - the '_' attributes are internal
+            # - getter methods are used instead to get these attributes to use their values
         self._name = name
         self._age = age
         self._weight = weight
@@ -38,7 +44,7 @@ class Human:
                 #   - e.g.: RecursionError: maximum recursion depth exceeded
         return f"Mr {self._name}"
 
-    @property  
+    @property
     def age(self):
 
         # using additional logic
@@ -47,7 +53,7 @@ class Human:
                 #   - e.g.: RecursionError: maximum recursion depth exceeded
         return f"{self._age}yrs old"
 
-    @property    
+    @property
     def weight(self):
 
         # using additional logic
@@ -56,7 +62,7 @@ class Human:
                 #   - e.g.: RecursionError: maximum recursion depth exceeded
         return f"{self._weight}kg"
 
-    @property    
+    @property
     def height(self):
 
         # using additional logic
@@ -84,7 +90,7 @@ human = Human(name="Bob", age=29, weight=56.31, height=6.47)
         #   - 56.31kg
         #   - 6.47m
 
-print(human._name)
-print(human._age) 
-print(human._weight)
-print(human._height)
+print(human.name)
+print(human.age) 
+print(human.weight)
+print(human.height)
