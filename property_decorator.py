@@ -73,20 +73,62 @@ class Human:
 
 
     # 4x setter methods
+    # setter to set name in human class
+    @name.setter
+    def name(self, new_name):
+        if new_name == "":
+            print()
+            print("Name cannot be empty!")
+        else:
+            print()
+            new_name = self._name
+            print(f"Hello {new_name} 👋")
+    
+    # setter to set age in human class
     @age.setter
     def age(self, new_age):
-        if self._age > 18:
-            print()
+        if new_age >= 18:
             print("You are of drinking age!")
         else:
-            self.name = new_age
-            print()
+            self._age = new_age
             print(f"You are too young to drink at {new_age}yrs old!")
+    
+    # setter to set weight in human class
+    @weight.setter
+    def weight(self, new_weight):
+        if new_weight <= 0:
+            print("Invalid weight! It cannot be less than or equal to 0!")
+        else:
+            new_weight = self._weight
+            print(f"Your current weight is {new_weight}!")
+    
+    # setter to set height in human class
+    @height.setter
+    def height(self, new_height):
+        if new_height <= 0:
+            print("Please enter a valid height!")
+        else:
+            new_height = self._height
+            print(f"Your height is {new_height}!")
 
 
 # standard object creation
 human = Human(name="Bob", age=29, weight=56.31, height=6.47)
 
+# reassignments for '@... setter' methods in class above
+human.name = ""
+human.age = 16
+human.weight = -9
+human.height = 0
+
+print()
+print(human.name)
+print(human.age) 
+print(human.weight)
+print(human.height)
+
+
+# using @property decorator & '_' on attribute variables stops these 'standard' values from showing
 # standard printing of values from attribute variables
     # values w/out getter, setter, deleter:
         #   - Bob
@@ -94,19 +136,17 @@ human = Human(name="Bob", age=29, weight=56.31, height=6.47)
         #   - 56.31
         #   - 6.47
 
-# using @property decorator stops the previous 'standard' values from showing
+# using @property decorator & '_' on attribute variables stops previous 'standard' values from showing
 # they now contain the additional logic that was added to their respective methods e.g. 'yrs old', 'Mr', etc.
     # values w/ getter:
         #   - Mr Bob
         #   - 29yrs old
         #   - 56.31kg
         #   - 6.47m
-
-# makes if condition code execute & print out statement in method under @name.setter
-human.age = 16
-
-print()
-print(human.name)
-print(human.age) 
-print(human.weight)
-print(human.height)
+    # values w/ setter:
+    # shown once reassignment from above occurs
+        #   - Name cannot be empty!
+        #   - You are too young to drink at 16yrs old!
+        #   - Invalid weight! It cannot be less than or equal to 0!
+        #   - Please enter a valid height!
+        
