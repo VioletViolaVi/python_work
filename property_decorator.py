@@ -70,7 +70,21 @@ class Human:
 human = Human(name="Bob", age=29, weight=56.31, height=6.47)
 
 # standard printing of values from attribute variables
-print(human.name) # Bob (w/out getter, setter, deleter)
-print(human.age) # 29 (w/out getter, setter, deleter)
-print(human.weight) # 56.31 (w/out getter, setter, deleter)
-print(human.height) # 6.47 (w/out getter, setter, deleter)
+    # values w/out getter, setter, deleter:
+        #   - Bob
+        #   - 29
+        #   - 56.31
+        #   - 6.47
+
+# using @property decorator stops the previous 'standard' values from showing
+# they now contain the additional logic that was added to their respective methods e.g. 'yrs old', 'Mr', etc.
+    # values w/ getter:
+        #   - Mr Bob
+        #   - 29yrs old
+        #   - 56.31kg
+        #   - 6.47m
+
+print(human._name)
+print(human._age) 
+print(human._weight)
+print(human._height)
