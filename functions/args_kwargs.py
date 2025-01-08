@@ -1,7 +1,7 @@
 # Arguments (*args) and Keyword Arguments (**kwargs)
 
 # Notes
-    # - *args and **kwargs are used when you want to accommodate for any number of arguments, at any time, to be passed through function when it's
+    # - *args and **kwargs are used when you want to accommodate for any number of arguments, at any time, to be passed through function when it's called
     # - 'args' and 'kwargs' don't have to be used but they are convention among developers
         # - '*' and '**' are what's important to add in 'def python_func()' brackets
             # - e.g. *test, **test_dict, *example, **example_dict, etc.
