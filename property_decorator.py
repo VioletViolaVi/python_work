@@ -34,7 +34,7 @@ class Human:
     # ------------------- using the @property decorator to add in additional logic -------------------
     # (this is just 1 example below) use @property decorator to add 1 digit after the decimal point & unit measurements e.g. cm, g, kg, etc.
     
-    # 4x methods made
+    # 4x getter methods
     @property
     def name(self):
 
@@ -72,6 +72,18 @@ class Human:
         return f"{self._height}m"
 
 
+    # 4x setter methods
+    @age.setter
+    def age(self, new_age):
+        if self._age > 18:
+            print()
+            print("You are of drinking age!")
+        else:
+            self.name = new_age
+            print()
+            print(f"You are too young to drink at {new_age}yrs old!")
+
+
 # standard object creation
 human = Human(name="Bob", age=29, weight=56.31, height=6.47)
 
@@ -90,6 +102,10 @@ human = Human(name="Bob", age=29, weight=56.31, height=6.47)
         #   - 56.31kg
         #   - 6.47m
 
+# makes if condition code execute & print out statement in method under @name.setter
+human.age = 16
+
+print()
 print(human.name)
 print(human.age) 
 print(human.weight)
