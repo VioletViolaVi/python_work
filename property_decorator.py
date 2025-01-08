@@ -1,0 +1,8 @@
+# Property Decorator
+
+# Notes:
+
+# - 
+# - 
+# - 
+# - 
