@@ -55,3 +55,8 @@ while keep_running:
         
         # stops while loop here & makes user start again from while loop beginning
         continue
+    
+    # this code block will always run regardless of whether an error occurred or not
+    finally:
+        print()
+        print("You will always see this regardless of 'try' & 'except'! 👻")
