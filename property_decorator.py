@@ -110,6 +110,33 @@ class Human:
         else:
             new_height = self._height
             print(f"Your height is {new_height}!")
+    
+
+    # 4x deleter methods
+
+    # to delete the private '_name' from the class
+    @name.deleter
+    def name(self):
+        del self._name
+        print("The name has been deleted. 😔")
+
+    # to delete the private '_age' from the class
+    @age.deleter
+    def age(self):
+        del self._age
+        print("The age has been deleted. 😔")
+
+    # to delete the private '_weight' from the class
+    @weight.deleter
+    def weight(self):
+        del self._weight
+        print("The weight has been deleted. 😔")
+
+    # to delete the private '_height' from the class
+    @height.deleter
+    def height(self):
+        del self._height
+        print("The height has been deleted. 😔")
 
 
 # standard object creation
@@ -126,6 +153,13 @@ print(human.name)
 print(human.age) 
 print(human.weight)
 print(human.height)
+print()
+
+# to delete private attribute variables that have been made private using '_' b4 their attribute variable names
+del human.name
+del human.age
+del human.weight
+del human.height
 
 
 # using @property decorator & '_' on attribute variables stops these 'standard' values from showing
@@ -138,15 +172,23 @@ print(human.height)
 
 # using @property decorator & '_' on attribute variables stops previous 'standard' values from showing
 # they now contain the additional logic that was added to their respective methods e.g. 'yrs old', 'Mr', etc.
+    
     # values w/ getter:
         #   - Mr Bob
         #   - 29yrs old
         #   - 56.31kg
         #   - 6.47m
+
     # values w/ setter:
     # shown once reassignment from above occurs
         #   - Name cannot be empty!
         #   - You are too young to drink at 16yrs old!
         #   - Invalid weight! It cannot be less than or equal to 0!
         #   - Please enter a valid height!
-        
+
+    # values w/ deleter:
+    # once deleted, attribute variables cannot be printed out to see their value (as it's been deleted) otherwise AttributeError will throw
+        #   - The name has been deleted. 😔
+        #   - The age has been deleted. 😔
+        #   - The weight has been deleted. 😔
+        #   - The height has been deleted. 😔
