@@ -14,12 +14,17 @@ def add_sugar(func_param):
 
     # inner function required to stop decorator from outputting contents of base function, w/out the base function making the call
         #   -  the '@add_sugar' decorator will cause print statements to be outputted in terminal despite 'bake_cake()' not being called
-    def layer():
+    # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+    # this is where parameters are placed if base function is called whilst passing value(s) through
+    def layer(*args, **kwargs):
 
         # function being passed through as the argument/value gets called inside inner function
         print()
         print("Add sugar! 🍚")
-        func_param()
+
+        # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+        # this is where parameters are placed if base function is called whilst passing value(s) through
+        func_param(*args, **kwargs)
     
     # returns entire function
     # 'layer' NOT 'layer()' as TypeError occurs
@@ -29,31 +34,55 @@ def add_sugar(func_param):
 
 # creating more decorators
 def add_butter(func_param):
-    def inner_layer():
+    
+    # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+    # this is where parameters are placed if base function is called whilst passing value(s) through
+    def inner_layer(*args, **kwargs):
         print()
         print("Add butter! 🧈")
-        func_param()
+
+        # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+        # this is where parameters are placed if base function is called whilst passing value(s) through
+        func_param(*args, **kwargs)
     return inner_layer
 
 def add_eggs(func_param):
-    def inner_layer():
+
+    # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+    # this is where parameters are placed if base function is called whilst passing value(s) through    
+    def inner_layer(*args, **kwargs):
         print()
         print("Add eggs! 🍳")
-        func_param()
+
+        # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+        # this is where parameters are placed if base function is called whilst passing value(s) through        
+        func_param(*args, **kwargs)
     return inner_layer
 
 def add_flour(func_param):
-    def inner_func():
+
+    # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+    # this is where parameters are placed if base function is called whilst passing value(s) through   
+    def inner_func(*args, **kwargs):
         print()
         print("Add flour! 💐")
-        func_param()
+
+        # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+        # this is where parameters are placed if base function is called whilst passing value(s) through           
+        func_param(*args, **kwargs)
     return inner_func
 
 def add_milk(func_param):
-    def inner_func():
+
+    # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+    # this is where parameters are placed if base function is called whilst passing value(s) through     
+    def inner_func(*args, **kwargs):
         print()
         print("Add milk! 🥛")
-        func_param()
+
+        # *args & **kwargs used to allow for any number of values to be passed through this function, when called
+        # this is where parameters are placed if base function is called whilst passing value(s) through        
+        func_param(*args, **kwargs)
     return inner_func
 
 
@@ -67,8 +96,11 @@ def add_milk(func_param):
 @add_flour
 @add_milk
 # base function
-def bake_cake():
+def bake_cake(cake_type):
     print()
     print("The cake is baked! 🍰")
+    print()
+    print(f"The type of cake baked is {cake_type}! 🥕")
 
-bake_cake()
+# if base function gets called w/ value passed through, parameter/placeholders will need to be put in decorator functions (see above)
+bake_cake("carrot")
