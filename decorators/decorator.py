@@ -18,7 +18,7 @@ def add_sugar(func_param):
 
         # function being passed through as the argument/value gets called inside inner function
         print()
-        print("Add sugar!🍚")
+        print("Add sugar! 🍚")
         func_param()
     
     # returns entire function
@@ -31,9 +31,30 @@ def add_sugar(func_param):
 def add_butter(func_param):
     def inner_layer():
         print()
-        print("Add butter!🧈")
+        print("Add butter! 🧈")
         func_param()
     return inner_layer
+
+def add_eggs(func_param):
+    def inner_layer():
+        print()
+        print("Add eggs! 🍳")
+        func_param()
+    return inner_layer
+
+def add_flour(func_param):
+    def inner_func():
+        print()
+        print("Add flour! 💐")
+        func_param()
+    return inner_func
+
+def add_milk(func_param):
+    def inner_func():
+        print()
+        print("Add milk! 🥛")
+        func_param()
+    return inner_func
 
 
 # decorator added on code line above base function
@@ -42,6 +63,9 @@ def add_butter(func_param):
 @add_sugar
 # more than 1 decorator can be added
 @add_butter
+@add_eggs
+@add_flour
+@add_milk
 # base function
 def bake_cake():
     print()
