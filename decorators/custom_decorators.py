@@ -1,4 +1,4 @@
-# Decorator
+# Decorators (self made decorators)
 
 # Notes:
 
