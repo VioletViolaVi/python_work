@@ -13,6 +13,7 @@
 def add_sugar(func_param):
 
     # inner function required to stop decorator from outputting contents of base function, w/out the base function making the call
+        #   -  the '@add_sugar' decorator will cause print statements to be outputted in terminal despite 'bake_cake()' not being called
     def layer():
 
         # function being passed through as the argument/value gets called inside inner function
