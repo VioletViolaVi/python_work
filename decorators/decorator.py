@@ -26,10 +26,22 @@ def add_sugar(func_param):
         #   - TypeError: 'NoneType' object is not callable
     return layer
 
+
+# creating more decorators
+def add_butter(func_param):
+    def inner_layer():
+        print()
+        print("Add butter!🧈")
+        func_param()
+    return inner_layer
+
+
 # decorator added on code line above base function
 # makes its function above run
 # this decorator makes no changes to the base function below, it merely extends it
 @add_sugar
+# more than 1 decorator can be added
+@add_butter
 # base function
 def bake_cake():
     print()
