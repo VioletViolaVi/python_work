@@ -37,3 +37,21 @@ while keep_running:
 
         # put end to while loop running again
         keep_running = False
+    
+    # this code runs when error occurs, more specifically when input is not a number e.g. string got entered instead
+    except ValueError:
+        print()
+        print("That's not a number! 😠")
+        
+        # stops while loop here & makes user start again from while loop beginning
+        continue
+
+    # this code is used as a last resort as using it as the only exception rule is bad practice
+    # 'Exception' covers all possible errors
+        #   - using this therefore will not inform users on what specifically went wrong, which is bad practice
+    except Exception:
+        print()
+        print("Something has gone wrong! - we don't know what, this exception is too generic! 😭")
+        
+        # stops while loop here & makes user start again from while loop beginning
+        continue
