@@ -19,7 +19,7 @@ class Human:
     def __init__(self, name, age, weight, height):
 
         # '_' need to be added to attribute variable names otherwise AttributeError will throw
-        #   - e.g.: AttributeError: property 'age' of 'Human' object has no setter
+            #   - e.g.: AttributeError: property 'age' of 'Human' object has no setter
         self._name = name
         self._age = age
         self._weight = weight
@@ -33,25 +33,37 @@ class Human:
     def name(self):
 
         # using additional logic
-        return f"Mr {self.name}"
+        # using @property for getters
+            # - '_' need to be added to attribute variable names here also or a RecursionError will occur
+                #   - e.g.: RecursionError: maximum recursion depth exceeded
+        return f"Mr {self._name}"
 
     @property  
     def age(self):
 
         # using additional logic
-        return f"{self.age}yrs old"
+        # using @property for getters
+            # - '_' need to be added to attribute variable names here also or a RecursionError will occur
+                #   - e.g.: RecursionError: maximum recursion depth exceeded
+        return f"{self._age}yrs old"
 
     @property    
     def weight(self):
 
         # using additional logic
-        return f"{self.weight}kg"
+        # using @property for getters
+            # - '_' need to be added to attribute variable names here also or a RecursionError will occur
+                #   - e.g.: RecursionError: maximum recursion depth exceeded
+        return f"{self._weight}kg"
 
     @property    
     def height(self):
-        
+
         # using additional logic
-        return f"{self.height}m"
+        # using @property for getters
+            # - '_' need to be added to attribute variable names here also or a RecursionError will occur
+                #   - e.g.: RecursionError: maximum recursion depth exceeded
+        return f"{self._height}m"
 
 
 # standard object creation
