@@ -55,10 +55,11 @@ file_path_2 = "C:/Users/vivia/OneDrive/Desktop/test_2.txt"
 # using try/except to avoid 'FileExistsError' if 'x' mode is used when file already exists
 try:
     # creates file
-    with open(file=file_path_2, mode="w") as file:
+    with open(file=file_path_2, mode="a") as file:
 
         # writes 'file'
-        file.write(txt_data_2)
+        # adds new line after string is printed in '.txt' file
+        file.write(txt_data_2 + "\n")
 
         # shows in terminal when file is written
         print(f"So, '{file_path_2}' has been created on the landing page of this laptop.")
