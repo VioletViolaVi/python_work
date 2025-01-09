@@ -30,6 +30,8 @@ file_path = "file_handling/test.txt"
 with open(file=file_path, mode="w") as file:
 
     # to write to 'file'
+    # actual '.txt' file of 'file_handling/test.txt' was made & can be found in VS Code's Explorer (left hand side)
+    # written string from 'txt_data' variable can also be seen in this '.txt' file
     file.write(txt_data)
 
     # confirmation message
