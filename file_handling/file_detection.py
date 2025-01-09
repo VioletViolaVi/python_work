@@ -13,4 +13,12 @@
 import os
 
 # variable contains string that matches the real file path of the 'test_file.txt' file
-file_path = ""
+# add folder in file path as file is in folder
+file_path = "file_handling/test_file.txt"
+
+# finds out if file exists in director
+print(os.path.exists(file_path)) # True
+if os.path.exists(file_path):
+    print("Yes this file exists.")
+else:
+    print("No this file does not exists.")
