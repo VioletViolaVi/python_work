@@ -67,3 +67,40 @@ try:
 # this block of code will run if 'x' mode is used in 'with', when file had already been created
 except FileExistsError:
     print("The file you're trying to create already exists! Stop it! 🛑")
+
+
+    # to write to 'file'
+    # actual '.txt' file of 'file_handling/test.txt' was made & can be found in VS Code's Explorer (left hand side)
+    # written string from 'txt_data' variable can also be seen in this '.txt' file
+    file.write(txt_data)
+
+    # confirmation message
+    print(f"{file_path} has been created.")
+
+
+print(" --- next --- ")
+
+
+# working with collections whilst file handling
+
+# outputs data
+spies = ["Sam", "Clover", "Alex"]
+
+# stores file name
+file_path_3 = "C:/Users/vivia/OneDrive/Desktop/test_3.txt"
+
+# creates file
+with open(file=file_path_3, mode="w") as file:
+
+    # writes 'file'
+    # to write over [list], the [list] must be iterated over via a loop
+        #   - CANNOT put in the brackets of the 'write()' method the [list] directly
+            #   - i.e. 'file.write(spies)' is wrong
+    for spy in spies:
+
+        # 'spy' is a string each now that can go in the brackets of the 'write()' method
+        # '\n' or ' ' (space bar) stops strings from being shown on '.txt' file squashed together
+        file.write(spy + " ")
+
+    # shows in terminal when file is written
+    print(f"So, '{spies}' has been created on the landing page of this laptop.")
