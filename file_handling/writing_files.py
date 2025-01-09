@@ -4,11 +4,11 @@
 
 
 # to output data
-txt_data = "This is a string to be seen in a .txt document."
+txt_data = "This is a string to be seen in a '.txt' document."
 
 # stores name of file, incl. extension
     #   - file path chosen below is a relative file path
-file_path = "test.txt"
+file_path = "file_handling/test.txt"
 
 # to create a file
 # features of code below:
@@ -30,4 +30,7 @@ file_path = "test.txt"
 with open(file=file_path, mode="w") as file:
 
     # to write to 'file'
-    pass
+    file.write(txt_data)
+
+    # confirmation message
+    print(f"{file_path} has been created.")
