@@ -126,11 +126,14 @@ with open(file=file_path_4, mode="w") as file:
 
     # uses imported json module
     # 'dump()' method converts dictionaries to json string for outputting data
-        #   - takes in json data as value inside its brackets
+        #   - takes in json data as argument/value inside its brackets
             #   - 'spies_colours' is the dictionary in this case (see above)
         #   - also takes in 2nd argument/value of 'file' from 'with' statement
-        #   - 'TypeError' is thrown if 2 arguments/values are not passed through
-    json.dump(spies_colours, file)
+            #   - 'TypeError' is thrown if 2 arguments/values are not passed through
+        #   - 3rd argument/value can also be passed through in brackets for giving number of indented spaces
+            #   - indented spaces are for each 'key:value' pair
+            #   - 'indent=' is used to achieve this
+    json.dump(spies_colours, file, indent=4)
 
     # print statement appears in terminal once file is written (& on desktop)
     print(f"(from desktop) json file: '{spies_colours}' file location: '{file_path_4}'")
