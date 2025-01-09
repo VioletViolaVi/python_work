@@ -1,7 +1,7 @@
 # Writing Files
 
-# imported to work w/ json file (@ bottom)
-import json
+# imported to work w/ json & csv files (@ bottom)
+import json, csv
 
 # to output data
 txt_data = "This is a string to be seen in a '.txt' document."
@@ -99,7 +99,7 @@ with open(file=file_path_3, mode="w") as file:
         file.write(spy + " ")
 
     # shows in terminal when file is written
-    print(f"(from desktop) json file: '{spies}' file location: '{file_path_3}'")
+    print(f"(from desktop) file: '{spies}' file location: '{file_path_3}'")
 
 
 print()
@@ -137,3 +137,49 @@ with open(file=file_path_4, mode="w") as file:
 
     # print statement appears in terminal once file is written (& on desktop)
     print(f"(from desktop) json file: '{spies_colours}' file location: '{file_path_4}'")
+
+
+print()
+print(" --- next --- ")
+print()
+
+
+# working with csv files whilst file handling
+# csv -> comma separated values
+    #   - needs csv module imported
+
+# create nested [list] (2D collection)
+# nested [list] will need to be iterated over to ensure output is seen in '.csv' file
+heroes = [
+    ["Name", "Location", "Is a Hero"],
+    ["Raven", "Titan Tower", True],
+    ["Hinata", "Hidden Leaf", True],
+    ["Starfire", "Titan Tower", True],
+    ["Ino", "Hidden Leaf", True]
+]
+
+# stores file name
+# file extension changed to '.csv' (no longer '.json')
+file_path_5 = "C:/Users/vivia/OneDrive/Desktop/test_5.csv"
+
+# creates file
+# newline="" -> removes new line automatically provided by 'writerow()' method, later on below
+with open(file=file_path_5, mode="w", newline="") as file:
+
+    # uses imported csv module
+    # creates a 'writer' object to write to the file
+        #   - uses 'writer()' & passes through its brackets the file
+    # 'writer' is an object
+        #   - provides methods to write data to a '.csv' file
+    writer = csv.writer(file)
+
+    # iterates over all the rows in the nested list/2D collection, to ensure output can be seen in '.csv' files
+    for row in heroes:
+
+        # built in 'writerow()' method from importing 'csv'
+            #   - this methods provides a new line after each row
+                #   - to remove this new line use newline="" in 'with' statement
+        writer.writerow(row)
+
+    # print statement appears in terminal once file is written (& on desktop)
+    print(f"(from desktop) csv file: '{heroes}' file location: '{file_path_5}'")
