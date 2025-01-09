@@ -22,7 +22,7 @@ file_path = "file_handling/test.txt"
         # -  2nd parameter/placeholder in 'open()' function is the mode
             #   types of modes:
                 #   - 'w' means write
-                #   - 'x' means also means write but will only do so if the file doesn't exist already otherwise an error will be thrown
+                #   - 'x' means also means write but will only do so if the file doesn't exist already otherwise an error will be thrown (FileExistsError)
                 #   - 'a' means to append file
                 #   - 'r' means read
     # 'as' keyword is used to give with statement a name to be know as within the code
@@ -50,12 +50,17 @@ txt_data_2 = "This should be seen on the landing page of this laptop."
     #   - uses an absolute file path
 file_path_2 = "C:/Users/vivia/OneDrive/Desktop/test_2.txt"
 
-# creates file
-with open(file=file_path_2, mode="w") as file:
+# using try/except to avoid 'FileExistsError' if 'x' mode is used when file already exists
+try:
+    # creates file
+    with open(file=file_path_2, mode="x") as file:
 
-     # writes 'file'
-    file.write(txt_data_2)
+        # writes 'file'
+        file.write(txt_data_2)
 
-    # shows in terminal when file is written
-    print(f"So, '{file_path_2}' has been created on the landing page of this laptop.")
+        # shows in terminal when file is written
+        print(f"So, '{file_path_2}' has been created on the landing page of this laptop.")
 
+# this block of code will run if 'x' mode is used in 'with', when file had already been created
+except FileExistsError:
+    print("The file you're trying to create already exists! Stop it! 🛑")
