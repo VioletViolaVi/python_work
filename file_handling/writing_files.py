@@ -1,7 +1,7 @@
 # Writing Files
 
-# Notes: (see below)
-
+# imported to work w/ json file (@ bottom)
+import json
 
 # to output data
 txt_data = "This is a string to be seen in a '.txt' document."
@@ -37,15 +37,18 @@ with open(file=file_path, mode="w") as file:
     file.write(txt_data)
 
     # confirmation message
-    print(f"{file_path} has been created.")
+    print()
+    print(f"(from desktop) [created/written] file location: '{file_path}'")
 
 
+print()
 print(" --- next --- ")
+print()
 
 
 # output '.txt' file to laptop home (outside of vs code)
 
-# outputs data
+# stores "string" data
 txt_data_2 = "This should be seen on the landing page of this laptop."
 
 # stores file name
@@ -62,28 +65,21 @@ try:
         file.write(txt_data_2 + "\n")
 
         # shows in terminal when file is written
-        print(f"So, '{file_path_2}' has been created on the landing page of this laptop.")
+        print(f"(from desktop) file location: '{file_path_2}'")
 
 # this block of code will run if 'x' mode is used in 'with', when file had already been created
 except FileExistsError:
     print("The file you're trying to create already exists! Stop it! 🛑")
 
 
-    # to write to 'file'
-    # actual '.txt' file of 'file_handling/test.txt' was made & can be found in VS Code's Explorer (left hand side)
-    # written string from 'txt_data' variable can also be seen in this '.txt' file
-    file.write(txt_data)
-
-    # confirmation message
-    print(f"{file_path} has been created.")
-
-
+print()
 print(" --- next --- ")
+print()
 
 
 # working with collections whilst file handling
 
-# outputs data
+# stores [list] data
 spies = ["Sam", "Clover", "Alex"]
 
 # stores file name
@@ -103,4 +99,38 @@ with open(file=file_path_3, mode="w") as file:
         file.write(spy + " ")
 
     # shows in terminal when file is written
-    print(f"So, '{spies}' has been created on the landing page of this laptop.")
+    print(f"(from desktop) json file: '{spies}' file location: '{file_path_3}'")
+
+
+print()
+print(" --- next --- ")
+print()
+
+
+# working with '.json' files for file handling
+# '.json' files are made up of 'key:value' pairs
+
+# stores {dictionary} data
+spies_colours = {
+    "Sam": "green", 
+    "Clover": "red", 
+    "Alex": "yellow"
+    }
+
+# stores file name
+# file extension changed to '.json' (no longer '.txt')
+file_path_4 = "C:/Users/vivia/OneDrive/Desktop/test_4.json"
+
+# creates file
+with open(file=file_path_4, mode="w") as file:
+
+    # uses imported json module
+    # 'dump()' method converts dictionaries to json string for outputting data
+        #   - takes in json data as value inside its brackets
+            #   - 'spies_colours' is the dictionary in this case (see above)
+        #   - also takes in 2nd argument/value of 'file' from 'with' statement
+        #   - 'TypeError' is thrown if 2 arguments/values are not passed through
+    json.dump(spies_colours, file)
+
+    # print statement appears in terminal once file is written (& on desktop)
+    print(f"(from desktop) json file: '{spies_colours}' file location: '{file_path_4}'")
