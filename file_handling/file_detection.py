@@ -12,13 +12,29 @@
 # need to import to be able to detect files
 import os
 
+
 # variable contains string that matches the real file path of the 'test_file.txt' file
-# add folder in file path as file is in folder
-file_path = "file_handling/test_file.txt"
+# folder needs to be included inside file path as .txt file is in folder
+relative_file_path = "file_handling/test_file.txt"
 
 # finds out if file exists in director
-print(os.path.exists(file_path)) # True
-if os.path.exists(file_path):
+print(os.path.exists(relative_file_path)) # True
+
+if os.path.exists(relative_file_path):
+    print("Yes this file exists.")
+else:
+    print("No this file does not exists.")
+print()
+
+
+# for absolute file paths
+# this file path is for a .txt doc 'stored' as this laptop's windows screen (w/ the sims game icons)
+absolute_file_path = "C:/Users/vivia/OneDrive/Desktop/outer_test.txt"
+
+# finds out if file exists in director
+print(os.path.exists(absolute_file_path)) # True
+
+if os.path.exists(absolute_file_path):
     print("Yes this file exists.")
 else:
     print("No this file does not exists.")
