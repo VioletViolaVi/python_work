@@ -13,6 +13,9 @@
 import os
 
 
+# note: the test files have been deleted, recreate them if needed
+
+
 # variable contains string that matches the real file path of the 'test_file.txt' file
 # folder needs to be included inside file path as .txt file is in folder
 relative_file_path = "file_handling/test_file.txt"
@@ -29,7 +32,7 @@ print()
 
 # for absolute file paths
 # this file path is for a .txt doc 'stored' as this laptop's windows screen (w/ the sims game icons)
-absolute_file_path = "C:/Users/vivia/OneDrive/Desktop/hello/outer_test"
+absolute_file_path = "C:/Users/vivia/OneDrive/Desktop/hello"
 
 # finds out if file exists in directory
 if os.path.exists(absolute_file_path):
@@ -45,9 +48,11 @@ if os.path.exists(absolute_file_path):
                 #   - '...... /hello/outer_test' - > file!!!  '...... /hello' - > folder!!!
                     #   - all depends on how much you write in path
        print("Yes. This is a file, not a folder.")
-    else:
-        print("No. This is a directory.")
+    
+    # checks if item is a directory
+    elif os.path.isdir(absolute_file_path):
+        print("No. This is a directory. Not a file.")
 else:
-    print("No this file does not exists.")
+    print("No this file does not exist.")
 
 print(os.path.exists(absolute_file_path)) # True
