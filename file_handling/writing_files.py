@@ -22,6 +22,8 @@ file_path = "file_handling/test.txt"
         # -  2nd parameter/placeholder in 'open()' function is the mode
             #   types of modes:
                 #   - 'w' means write
+                    #   - will create new file from scratch
+                    #   - can also overwrite same file
                 #   - 'x' means also means write but will only do so if the file doesn't exist already otherwise an error will be thrown (FileExistsError)
                 #   - 'a' means to append file
                 #   - 'r' means read
@@ -53,7 +55,7 @@ file_path_2 = "C:/Users/vivia/OneDrive/Desktop/test_2.txt"
 # using try/except to avoid 'FileExistsError' if 'x' mode is used when file already exists
 try:
     # creates file
-    with open(file=file_path_2, mode="x") as file:
+    with open(file=file_path_2, mode="w") as file:
 
         # writes 'file'
         file.write(txt_data_2)
