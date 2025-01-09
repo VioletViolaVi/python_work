@@ -1,7 +1,6 @@
 # Writing Files
 
-# Notes:
-# - 
+# Notes: (see below)
 
 
 # to output data
@@ -17,6 +16,18 @@ file_path = "test.txt"
     # 'with' statement will close file once code is done using it
         # - prevents need to manually close files
         # - important to close files once done w/ them being opened to avoid unexpected behaviours occurring
-    # 'w' means write
-with open(file_path, "w") as file:
+            # - it's good practice
+    # 'open()' function returns file object
+        # -  1st parameter/placeholder in 'open()' function is for the file path (file)
+        # -  2nd parameter/placeholder in 'open()' function is the mode
+            #   types of modes:
+                #   - 'w' means write
+                #   - 'x' means also means write but will only do so if the file doesn't exist already otherwise an error will be thrown
+                #   - 'a' means to append file
+                #   - 'r' means read
+    # 'as' keyword is used to give with statement a name to be know as within the code
+        # - example below means file object output given out by the 'with' statement will be called 'file'
+with open(file=file_path, mode="w") as file:
+
+    # to write to 'file'
     pass
