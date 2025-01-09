@@ -6,7 +6,7 @@
 # to output data
 txt_data = "This is a string to be seen in a '.txt' document."
 
-# stores name of file, incl. extension
+# stores name of file, including extension
     #   - file path chosen below is a relative file path
 file_path = "file_handling/test.txt"
 
@@ -36,3 +36,26 @@ with open(file=file_path, mode="w") as file:
 
     # confirmation message
     print(f"{file_path} has been created.")
+
+
+print(" --- next --- ")
+
+
+# output '.txt' file to laptop home (outside of vs code)
+
+# outputs data
+txt_data_2 = "This should be seen on the landing page of this laptop."
+
+# stores file name
+    #   - uses an absolute file path
+file_path_2 = "C:/Users/vivia/OneDrive/Desktop/test_2.txt"
+
+# creates file
+with open(file=file_path_2, mode="w") as file:
+
+     # writes 'file'
+    file.write(txt_data_2)
+
+    # shows in terminal when file is written
+    print(f"So, '{file_path_2}' has been created on the landing page of this laptop.")
+
