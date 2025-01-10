@@ -4,7 +4,7 @@
 # absolute file path
 file_path = "C:/Users/vivia/OneDrive/Desktop/test_1.txt"
 
-#using exceptions
+# using try/except exceptions
 try:
     # 'with' is a statement
     # 'with' wraps block of code w/in a context manager
@@ -32,3 +32,8 @@ try:
 except FileNotFoundError:
     print()
     print("This file cannot be found!")
+
+# 'PermissionError' occurs when user doesn't have permission to view the file
+except PermissionError:
+    print()
+    print("You do not have permission to read this file!")
