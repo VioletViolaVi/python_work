@@ -1,7 +1,8 @@
 # Reading Files - '.txt', '.json', 'csv'
 
 # needed to use methods from json module to read '.json' files
-import json
+# need to import csv module to read csv files
+import json, csv
 
 # ----------------------------------- '.txt'file
 # absolute file path for '.txt' file
@@ -76,3 +77,6 @@ except FileNotFoundError:
 except PermissionError:
     print()
     print("You do not have permission to read this file!")
+
+
+
