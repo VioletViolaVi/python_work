@@ -1,5 +1,8 @@
 # Reading Files - '.txt', '.json', 'csv'
 
+# needed to use methods from json module
+import json
+
 # ----------------------------------- '.txt'file
 # absolute file path
 file_path = "C:/Users/vivia/OneDrive/Desktop/test_1.txt"
@@ -37,3 +40,11 @@ except FileNotFoundError:
 except PermissionError:
     print()
     print("You do not have permission to read this file!")
+
+
+print()
+print(" --- new --- ")
+print()
+
+
+# 
