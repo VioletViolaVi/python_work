@@ -89,6 +89,12 @@ file_path = "C:/Users/vivia/OneDrive/Desktop/test_3.csv"
 
 # using try/except exceptions
 try:
+    with open(file=file_path, mode="r") as file:
+        
+        # 'reader()' method reads csv file
+            # this results to a memory address being saved in variable
+        file_content = csv.reader(file)
+
 
 
 # 'FileNotFoundError' occurs when '.csv' file cannot be found (according to the entered file path in the string above)
