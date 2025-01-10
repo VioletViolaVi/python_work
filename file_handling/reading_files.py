@@ -102,6 +102,10 @@ try:
         print(file_content)
         print()
 
+        # iterating through collection to avoid getting memory address & get values instead
+        for line in file_content:
+            # indexing e.g. 'print(line[1])' can be used to get specific columns
+            print(line)
 
 # 'FileNotFoundError' occurs when '.csv' file cannot be found (according to the entered file path in the string above)
 except FileNotFoundError:
