@@ -87,4 +87,16 @@ print()
 # reading '.csv' files
 file_path = "C:/Users/vivia/OneDrive/Desktop/test_3.csv"
 
+# using try/except exceptions
+try:
 
+
+# 'FileNotFoundError' occurs when '.csv' file cannot be found (according to the entered file path in the string above)
+except FileNotFoundError:
+    print()
+    print("This file cannot be found!")
+
+# 'PermissionError' occurs when user doesn't have permission to view the '.csv' file
+except PermissionError:
+    print()
+    print("You do not have permission to read this file!")
