@@ -95,6 +95,12 @@ try:
             # this results to a memory address being saved in variable
         file_content = csv.reader(file)
 
+        # displays content of csv file
+        # csv files need to be read line by line
+            # all data in inside a collection that needs to be iterated over
+        print()
+        print(file_content)
+        print()
 
 
 # 'FileNotFoundError' occurs when '.csv' file cannot be found (according to the entered file path in the string above)
