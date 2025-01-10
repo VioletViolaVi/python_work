@@ -1,10 +1,10 @@
 # Reading Files - '.txt', '.json', 'csv'
 
-# needed to use methods from json module
+# needed to use methods from json module to read '.json' files
 import json
 
 # ----------------------------------- '.txt'file
-# absolute file path
+# absolute file path for '.txt' file
 file_path = "C:/Users/vivia/OneDrive/Desktop/test_1.txt"
 
 # using try/except exceptions
@@ -27,7 +27,7 @@ try:
                 # this long string is stored in this variable
         long_str_container = file.read()
 
-        # display this long string
+        # displays this long string
         print()
         print(long_str_container)
 
@@ -47,4 +47,32 @@ print(" --- new --- ")
 print()
 
 
-# 
+# absolute file path for '.json' file
+file_path = "C:/Users/vivia/OneDrive/Desktop/test_2.json"
+
+# using try/except exceptions
+try:
+    with open(file=file_path, mode="r") as file:
+        
+        # to read contents of a '.json' file
+        container = json.load(file)
+
+        # displays '.json' file contents
+        print()
+        print(container)
+
+        # to access values from'.json' file using keys
+        print()
+        print(container["Clover"]) # red
+        print(container["Alex"]) # yellow
+        print(container["Sam"]) # green
+
+# 'FileNotFoundError' occurs when '.json' file cannot be found (according to the entered file path in the string)
+except FileNotFoundError:
+    print()
+    print("This file cannot be found!")
+
+# 'PermissionError' occurs when user doesn't have permission to view the '.json' file
+except PermissionError:
+    print()
+    print("You do not have permission to read this file!")
