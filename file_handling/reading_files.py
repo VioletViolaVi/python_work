@@ -79,4 +79,12 @@ except PermissionError:
     print("You do not have permission to read this file!")
 
 
+print()
+print(" --- new --- ")
+print()
+
+
+# reading '.csv' files
+file_path = "C:/Users/vivia/OneDrive/Desktop/test_3.csv"
+
 
