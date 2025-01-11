@@ -18,7 +18,8 @@ print()
 
 
 # gets whatever date is now
-today_date = datetime.datetime.now()
+# returns date object that displays today's date
+today_date = datetime.date.today()
 
 print(f"today_date: {today_date}")
 print()
