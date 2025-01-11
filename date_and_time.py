@@ -64,6 +64,7 @@ print()
 
 
 # checking if date & time, being compared w/, has passed the current date & time
+    # helps check if date & time has already passed/elapsed
 
 # date & time being compared with
 # # 'datetime.datetime()' datetime method called on datetime module
@@ -81,4 +82,15 @@ print()
 print(f"current_datetime: {current_datetime}")
 print()
 
+# conditional statement based on which is smaller
+if target_datetime < current_datetime:
 
+    # if @ this point, then the date & time has already passed
+    print("The target date has passed.")
+
+else:
+    # @ this point means the target date & time has not gone passed the current date & time
+    print("The target date has NOT passed.")
+
+# output for if/else above says target date has not passed
+    # year 3000 has not been reached and current date & time is still in year 2025
