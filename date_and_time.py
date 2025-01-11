@@ -1,11 +1,11 @@
-# enables the use of dates and times using this computer's system clock
+# enables the use of dates and times using this computer's system clock (see bottom corner of laptop screen)
 import datetime
 
 # creates date object
 # 'datetime' -> module
 # 'date()' -> method
 # inside method values:
-    # - (year, month, day) -> '(2025, 12, 25)'
+    # (year, month, day) -> '(2025, 12, 25)'
 date = datetime.date(2025, 12, 25)
 
 print()
@@ -48,7 +48,7 @@ right_now = datetime.datetime.now()
 
 print(f"right_now: {right_now}")
 
-# format appearance of string stored in teh 'right_now' module
+# format appearance of string stored in the 'right_now' module
 # 'strftime()' is a method that gets called on the object made from the 'datetime' class in 'datetime' module ('datetime.datetime')
     # use formatters, written as strings, in brackets of method 'strftime( ... )'
         # can view 'datetime' module's documentation to find more string formatters
@@ -67,9 +67,9 @@ print()
     # helps check if date & time has already passed/elapsed
 
 # date & time being compared with
-# # 'datetime.datetime()' datetime method called on datetime module
+# 'datetime.datetime()' datetime method called on datetime module
 # 'datetime()' needs both date & time passed through
-# 'datetime()' -> separate values by commas
+# 'datetime()' -> you need to separate values by commas, when writing them in the method's brackets
 target_datetime = datetime.datetime(3000, 12, 25, 17, 0, 1)
 
 # current date & time
@@ -82,15 +82,16 @@ print()
 print(f"current_datetime: {current_datetime}")
 print()
 
-# conditional statement based on which is smaller
+# conditional statement based on which datetime is smaller
 if target_datetime < current_datetime:
 
     # if @ this point, then the date & time has already passed
     print("The target date has passed.")
 
 else:
+
     # @ this point means the target date & time has not gone passed the current date & time
     print("The target date has NOT passed.")
 
-# output for if/else above says target date has not passed
+# output for 'if/else' above says target date has not passed
     # year 3000 has not been reached and current date & time is still in year 2025
