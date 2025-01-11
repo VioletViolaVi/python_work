@@ -37,3 +37,18 @@ time = datetime.time(18, 36, 20)
 print(f"time: {time}")
 print()
 
+
+print()
+print(" --- next --- ")
+print()
+
+
+# gets what the time is right now
+# output includes hours, minutes & seconds
+# 'datetime.datetime' -> calls the 'datetime' class from the 'datetime' module
+right_now = datetime.datetime.now()
+
+print(f"right_now: {right_now}")
+print()
+
+
