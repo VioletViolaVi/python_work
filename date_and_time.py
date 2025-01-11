@@ -24,3 +24,16 @@ today_date = datetime.date.today()
 print(f"today_date: {today_date}")
 print()
 
+
+print()
+print(" --- next --- ")
+print()
+
+
+# creates time object
+# 'time()' takes in hours, minutes & seconds as values
+time = datetime.time(18, 36, 20)
+
+print(f"time: {time}")
+print()
+
