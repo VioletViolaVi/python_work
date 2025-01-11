@@ -22,7 +22,6 @@ print()
 today_date = datetime.date.today()
 
 print(f"today_date: {today_date}")
-print()
 
 
 print()
@@ -35,7 +34,6 @@ print()
 time = datetime.time(18, 36, 20)
 
 print(f"time: {time}")
-print()
 
 
 print()
@@ -49,7 +47,6 @@ print()
 right_now = datetime.datetime.now()
 
 print(f"right_now: {right_now}")
-print()
 
 # format appearance of string stored in teh 'right_now' module
 # 'strftime()' is a method that gets called on the object made from the 'datetime' class in 'datetime' module ('datetime.datetime')
@@ -57,6 +54,31 @@ print()
         # can view 'datetime' module's documentation to find more string formatters
 right_now_formatted = right_now.strftime("%H:%M:%S | %d-%m-%Y")
 
-print(f"right_now_formatted: {right_now_formatted}")
 print()
+print(f"right_now_formatted: {right_now_formatted}")
+
+
+print()
+print(" --- next --- ")
+print()
+
+
+# checking if date & time, being compared w/, has passed the current date & time
+
+# date & time being compared with
+# # 'datetime.datetime()' datetime method called on datetime module
+# 'datetime()' needs both date & time passed through
+# 'datetime()' -> separate values by commas
+target_datetime = datetime.datetime(3000, 12, 25, 17, 0, 1)
+
+# current date & time
+# 'now()' -> gets what the date & time is right now
+current_datetime = datetime.datetime.now()
+
+print(f"target_datetime: {target_datetime}")
+print()
+
+print(f"current_datetime: {current_datetime}")
+print()
+
 
