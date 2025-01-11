@@ -51,4 +51,12 @@ right_now = datetime.datetime.now()
 print(f"right_now: {right_now}")
 print()
 
+# format appearance of string stored in teh 'right_now' module
+# 'strftime()' is a method that gets called on the object made from the 'datetime' class in 'datetime' module ('datetime.datetime')
+    # use formatters, written as strings, in brackets of method 'strftime( ... )'
+        # can view 'datetime' module's documentation to find more string formatters
+right_now_formatted = right_now.strftime("%H:%M:%S | %d-%m-%Y")
+
+print(f"right_now_formatted: {right_now_formatted}")
+print()
 
