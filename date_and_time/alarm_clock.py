@@ -18,6 +18,29 @@ def set_alarm(alarm_time):
     # keeps going until alarm clock is to run no more
     while is_running:
 
+        # gets & stores time for right now
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(current_time)
+
+        # triggers actual alarm
+        if current_time == alarm_time:
+            print("Wake Up!")
+
+            # initialise sound
+            pygame.mixer.init()
+
+            # loads sound file
+            pygame.mixer.music.load(sound_file)
+
+            # plays sound
+            # plays for short moment
+            pygame.mixer.music.play()
+
+            # stops clock from running
+            is_running = False
+
+        # updates time every second
+        time.sleep(1)
 
 
 # to run this python file directly
