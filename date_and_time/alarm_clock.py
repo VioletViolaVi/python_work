@@ -36,6 +36,11 @@ def set_alarm(alarm_time):
             # plays for short moment
             pygame.mixer.music.play()
 
+            # keeps sound file playing during while loop
+            # sound file will stop being busy (return 'False') -> when song ends or software is stopped prematurely
+            while pygame.mixer.music.get_busy():
+                time.sleep(1)
+
             # stops clock from running
             is_running = False
 
