@@ -5,3 +5,20 @@
 # 'pygame' -> to provide sound effects
 import time, datetime, pygame
 
+# display string representation of time
+def set_alarm(alarm_time):
+    print(f"Alarm set time for: {alarm_time}")
+
+    # for file sound is in
+    sound_file = "sound_file.mp3"
+
+
+# to run this python file directly
+if __name__ == "__main__":
+
+    # prompts user what they want to set alarm to
+    alarm_time = input("Enter alarm time (HH:MM:SS): ")
+
+    # runs function body
+    set_alarm(alarm_time)
+
