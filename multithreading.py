@@ -10,3 +10,19 @@
 # allows use of multithreading in python
 import threading
 
+# functions to emulate watching movie @ home
+# eating popcorn
+def popcorn_eating():
+    print()
+    print("You've finished eating the popcorn!")
+
+# watching movie
+def movie_watching():
+    print()
+    print("Movie ended!")
+
+# microwaving the popcorn
+def microwaving_popcorn():
+    print()
+    print("Microwave popcorn ready!")
+
