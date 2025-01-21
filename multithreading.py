@@ -31,8 +31,21 @@ def microwaving_popcorn():
     print("Microwave popcorn ready!")
 
 # calling all functions
-    # -  without multithreading, these functions get called in order of there appearance
+    # -  without multithreading, these functions get called in order of being called (see below)
+        # - this is because the functions are currently running on the same 'python thread'
         # - this order is 'out of step' for real world scenario so multithreading can help
-popcorn_eating()
-movie_watching()
-microwaving_popcorn()
+# popcorn_eating()
+# movie_watching()
+# microwaving_popcorn()
+
+# makes all functions start running at the same time
+    # - using multithreading here print statements appear in different order
+        # - 'Microwave popcorn ready!' -> 'You've finished eating the popcorn!' -> 'Movie ended!'
+task_1 = threading.Thread(target=popcorn_eating)
+task_1.start()
+
+task_2 = threading.Thread(target=movie_watching)
+task_2.start()
+
+task_3 = threading.Thread(target=microwaving_popcorn)
+task_3.start()
