@@ -20,10 +20,10 @@ def popcorn_eating():
 
 # watching movie
 # value using in function when called will be passed through in place of this parameter
-def movie_watching(move_title):
+def movie_watching(move_title, opinion):
     time.sleep(10)
     print()
-    print(f"{move_title} movie ended!")
+    print(f"{move_title} movie ended! It was {opinion}!")
 
 # microwaving the popcorn
 def microwaving_popcorn():
@@ -47,7 +47,10 @@ task_1 = threading.Thread(target=popcorn_eating)
 task_1.start()
 
 # str argument will be passed through respective function
-task_2 = threading.Thread(target=movie_watching("Death by Rose")) # shout out to project 3 😉
+# 'args=("Death by Rose",)' -> this is a tuple
+    # - use a comma ',' after value if there's only 1 value w/in brackets/tuple
+        # - TypeError will throw otherwise
+task_2 = threading.Thread(target=movie_watching, args=("Death by Rose", "great")) # shout out to project 3 😉
 task_2.start()
 
 task_3 = threading.Thread(target=microwaving_popcorn)
