@@ -19,10 +19,11 @@ def popcorn_eating():
     print("You've finished eating the popcorn!")
 
 # watching movie
-def movie_watching():
+# value using in function when called will be passed through in place of this parameter
+def movie_watching(move_title):
     time.sleep(10)
     print()
-    print("Movie ended!")
+    print(f"{move_title} movie ended!")
 
 # microwaving the popcorn
 def microwaving_popcorn():
@@ -45,7 +46,8 @@ def microwaving_popcorn():
 task_1 = threading.Thread(target=popcorn_eating)
 task_1.start()
 
-task_2 = threading.Thread(target=movie_watching)
+# str argument will be passed through respective function
+task_2 = threading.Thread(target=movie_watching("Death by Rose")) # shout out to project 3 😉
 task_2.start()
 
 task_3 = threading.Thread(target=microwaving_popcorn)
