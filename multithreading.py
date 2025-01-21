@@ -50,3 +50,16 @@ task_2.start()
 
 task_3 = threading.Thread(target=microwaving_popcorn)
 task_3.start()
+
+# to show before any threading begins
+print()
+print("Lets watch a movie! 🎥 🍿 🎬")
+
+# makes last print statement (see below) appear after all threading has completed / all threads have been joined
+task_1.join()
+task_2.join()
+task_3.join()
+
+# to show after all threading has been completed
+print()
+print("Clean up time! 🫧 🧹 🧼")
