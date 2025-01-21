@@ -32,8 +32,9 @@ def microwaving_popcorn():
 
 # calling all functions
     # -  without multithreading, these functions get called in order of being called (see below)
-        # - this is because the functions are currently running on the same 'python thread'
-        # - this order is 'out of step' for real world scenario so multithreading can help
+        # - current order: 'You've finished eating the popcorn!' -> 'Microwave popcorn ready!' -> 'Movie ended!'
+            # - this is because the functions are currently running on the same 'python thread'
+            # - this order is 'out of step' for real world scenario so multithreading can help
 # popcorn_eating()
 # movie_watching()
 # microwaving_popcorn()
