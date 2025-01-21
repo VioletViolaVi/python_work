@@ -26,3 +26,9 @@ def microwaving_popcorn():
     print()
     print("Microwave popcorn ready!")
 
+# calling all functions
+    # -  without multithreading, these functions get called in order of there appearance
+        # - this order is 'out of step' for real world scenario so multithreading can help
+popcorn_eating()
+movie_watching()
+microwaving_popcorn()
